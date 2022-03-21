@@ -5,6 +5,7 @@ from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen
 from PyQt5.QtSvg import *
 from utils import *
 from Edge import Edge
+from BubbleContent import BubbleContent
 import glob
 import sys
 import os
@@ -27,6 +28,9 @@ class Bubble(QGraphicsEllipseItem):
         self.setZValue(2)
         self.setAcceptHoverEvents(True)
 
+        # Content
+        self.content=BubbleContent()
+
         # Edges
         self.toLinks=[]
         self.fromLinks=[]
@@ -42,32 +46,8 @@ class Bubble(QGraphicsEllipseItem):
         ### Construct from text description ###
         if desc != '':
             lines=self.constructFromDesc(desc)
+            self.content.setText(lines)
         # Generates inner svg
-        try:
-            cachePath="mindmaps/"+self.tab.tabName+"/cache/"
-            pdfPath=cachePath+"tempSnippet.pdf"
-            svgPath=cachePath+"tempSnippet.svg"
-            latexMaker.makePdf(lines,pdfPath,self.id==0)
-            os.system('pdf2svg '+pdfPath+" "+svgPath)
-            f=open(svgPath,'r')
-            svgCode=f.read()
-            f.close()
-            svgCode=svgCode.replace('</symbol>','').replace('>\n<path','').replace('<symbol','<path').replace('</g style','</g><path style')
-            f=open(svgPath,'w')
-            f.write(svgCode)
-            f.close()
-            self.innerSvg=QGraphicsSvgItem(svgPath,parent=self)
-        except :
-            self.innerSvg=None
-            # os.system('cp '+svgPath+" "+svgPath+str(self.id))
-        if self.innerSvg:
-            self.innerSvg.setScale(1)
-            size=self.innerSvg.boundingRect().size()
-            w=size.width()/2*self.innerSvg.scale()
-            h=size.height()/2*self.innerSvg.scale()
-            self.findEllipseSize(w,h)
-            self.innerSvg.moveBy(-w,-h)
-            self.setRect(-self.a,-self.b,2*self.a,2*self.b)
 
 
         # Id label

@@ -1,0 +1,38 @@
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF
+from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen
+from PyQt5.QtSvg import *
+from utils import *
+import glob
+import sys
+import os
+
+class BubbleContent():
+    def __init__(self,bubble,text=None,latexMaker=None):
+        self.bubble=bubble
+        self.text=text
+        self.latexMaker=latexMaker
+
+
+    def makeInnerLatexSvg (self):
+        cachePath="mindmaps/"+self.bubble.tab.tabName+"/cache/"
+        pdfPath=cachePath+"tempSnippet.pdf"
+        svgPath=cachePath+"tempSnippet.svg"
+        self.latexMaker.makePdf(lines,pdfPath,self.id==0)
+        os.system('pdf2svg '+pdfPath+" "+svgPath)
+        f=open(svgPath,'r')
+        svgCode=f.read()
+        f.close()
+        svgCode=svgCode.replace('</symbol>','').replace('>\n<path','').replace('<symbol','<path').replace('</g style','</g><path style')
+        f=open(svgPath,'w')
+        f.write(svgCode)
+        f.close()
+        self.innerSvg=QGraphicsSvgItem(svgPath,parent=self.bubble)
+        self.innerSvg.setScale(1)
+        size=self.innerSvg.boundingRect().size()
+        w=size.width()/2*self.innerSvg.scale()
+        h=size.height()/2*self.innerSvg.scale()
+        self.bubble.findEllipseSize(w,h)
+        self.innerSvg.moveBy(-w,-h)
+        self.setRect(-self.bubble.a,-self.bubble.b,2*self.bubble.a,2*self.bubble.b)
