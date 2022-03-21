@@ -1,0 +1,12 @@
+{
+"exp":"\\newcommand\\ex{\\mathrm{exp}}",
+"cos":"\\newcommand\\co{\\mathrm{cos}}",
+"de":"\\newcommand\\de{\\mathrm{d}}",
+"ast":"\\newcommand\\dl[1]{{#1}^\\ast}",
+"albe":"\\newcommand\\albe{{\\alpha\\beta}}",
+"munu":"\\newcommand\\munu{{\\mu\\nu}}",
+"colorBox": "\\newcommand\\redbox[1]{\\fcolorbox{red}{white}{#1}}",
+"eom":"\\newcommand\\eom{\\textsc{eom}}",
+"lb":"\\newcommand\\lb{\\{}",
+"rb":"\\newcommand\\rb{\\}}"
+}

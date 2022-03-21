@@ -1,0 +1,81 @@
+|MindMap title : Integrability
+|Height : 2000
+|Width : 2000
+|Bg color : #BBB
+|Optimize : yes
+|Tolerance : 0.00000001
+
+#0: to:1,2
+\textbf{Dynamical systems}
+
+#1:
+Non-integrable systems
+
+#2: to:3
+Integrable systems
+= exactly solvable
+
+#3: to:4,7
+Liouville integrability
+\scriptsize Liouville theorem :
+\scriptsize \textsc{If} $\forall i,j {F_i,F_j}=0$
+\scriptsize \textsc{then} $\exists (p_i,q_i)\rightarrow(F_i,\phi_i) |$
+\scriptsize $$\dot F_i={H,F_i}=0$$
+\scriptsize $\dot \phi_i={H,\phi_i}=\frac{\partial H}{\partial F_i}=\Omega_i$
+
+#4: to:5,6
+Lax pair
+
+#5: to:7,8
+Constant Lax pair $(L,M)$
+Hamilton equations $\Rightarrow \dot L=[L,M]$
+
+#6: to:16
+Lax pair with spectral parameter
+$(L(z),M(z)), z\in \mathbb{C}$
+Hamilton equations $\Rightarrow \dot L(z)=[L(z),M(z)]$
+
+#7:
+Conserved charges
+$Q_n=TrL^n$
+
+#8: to:13
+Solution
+$L(t)=G(t)L(0)G(t)^{-1}$
+$M(t)=\dot G(t)G(t)^{-1}$
+
+#13: to:14;size=0.8
+Diagonalizing L
+$L=U\Lambda U^{-1}$
+
+#14: size=0.5
+Charges in involution
+${\Lambda_1,\Lambda_2}=0$
+
+#15:
+${L_1,L_2}=[r_{12},L_1]-[r_{12},L_2]$
+$r_{12}$
+
+#9: to:10;size=0.5
+Jacobi-identity
+
+#12: to:10
+$r_{ij}=-r_{ji}$
+
+#10: to:11
+Classical Yang-Baxter Equation (cYBE)
+$[r_{12},r_{13}+r{23}]+[r13,r23]=0$
+
+#11:
+modified classical Yang-Baxter Equation
+cYBE with a Casimir element on the rhs
+
+#16: to:17,18
+Spectral parameter dependent cYBE
+$[r_{12}(z_1,z_2),r_{13}(z_1,z_3)+r_{23}(z_2,z_3)]+[r_{13}(z_1,z_3),r_{23}(z_2,z_3)]$
+
+#17:
+Non-difference type solutions
+
+#18:
+Difference-form type solutions

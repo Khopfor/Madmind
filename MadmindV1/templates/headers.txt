@@ -1,0 +1,6 @@
+|MindMap title : <title>
+|Height : 2000
+|Width : 2000
+|Bg color : #f3eee9
+|Optimize : yes
+|Tolerance : 0.5

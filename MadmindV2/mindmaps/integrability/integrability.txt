@@ -1,0 +1,41 @@
+|MindMap title : Integrability
+|Height : 2000
+|Width : 2000
+|Bg color : #BBB
+|Optimize : yes
+|Tolerance : 0.2
+
+#0: to:1,2;x=255.0;y=66.0
+\textbf{Dynamical systems}
+
+#1:;x=177.0;y=182.0
+Non-integrable systems
+
+#2: to:3;x=18.0;y=298.0
+Integrable systems
+= exactly solvable
+
+#3: to:4,7
+Liouville integrability
+\scriptsize Liouville theorem :
+\scriptsize \textsc{If} $\forall i,j {F_i,F_j}=0$
+\scriptsize \textsc{then} $\exists (p_i,q_i)\rightarrow(F_i,\phi_i) |$
+\scriptsize $$\dot F_i={H,F_i}=0$$
+\scriptsize $\dot \phi_i={H,\phi_i}=\frac{\partial H}{\partial F_i}=\Omega_i$
+
+#4: to:5,6;x=692.0;y=298.0
+Lax pair
+
+#5: to:7,8;x=427.0;y=177.0
+Constant Lax pair $(L,M)$
+Hamilton equations $\Rightarrow \dot L=[L,M]$
+
+#6: to:16;x=496.0;y=374.0
+Lax pair with spectral parameter
+$(L(z),M(z)), z\in \mathbb{C}$
+Hamilton equations $\Rightarrow \dot L(z)=[L(z),M(z)]$
+
+#7:;x=157.0;y=324.0
+Conserved charges
+$Q_n=TrL^n$
+

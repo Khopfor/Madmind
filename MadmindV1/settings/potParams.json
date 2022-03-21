@@ -1,0 +1,9 @@
+{
+ "targetLength":10,
+ "edgeLengthCoef":0.1,
+ "bypassCoef":0.01,
+ "hierarchyCoef":0.1,
+ "bubblePotFunc":"sqBell",
+ "amplitude":10000,
+ "range":1.8
+}

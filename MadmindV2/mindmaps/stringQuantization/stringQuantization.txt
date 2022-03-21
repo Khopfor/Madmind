@@ -1,0 +1,89 @@
+|MindMap title : String Quantization
+|Height : 2000
+|Width : 2000
+|Bg color : #f3eee9
+|Optimize : yes
+|Tolerance : 5
+
+#0: to:t1100,t1200;x=0;y=700;size=2;color=green
+Quantization of the string
+
+#1100: size=1.6;x=-300;y=550;color=green
+Covariant quantization
+Canonical quantize then apply Virasoro
+constraints as operator constraints.
+
+#1200: size=1.6;x=300;y=550;color=green
+Lightcone quantization
+Solve constraints in the classical
+theory then quantize
+
+#1201: from:1200;color=green
+Level operator
+$\displaystyle N=\sum_{i=1}^{D-2}\sum_{n>0}\alpha^i_{-n}\alpha^i_n$
+$\displaystyle\bar N=\sum_{i=1}^{D-2}\sum_{n>0}\bar\alpha^i_{-n}\bar\alpha^i_n$
+
+#1210: from:1200;color=green
+Commutation relations
+$[x^i,p^j]=i\delta^{ij} \quad [x^-,p^+]=-i$
+$[\alpha^i_n,\alpha^j_m]=[\bar\alpha^i_n,\bar\alpha^j_m]=n\delta^{ij}\delta_{n+m}$
+
+#1220: from:1200;color=green
+Fock space
+Built by acting with
+$\alpha^i_{-n}$ and $\bar\alpha^i_{-n}$ with $n>0$
+The Hilbert space is positive definite
+$\rightarrow$ no ghosts
+
+#1230: from:1200;color=green
+Vaccuum state $|0,p\rangle$
+$\hat p^\mu|0;p\rangle=p^\mu|0;p\rangle$
+$\alpha^i_n|0;p\rangle=\bar\alpha^i_n|0;p\rangle=0$
+
+#1240: from:1201;color=green
+Level matching condition
+Mass of states in lightcone gauge
+$M^2=\frac{4}{\alpha'}(N-a)=\frac{4}{\alpha'}(\bar N-a)$
+
+#2000: from:1240,l1100;x=0;y=0;size=1.6;color=green
+The string spectrum
+
+#2010: from:2000,1230;color=green
+Tachyon
+$M^2=-\frac{1}{\alpha'}\frac{D-2}{6}$
+
+#2020: from:2000;color=green
+First excited states
+\textit{$(D-2)^2$ massless particle states}
+$\bar\alpha_{-1}^i\alpha_{-1}^i|0;p\rangle$
+$N=\bar N=1 \Rightarrow M^2=0$
+
+#2021: from:2020;size=0.5;color=green¤
+$M^2=\frac{4}{\alpha'}(1-\frac{D-2}{24})$
+
+#2022: from:2020;size=0.75;color=green
+representation
+\textbf{24} $\otimes$  \textbf{24} representation of $SO(24)$
+Decomposed in 3 irreducible representations
+traceless symmetric $\oplus$ anti-symmetric $\oplus$ singlet (=trace)
+
+#2030: from:2022;color=green
+Graviton $G_\munu(X)$
+Traceless symmetric spin 2 particle
+
+#2040: from:2022;color=green
+Kalb-Ramond field $B_\munu(X)$
+Anti-symmetric tensor field
+
+#2050: from:2022;color=green
+Dilaton $\Phi(X)$
+Scalar field (trace)
+
+#2100: from:2000;color=green
+Higher excited states
+
+#3000:from:2020;color=green
+D=26
+
+#3010: from:3000;color=green
+Compactified dimensions

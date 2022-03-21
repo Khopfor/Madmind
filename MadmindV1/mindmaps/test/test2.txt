@@ -1,0 +1,26 @@
+|MindMap title : Test
+|Height : 200
+|Width : 200
+|Bg color : #BBB
+|Tolerance : 0.02
+
+#0: 1:x>0
+String
+$S=1000$
+
+#1: 2
+Worldsheet
+
+#2: 3,4,5
+Polyakov action
+$\boxed{S=-T\int d^2\sigma\sqrt{-h}h^{\alpha\beta}\partial_\alpha}$
+
+#3: 
+Reparam invariance
+
+#4:
+Weyl invariance
+
+#5: 
+Stress-energy tensor
+$T$
