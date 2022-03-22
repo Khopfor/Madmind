@@ -1,4 +1,6 @@
+from xxlimited import new
 from Bubble import Bubble
+from Edge import Edge
 
 class Mindmap():
     def __init__(self,name,contents,latexMaker=None,tab=None):
@@ -9,6 +11,7 @@ class Mindmap():
         self.bubbles={}
         self.latexMaker=latexMaker
         self.lastId=-10
+        self.newEdgeFr=None
 
         ### Headers and settings ###
         if type(contents)==type(""):
@@ -36,17 +39,33 @@ class Mindmap():
         except:
             self.tol=None
 
-    def newBubble(self,x,y,id=None):
-        if not id :
-            id=self.lastId+10
-            self.lastId=id
-        self.bubbles[id]=Bubble(x=x,y=y,latexMaker=self.latexMaker,tab=self.tab,mindmap=self)
+    def newBubble(self,x,y,scene):
+        newBubble=Bubble(x=x,y=y,id=self.lastId+10,latexMaker=self.latexMaker,tab=self.tab,mindmap=self)
+        self.lastId+=10
+        scene.addItem(newBubble)
+        newBubble.drawn=True
+        contents=self.tab.textEdit.toPlainText()
+        if contents[-1]!='\n': contents+='\n'
+        contents+="\n#{}:x={};y={}".format(newBubble.id,x,y)
+        self.tab.textEdit.setPlainText(contents)
+
+    def addBubble(self,bubble):
+        if bubble.id not in self.bubbles:
+            self.bubbles[bubble.id]=bubble
+            self.writeBubble(bubble)
+        else :
+            print("Error : id already used.")
+
+    def writeBubble(self,bubble):
+        fileName="mindmap/"+self.tab.tabName+"/"+self.tab.tabName+".txt"
+        newText=self.tab.textEdit.toPlainText()+"\n\n#"+str(bubble.id)+": x="+str(bubble.scenePos().x())+";y="+str(bubble.scenePos().y())
+        # print(newText)
+        self.tab.textEdit.setPlainText(newText)
 
     # Constructs the bubbles
     def constructBubbles (self,contents):            
         if type(contents)==type(""):
             contents=contents.split('\n')
-
         i=0
         while '#0' not in contents[i]:
             i+=1
@@ -59,20 +78,27 @@ class Mindmap():
                     print("ID Error : ID '"+str(id)+"' not unique.")
                 else :
                     self.bubbles[id]=Bubble(desc='#'+c,latexMaker=self.latexMaker,tab=self.tab,mindmap=self)
+                    self.lastId=max(self.lastId,id)
                     # print("Bubble",id,"created at",self.bubbles[id].scenePos())
                 # except :
                 #     print("Invalid entry : ",c)
 
 
+    def newEdge(self,bubble):
+        if self.newEdgeFr==None :
+            self.newEdgeFr=bubble
+            print(self.newEdgeFr.id)
+        else :
+            newEdge=Edge(self.newEdgeFr,bubble,bubbles=self.bubbles)
+            if self.newEdgeFr.addEdge(newEdge) and bubble.addEdge(newEdge) :
+                self.tab.canvas.scene.addItem(newEdge)
+                self.tab.writeNewEdge(newEdge)
+            self.newEdgeFr=None
+
     def constructEdges(self):
         for bub in self.bubbles.values():
             bub.constructEdges(self.bubbles)
 
-
-    def drawBubble(self,scene):
-        if len(self.bubbles)>0 and not self.bubbles[self.lastId].drawn:
-            scene.addItem(self.bubbles[self.lastId])
-            self.bubbles[self.lastId].drawn=True
 
     # Counts the bubbles
     def countBubbles (self):

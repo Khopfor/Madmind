@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF
-from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen
+from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF,QRectF
+from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen,QIntValidator,QPalette
 from PyQt5.QtSvg import *
 from utils import *
 from Edge import Edge
@@ -14,22 +14,22 @@ class Bubble(QGraphicsEllipseItem):
     ##########################################
     #### INIT ################################
     ##########################################
-    def __init__ (self,desc='',id=0,x=0,y=0,a=80,b=40,latexMaker=None,tab=None,mindmap=None):
+    def __init__(self,desc='',id=99999999,x=None,y=None,latexMaker=None,tab=None,mindmap=None):
+        a,b=80,50
         super().__init__(-a,-b,2*a,2*b)
-        self.id=id
-        self.a=a
-        self.b=b
+        self.a,self.b=a,b
         self.mindmap=mindmap
         self.tab=tab
         self.size=1
         self.drawn=False
         self.moving=False
-        self.setPos(x,y)
+        self.idLabel=None
         self.setZValue(2)
         self.setAcceptHoverEvents(True)
+        self.setFlag(QGraphicsItem.ItemIsSelectable)
 
         # Content
-        self.content=BubbleContent()
+        self.content=BubbleContent(self,latexMaker=latexMaker)
 
         # Edges
         self.toLinks=[]
@@ -41,46 +41,66 @@ class Bubble(QGraphicsEllipseItem):
         self.color="#CCAACC"
         self.pen=QPen()
         self.lens=1.4
-        self.setFlag(QGraphicsItem.ItemIsSelectable)
 
-        ### Construct from text description ###
-        if desc != '':
-            lines=self.constructFromDesc(desc)
-            self.content.setText(lines)
-        # Generates inner svg
+        if desc!='':
+            self.descInit(desc)
+        elif x!=None and y!=None :
+            self.posInit(x,y,id)
+
+        self.setStyle()
+        self.check()
 
 
-        # Id label
+    def posInit (self,x,y,id):
+        self.setPos(x,y)
+        self.id=id
+        self.initIdLabel()
+        # self.idEdit=QLineEdit(self.tab.canvas)
+        # self.idEdit.setValidator(QIntValidator())
+        # self.idEdit.setMaxLength(8)
+        # # self.idEdit.setFont(QFont())
+        # self.id=None
+        # self.idEdit.show()
+        # self.idEdit.editingFinished.connect(self.setId)
+        # self.id=int()
+
+    def descInit (self,desc):
+        lines=self.constructFromDesc(desc)
+        self.content.setContent(lines)
+        self.setEllipseSize()
+        self.initIdLabel()
+    
+
+    def initIdLabel(self):
         self.idLabel=QGraphicsTextItem(str(self.id),self)
-        self.idLabel.moveBy(-self.idLabel.boundingRect().width()/2*self.idLabel.scale(),-self.idLabel.boundingRect().height()*self.idLabel.scale()-self.b)
+        self.setIdLabelPos()
         self.idLabel.hide()
 
+
+    def setIdLabelPos(self):
+        if self.idLabel:
+            self.idLabel.setPos(-self.idLabel.boundingRect().width()/2*self.idLabel.scale(),-self.idLabel.boundingRect().height()*self.idLabel.scale()-self.b)
+
+
+    # def setId(self):
+    #     newId=int(self.idEdit.text())
+    #     if newId != self.id :
+    #         self.id=newId
+    #         self.idEdit.hide()
+    #         self.initIdLabel()
+    #         self.mindmap.addBubble(self)
+    ##############################################
+    #### END INIT ################################
+    ##############################################
+
+    def setStyle(self):
         self.pen.setWidthF(self.strokeWidth)
         if "#" in self.color:
             self.pen.setColor(QColor(*hex_to_rgb(self.color)))
         else :
             self.pen.setColor(QColor(self.color))
         self.setPen(self.pen)
-        self.setBrush(QColor(240,240,240))
-
-        # try:
-        # snippet=latexMaker.makeLatexSvg(lines,self.id==0)
-        # if snippet!=None:
-            # latexMaker.saveSvgAsPng(snippet,"mindmaps/"+self.tab.tabName+"/cache/tempSnippet.png")
-            # self.innerImg=QGraphicsPixmapItem(QPixmap("mindmaps/"+self.tab.tabName+"/cache/tempSnippet.png"))
-            # self.innerImg.setPos(self.scenePos())
-            # self.tab.canvas.scene.addItem(self.innerImg)
-        # self.tab.canvas.scene.addItem(self.innerSvg)
-        # except:
-        #     pass
-
-
-        self.check()
-
-
-    ##############################################
-    #### END INIT ################################
-    ##############################################
+        self.setBrush(QColor(250,250,250))
 
     # def addEdge (self,alter):
     #     if alter.id not in self.edges:
@@ -89,6 +109,8 @@ class Bubble(QGraphicsEllipseItem):
     def addEdge(self,edge):
         if edge.id not in self.edges:
             self.edges[edge.id]=edge
+            return True
+        return False
 
     def constructEdges(self,bubbles):
         for toid in self.toLinks :
@@ -117,11 +139,13 @@ class Bubble(QGraphicsEllipseItem):
         for e in self.edges.values():
             e.optimizePath(self.mindmap.bubbles)
 
-    def findEllipseSize (self,w,h):
-        if self.innerSvg :
-            self.a=np.sqrt(w*(h+w))
-            self.b=np.sqrt(h*(h+w))
-        self.b=max(self.b,self.a/2.5)
+    def setEllipseSize (self,w=None,h=None):
+        if self.content.innerSvg and w!=None and h!=None:
+            self.a=max(np.sqrt(w*(h+w)),5)
+            self.b=max(np.sqrt(h*(h+w)),5)
+        # self.b=max(self.b,self.a/2.5)
+        self.setRect(-self.a,-self.b,2*self.a,2*self.b)
+        self.setIdLabelPos()
         # self.a*=self.size
         # self.b*=self.size
 
@@ -132,7 +156,13 @@ class Bubble(QGraphicsEllipseItem):
         y0=self.scenePos().y()
         self.setPos(QPoint(x0+dx,y0+dy))
 
+    def shrink(self):
+        self.size/=1.2
+        self.setScale(self.size)
 
+    def grow(self):
+        self.size*=1.2
+        self.setScale(self.size)
 
     def magnify(self,bool):
         if bool:
@@ -145,23 +175,33 @@ class Bubble(QGraphicsEllipseItem):
         # self.setRect(rect)
         # self.move(sgn*(self.lens-1)*self.a,sgn*(self.lens-1)*self.b)
 
+    def getA(self):
+        return (self.a+self.strokeWidth/2)*self.size
+
+    def getB(self):
+        return (self.b+self.strokeWidth/2)*self.size
 
 
+    ### Hover ###
     def hoverEnterEvent(self, event):
         self.magnify(1)
-        self.idLabel.show()
-
-
-
+        if self.idLabel :
+            self.idLabel.show()
+        self.tab.canvas.scene.hoveredBubble=self
+        
     def hoverLeaveEvent(self, event):
         self.magnify(0)
-        self.idLabel.hide()
+        if self.idLabel :
+            self.idLabel.hide()
+        self.tab.canvas.scene.hoveredBubble=None
 
 
-
+    ### Mouse ###
     def mousePressEvent(self, event):
-        pass
-
+        # self.tab.goTo(self.id)
+        if (QApplication.keyboardModifiers() and Qt.ShiftModifier):
+            # self.setBrush(Qt.red)
+            self.mindmap.newEdge(self)
 
 
     def mouseMoveEvent(self, event):
@@ -173,56 +213,55 @@ class Bubble(QGraphicsEllipseItem):
         self.magnify(0)
         self.updateEdges()
 
-
-
     def mouseReleaseEvent(self, event):
         self.writePos()
         self.optimizeEdges()
         self.moving=False
 
-
-
     def mouseDoubleClickEvent(self,event):
         if event.button() == Qt.LeftButton:
-            self.setBrush(Qt.yellow)
+            # self.setBrush(Qt.yellow)
+            self.content.showTextEdit()
 
-
-
-    def keyPressEvent(self, event):
-        print("hello")
-        if self.isUnderMouse() :
-            if event.key()==Qt.Key.Key_Plus:
-                self.size*=1.2
-            if event.key()==Qt.Key.Key_Minus:
-                self.size/=1.2
-            self.setScale(self.size)
-            if (event.key()==Qt.Key.Key_Control):
-                print("yay")
-                self.tab.canvas.centerOn(self.scenePos())
-        return super().keyPressEvent(event)
+    ### Keyboard ###
+    # def keyPressEvent(self, event):
+    #     print("hello")
+    #     if self.isUnderMouse() :
+    #         if event.key()==Qt.Key.Key_Plus:
+    #             self.size*=1.2
+    #         if event.key()==Qt.Key.Key_Minus:
+    #             self.size/=1.2
+    #         self.setScale(self.size)
+    #         if (event.key()==Qt.Key.Key_Control):
+    #             print("yay")
+    #             self.tab.canvas.centerOn(self.scenePos())
+    #     return super().keyPressEvent(event)
 
 
     def writePos (self):
-        if self.tab:
+        if self.tab and self.id:
             lines=self.tab.textEdit.toPlainText().split('\n')
+            index=None
             for i,l in enumerate(lines):
                 if "#"+str(self.id)+':' in l:
                     index=i
                     break
-            l=lines[index].split(';')
-            newX,newY=False,False
-            for i,s in enumerate(l):
-                if "x" in s and "=" in s :
-                    l[i]="x="+str(self.scenePos().x())
-                    newX=True
-                if "y" in s and "=" in s :
-                    l[i]="y="+str(self.scenePos().y())
-                    newY=True
-            if not newX : l.append("x="+str(self.scenePos().x()))
-            if not newY : l.append("y="+str(self.scenePos().y()))
-            lines[index]=';'.join(l)
-            contents='\n'.join(lines)
-            self.tab.textEdit.setPlainText(contents)
+            if index!=None :
+                [idPart,par]=lines[index].split(':',1)
+                par=par.split(';')
+                newX,newY=False,False
+                for i,s in enumerate(par):
+                    if "x" in s and "=" in s :
+                        par[i]="x="+str(self.scenePos().x())
+                        newX=True
+                    if "y" in s and "=" in s :
+                        par[i]="y="+str(self.scenePos().y())
+                        newY=True
+                if not newX : par.append("x="+str(self.scenePos().x()))
+                if not newY : par.append("y="+str(self.scenePos().y()))
+                lines[index]=idPart+':'+';'.join(par)
+                contents='\n'.join(lines)
+                self.tab.textEdit.setPlainText(contents)
 
 
 

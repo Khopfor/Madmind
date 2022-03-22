@@ -20,12 +20,7 @@ class Scene (QGraphicsScene):
         self.h=2000
         self.setSceneRect(0,0,self.w,self.h)
         self.setBackgroundBrush(QColor(250,242,232))
-        # self.setBackgroundBrush(QColor(100,100,100))
-        self.label=QGraphicsTextItem("YAYYYYYY")
-        # self.addItem(self.label)
-
-        # Mindmap
-        # mmName=tab.tabName
+        self.hoveredBubble=None
 
 
     def initMindmap(self,tab):
@@ -47,13 +42,17 @@ class Scene (QGraphicsScene):
         if event.key()== Qt.Key.Key_N:
             x=self.mousePos.x()#*self.sceneRect().width()
             y=self.mousePos.y()#*self.sceneRect().height()
-            print(x,y)
-            self.mindmap.newBubble(x,y)
-            self.mindmap.drawBubble(self)
+            self.mindmap.newBubble(x,y,self)
+            # self.mindmap.drawBubble(self)
             # self.svgPainter.drawEllipse(self.center,50,30)
             # guiPainter=QPainter(self.pix)
             # guiPainter.drawEllipse(self.center,50,30)
             self.update()
+        if self.hoveredBubble :
+            if event.key()==Qt.Key.Key_Plus:
+                self.hoveredBubble.grow()
+            elif event.key()==Qt.Key.Key_Minus:
+                self.hoveredBubble.shrink()
         return super().keyPressEvent(event)
 
     # def mouseDoubleClickEvent(self,event):

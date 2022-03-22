@@ -52,11 +52,11 @@ class Edge (QGraphicsPathItem):
     #     elif k==1:return self.
 
     def P (self,X):
-        P0=QPointF(self.fr.x()+self.fr.a*np.cos(X[0]),self.fr.y()+self.fr.b*np.sin(X[0]))
-        if X[1] <=1.1 : X[1]=1.1
+        P0=QPointF(self.fr.x()+self.fr.getA()*np.cos(X[0]),self.fr.y()+self.fr.getB()*np.sin(X[0]))
+        if X[1] <=1.2 : X[1]=1.2
         P1=P0*X[1]+(1-X[1])*self.fr.scenePos()
-        P3=QPointF(self.to.x()+self.to.a*np.cos(X[3]),self.to.y()+self.to.b*np.sin(X[3]))
-        if X[2] <=1.1 : X[2]=1.1
+        P3=QPointF(self.to.x()+self.to.getA()*np.cos(X[3]),self.to.y()+self.to.getB()*np.sin(X[3]))
+        if X[2] <=1.2 : X[2]=1.2
         P2=P3*X[2]+(1-X[2])*self.to.scenePos()
         return P0,P1,P2,P3
 
@@ -64,8 +64,8 @@ class Edge (QGraphicsPathItem):
         if not self.opti:
             dx=self.fr.scenePos().x()-self.to.scenePos().x()
             dy=self.fr.scenePos().y()-self.to.scenePos().y()
-            self.params[0]=self.a(self.fr.a,self.fr.b,dx,dy)
-            # self.params[3]=self.a(self.to.a,self.to.b,-dx,-dy)
+            self.params[0]=self.a(self.fr.getA(),self.fr.getB(),dx,dy)
+            # self.params[3]=self.a(self.to.getA(),self.to.getB(),-dx,-dy)
             self.params[3]=np.sign(dy)*np.pi/2
         P0,P1,P2,P3=self.P(self.params)
         pp=QPainterPath(P0)

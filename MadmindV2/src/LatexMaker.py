@@ -16,19 +16,19 @@ class LatexMaker ():
         
     def makeLatexCode (self,lines,special=False):
         latexCode=""
-        if '' in lines:
-            lines.remove('')
+        while len(lines)>0 and lines[-1]=='':
+            del(lines[-1])
         if len(lines)>0:
-            flSize=" "
             subTextSize=" "
             latexCode="\centering  \n "
+            # First line style
+            flSize=" "
+            if special: flStyle="\\textsc{\\textbf{"
+            else : flStyle="\\textsc{\\textbf{"
+            # Words
             words=lines[0].split(' ')
             wordsNb=len(words)
             wordsNb+=lines[0].count('-')
-            if special:
-                flStyle="\\textsc{\\textbf{"
-            else :
-                flStyle="\\textsc{\\textbf{"
             if wordsNb>=4:
                 if len(lines)==1 or (max([len(l) for l in lines[1:]]) <=wordsNb*10):
                     ind=ceil(wordsNb/2)
@@ -46,9 +46,12 @@ class LatexMaker ():
                 if "\\begin{tabular" in lines[i]:
                     newline=False
                 latexCode+=newline*("\\newline "+subTextSize)
-                if lines[i][0]=='$'and lines[i][1]!='$':
-                    lines[i]='$\displaystyle '+lines[i][1:]
-                latexCode+=lines[i]
+                try:
+                    if lines[i][0]=='$'and lines[i][1]!='$':
+                        lines[i]='$\displaystyle '+lines[i][1:]
+                    latexCode+=lines[i]
+                except :
+                    print("i=",i,"len(lines)=",len(lines),"lines=",lines)
         return latexCode
 
     def makeSnippet(self,latexCode):
