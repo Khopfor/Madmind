@@ -1,0 +1,158 @@
+|MindMap title : Supersymmetry
+|Height : 2000
+|Width : 2000
+|Bg color : #f3eee9
+|Optimize : yes
+|Tolerance : 5
+
+#0:to:10,230;x=200;y=150
+Supersymmetry
+
+#10:to:230;from:0;x=778.3971662815757;y=211.6768025316094
+Fermionic generators
+$Q_\alpha^I,\bar Q_{\dot\alpha}^I$
+with $I=1,...,\mathcal{N}$
+transforming in (1/2,0) and (0,1/2)
+
+#20:from:30,210;to:30,50,240;x=128.0;y=162.0
+Poincaré group
+$SO(1,3)\times R^{1,3}$
+10 generators packed in $M_\munu$ and $P_\mu$
+3 boosts $\displaystyle K_i=M_{0i}$
+3 spatial rotations $\displaystyle J_i=\epsilon^{ijk}M_{jk}/2$
+4 translations $\displaystyle P_\mu$
+
+#30:from:40,20;to:40,20,120;x=284.81855866630843;y=293.7191386246306
+Lorentz group
+$SO(1,3)$
+$\eta_\munu\Lambda^\mu_\lambda\Lambda^\nu_\sigma=\eta_{\lambda\sigma}$
+
+#40:to:30,70,80;from:30,80;x=190.843012685135;y=378.03934359921647
+$SU(2)\times SU(2)^\ast$
+$[J^\pm_i,J^\pm_j]=i\epsilon^{ijk}J_k^\pm$
+$[J^\pm_i,J^\mp_j]=0$
+
+#50:to:60;from:20;x=72.57395966016513;y=270.44069873363424
+Casimirs of Poincaré algebra
+$C_1=-P_\mu P^\mu$
+$C_2=W_\lambda W^\lambda$
+with $W^\lambda=\epsilon^{\lambda\mu\nu\sigma}J_\munu P_\sigma/2$
+
+#60:from:50;x=89.00579958322139;y=334.1140784354772
+Stability (little) group of $p^\mu$
+Lie algebra formed by the independant
+components of the Pauli-Lubanski vector
+
+#70:to:80;from:40;x=106.12229950307166;y=447.767637903283
+Casimirs of $SU(2)\times SU(2)^\ast$
+$\sum_i(J^+_i)^2 \quad \sum_i(J^-_i)^2$
+
+#80:to:90,100,110,40,140,150;from:70,40;x=217.58534567286094;y=516.0054706040752
+Representations of $SU(2)\times SU(2)^\ast$
+$(n,m)$
+$Dim=(2n+1)(2m+1)$
+$Spin=n+m$
+
+#90:from:80;x=76.58031719212424;y=547.0022656580303
+4-vector $\displaystyle\left(1/2,1/2\right)$
+Spin content $0\oplus 1$
+Ex : Poincaré translation generators
+
+#100:from:80;x=91.77482457151396;y=592.5857877961995
+2-form
+6 indep components
+Ex : $M_\munu$,$F_\munu$
+
+#110:from:80;x=145.8672708421414;y=627.229264621208
+2-rank symmetric and traceless tensor
+A scale and 9 indep components
+Ex : $T_\munu$
+
+#120:to:130;from:30;x=410.70359694379994;y=376.126908084055
+$SL(2,C)\sim Spin(1,3)$
+Double cover of $SO(1,3)$
+Homomorphism $\Lambda^\mu_\nu(A)=\frac{1}{2}Tr(\bar\sigma^\mu A\sigma_\nu A^\dag)$
+
+#130:to:140,150;from:120;x=395.66497215930855;y=491.69425879705165
+Spinor
+Object carrying the basic
+reps of $SL(2,C)$
+
+#140:to:160,170;from:130,80;x=343.3958667742079;y=683.1450517773623
+Self or fundamental repr $(1/2,0)$
+$\psi_\alpha\rightarrow\psi_\alpha'=A^\beta_\alpha\psi_\beta$
+$\psi_\alpha$ are Grassmann numbers
+$J_i=\sigma_i/2$, $K_i=i\sigma_i/2$
+
+#150:to:160,170;from:130,80;x=542.7478035918011;y=683.7528320725378
+CC or anti-fundamental repr $(0,1/2)$
+$\bar\psi_{\dot\alpha}\rightarrow\bar\psi_{\dot\alpha}'=A^{\ast\dot\beta}_\alpha\bar\psi_{\dot\beta}$
+$\bar\psi_{\dot\alpha}$ are Grassmann ----
+$J_i=\sigma_i/2$, $K_i=-i\sigma_i/2$
+
+#160:from:140,150;x=570.093699248478;y=780.0838340308316
+Properties of spinors\\
+\begin{tabular}{cc}
+$\psi^\alpha=\epsilon^{\alpha\beta}\psi_\beta$ 
+		& $\bar\psi^{\dot\alpha}=\epsilon^{\dot\alpha\dot\beta}\bar\psi_{\dot\beta}$\\
+$\psi\chi=\chi\psi$ & $\bar\psi\bar\chi=\bar\chi\bar\psi$\\
+$(\psi_\alpha)^\dag=\bar\psi_{\dot\alpha}$ & $(\psi\chi)^\dag=\bar\psi\bar\chi$\\
+$\chi\sigma^\mu\bar\psi=-\bar\psi\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\psi)^\ast=\psi\bar\sigma^\mu\bar\chi$ \\
+$\chi\sigma^\mu\bar\sigma^\nu\psi=\psi\sigma^\nu\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\sigma^\nu\psi)^\ast=\bar\psi\bar\sigma^\nu\sigma^\mu\bar\chi$
+\end{tabular}
+
+#170:to:190,200;from:140,150;x=412.3902646930558;y=778.3971662815757
+Dirac spinor
+$(1/2,0)\oplus (0,1/2)$
+$\Psi=\begin{pmatrix}\psi_\alpha\\\bar\chi^{\dot\alpha}\end{pmatrix}$
+
+#180:to:190;x=236.4265348233042;y=785.8599216620368
+Chirality matrix $\gamma_5$
+$\gamma_5=i\gamma_0\gamma_1\gamma_2\gamma_3=\begin{pmatrix}\mathbf{1}&0\\0&-\mathbf{1}\end{pmatrix}$
+
+#190:from:170,180;x=313.0068520154284;y=864.2635797396878
+Weyl spinors
+\\\begin{tabular}{cc}
+chirality + & chirality -\\
+$\begin{pmatrix}\psi_\alpha\\0\end{pmatrix}$&$\begin{pmatrix}0\\\bar\chi^{\dot\alpha}\end{pmatrix}$
+\end{tabular}
+
+#200:from:170;x=463.52025887788375;y=859.5324066577272
+Majorana spinor
+$\Psi=\begin{pmatrix}\psi_\alpha\\\bar\psi^{\dot\alpha}\end{pmatrix}$
+
+#210:to:20,220;x=377.4776171991517;y=91.71111122092067
+Coleman-Mandula theorem
+Under several assumptions, the only
+symmetries of the $S$-matrix are
+\\\begin{tabular}{l}
+- Poincaré symmetry $P_\mu,M\munu$\\
+- Internal symmetries $B_l$
+\end{tabular}
+
+#220:to:230;from:210;x=515.2769973976627;y=247.09682526598232
+Poincaré $\times$ Internal algebra
+\\\begin{tabular}{rl}
+$[B_l,B_m]=$&$if_{lm}^nB_n$\\
+$[B_l,M_\munu]=$&0\\
+$[B_l,P_\mu]=$&0\\
+\end{tabular}
+
+#230:from:0,10,220;x=652.0;y=360.0
+SUSY algebra
+Graded Lie algebra of grade n=1
+$L=L_0\oplus L_1$
+with $L_0=$Poincaré and $L_1=(Q_\alpha^I,\bar Q_{\dot\alpha}^I)$
+\\\begin{tabular}{rl}
+$[P_\mu,Q_\alpha^I]$=&$[P_\mu,\bar Q_{\dot\alpha}^I]=0$\\
+$[Q_\alpha^I,M_\munu]=$&$i(\sigma_\munu)_\alpha^\beta Q_\beta^I$\\
+$[\bar Q^{\dot\alpha I},M_\munu]=$&$i(\bar\sigma_\munu)^{\dot\alpha}_{\dot\beta} Q^{\dot\beta I}$\\
+\end{tabular}
+
+#240:from:20;x=354.10523552989406;y=208.12104752074112
+Poincaré algebra
+\\\begin{tabular}{rl}
+$[P_\mu,P_\nu]=$&0\\
+$[M_\munu,M_\rhosi]=$&$i(\eta_\murho M_\nusi+\eta_\nusi M_\murho-\eta_\nurho M_\musi-\eta_\musi M_\nurho)$\\
+$[M_\munu,P_\rho]=$&$i(\eta_\murho P_\nu-\eta_\nurho P_\mu)$
+\end{tabular}

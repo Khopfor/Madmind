@@ -38,7 +38,7 @@ class Bubble(QGraphicsEllipseItem):
 
         # Style
         self.strokeWidth=2
-        self.color="#CCAACC"
+        self.color="#33BBEE"
         self.pen=QPen()
         self.lens=1.4
 
@@ -205,11 +205,12 @@ class Bubble(QGraphicsEllipseItem):
 
 
     def mouseMoveEvent(self, event):
-        orig=event.lastScenePos()
-        updated=event.scenePos()
-        dx=updated.x()-orig.x()
-        dy=updated.y()-orig.y()
-        self.move(dx,dy)
+        # orig=event.lastScenePos()
+        # updated=event.scenePos()
+        # dx=updated.x()-orig.x()
+        # dy=updated.y()-orig.y()
+        # self.move(dx,dy)
+        self.setPos(event.scenePos())
         self.magnify(0)
         self.updateEdges()
 

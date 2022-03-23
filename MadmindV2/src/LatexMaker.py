@@ -5,7 +5,7 @@ from utils import *
 class LatexMaker ():
     def __init__(self,commandsFile=None) -> None:
         self.config=latextools.DocumentConfig('standalone',('varwidth','border=1pt'))
-        self.packages=[latextools.LatexPackage("xcolor"),latextools.LatexPackage("fontenc",options=["T1"])]#,latextools.LatexPackage("lmodern")
+        self.packages=[latextools.LatexPackage("xcolor"),latextools.LatexPackage("bm"),latextools.LatexPackage("fontenc",options=["T1"])]#,latextools.LatexPackage("lmodern")
         self.commands=[latextools.cmd.all_math]
         self.customCommands=""
         if commandsFile :

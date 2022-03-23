@@ -20,6 +20,7 @@ class BubbleContent(QTextEdit):
         self.setAlignment(Qt.AlignCenter)
         # self.setPalette(QPalette(QColor(255,0,0,100),QColor(255,255,255,100)))
         self.setStyleSheet("background-color:rgba(255,255,255,0);")
+        self.setFontFamily("monospace")
         self.hide()
 
     def showTextEdit(self):
@@ -30,6 +31,7 @@ class BubbleContent(QTextEdit):
         self.hideContent()
         self.selectAll()
         self.setAlignment(Qt.AlignCenter)
+        self.setFontFamily("monospace")
         self.show()
 
     def makeInnerLatexSvg (self):
@@ -41,8 +43,9 @@ class BubbleContent(QTextEdit):
         svgPath=cachePath+"tempSnippet.svg"
         try :
             self.latexMaker.makePdf(lines,pdfPath,self.bubble.id==0)
-        except :
+        except Exception as e:
             print("Latex error in content of bubble",self.bubble.id)
+            print("Latex error :",e)
             self.latexMaker.makePdf(["LATEX ERROR"],pdfPath,self.bubble.id==0)
         os.system('pdf2svg '+pdfPath+" "+svgPath)
         f=open(svgPath,'r')
