@@ -93,6 +93,25 @@ class Tab (QWidget):
         insertId(e.fr.id,e.to.id,'to')
         insertId(e.to.id,e.fr.id,'from')
 
+    def writeNewSize(self,bub):
+        size=str(round(bub.size,3))
+        contents=self.textEdit.toPlainText()
+        idIndex=contents.find("#"+str(bub.id)+":")
+        endLineIndex=contents.find('\n',idIndex)
+        if endLineIndex==-1:sizeIndex=contents.find("size",idIndex)
+        else :sizeIndex=contents.find("size",idIndex,endLineIndex)
+        if sizeIndex==-1:
+            if endLineIndex==-1:
+                contents=contents+';size='+size
+            else :
+                contents=contents[:endLineIndex]+";size="+size+';'+contents[endLineIndex:]
+        else:
+            semicolonIndex=contents.find(';',sizeIndex)
+            delimIndex=contents.find('=',sizeIndex,semicolonIndex)
+            if delimIndex!=-1:
+                contents=contents[:delimIndex+1]+size+contents[semicolonIndex:]
+        self.textEdit.setPlainText(contents)
+
     def keyPressEvent(self, e):
         if (e.key()==Qt.Key_S) and (QApplication.keyboardModifiers() and Qt.ControlModifier):
             f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')

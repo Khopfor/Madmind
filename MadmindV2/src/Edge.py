@@ -22,16 +22,22 @@ class Edge (QGraphicsPathItem):
         self.params=[1,5,5,1]
         self.opti=True
         self.setZValue(0)
+        self.width=1.3
+        self.color=QColor(5,5,5)
+        pen=self.pen()
+        pen.setWidthF(self.width)
+        pen.setColor(self.color)
+        pen.setCapStyle(Qt.PenCapStyle.RoundCap)
+        self.setPen(pen)
         self.arrow=QGraphicsPolygonItem(parent=self)
         arrowPen=self.arrow.pen()
+        arrowPen.setWidthF(self.width)
         arrowPen.setCapStyle(Qt.PenCapStyle.RoundCap)
         arrowPen.setJoinStyle(Qt.PenJoinStyle.RoundJoin)
         self.arrow.setPen(arrowPen)
         self.updatePath()
         # print(self.points)
         self.index=-1
-        self.color="black"
-        self.width=1.3
         self.long=False
         if style :
             for c in style :
@@ -55,10 +61,31 @@ class Edge (QGraphicsPathItem):
         P0=QPointF(self.fr.x()+self.fr.getA()*np.cos(X[0]),self.fr.y()+self.fr.getB()*np.sin(X[0]))
         if X[1] <=1.2 : X[1]=1.2
         P1=P0*X[1]+(1-X[1])*self.fr.scenePos()
-        P3=QPointF(self.to.x()+self.to.getA()*np.cos(X[3]),self.to.y()+self.to.getB()*np.sin(X[3]))
+        P3=QPointF(self.to.x()+(self.to.getA()+0.5)*np.cos(X[3]),self.to.y()+(self.to.getB()+0.5)*np.sin(X[3]))
         if X[2] <=1.2 : X[2]=1.2
         P2=P3*X[2]+(1-X[2])*self.to.scenePos()
         return P0,P1,P2,P3
+
+    def shrink(self):
+        if self.width > 0.2:
+            self.width/=1.4
+        self.updateWidth()
+        # self.tab.writeNewWidth(self)
+
+    def grow(self):
+        if self.width < 5:
+            self.width*=1.4
+        self.updateWidth()
+        # self.tab.writeNeWidth(self)
+
+    def updateWidth(self):
+        pen=self.pen()
+        pen.setWidthF(self.width)
+        self.setPen(pen)
+        arrowPen=self.arrow.pen()
+        arrowPen.setWidthF(self.width)
+        self.arrow.setPen(arrowPen)
+
 
     def updatePath(self):
         if not self.opti:
@@ -70,8 +97,12 @@ class Edge (QGraphicsPathItem):
         P0,P1,P2,P3=self.P(self.params)
         pp=QPainterPath(P0)
         pp.cubicTo(P1,P2,P3)
+        A1,A2=self.arrowMaker(P0,P1,P2,P3)
+        pp.lineTo(A1)
+        pp.moveTo(P3)
+        pp.lineTo(A2)
         self.setPath(pp)
-        self.arrow.setPolygon(self.arrowMaker(P0,P1,P2,P3))
+        # self.arrow.setPolygon(self.arrowMaker(P0,P1,P2,P3))
 
     def optimizePath(self,bubbles):
         if self.opti :
@@ -144,8 +175,8 @@ class Edge (QGraphicsPathItem):
         chi=length*norm(P-P3)*np.cos(angle)
         x1,x2=P3.x()+length/np.sqrt(Z)*(np.cos(angle)*(P.x()-P3.x())/abs(P.y()-P3.y())+np.sin(angle)),P3.x()+length/np.sqrt(Z)*(np.cos(angle)*(P.x()-P3.x())/abs(P.y()-P3.y())-np.sin(angle))
         y1,y2=P3.y()+(chi-(x1-P3.x())*(P.x()-P3.x()))/(P.y()-P3.y()),P3.y()+(chi-(x2-P3.x())*(P.x()-P3.x()))/(P.y()-P3.y())
-        polygon= QPolygonF([QPointF(x1,y1),P3,QPointF(x2,y2)])
-        return polygon
+        # polygon= QPolygonF([QPointF(x1,y1),P3,QPointF(x2,y2)])
+        return QPointF(x1,y1),QPointF(x2,y2)
         # arrow=draw.Lines(x1,y1,*P3,x2,y2,close=False,fill="none",stroke=self.color,stroke_width=self.width*scale,stroke_linecap='round',stroke_linejoin='round')
 
     def a (self,a,b,dx,dy):
@@ -156,3 +187,20 @@ class Edge (QGraphicsPathItem):
             if dx>0:
                 t+=np.sign(dy)*np.pi
             return t
+
+
+    def mousePressEvent(self, event: 'QGraphicsSceneMouseEvent') -> None:
+        if QApplication.keyboardModifiers()== Qt.KeyboardModifier.ControlModifier :
+            self.grow()
+        elif QApplication.keyboardModifiers() == Qt.KeyboardModifier.ShiftModifier :
+            self.shrink()
+        return super().mousePressEvent(event)
+
+    def hoverEnterEvent(self, event):
+        print("hovered!")
+        self.tab.canvas.scene.hoveredObject=self
+        return super().hoverEnterEvent(event)
+    
+    def hoverLeaveEvent(self, event):
+        self.tab.canvas.scene.hoveredObject=None
+        return super().hoverEnterEvent(event)

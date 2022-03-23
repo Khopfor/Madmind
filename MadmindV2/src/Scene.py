@@ -20,7 +20,7 @@ class Scene (QGraphicsScene):
         self.h=2000
         self.setSceneRect(0,0,self.w,self.h)
         self.setBackgroundBrush(QColor(250,242,232))
-        self.hoveredBubble=None
+        self.hoveredObject=None
 
 
     def initMindmap(self,tab):
@@ -48,11 +48,11 @@ class Scene (QGraphicsScene):
             # guiPainter=QPainter(self.pix)
             # guiPainter.drawEllipse(self.center,50,30)
             self.update()
-        if self.hoveredBubble :
+        if self.hoveredObject :
             if event.key()==Qt.Key.Key_Plus:
-                self.hoveredBubble.grow()
+                self.hoveredObject.grow()
             elif event.key()==Qt.Key.Key_Minus:
-                self.hoveredBubble.shrink()
+                self.hoveredObject.shrink()
         return super().keyPressEvent(event)
 
     # def mouseDoubleClickEvent(self,event):

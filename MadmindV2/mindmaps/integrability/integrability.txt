@@ -30,7 +30,7 @@ Lax pair
 Constant Lax pair $(L,M)$
 Hamilton equations $\Rightarrow \dot L=[L,M]$
 
-#6: to:16;x=497.0;y=389.0
+#6: to:16;x=510.0;y=360.0;size=1.0;
 Lax pair with spectral parameter
 $(L(z),M(z)), z\in \mathbb{C}$
 Hamilton equations $\Rightarrow \dot L(z)=[L(z),M(z)]$

@@ -159,10 +159,12 @@ class Bubble(QGraphicsEllipseItem):
     def shrink(self):
         self.size/=1.2
         self.setScale(self.size)
+        self.tab.writeNewSize(self)
 
     def grow(self):
         self.size*=1.2
         self.setScale(self.size)
+        self.tab.writeNewSize(self)
 
     def magnify(self,bool):
         if bool:
@@ -187,13 +189,13 @@ class Bubble(QGraphicsEllipseItem):
         self.magnify(1)
         if self.idLabel :
             self.idLabel.show()
-        self.tab.canvas.scene.hoveredBubble=self
+        self.tab.canvas.scene.hoveredObject=self
         
     def hoverLeaveEvent(self, event):
         self.magnify(0)
         if self.idLabel :
             self.idLabel.hide()
-        self.tab.canvas.scene.hoveredBubble=None
+        self.tab.canvas.scene.hoveredObject=None
 
 
     ### Mouse ###
@@ -258,8 +260,8 @@ class Bubble(QGraphicsEllipseItem):
                     if "y" in s and "=" in s :
                         par[i]="y="+str(self.scenePos().y())
                         newY=True
-                if not newX : par.append("x="+str(self.scenePos().x()))
-                if not newY : par.append("y="+str(self.scenePos().y()))
+                if not newX : par.append("x="+str(round(self.scenePos().x(),1)))
+                if not newY : par.append("y="+str(round(self.scenePos().y(),1)))
                 lines[index]=idPart+':'+';'.join(par)
                 contents='\n'.join(lines)
                 self.tab.textEdit.setPlainText(contents)
@@ -299,7 +301,6 @@ class Bubble(QGraphicsEllipseItem):
             elif contains(a,"size","s"):
                 if ':' in a : self.size=float(a.split(':')[1])
                 elif '=' in a : self.size=float(a.split('=')[1])
-                self.strokeWidth*=self.size
                 self.setScale(self.size)
             elif contains(a,"color","col","c"):
                 if ':' in a : self.color=a.split(':')[1]
