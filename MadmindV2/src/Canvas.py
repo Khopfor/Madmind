@@ -29,39 +29,9 @@ class Canvas(QGraphicsView):
         self.minimap.scale(0.1,0.1)
         self.minimap.setWindowOpacity(0.5)
         self.show()
-        # self.setBackgroundBrush(QColor(0,0,0))
-        # self.label=QtWidgets.QLabel(self)
-        # self.label.setText(tabName)
-        # self.label.move(50,50)
-        # self.pix=QPixmap(QSize(5000,5000))
-        # self.pix.fill(Qt.white)
-        # self.svg=QSvgWidget("mindmaps/"+tabName+"/"+"Integrability.svg")
-        # self.vbox=QVBoxLayout()
-        # self.vbox.addWidget(self.label)
-        # self.vbox.addWidget(self.svg,Qt.AlignCenter,Qt.AlignCenter)
-        # self.setLayout(self.vbox)
-                # self.generator = QSvgGenerator()
-        # self.generator.setFileName(tabName+".svg")
-        # self.generator.setSize(QSize(400, 400))
-        # self.generator.setViewBox(QRect(0, 0, 400, 400))
-        # self.svgPainter=QPainter(self.generator)
-        # self.pix=QPixmap(self.rect().size())
-        # self.scrollArea.setLayout(QVBoxLayout)
 
-    # def paintEvent(self, event):
-    #     guiPainter=QPainter(self)
-    #     guiPainter.drawPixmap(QPoint(),self.pix)
-    #     self.painter=QPainter(self)
-        # if not self.center.isNull():
-            # print(self.center)
-        #     self.guiPainter.drawEllipse(self.center,50,30)
-
-    # def mousePressEvent(self, event):
-    #     if event.buttons() and Qt.LeftButton:
-    #         pass
-
-    def initMindmap(self,tab):
-        self.scene.initMindmap(tab)
+    def initMindmap(self,tab,contents):
+        self.scene.initMindmap(tab,contents)
 
     def mousePressEvent(self, event):
         if event.button()== Qt.MouseButton.RightButton :
@@ -88,26 +58,3 @@ class Canvas(QGraphicsView):
                 self.scale(1/zoom,1/zoom)
         else :
             return super().wheelEvent(event)
-
-    # def mouseMoveEvent(self, event):
-    #     # print(event.pos())
-    #     # print(self.mapFromScene(event.pos()))
-    #     # print(self.viewport().width(),self.viewport().height())
-    #     # print(self.width(),self.height())
-    #     print()
-    #     return super().mouseMoveEvent(event)
-
-    # def mouseDoubleClickEvent(self,event):
-        # if event.buttons() and Qt.LeftButton:
-    #         x=event.scenePos().x()#*self.sceneRect().width()
-    #         y=event.scenePos().y()#*self.sceneRect().height()
-    #         self.bubbles.append(Bubble(x=x,y=y))
-    #         self.scene.addItem(self.bubbles[-1])
-    #         # self.svgPainter.drawEllipse(self.center,50,30)
-    #         # guiPainter=QPainter(self.pix)
-    #         # guiPainter.drawEllipse(self.center,50,30)
-    #         self.update()
-
-    # def mouseMoveEvent(self,event):
-    #    if event.buttons() and Qt.LeftButton:
-    #         print(event.pos())

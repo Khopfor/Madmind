@@ -14,7 +14,7 @@ class Bubble(QGraphicsEllipseItem):
     ##########################################
     #### INIT ################################
     ##########################################
-    def __init__(self,desc='',id=99999999,x=None,y=None,latexMaker=None,tab=None,mindmap=None):
+    def __init__(self,desc='',id=99999999,x=None,y=None,latexMaker=None,tab=None,mindmap=None,color=None):
         a,b=80,50
         super().__init__(-a,-b,2*a,2*b)
         self.a,self.b=a,b
@@ -23,8 +23,9 @@ class Bubble(QGraphicsEllipseItem):
         self.size=1
         self.drawn=False
         self.moving=False
+        self.lensed=False
         self.idLabel=None
-        self.setZValue(2)
+        self.setZValue(4)
         self.setAcceptHoverEvents(True)
         self.setFlag(QGraphicsItem.ItemIsSelectable)
 
@@ -38,9 +39,16 @@ class Bubble(QGraphicsEllipseItem):
 
         # Style
         self.strokeWidth=2
-        self.color="#33BBEE"
-        self.pen=QPen()
+        if color==None:
+            self.color="#33BBEE"
+        else :
+            self.color=color
         self.lens=1.4
+        self.shadow=QGraphicsDropShadowEffect()
+        self.shadow.setBlurRadius(10)
+        self.shadow.setOffset(0,3)
+        self.shadow.setColor(QColor(70,70,70))
+        # self.setGraphicsEffect(self.shadow)
 
         if desc!='':
             self.descInit(desc)
@@ -94,12 +102,13 @@ class Bubble(QGraphicsEllipseItem):
     ##############################################
 
     def setStyle(self):
-        self.pen.setWidthF(self.strokeWidth)
+        pen=self.pen()
+        pen.setWidthF(self.strokeWidth)
         if "#" in self.color:
-            self.pen.setColor(QColor(*hex_to_rgb(self.color)))
+            pen.setColor(QColor(*hex_to_rgb(self.color)))
         else :
-            self.pen.setColor(QColor(self.color))
-        self.setPen(self.pen)
+            pen.setColor(QColor(self.color))
+        self.setPen(pen)
         self.setBrush(QColor(250,250,250))
 
     # def addEdge (self,alter):
@@ -168,14 +177,10 @@ class Bubble(QGraphicsEllipseItem):
 
     def magnify(self,bool):
         if bool:
-            s=self.lens
+            s=self.scale()*self.lens
         else :
             s=1
         self.setScale(s*self.size)
-        # rect=self.rect()
-        # rect.setSize(QSizeF(s*2*self.a,s*2*self.b))
-        # self.setRect(rect)
-        # self.move(sgn*(self.lens-1)*self.a,sgn*(self.lens-1)*self.b)
 
     def getA(self):
         return (self.a+self.strokeWidth/2)*self.size
@@ -196,6 +201,10 @@ class Bubble(QGraphicsEllipseItem):
         if self.idLabel :
             self.idLabel.hide()
         self.tab.canvas.scene.hoveredObject=None
+        if self.lensed :
+            for bub in self.mindmap.bubbles.values():
+                bub.toggleBlur(0)
+            self.lensed=False
 
 
     ### Mouse ###
@@ -226,47 +235,6 @@ class Bubble(QGraphicsEllipseItem):
             # self.setBrush(Qt.yellow)
             self.content.showTextEdit()
 
-    ### Keyboard ###
-    # def keyPressEvent(self, event):
-    #     print("hello")
-    #     if self.isUnderMouse() :
-    #         if event.key()==Qt.Key.Key_Plus:
-    #             self.size*=1.2
-    #         if event.key()==Qt.Key.Key_Minus:
-    #             self.size/=1.2
-    #         self.setScale(self.size)
-    #         if (event.key()==Qt.Key.Key_Control):
-    #             print("yay")
-    #             self.tab.canvas.centerOn(self.scenePos())
-    #     return super().keyPressEvent(event)
-
-
-    def writePos (self):
-        if self.tab and self.id:
-            lines=self.tab.textEdit.toPlainText().split('\n')
-            index=None
-            for i,l in enumerate(lines):
-                if "#"+str(self.id)+':' in l:
-                    index=i
-                    break
-            if index!=None :
-                [idPart,par]=lines[index].split(':',1)
-                par=par.split(';')
-                newX,newY=False,False
-                for i,s in enumerate(par):
-                    if "x" in s and "=" in s :
-                        par[i]="x="+str(self.scenePos().x())
-                        newX=True
-                    if "y" in s and "=" in s :
-                        par[i]="y="+str(self.scenePos().y())
-                        newY=True
-                if not newX : par.append("x="+str(round(self.scenePos().x(),1)))
-                if not newY : par.append("y="+str(round(self.scenePos().y(),1)))
-                lines[index]=idPart+':'+';'.join(par)
-                contents='\n'.join(lines)
-                self.tab.textEdit.setPlainText(contents)
-
-
 
     def check(self):
         if self.scenePos().x() <self.a:
@@ -279,6 +247,44 @@ class Bubble(QGraphicsEllipseItem):
         d=np.sqrt(((x-self.scenePos().x())/100)**2+((y-self.scenePos().y())/100)**2)
         z=d/(range+0.5*tl/100)
         return (-z**2+A)*np.exp(-z**4)
+
+    def shine(self,bool=True):
+        if bool :
+            shine=QGraphicsDropShadowEffect()
+            shine.setBlurRadius(50)
+            shine.setOffset(0,0)
+            shine.setColor(self.pen().color())
+            self.setGraphicsEffect(shine)
+        else:
+            self.setGraphicsEffect(None)
+
+    def toggleShadow(self):
+        if self.graphicsEffect()==None:
+            self.setGraphicsEffect(self.shadow)
+        else :
+            self.setGraphicsEffect(None)
+
+    def toggleBlur(self,bool):
+        if bool :
+            blur=QGraphicsBlurEffect()
+            self.setGraphicsEffect(blur)
+            self.setZValue(3)
+            for e in self.edges.values():
+                e.toggleBlur(1)
+        else :
+            self.setGraphicsEffect(None)
+            self.setZValue(4)
+            for e in self.edges.values():
+                e.toggleBlur(0)
+        # if isinstance(self.graphicsEffect(),QGraphicsBlurEffect):
+        #     self.setGraphicsEffect(None)
+        # else :
+        #     blur=QGraphicsBlurEffect()
+        #     self.setGraphicsEffect(blur)
+
+
+
+
 
 
 
@@ -324,3 +330,30 @@ class Bubble(QGraphicsEllipseItem):
         ### Text lines ###
         lines=desc[1:]
         return lines
+
+    def writePos (self):
+        if self.tab and self.id:
+            xStr=str(round(self.scenePos().x(),1))
+            yStr=str(round(self.scenePos().y(),1))
+            lines=self.tab.textEdit.toPlainText().split('\n')
+            index=None
+            for i,l in enumerate(lines):
+                if "#"+str(self.id)+':' in l:
+                    index=i
+                    break
+            if index!=None :
+                [idPart,par]=lines[index].split(':',1)
+                par=par.split(';')
+                newX,newY=False,False
+                for i,s in enumerate(par):
+                    if "x" in s and "=" in s :
+                        par[i]="x="+xStr
+                        newX=True
+                    if "y" in s and "=" in s :
+                        par[i]="y="+yStr
+                        newY=True
+                if not newX : par.append("x="+xStr)
+                if not newY : par.append("y="+yStr)
+                lines[index]=idPart+':'+';'.join(par)
+                contents='\n'.join(lines)
+                self.tab.textEdit.setPlainText(contents)

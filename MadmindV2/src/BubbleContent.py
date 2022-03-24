@@ -13,8 +13,8 @@ class BubbleContent(QTextEdit):
     def __init__(self,bubble,latexMaker=None):
         super().__init__(bubble.tab.canvas)
         self.bubble=bubble
-        self.textEditW=1000
-        self.textEditH=70
+        self.textEditW=600
+        self.textEditH=80
         self.innerSvg=None
         self.latexMaker=latexMaker
         self.setAlignment(Qt.AlignCenter)
@@ -24,6 +24,7 @@ class BubbleContent(QTextEdit):
         self.hide()
 
     def showTextEdit(self):
+        self.textEditH=max(70,1.6*self.bubble.getB())
         pos=self.bubble.tab.canvas.mapFromScene(self.bubble.pos())
         textEditX=int(pos.x()-self.textEditW/2)
         textEditY=int(pos.y()-self.textEditH/2)
@@ -84,6 +85,7 @@ class BubbleContent(QTextEdit):
         contentText=self.toPlainText()
         while len(contentText)>0 and contentText[-1]=='\n':
             contentText=contentText[:-1]
+        contentText=self.fixCode(contentText)
         self.setPlainText(contentText)
         self.hide()
         self.makeInnerLatexSvg()
@@ -108,6 +110,17 @@ class BubbleContent(QTextEdit):
             # while j<len(lines) or lines[j]!='\n':j+=1
             # lines=lines[:i+1]+self.toPlainText().splitlines()+lines[j:]
             # self.bubble.tab.textEdit.setPlainText('\n'.join(lines))
+
+    def fixCode (self,code):
+        money=code.count('$')
+        if money>0 and money%2==1:
+            lines=code.splitlines()
+            for i in range(len(lines)):
+                if lines[i].count('$')%2==1:
+                    lines[i]+='$'
+                    print("Latex : a '$' was missing.")
+            code='\n'.join(lines)
+        return code
 
     def mouseDoubleClickEvent(self, event):
         self.setContent()

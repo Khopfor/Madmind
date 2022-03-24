@@ -45,16 +45,16 @@ class Tab (QWidget):
         self.vbox.update()
         # Canvas
         self.canvas=Canvas(self)
-        self.canvas.initMindmap(self)
         # Text Editor
         f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'r')
         contents=f.read()
         f.close()
         self.textEdit=QTextEdit(self)
+        print(contents)
         self.textEdit.setPlainText(contents)
-        # x,y,w,h=self.canvas.geometry().getCoords()
         self.textEdit.setGeometry(self.parent().width()-402,self.parent().height()-202,400,200)
         self.textEdit.show()
+        self.canvas.initMindmap(self,contents)
         self.vbox.removeWidget(loading)
 
     def goTo(self,target):

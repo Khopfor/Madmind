@@ -1,7 +1,7 @@
 |MindMap title : Integrability
 |Height : 2000
 |Width : 2000
-|Bg color : #BBB
+|BubbleColor : #33BBEE
 |Optimize : yes
 |Tolerance : 0.2
 

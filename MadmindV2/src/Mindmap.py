@@ -1,6 +1,8 @@
+from curses.ascii import isdigit
 from xxlimited import new
 from Bubble import Bubble
 from Edge import Edge
+from utils import cleanStr
 
 class Mindmap():
     def __init__(self,name,contents,latexMaker=None,tab=None):
@@ -12,35 +14,29 @@ class Mindmap():
         self.latexMaker=latexMaker
         self.lastId=-10
         self.newEdgeFr=None
+        self.bubbleColor=None
 
         ### Headers and settings ###
-        if type(contents)==type(""):
-            contents=contents.split('\n')
         self.readHeaders(contents)
-
         self.constructBubbles(contents) # Creation of the bubbles
         self.constructEdges()
 
     # Reads headers
-    def readHeaders (self,headers):
-        i=0
-        try:self.title=headers[0].split(':')[1].replace("\n",'').replace(' ','')
-        except:pass
-        try:self.height=int(headers[1].split(':')[1])
-        except:pass
-        try:self.width=int(headers[2].split(':')[1])
-        except:pass
-        try:self.bgColor=headers[3].split(':')[1]
-        except:pass
-        try:tol=headers[5].split(':')[1]
-        except:pass
-        try:
-            self.tol=float(tol)
-        except:
-            self.tol=None
+    def readHeaders (self,contents):
+        headers=contents[:contents.find('\n#')]
+        headers=headers.split('|')
+        for h in headers :
+            if h!='':
+                [k,v]=cleanStr(h).split(':')
+                if "itle" in k :
+                    self.title=v
+                    self.tab.tabWidget.setTabText(self.tab.tabId,v)
+                elif "ubble" in k and "olor" in k :
+                    self.bubbleColor=v
+            
 
     def newBubble(self,x,y,scene):
-        newBubble=Bubble(x=x,y=y,id=self.lastId+10,latexMaker=self.latexMaker,tab=self.tab,mindmap=self)
+        newBubble=Bubble(x=x,y=y,id=self.lastId+10,latexMaker=self.latexMaker,tab=self.tab,mindmap=self,color=self.bubbleColor)
         self.lastId+=10
         scene.addItem(newBubble)
         newBubble.drawn=True
@@ -63,36 +59,41 @@ class Mindmap():
         self.tab.textEdit.setPlainText(newText)
 
     # Constructs the bubbles
-    def constructBubbles (self,contents):            
-        if type(contents)==type(""):
-            contents=contents.split('\n')
-        i=0
-        while '#0' not in contents[i]:
-            i+=1
-        contents='\n'.join(contents[i:]).split('#')
-        for c in contents :
-            if c!='' and "¤" not in c :
+    def constructBubbles (self,contents):          
+        # if type(contents)==type(""):
+        #     lines=contents.splitlines()
+        # i=0
+        # while '#0' not in lines[i]:
+        #     i+=1
+        # contents='\n'.join(lines[i:]).split('#')
+        contents=contents[contents.find("#0:"):].split('#')
+        for desc in contents :
+            if desc!='' and "¤" not in desc :
                 # try :
-                id=int(c.split(':',1)[0])
+                id=int(desc.split(':',1)[0])
                 if id in self.bubbles :
                     print("ID Error : ID '"+str(id)+"' not unique.")
                 else :
-                    self.bubbles[id]=Bubble(desc='#'+c,latexMaker=self.latexMaker,tab=self.tab,mindmap=self)
+                    self.bubbles[id]=Bubble(desc='#'+desc,latexMaker=self.latexMaker,tab=self.tab,mindmap=self,color=self.bubbleColor)
                     self.lastId=max(self.lastId,id)
                     # print("Bubble",id,"created at",self.bubbles[id].scenePos())
                 # except :
-                #     print("Invalid entry : ",c)
+                #     print("Invalid entry : ",desc)
 
 
     def newEdge(self,bubble):
         if self.newEdgeFr==None :
             self.newEdgeFr=bubble
-            print(self.newEdgeFr.id)
+            bubble.shine()
+        elif self.newEdgeFr==bubble:
+            self.newEdgeFr=None
+            bubble.shine(False)
         else :
             newEdge=Edge(self.newEdgeFr,bubble,bubbles=self.bubbles)
             if self.newEdgeFr.addEdge(newEdge) and bubble.addEdge(newEdge) :
                 self.tab.canvas.scene.addItem(newEdge)
                 self.tab.writeNewEdge(newEdge)
+            self.newEdgeFr.shine(False)
             self.newEdgeFr=None
 
     def constructEdges(self):

@@ -23,12 +23,9 @@ class Scene (QGraphicsScene):
         self.hoveredObject=None
 
 
-    def initMindmap(self,tab):
+    def initMindmap(self,tab,contents):
         latexMaker=LatexMaker(LATEXCOMMANDS)
         mmName=tab.tabName
-        f=open("mindmaps/"+mmName+"/"+mmName+".txt",'r')
-        contents=f.read()
-        f.close()
         self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,tab=tab)
         self.mindmap.draw(self)
 
@@ -43,16 +40,22 @@ class Scene (QGraphicsScene):
             x=self.mousePos.x()#*self.sceneRect().width()
             y=self.mousePos.y()#*self.sceneRect().height()
             self.mindmap.newBubble(x,y,self)
-            # self.mindmap.drawBubble(self)
-            # self.svgPainter.drawEllipse(self.center,50,30)
-            # guiPainter=QPainter(self.pix)
-            # guiPainter.drawEllipse(self.center,50,30)
             self.update()
-        if self.hoveredObject :
+        elif event.key()== Qt.Key.Key_S:
+            for bub in self.mindmap.bubbles.values():
+                bub.toggleShadow()
+        elif self.hoveredObject :
             if event.key()==Qt.Key.Key_Plus:
                 self.hoveredObject.grow()
             elif event.key()==Qt.Key.Key_Minus:
                 self.hoveredObject.shrink()
+            elif event.key()==Qt.Key.Key_L:
+                print("Lens mode")
+                self.hoveredObject.magnify(1)
+                self.hoveredObject.lensed=True
+                for bub in self.mindmap.bubbles.values():
+                    if bub!=self.hoveredObject:
+                        bub.toggleBlur(1)
         return super().keyPressEvent(event)
 
     # def mouseDoubleClickEvent(self,event):

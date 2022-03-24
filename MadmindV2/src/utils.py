@@ -67,8 +67,12 @@ def json2dict (jsonFile):
     s=open(jsonFile,'r').read()
     return json.loads(s)
 
-def cleanStr (s,*toRemove):
-    bl=[' ','\n']+toRemove
+def cleanStr (s,toRemove=[]):
+    bl=[' ','\n']
+    if not isinstance(toRemove,list):
+        print(toRemove)
+    else:
+        bl=bl+toRemove
     newS=''
     for i in range(len(s)):
         if s[i] not in bl:

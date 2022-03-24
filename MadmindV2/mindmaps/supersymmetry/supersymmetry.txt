@@ -5,16 +5,16 @@
 |Optimize : yes
 |Tolerance : 5
 
-#0:to:10,230;x=200;y=150
+#0:to:10,230;x=200;y=150;size=2.986;
 Supersymmetry
 
-#10:to:230;from:0;x=778.3971662815757;y=211.6768025316094
+#10:to:230;from:0;x=1367.302325947081;y=265.0683401349506
 Fermionic generators
 $Q_\alpha^I,\bar Q_{\dot\alpha}^I$
 with $I=1,...,\mathcal{N}$
 transforming in (1/2,0) and (0,1/2)
 
-#20:from:30,210;to:30,50,240;x=128.0;y=162.0
+#20:from:30,210;to:30,50,240;x=387.879926297862;y=272.23234932778706
 Poincaré group
 $SO(1,3)\times R^{1,3}$
 10 generators packed in $M_\munu$ and $P_\mu$
@@ -22,75 +22,75 @@ $SO(1,3)\times R^{1,3}$
 3 spatial rotations $\displaystyle J_i=\epsilon^{ijk}M_{jk}/2$
 4 translations $\displaystyle P_\mu$
 
-#30:from:40,20;to:40,20,120;x=284.81855866630843;y=293.7191386246306
+#30:from:40,20;to:40,20,120;x=429.84055157019014;y=760.4084043253602;size=1.2;
 Lorentz group
 $SO(1,3)$
 $\eta_\munu\Lambda^\mu_\lambda\Lambda^\nu_\sigma=\eta_{\lambda\sigma}$
 
-#40:to:30,70,80;from:30,80;x=190.843012685135;y=378.03934359921647
+#40:to:30,70,80;from:30,80;x=356.15359987244324;y=920.0634663371451
 $SU(2)\times SU(2)^\ast$
 $[J^\pm_i,J^\pm_j]=i\epsilon^{ijk}J_k^\pm$
 $[J^\pm_i,J^\mp_j]=0$
 
-#50:to:60;from:20;x=72.57395966016513;y=270.44069873363424
+#50:to:60,270,280;from:20;x=275.30263898185984;y=382.7627768744074;size=0.694;
 Casimirs of Poincaré algebra
 $C_1=-P_\mu P^\mu$
 $C_2=W_\lambda W^\lambda$
 with $W^\lambda=\epsilon^{\lambda\mu\nu\sigma}J_\munu P_\sigma/2$
 
-#60:from:50;x=89.00579958322139;y=334.1140784354772
+#60:from:50,260;x=160.67849189647583;y=329.5444228704791;size=0.402;
 Stability (little) group of $p^\mu$
 Lie algebra formed by the independant
 components of the Pauli-Lubanski vector
 
-#70:to:80;from:40;x=106.12229950307166;y=447.767637903283
+#70:to:80;from:40;x=165.79564131993047;y=937.4617743768908;size=0.833;
 Casimirs of $SU(2)\times SU(2)^\ast$
 $\sum_i(J^+_i)^2 \quad \sum_i(J^-_i)^2$
 
-#80:to:90,100,110,40,140,150;from:70,40;x=217.58534567286094;y=516.0054706040752
+#80:to:90,100,110,40,140,150;from:70,40;x=290.6540872522238;y=1075.6248088101663;size=0.694;
 Representations of $SU(2)\times SU(2)^\ast$
 $(n,m)$
 $Dim=(2n+1)(2m+1)$
 $Spin=n+m$
 
-#90:from:80;x=76.58031719212424;y=547.0022656580303
+#90:from:80;x=95.17897927625638;y=1007.055006535874;size=0.694;
 4-vector $\displaystyle\left(1/2,1/2\right)$
 Spin content $0\oplus 1$
 Ex : Poincaré translation generators
 
-#100:from:80;x=91.77482457151396;y=592.5857877961995
+#100:from:80;x=117.69443673945682;y=1079.71852834893;size=0.694;
 2-form
 6 indep components
 Ex : $M_\munu$,$F_\munu$
 
-#110:from:80;x=145.8672708421414;y=627.229264621208
+#110:from:80;x=148.39733328018468;y=1148.2883306232222;size=0.694;
 2-rank symmetric and traceless tensor
 A scale and 9 indep components
 Ex : $T_\munu$
 
-#120:to:130;from:30;x=410.70359694379994;y=376.126908084055
+#120:to:130;from:30;x=538.3241193474286;y=924.1571858759088
 $SL(2,C)\sim Spin(1,3)$
 Double cover of $SO(1,3)$
 Homomorphism $\Lambda^\mu_\nu(A)=\frac{1}{2}Tr(\bar\sigma^\mu A\sigma_\nu A^\dag)$
 
-#130:to:140,150;from:120;x=395.66497215930855;y=491.69425879705165
+#130:to:140,150;from:120;x=468.7308871884454;y=1103.2574156968212
 Spinor
 Object carrying the basic
 reps of $SL(2,C)$
 
-#140:to:160,170;from:130,80;x=343.3958667742079;y=683.1450517773623
+#140:to:160,170;from:130,80;x=350.0130205642977;y=1215.8347030128234;size=0.694;
 Self or fundamental repr $(1/2,0)$
 $\psi_\alpha\rightarrow\psi_\alpha'=A^\beta_\alpha\psi_\beta$
 $\psi_\alpha$ are Grassmann numbers
 $J_i=\sigma_i/2$, $K_i=i\sigma_i/2$
 
-#150:to:160,170;from:130,80;x=542.7478035918011;y=683.7528320725378
+#150:to:160,170;from:130,80;x=613.0345009298665;y=1227.0924317444237;size=0.694;
 CC or anti-fundamental repr $(0,1/2)$
 $\bar\psi_{\dot\alpha}\rightarrow\bar\psi_{\dot\alpha}'=A^{\ast\dot\beta}_\alpha\bar\psi_{\dot\beta}$
 $\bar\psi_{\dot\alpha}$ are Grassmann ----
 $J_i=\sigma_i/2$, $K_i=-i\sigma_i/2$
 
-#160:from:140,150;x=570.093699248478;y=780.0838340308316
+#160:from:140,150;x=824.8844870608887;y=1457.3641557998828;size=0.694;
 Properties of spinors\\
 \begin{tabular}{cc}
 $\psi^\alpha=\epsilon^{\alpha\beta}\psi_\beta$ 
@@ -101,27 +101,27 @@ $\chi\sigma^\mu\bar\psi=-\bar\psi\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\psi)
 $\chi\sigma^\mu\bar\sigma^\nu\psi=\psi\sigma^\nu\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\sigma^\nu\psi)^\ast=\bar\psi\bar\sigma^\nu\sigma^\mu\bar\chi$
 \end{tabular}
 
-#170:to:190,200;from:140,150;x=412.3902646930558;y=778.3971662815757
+#170:to:190,200;from:140,150;x=471.8011768425182;y=1347.8571581379533
 Dirac spinor
 $(1/2,0)\oplus (0,1/2)$
 $\Psi=\begin{pmatrix}\psi_\alpha\\\bar\chi^{\dot\alpha}\end{pmatrix}$
 
-#180:to:190;x=236.4265348233042;y=785.8599216620368
+#180:to:190;x=220.0374252085497;y=1466.575024762101;size=0.833;
 Chirality matrix $\gamma_5$
 $\gamma_5=i\gamma_0\gamma_1\gamma_2\gamma_3=\begin{pmatrix}\mathbf{1}&0\\0&-\mathbf{1}\end{pmatrix}$
 
-#190:from:170,180;x=313.0068520154284;y=864.2635797396878
+#190:from:170,180;x=384.80963664378925;y=1505.4653603803563;size=0.833;
 Weyl spinors
 \\\begin{tabular}{cc}
 chirality + & chirality -\\
 $\begin{pmatrix}\psi_\alpha\\0\end{pmatrix}$&$\begin{pmatrix}0\\\bar\chi^{\dot\alpha}\end{pmatrix}$
 \end{tabular}
 
-#200:from:170;x=463.52025887788375;y=859.5324066577272
+#200:from:170;x=583.3550342738295;y=1497.2779213028289;size=0.833;
 Majorana spinor
 $\Psi=\begin{pmatrix}\psi_\alpha\\\bar\psi^{\dot\alpha}\end{pmatrix}$
 
-#210:to:20,220;x=377.4776171991517;y=91.71111122092067
+#210:to:20,220;x=663.1825652797219;y=216.96713555447693
 Coleman-Mandula theorem
 Under several assumptions, the only
 symmetries of the $S$-matrix are
@@ -130,7 +130,7 @@ symmetries of the $S$-matrix are
 - Internal symmetries $B_l$
 \end{tabular}
 
-#220:to:230;from:210;x=515.2769973976627;y=247.09682526598232
+#220:to:230;from:210;x=778.8301422497968;y=339.7787217173884
 Poincaré $\times$ Internal algebra
 \\\begin{tabular}{rl}
 $[B_l,B_m]=$&$if_{lm}^nB_n$\\
@@ -138,7 +138,7 @@ $[B_l,M_\munu]=$&0\\
 $[B_l,P_\mu]=$&0\\
 \end{tabular}
 
-#230:from:0,10,220;x=652.0;y=360.0
+#230:to:250;from:0,10,220,240;x=983.5161191879827;y=517.85552165361;size=1.728;
 SUSY algebra
 Graded Lie algebra of grade n=1
 $L=L_0\oplus L_1$
@@ -147,12 +147,44 @@ with $L_0=$Poincaré and $L_1=(Q_\alpha^I,\bar Q_{\dot\alpha}^I)$
 $[P_\mu,Q_\alpha^I]$=&$[P_\mu,\bar Q_{\dot\alpha}^I]=0$\\
 $[Q_\alpha^I,M_\munu]=$&$i(\sigma_\munu)_\alpha^\beta Q_\beta^I$\\
 $[\bar Q^{\dot\alpha I},M_\munu]=$&$i(\bar\sigma_\munu)^{\dot\alpha}_{\dot\beta} Q^{\dot\beta I}$\\
+$\{\spi Q^I,\spicc Q^J\}=$&$2\delta^{IJ}\sigma^\mu_\ada P_\mu$\\
+$\{\spi Q^I,\spi Q^J\}=$&$\epsilon_\albe Z^{IJ}$\\
+$\{\spicc Q^I,\spicc Q^J\}=$&$\epsilon_{\dot\alpha\dot\beta}\bar Z^{IJ}$\\
+$[Z^{IJ},\cdot ]=0$ & $Z^{IJ}=-Z^{JI}$
 \end{tabular}
 
-#240:from:20;x=354.10523552989406;y=208.12104752074112
+#240:to:230;from:20;x=629.4093790849213;y=434.9577009936448;size=0.833;
 Poincaré algebra
 \\\begin{tabular}{rl}
 $[P_\mu,P_\nu]=$&0\\
 $[M_\munu,M_\rhosi]=$&$i(\eta_\murho M_\nusi+\eta_\nusi M_\murho-\eta_\nurho M_\musi-\eta_\musi M_\nurho)$\\
 $[M_\munu,P_\rho]=$&$i(\eta_\murho P_\nu-\eta_\nurho P_\mu)$
 \end{tabular}
+
+#250:from:230;x=1384.7006339868267;y=430.86398145488107
+Particle multiplet
+The consequence of the SUSY algebra is that any repr gives also a reducible repr of the Poincaré algebra and so to several particles gathered in a so-called multiplet. All particles of a multiplet have the same mass and multiplets with a finite number of particles contain the same number of bosonic and fermionic states.
+
+#260:from:280;to:60,270;x=134.06931489451168;y=458.49658834153615;size=0.694;
+Wigner's method of induced representation
+1. Choice of $p^\mu$ and construction of a repr of its stability group.
+2. Boosting the repr to a repr of the full SUSY algebra by using the other generators.
+
+#270:from:260,50;x=154.53791258833027;y=610.9876411604845;size=0.694;
+Massless unitary representation
+$C_1=0$
+$p=(E,0,0,E) E>0$
+$C_2=W_1^2+W_2^2$
+$[W^{1,2},J_3]=\pm iW^{2,1}$ 2D Euclidean algebra
+
+#280:from:50;to:260;x=318.2866941388789;y=610.9876411604845;size=0.694;
+Massive unitary representation
+$C_1=-p^2=M^2$
+$p=(M,0,0,0) \; E>0$
+$W_0=0$, $W^i=MJ^i$ 3D Euclidean 
+
+#290:x=1096.0934065039849;y=928.2509054146725
+Massless representation
+$p^\mu=(E,0,0,E)$
+$\{\spi Q^I,\spicc Q^J\}=4E\delta^{IJ}\begin{pmatrix}1&0\\0&0\end{pmatrix}$
+$a^I=\frac{1}{\sqrt{4E}}Q^I_1$, $(a^I)^\dag=\frac{1}{\sqrt{4E}}\bar Q^I_1$

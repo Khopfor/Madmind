@@ -59,10 +59,10 @@ class Edge (QGraphicsPathItem):
 
     def P (self,X):
         P0=QPointF(self.fr.x()+self.fr.getA()*np.cos(X[0]),self.fr.y()+self.fr.getB()*np.sin(X[0]))
-        if X[1] <=1.2 : X[1]=1.2
+        if X[1] <=1.3 : X[1]=1.3
         P1=P0*X[1]+(1-X[1])*self.fr.scenePos()
         P3=QPointF(self.to.x()+(self.to.getA()+0.5)*np.cos(X[3]),self.to.y()+(self.to.getB()+0.5)*np.sin(X[3]))
-        if X[2] <=1.2 : X[2]=1.2
+        if X[2] <=1.3 : X[2]=1.3
         P2=P3*X[2]+(1-X[2])*self.to.scenePos()
         return P0,P1,P2,P3
 
@@ -188,12 +188,23 @@ class Edge (QGraphicsPathItem):
                 t+=np.sign(dy)*np.pi
             return t
 
+    def reverse(self):
+        pass
+
+    def toggleBlur(self,bool):
+        if bool :
+            blur=QGraphicsBlurEffect()
+            self.setGraphicsEffect(blur)
+        else :
+            self.setGraphicsEffect(None)
 
     def mousePressEvent(self, event: 'QGraphicsSceneMouseEvent') -> None:
         if QApplication.keyboardModifiers()== Qt.KeyboardModifier.ControlModifier :
             self.grow()
         elif QApplication.keyboardModifiers() == Qt.KeyboardModifier.ShiftModifier :
             self.shrink()
+        elif QApplication.keyboardModifiers() == Qt.KeyboardModifier.AltModifier :
+            self.reverse()
         return super().mousePressEvent(event)
 
     def hoverEnterEvent(self, event):

@@ -13,6 +13,16 @@ class LatexMaker ():
             for name in commandsDict:
                 self.commands.append(latextools.LatexCommand(name,eval("r"+"'"+commandsDict[name]+"'")))
                 self.customCommands+=commandsDict[name]
+
+    # def fixCode (self,code):
+    #     if code.count('$')%2==1:
+    #         lines=code.split('\\\\')
+    #         for i in range(len(lines)):
+    #             if lines[i].count('$')%2==1:
+    #                 lines[i]+='$'
+    #                 print("Latex : a '$' was missing.")
+    #         code='\\\\'.join(lines)
+    #     return code
         
     def makeLatexCode (self,lines,special=False):
         latexCode=""
@@ -45,13 +55,17 @@ class LatexMaker ():
             for i in range (1,len(lines)) :
                 if "\\begin{tabular" in lines[i]:
                     newline=False
-                latexCode+=newline*("\\newline "+subTextSize)
+                latexCode+=newline*("\\\\ "+subTextSize)
                 try:
                     if lines[i][0]=='$'and lines[i][1]!='$':
                         lines[i]='$\displaystyle '+lines[i][1:]
                     latexCode+=lines[i]
                 except :
                     print("i=",i,"len(lines)=",len(lines),"lines=",lines)
+        # try:
+        # latexCode=self.fixCode(latexCode)
+        # print("Latex code fixed !!")
+        # except :pass
         return latexCode
 
     def makeSnippet(self,latexCode):
