@@ -1,127 +1,127 @@
 |MindMap title : String Theory
 |Height : 2000
 |Width : 2000
-|Bg color : #f3eee9
-|Optimize : no
+|BubbleColor : #992299
+|Optimize : nollll
 |Tolerance : None
 
 #0: to:1;size=2;x=296.0;y=41.0
 \textbf{String}
 
-#1: to:2;x=163.0;y=88.0
+#1: to:2;x=690.5;y=145.5
 Worldsheet
 
-#110: from:0;color=772244;x=273.0;y=104.0
+#110: from:0;color=772244;x=795.1;y=174.9
 Closed string
 $\sigma \in [0,2\pi]$
 
-#120: from:0;color=442277;x=376.0;y=88.0
+#120: from:0;color=442277;x=897.2;y=158.6
 Open string
 $\sigma \in [0,\pi]$
 
-#121: from:120;color=442277;x=484.0;y=130.0
+#121: from:120;color=442277;x=980.9;y=224.8
 Neumann \textsc{BC}
 $X'^\mu(\tau,0)=X'^\mu(\tau,\pi)=0$
 
-#101: from:1;size=0.6;x=57.0;y=84.0
+#101: from:1;size=0.6;x=531.2;y=139.0
 Nambu-Goto action
 $S=-T\int \de^2\sigma\sqrt{-det\gamma_\albe}$
 
-#2: to:3,4,5;size=1.25;x=171.0;y=131.0
+#2: to:3,4,5;size=1.25;x=447.2;y=223.6
 Polyakov action
 \redbox{$S=-T\int \de^2\sigma\sqrt{-h}g_\munu(X)h^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
 
-#201: from:2;x=626.0;y=961.0
+#201: from:2;x=763.1;y=330.7
 Equations of motion for $X^\mu$
 $\partial_\alpha (\sqrt{-h}h^\albe\partial_\beta X_\mu)=0$
 $\iff \nabla^2X^\mu=0$
 
-#202: from:201,302;x=78.0;y=765.0
+#202: from:201,302;x=344.7;y=557.4
 EOM for $X^\mu$ in unit gauge
 $(\partial_\tau^2-\partial_\sigma^2)X^\mu=\partial_-\partial_+X^\mu=0$
 
-#203: from:202;to:601;size=0.5;x=771.0;y=84.0
+#203: from:202;to:601;size=0.5;x=492.1;y=593.1
 lightcone coordinates
 $\sigma^+=\tau+\sigma \qquad \sigma^-=\tau-\sigma$
 
-#3: ;x=185.0;y=304.0
+#3: ;x=153.7;y=242.2
 Reparam invariance
 $(\tau,\sigma)\rightarrow\xi^\alpha(\tau,\sigma)$
 
-#301: from:3;x=264.0;y=215.0
+#301: from:3;x=139.7;y=369.6
 Conformal gauge
 $h_\albe(\tau,\sigma)=\Omega^2(\tau,\sigma)\eta_\albe$
 
-#302: from:301;x=385.0;y=200.0
+#302: from:301;x=237.6;y=447.2
 Unit gauge
 $h_\albe=\eta_\albe$
 
-#303: from:302;size=0.8;x=1090.0;y=406.0
+#303: from:302;size=0.8;x=453.4;y=434.8
 Remaining gauge freedom
 Reparam of special type $\sigma^\pm=\xi^\pm(\sigma^\pm)$
 where $\xi^\pm$ are periodic in $\sigma$
 This freedom is fixed by imposing the light-cone gauge
 
-#4: to:302;x=31.0;y=255.0
+#4: to:302;x=250.0;y=293.5
 Weyl invariance
 $h_\albe(\sigma)\rightarrow e^{-2\Lambda(\sigma)}h_\albe$
 
-#5: ;x=214.0;y=408.0
+#5: ;x=518.6;y=340.1;size=0.833;
 Stress-energy tensor
 $T_\albe=-\frac{1}{T\sqrt{-h}}\frac{\delta S}{\delta h_\albe}$
 
-#501: from:4,5;size=0.5;x=150.0;y=204.0
+#501: from:4,5;size=0.5;x=391.3;y=326.1
 Traceless $T_{\alpha\beta}$
 $T^\alpha_\alpha=0$
 
-#510: from:5;x=306.0;y=547.0
+#510: from:5;x=777.7;y=441.5
 Equations of motion for $h_{\alpha\beta}$
 $T_\albe=0$
 $\iff \partial_\alpha X^\mu\partial_\beta X_\mu=\frac{1}{2}h_\albe h^{\gamma\delta}\partial_\gamma X^\mu\partial_\delta X_\mu$
 
-#6: from:302;x=642.0;y=608.0
+#6: from:302;x=589.8;y=536.6;size=1.2;
 Virasoro constraints
 (= \eom for $h_\albe$ in unit gauge)
 $T_{00}=T_{11}=\dot{X}^2+X'^2=0$
 $T_{01}=T_{10}=\dot{X}\cdot X'=0$
 
-#601: from:6;size=0.75;x=1399.0;y=126.0
+#601: from:6;size=0.75;x=694.1;y=676.7
 Virasoro constraints in lightcone coordinates
 $(\partial_+X)^2=(\partial_-X)^2=0$
 
-#7: from:202;x=90.0;y=889.0
+#7: from:202;x=435.6;y=649.6
 Solution of the EOM
 $X^\mu(\tau,\sigma)=X^\mu_L(\sigma^+)+X^\mu_R(\sigma^-)$
 
-#8: from:7,110;size=1.2;color=772244;x=39.0;y=354.0
+#8: from:7,110;size=1.2;color=772244;x=446.4;y=833.1
 Solution for closed string
 $X^\mu_{\overset{L}{R}}(\sigma^\pm)=\frac{1}{2} x^\mu+\frac{1}{4\pi T}p^\mu\sigma^{\pm}+\frac{i}{\sqrt{2\pi T}}\sum_{n\neq 0}\frac{1}{n}\alpha^\mu_{\overset{L}{R}\overset{n}{}} e^{-in\sigma^{\pm}}$
 \redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\frac{p^\mu}{2\pi T}\tau+\frac{i}{\sqrt{2\pi T}}\sum_{n\neq 0}\frac{1}{n}\left(\alpha^\mu_n e^{-in\sigma^{-}}+\bar\alpha^\mu_n e^{-in\sigma^{+}}\right)$}
 
-#801: from:8;size=0.75;color=772244;x=115.0;y=653.0
+#801: from:8;size=0.75;color=772244;x=351.9;y=990.6
 Closed string zero modes
 $\alpha_0^\mu=\bar\alpha_0^\mu=\frac{p^\mu}{\sqrt{4\pi T}}$
 
-#802: from:8,801;color=772244;x=1626.0;y=681.0
+#802: from:8,801;color=772244;x=539.9;y=1008.0
 Oscillators Poisson relations
 $\{\alpha_m^\mu,\alpha_n^\nu\}=\{\bar\alpha_m^\mu,\bar\alpha_n^\nu\}=-im\delta_{m+n}\eta^\munu$
 $\{\alpha_m^\mu,\bar\alpha_n^\nu\}=0$
 $\{x^\mu,p^\nu\}=\eta^\munu$
 
-#9: from:7,121;color:442277;x=1027.0;y=263.0
+#9: from:7,121;color:442277;x=908.1;y=853.8
 Open string solution with Neumann \textsc{BC}
 \redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\frac{p^\mu}{\pi T}\tau+\frac{i}{\sqrt{\pi T}}\sum_{n\neq 0}\frac{1}{n}\alpha^\mu_n e^{-in\tau}\co (n\sigma)$}
 
-#901: from:9;size=0.75;color:442277;x=1518.0;y=279.0
+#901: from:9;size=0.75;color:442277;x=1078.6;y=963.5
 Open string zero mode
 $\alpha_0^\mu=\frac{p^\mu}{\sqrt{\pi T}}$
 
-#902: from:9,901;color=442277;x=1601.0;y=411.0
+#902: from:9,901;color=442277;x=888.5;y=1002.6
 Oscillators Poisson relations
 $\{\alpha_m^\mu,\alpha_n^\nu\}=-im\delta_{m+n}\eta^\munu$
 $\{x^\mu,p^\nu\}=\eta^\munu$
 
-#910: from:902;size=0.2;x=45.0;y=265.0
+#910: from:902;size=0.597;x=726.7;y=1163.4
 Poisson brakets of the light-cone modes\\
 \begin{tabular}{c|ccccccc}
     $\{,\}$ & $p^+$ & $p^-$ & $p^j$ & $x^j$ & $x^-$ & $\alpha_m^j$ & $\alpha_m^-$ \\
@@ -136,55 +136,56 @@ Poisson brakets of the light-cone modes\\
 \end{tabular}\\
 $\{\alpha_n^-,\alpha_m^-\}=\frac{-i\sqrt{4\pi T}}{p^+}-(m-n)\alpha_{m+n}^-$
 
-#10: from:8,9;size=0.8;x=109.0;y=389.0
+#10: from:8,9;size=0.8;x=698.4;y=908.1
 Reality condition
 $(\alpha^\mu_n)^*=\alpha^\mu_{-n}$
 
-#12: to:131,132;size=0.5;x=1592.0;y=106.0
+#12: to:131,132;size=0.5;x=1319.8;y=575.7
 $T_{++}=\frac{(P_\mu+TX'_\mu)^2}{8T^2}$
 $T_{--}=\frac{(P_\mu-TX'_\mu)^2}{8T^2}$
 
-#13:;x=595.0;y=108.0
+#13:;x=1137.3;y=681.1
 Virasoro generators
 $L_n=\frac{1}{2}\sum_m\alpha_{n-m}\cdot \alpha_m$
 $\bar L_n=\frac{1}{2}\sum_m\bar\alpha_{n-m}\cdot \bar\alpha_m$
 
-#131: to:13;size=0.5;x=334.0;y=977.0
+#131: to:13;size=0.5;x=1227.4;y=606.1
 Virasoro generators for an open string
 $L_m=2T\int^\pi_0\de\sigma(e^{im\sigma^+}T_{++})+e^{im\sigma_-}T_{--})$
 
-#132: to:13;size=0.5;x=1309.0;y=517.0
+#132: to:13;size=0.5;x=1266.5;y=773.4
 Virasoro generators for a closed string
 $L_m=2T\int^{2\pi}_0\de\sigma T_{--}(\sigma)e^{-im\sigma^-}$
 $\bar L_m=2T\int^{2\pi}_0\de\sigma T_{++}(\sigma)e^{-im\sigma^+}$
 
-#14: from:13;size=0.8;x=390.0;y=368.0
+#14: from:13;size=0.8;x=1339.3;y=657.2
 Witt algebra
 $\lb L_m,L_n\rb =-i(m-n)L_{m+n}$
 $\lb \bar L_m,\bar L_n\rb =-i(m-n)L_{m+n}$
 $\lb L_m,\bar L_n\rb =0$
 
-#15: from:13,6;x=374.0;y=658.0
+#15: from:13,6;x=773.4;y=605.0
 Virasoro constraints in terms of $L_n$
 $\forall n \in \mathbb{Z}, L_n=\bar L_n=0$
 
-#20: from:303;x=954.0;y=576.0
+#20: from:303;x=889.6;y=537.7
 Light-cone gauge
 Light-cone gauge coordinates
-$X^\pm=\frac{1}{\sqrt{2}}(X^0\pm X^{d-1})}$
+$X^\pm=\frac{1}{\sqrt{2}}(X^0\pm X^{d-1})$
 
-#21: from:20;x=869.0;y=146.0
+#21: from:20;x=995.0;y=423.7
 Light-cone gauge fixing for closed string
 $X^+=\frac{p^+}{2\pi T}\tau \qquad P^+=\frac{p^+}{2\pi}=const$
 
-#22: from:20;x=567.0;y=756.0
+#22: from:20;x=1087.3;y=564.8
 Light-cone gauge fixing for open string
 $X^+=\frac{p^+}{\pi T}\tau \qquad P^+=\frac{p^+}{\pi}=const$
 
-#23: from:20,601;x=620.0;y=244.0
+#23: from:20,601;x=903.7;y=713.7
+Consequence of Virasoro constraints
 $\partial_\pm X^-=\frac{2\pi T}{p^+}(\partial_\pm X^i)^2$
 
-#24: from:23;x=481.0;y=476.0
+#24: from:23;x=1142.7;y=849.4
 Dependence of the $\alpha^-_n$
 $\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\alpha_{n-m}^i\alpha_m^i$
 $\bar\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\bar\alpha_{n-m}^i\bar\alpha_m^i$

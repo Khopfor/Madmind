@@ -50,7 +50,6 @@ class Scene (QGraphicsScene):
             elif event.key()==Qt.Key.Key_Minus:
                 self.hoveredObject.shrink()
             elif event.key()==Qt.Key.Key_L:
-                print("Lens mode")
                 self.hoveredObject.magnify(1)
                 self.hoveredObject.lensed=True
                 for bub in self.mindmap.bubbles.values():

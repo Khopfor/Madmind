@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ~/Desktop/Madmind
+cd ~/Desktop/Madmind/MadmindV2
 python ./src/main.py

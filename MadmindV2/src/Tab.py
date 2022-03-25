@@ -50,7 +50,6 @@ class Tab (QWidget):
         contents=f.read()
         f.close()
         self.textEdit=QTextEdit(self)
-        print(contents)
         self.textEdit.setPlainText(contents)
         self.textEdit.setGeometry(self.parent().width()-402,self.parent().height()-202,400,200)
         self.textEdit.show()

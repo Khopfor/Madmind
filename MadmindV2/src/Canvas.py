@@ -35,7 +35,6 @@ class Canvas(QGraphicsView):
 
     def mousePressEvent(self, event):
         if event.button()== Qt.MouseButton.RightButton :
-            print("YAYYYY")
             self.resetTransform()
             self.centerOn(0,0)
             self.scale(0.5,0.5)

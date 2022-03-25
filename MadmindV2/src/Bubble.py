@@ -179,8 +179,8 @@ class Bubble(QGraphicsEllipseItem):
         if bool:
             s=self.scale()*self.lens
         else :
-            s=1
-        self.setScale(s*self.size)
+            s=self.size
+        self.setScale(s)
 
     def getA(self):
         return (self.a+self.strokeWidth/2)*self.size
