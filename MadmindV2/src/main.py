@@ -11,7 +11,7 @@ class MainWindow(QDialog):
     resized = pyqtSignal()
     def __init__(self):
         super(MainWindow,self).__init__()
-        self.setGeometry(200,200,1200,900)
+        self.setGeometry(150,100,500,600)
         self.setWindowTitle("Madmind")
         self.setWindowFlags(Qt.WindowMinimizeButtonHint|Qt.WindowMaximizeButtonHint|Qt.WindowCloseButtonHint)
         self.initUI()

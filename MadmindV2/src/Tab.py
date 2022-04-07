@@ -111,6 +111,8 @@ class Tab (QWidget):
         self.textEdit.setPlainText(contents)
         self.textEdit.setGeometry(self.parent().width()-402,self.parent().height()-202,400,200)
         self.textEdit.show()
+        if self.tabWidget.parent().width()<700:
+            self.tabWidget.parent().resize(1000,900)
         self.timer.start(15000)
 
     def goTo(self,target):
