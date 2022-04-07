@@ -2,10 +2,10 @@
 |Height : 2000
 |Width : 2000
 |BubbleColor : #992299
-|Optimize : nollll
+|Optimize : no
 |Tolerance : None
 
-#0: to:1;size=2;x=296.0;y=41.0
+#0:from:920; to:1,920;size=2;x=296.0;y=41.0
 \textbf{String}
 
 #1: to:2;x=690.5;y=145.5
@@ -19,7 +19,7 @@ $\sigma \in [0,2\pi]$
 Open string
 $\sigma \in [0,\pi]$
 
-#121: from:120;color=442277;x=980.9;y=224.8
+#121: from:120,920;color=442277;x=980.9;y=224.8
 Neumann \textsc{BC}
 $X'^\mu(\tau,0)=X'^\mu(\tau,\pi)=0$
 
@@ -27,7 +27,7 @@ $X'^\mu(\tau,0)=X'^\mu(\tau,\pi)=0$
 Nambu-Goto action
 $S=-T\int \de^2\sigma\sqrt{-det\gamma_\albe}$
 
-#2: to:3,4,5;size=1.25;x=447.2;y=223.6
+#2: to:3,4,5;size=1.25;x=447.7;y=223.8
 Polyakov action
 \redbox{$S=-T\int \de^2\sigma\sqrt{-h}g_\munu(X)h^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
 
@@ -93,7 +93,7 @@ $(\partial_+X)^2=(\partial_-X)^2=0$
 Solution of the EOM
 $X^\mu(\tau,\sigma)=X^\mu_L(\sigma^+)+X^\mu_R(\sigma^-)$
 
-#8: from:7,110;size=1.2;color=772244;x=446.4;y=833.1
+#8: from:7,110;size=0.833;color=772244;x=444.2;y=820.8
 Solution for closed string
 $X^\mu_{\overset{L}{R}}(\sigma^\pm)=\frac{1}{2} x^\mu+\frac{1}{4\pi T}p^\mu\sigma^{\pm}+\frac{i}{\sqrt{2\pi T}}\sum_{n\neq 0}\frac{1}{n}\alpha^\mu_{\overset{L}{R}\overset{n}{}} e^{-in\sigma^{\pm}}$
 \redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\frac{p^\mu}{2\pi T}\tau+\frac{i}{\sqrt{2\pi T}}\sum_{n\neq 0}\frac{1}{n}\left(\alpha^\mu_n e^{-in\sigma^{-}}+\bar\alpha^\mu_n e^{-in\sigma^{+}}\right)$}
@@ -189,3 +189,14 @@ $\partial_\pm X^-=\frac{2\pi T}{p^+}(\partial_\pm X^i)^2$
 Dependence of the $\alpha^-_n$
 $\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\alpha_{n-m}^i\alpha_m^i$
 $\bar\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\bar\alpha_{n-m}^i\bar\alpha_m^i$
+
+#920:to:0,121;from:0;x=1263.9;y=144.1
+Heloise c'est vraiment l'amour de ma vie
+Ca c'est sur à $I_{confiance}=1000$
+
+#930:x=1217.2;y=1643.7
+Superstring action
+$S=\frac{1}{2\pi}\int \de^2\sigma\left(\partial_\alpha X^\mu\partial_\beta X^\nu h^\albe\eta_\munu+2i\bar\Phi^\mu\rho^\alpha\partial_\alpha\Phi_\mu-\bar\xi_\alpha\rho^\beta\rho^\alpha\Phi^\mu[\partial_\beta X_\mu-\tfrac i4 \bar\xi^\beta\Phi_\mu]\right)$
+
+#940:x=922.6;y=1814.8
+Reparam symmetry

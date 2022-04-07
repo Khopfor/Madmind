@@ -1,14 +1,12 @@
-from PyQt5 import QtWidgets
+# PyQt imports
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF,QRectF
 from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen,QIntValidator,QPalette
 from PyQt5.QtSvg import *
+# Local imports
 from utils import *
 from Edge import Edge
 from BubbleContent import BubbleContent
-import glob
-import sys
-import os
 
 class Bubble(QGraphicsEllipseItem):
     ##########################################

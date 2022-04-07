@@ -1,16 +1,11 @@
 import numpy as np
-from PyQt5 import QtWidgets
+from scipy.optimize import fsolve,minimize
+# PyQt imports
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF
 from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen,QPainterPath,QPolygonF
-from PyQt5.QtSvg import *
+# Local imports
 from utils import *
-import glob
-import sys
-import os
-from scipy.optimize import fsolve,minimize
-
-from utils import Bezier, lengthBezier
 
 
 class Edge (QGraphicsPathItem):
@@ -133,11 +128,11 @@ class Edge (QGraphicsPathItem):
         E=E_edges+E_bypass
         return E
 
-    def plot(self):
-        X=np.linspace(-np.pi,np.pi,1000)
-        Y=[self.energy(x,self.fr.mindmap.bubbles) for x in X]
-        plt.plot(X,Y)
-        plt.show()
+    # def plot(self):
+    #     X=np.linspace(-np.pi,np.pi,1000)
+    #     Y=[self.energy(x,self.fr.mindmap.bubbles) for x in X]
+    #     plt.plot(X,Y)
+    #     plt.show()
 
     def place (self,X,bubbles,origin=np.array([0,0]),scale=1):
         self.points=self.computePoints(X,bubbles,method='')

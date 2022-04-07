@@ -1,13 +1,10 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF
-from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen
-from PyQt5.QtSvg import *
-from numpy import delete
-from utils import *
-import glob
-import sys
 import os
+# PyQt imports
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import Qt
+from PyQt5.QtSvg import *
+# Local imports
+from utils import *
 
 class BubbleContent(QTextEdit):
     def __init__(self,bubble,latexMaker=None):
@@ -40,6 +37,8 @@ class BubbleContent(QTextEdit):
         if type(lines)==type(""):
             lines=lines.split('\n')
         cachePath="mindmaps/"+self.bubble.tab.tabName+"/cache/"
+        if not os.path.isdir(cachePath):
+            os.mkdir(cachePath)
         pdfPath=cachePath+"tempSnippet.pdf"
         svgPath=cachePath+"tempSnippet.svg"
         try :

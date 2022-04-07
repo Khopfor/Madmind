@@ -1,11 +1,9 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication,QMainWindow, QDialog, QAction, QTabWidget, QWidget,QVBoxLayout,QStyle
-from PyQt5.QtCore import Qt, QPoint, QRect,pyqtSignal
-from PyQt5.QtGui import QPixmap,QPainter
-from Tab import Tab
-import glob
 import sys
-import os
+# PyQt imports
+from PyQt5.QtWidgets import QApplication,QMainWindow, QDialog, QAction, QTabWidget, QWidget,QVBoxLayout,QStyle
+from PyQt5.QtCore import Qt,pyqtSignal
+# Local imports
+from Tab import Tab
 
 VERSION=2.0
 
@@ -51,6 +49,8 @@ class MainWindow(QDialog):
         self.tabs[self.tabNb]=newTab
         self.tabWidget.addTab(newTab,"New Tab")
         self.tabNb+=1
+        self.resizeTabs()
+        self.tabWidget.setCurrentIndex(self.tabWidget.indexOf(newTab))
 
     def resizeTabs(self):
         self.tabWidget.setGeometry(0,0,self.width(),self.height())
@@ -63,7 +63,7 @@ class MainWindow(QDialog):
         return super(MainWindow, self).resizeEvent(event)
 
     def keyPressEvent(self, event):
-        if (event.key()==Qt.Key_T) and (QApplication.keyboardModifiers() and Qt.ControlModifier):
+        if (event.key()==Qt.Key_T) and (QApplication.keyboardModifiers()== Qt.ControlModifier):
             self.createNewTab()
         return super().keyPressEvent(event)
 

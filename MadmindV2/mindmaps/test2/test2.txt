@@ -1,0 +1,10 @@
+|MindMap title : TEST2
+|Height : 2000
+|Width : 2000
+|BubbleColor : #778899
+
+#0:to:10;;size=3.583;
+COUCOU
+
+#10:from:0;x=374.0;y=410.0;size=2.488;
+HEYHEYHEY

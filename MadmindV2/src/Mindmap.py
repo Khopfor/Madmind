@@ -1,11 +1,11 @@
-from curses.ascii import isdigit
-from xxlimited import new
+from math import ceil
+# Local imports
 from Bubble import Bubble
 from Edge import Edge
 from utils import cleanStr
 
 class Mindmap():
-    def __init__(self,name,contents,latexMaker=None,tab=None):
+    def __init__(self,name,contents,latexMaker=None,tab=None,progress=None):
         self.name=name
         print(name)
         self.title=""
@@ -18,8 +18,8 @@ class Mindmap():
 
         ### Headers and settings ###
         self.readHeaders(contents)
-        self.constructBubbles(contents) # Creation of the bubbles
-        self.constructEdges()
+        self.constructBubbles(contents,progress) # Creation of the bubbles
+        self.constructEdges(progress)
 
     # Reads headers
     def readHeaders (self,contents):
@@ -30,7 +30,8 @@ class Mindmap():
                 [k,v]=cleanStr(h).split(':')
                 if "itle" in k :
                     self.title=v
-                    self.tab.tabWidget.setTabText(self.tab.tabId,v)
+                    if self.title!="<title>":
+                        self.tab.setTabText(self.title)
                 elif "ubble" in k and "olor" in k :
                     self.bubbleColor=v
             
@@ -59,26 +60,31 @@ class Mindmap():
         self.tab.textEdit.setPlainText(newText)
 
     # Constructs the bubbles
-    def constructBubbles (self,contents):          
+    def constructBubbles (self,contents,progress=None):          
         # if type(contents)==type(""):
         #     lines=contents.splitlines()
         # i=0
         # while '#0' not in lines[i]:
         #     i+=1
         # contents='\n'.join(lines[i:]).split('#')
-        contents=contents[contents.find("#0:"):].split('#')
-        for desc in contents :
-            if desc!='' and "¤" not in desc :
-                # try :
-                id=int(desc.split(':',1)[0])
-                if id in self.bubbles :
-                    print("ID Error : ID '"+str(id)+"' not unique.")
-                else :
-                    self.bubbles[id]=Bubble(desc='#'+desc,latexMaker=self.latexMaker,tab=self.tab,mindmap=self,color=self.bubbleColor)
-                    self.lastId=max(self.lastId,id)
-                    # print("Bubble",id,"created at",self.bubbles[id].scenePos())
-                # except :
-                #     print("Invalid entry : ",desc)
+
+        if "#0:" in contents :
+            contents=contents[contents.find("#0:"):].split('#')
+            Ntot=len(contents)
+            for i,desc in enumerate(contents) :
+                if desc!='' and "¤" not in desc :
+                    # try :
+                    id=int(desc.split(':',1)[0])
+                    if id in self.bubbles :
+                        print("ID Error : ID '"+str(id)+"' not unique.")
+                    else :
+                        self.bubbles[id]=Bubble(desc='#'+desc,latexMaker=self.latexMaker,tab=self.tab,mindmap=self,color=self.bubbleColor)
+                        self.lastId=max(self.lastId,id)
+                        # print("Bubble",id,"created at",self.bubbles[id].scenePos())
+                    # except :
+                    #     print("Invalid entry : ",desc)
+                    if progress!=None:
+                        progress.setValue(ceil(i/Ntot*50))
 
 
     def newEdge(self,bubble):
@@ -96,9 +102,12 @@ class Mindmap():
             self.newEdgeFr.shine(False)
             self.newEdgeFr=None
 
-    def constructEdges(self):
-        for bub in self.bubbles.values():
+    def constructEdges(self,progress=None):
+        Nbub=len(self.bubbles)
+        for i,bub in enumerate(self.bubbles.values()):
             bub.constructEdges(self.bubbles)
+            if progress!=None:
+                progress.setValue(50+ceil(i/Nbub*50))
 
 
     # Counts the bubbles

@@ -1,0 +1,333 @@
+|MindMap title : Relativity
+|Height : 2000
+|Width : 2000
+|BubbleColor : #44AA44
+|Optimize : no
+|Tolerance : None
+
+#0:to:380;;size=1.728;x=900;y=100
+General Relativity
+
+#10:to:40,120,30;from:20,420;x=529.7;y=216.2;size=1.728;
+Metric tensor
+$g_{ab}(x)=\mathbf e_a(x)\cdot\mathbf e_b(x)$
+
+#20:from:30,330;to:30,10,50;x=317.3;y=175.3
+Coordinate basis vectors
+$\mathbf e_a=\mathrm{lim}\frac{\delta s}{\delta x^a}$
+
+#30:from:20,10;to:40,20,430;x=474.7;y=130.5
+Line element
+$\de \mathbf s =\mathbf e_a(x)\de x^a$
+
+#50:from:20;to:70,80,160,130,760;x=354.4;y=309.6;size=1.44;
+Christoffel symbol \\ (Affine connection)
+$\partial_c \mathbf e_a=\Gamma^b_{ac}\mathbf e_b \iff \Gamma^b_{ac}=\mathbf e^b\cdot\partial_c\mathbf e_a$
+
+#60:to:70;x=67.3;y=237.9;size=0.833;
+Coordinate transformation
+$x^a \rightarrow x'^a$
+$\mathbf e'_a=\frac{\partial x^b}{\partial x'^a}\mathbf e_b$
+
+#70:from:60,50;x=102.4;y=341.6;size=0.694;
+Transformation of the affine connection
+$\Gamma'^a_{bc}=\frac{\partial x'^a}{\partial x^d}\frac{\partial x^f}{\partial x'^b}\frac{\partial x^g}{\partial x'^c}\Gamma^d_{fg}-\frac{\partial x^d}{\partial x'^b}\frac{\partial x^f}{\partial x'^c}\frac{\partial^2 x'^a}{\partial x^d\partial x^f}$
+
+#80:to:90;from:50;x=355.2;y=404.4;size=0.694;
+Torsion tensor
+$T^b_{ac}=\Gamma^b_{ac}-\Gamma^b_{ca}$
+
+#90:to:760,750;from:80;x=337.7;y=465.6;size=0.832;
+Torsionless\\manifold
+$T^b_{ac}=0$
+
+#100:to:760;from:120;x=464.0;y=421.9;size=0.578;
+Metric connection
+$\begin{Bmatrix}a\\bc\end{Bmatrix}=\tfrac{1}{2}g^{ad}(\partial_bg_{dc}+\partial_cg_{bd}-\partial_dg_{bc})$
+
+#110:to:510,690;from:210,220;x=946.7;y=620.5;size=1.728;
+Geodesic equation
+\redbox{$\displaystyle\frac{\de^2x^a}{\de u^2}+\Gamma^a_{bc}\frac{\de x^b}{\de u}\frac{\de x^c}{\de u}=0$}
+\small$\dot t_a=\frac 12(\partial_a g_{cd})t^ct^d$
+
+#120:to:100;from:10;x=513.3;y=365.2;size=0.578;
+Derivative of metric tensor
+$\partial_c g_{ab}=(\partial_c\mathbf e_a)\cdot\mathbf e_b+\mathbf e_a\cdot(\partial_c\mathbf e_b)$
+$\partial_c g_{ab}=\Gamma^d_{ac} g_{db}+\Gamma^d_{bc} g_{ad}$
+
+#130:from:50;to:140,150,180,350,410;x=451.5;y=620.5;size=1.2;
+Covariant derivative
+$\partial_b\mathbf v=\nabla_bv^a$
+\vspace{2pt}\bbox{$\displaystyle\nabla_bv^a=\partial_bv^a+\Gamma^a_{cb}v^c$}
+
+#140:to:170;from:130,160;x=106.0;y=710.0;size=1.0;
+Differential operators
+\\\small\begin{tabular}{rl}\hline
+\textsc{Gradient}&$\nabla\phi=\nabla_a\phi\mathbf e^a=\partial_a\phi\bve^a$\\\textsc{Divergence}&$\nabla\cdot\bvv=\nabla_av^a=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}v^a)$\\\textsc{Laplacian}&$\nabla^2\phi=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}g^{ab}\partial_b\phi)$\\\textsc{Curl}&$(\mathrm{curl}\bvv)_{ab}=\nabla_av_b-\nabla_bv_a$\\\textsc{D'Alembertian}&$\square^2=g^\munu\nabla_\mu\nabla_\nu$\\\hline\end{tabular}
+
+#160:to:150,140;from:50;x=76.3;y=505.1;size=0.482;
+Contraction of\\the connection
+$\Gamma^a_{ab}=\frac{1}{\sqrt{|g|}}\partial_b\sqrt{|g|}$
+
+#190:from:700;to:200;x=742.8;y=415.3
+Intrinsic derivative
+$\frac{\de\bvv}{\de u}=\frac{\mathrm Dv^a}{\mathrm D u}\bve_a$
+\vspace{2pt}\bbox{$\displaystyle\frac{\mathrm Dv^a}{\mathrm D u}=\frac{\de v^a}{\de u}+\Gamma^a_{bc}v^b\frac{\de x^c}{\de u}$}
+
+#200:to:220;from:190;x=740.4;y=542.8;size=0.833;
+Parallel transport
+$\frac{\de\bvv}{\de u}=0$
+
+#210:from:40,430;to:110;x=847.6;y=484.2;size=0.694;
+Lagrangian for geodesic
+$L=\left(\fracdd su\right)^2= g_{ab}\fracdd{x^a}{u}\fracdd{x^b}{u}$
+
+#220:from:200,670;to:110;x=741.2;y=635.5;size=0.833;
+Parallel-transported\\tangent vector
+$\fracdd {\mathbf t}u=0 \quad \Rightarrow \quad \frac{Dt^a}{Du}=0$
+
+#230:to:260,240;x=257.1;y=1156.5;size=1.2;
+Electromagnetism
+
+#240:to:370;from:260,230;x=461.5;y=1217.4
+4-force
+$\bvec f=q\bvec F\cdot\bvec u$
+
+#250:to:280,360;x=459.7;y=1304.6
+4-current density
+$\bvec j(x)=\rho_0(x)\bvec u(x)$
+$\bvec j^2=\rho_0^2c^2$
+
+#260:from:230,300;to:280,240,290,360;x=271.6;y=1365.5
+Electromagnetic\\field tensor $\bvec{F}$
+$F_\munu=\partial_\mu A_\nu-\partial_\nu A_\mu$
+$[F_\munu]=\begin{pmatrix}0&\frac{E^1}c&\frac{E^2}c&\frac{E^3}c\\-\frac{E^1}c&0&-B^3&B^2\\-\frac{E^2}c&B^3&0&-B^1\\-\frac{E^3}c&-B^2&B^1&0\end{pmatrix}$
+
+#270:to:280,320;from:280,300;x=163.5;y=1607.2
+Field equation for the 4-potential $\bvec{A}$
+$g^\musi\left(\nabla_\mu\nabla_\nu A_\lambda-\nabla_\mu\nabla_\nu A_\sigma\right)=\mu_0j_\lambda$
+
+#280:from:270,260,250;to:270,360;x=487.0;y=1516.3
+Electromagnetic field equations
+\redbox{\begin{tabular}{rl}$\nabla_\mu F^\munu$&$=\mu_0 j^\nu$\\
+$\nabla_\sigma F_\munu+\nabla_\nu F_{\sigma\mu}+\nabla_\mu F_\nusi$&$=0$\end{tabular}}
+
+#290:to:310;from:260,300;x=205.3;y=1509.0
+Gauge freedom
+$A_\mu \rightarrow A_\mu+\partial_\mu \psi$
+
+#300:to:260,290,270;x=87.2;y=1444.5
+4-vector potential $\bvec{A}$
+
+#310:to:320;from:290;x=362.5;y=1636.2
+Lorenz gauge
+$\nabla_\mu A^\mu=0$
+
+#320:to:340;from:310,270;x=260.7;y=1744.3
+Field equations in Lorenz gauge
+$\square^2A_\mu=\mu_0j_\mu$
+
+#330:to:20,420;x=418.7;y=74.7
+Differential geometry
+
+#340:from:320;x=487.0;y=1731.6
+Maxwell equations
+\\\redbox{\begin{tabular}{ll}$\vec\nabla\cdot\vec E=\frac\rho{\epsilon_0}$&$\vec\nabla\times\vec E=-\frac{\partial\vec B}{\partial t}$\\$\vec\nabla\cdot\vec B=0$&$\vec\nabla\times\vec B=\mu_0\vec j+\mu_0\epsilon_0\frac{\partial\vec E}{\partial t}$\end{tabular}}
+
+#360:from:250,280,260;x=599.6;y=1396.4
+Conservation of charge
+$\nabla\cdot\bvec j=0$
+
+#370:from:240;x=710.5;y=1285.5
+Equation for the particle's\\worldline in arbitrary coordinates
+$\displaystyle\frac{\de^2x^\mu}{\de \tau^2}+\Gamma^\mu_{\nu\sigma}\frac{\de x^\nu}{\de \tau}\frac{\de x^\sigma}{\de \tau}=\frac q{m_0}F^\mu_\nu\fracdd{x^\nu}\tau$
+
+#380:from:0;to:390;x=1053.6;y=134.3
+The equivalence principle
+In a freely falling (non-rotating) laboratory
+occupying a small region of spacetime,
+the laws of physics are those of special relativity.
+
+#390:to:400,420;from:380;x=873.2;y=210.6
+Pseudo-Riemannian spacetime
+$ds^2=g_\munu\de x^\mu\de x^\nu$
+
+#400:from:390,750;x=1068.7;y=282.1
+Metric in a local inertial\\coordinate system $X^\mu$
+whose origin is at P
+$g_\munu(X)=\eta_\munu+\frac 12(\partial_\sigma\partial_\rho g_\munu)_PX^\sigma X^\rho+...$
+
+#410:to:440,450,460,470,510;from:130;x=607.3;y=747.2;size=1.2;
+Curvature tensor (Riemann tensor)
+$\nabla_c\nabla_bv_a-\nabla_b\nabla_cv_a=R^d_{\ abc}v_d$
+\bbox{$R^d_{\ abc}=\partial_b \Gamma^d_{ac}-\partial_c \Gamma^d_{ab}+\Gamma^e_{ac}\Gamma^d_{eb}-\Gamma^e_{ab}\Gamma^d_{ec}$}
+\small $\displaystyle R_{abcd}=\tfrac 12\left(\partial_d\partial_ag_{bc}-\partial_d\partial_bg_{ac}+\partial_c\partial_bg_{ad}-\partial_c\partial_ag_{bd}\right)$\\$-g^{ef}\left(\Gamma_{eac}\Gamma_{fbd}-\Gamma_{ead}\Gamma_{fbc}\right)$
+
+#420:from:390,330;to:430,10,700;x=710.5;y=150.8
+Pseudo-Riemannian\\manifold
+
+#430:from:420,30;to:210;x=624.5;y=327.4
+Pseudo-Riemannian\\interval
+$\de s^2=g_{ab}(x)\de x^a\de x^b$
+
+#440:to:450,500;from:410;x=766.8;y=847.6;size=0.833;
+Symmetric properties
+$R_{abcd}=-R_{bacd}$
+$R_{abcd}=-R_{abdc}$
+$R_{abcd}=R_{cdab}$
+$R_{abcd}+R_{acdb}+R_{adbc}=0$
+
+#450:from:410,440;x=395.2;y=899.4;size=0.833;
+Number of independant components
+$N^2(N^2-1)/12$
+\\\begin{tabular}{lccc}\hline Nb of dimensions&2&3&4\\Nb of independant components&1&6&20\\\hline\end{tabular}
+
+#460:to:500;from:410;x=911.2;y=804.0;size=0.833;
+Bianchi identity
+$\nabla_eR_{abcd}+\nabla_cR_{abde}+\nabla_dR_{abec}=0$
+
+#470:to:480,490;from:410;x=633.2;y=893.1;size=1.2;
+Ricci tensor
+\scriptsize (symmetric)
+\normalsize \bbox{$R_{ab}=R^c_{\; abc}$}
+
+#480:to:490;from:470;x=602.3;y=995.7
+Curvature scalar\\(Ricci scalar)
+\bbox{$R=g^{ab}R_{ab}=R^a_{\ a}$}
+
+#490:to:500,570;from:470,480;x=751.3;y=974.8;size=1.2;
+Einstein tensor
+\scriptsize (symmetric)
+\normalsize \bbox{$G^{ab}=R^{ab}-\frac 12g^{ab}R$}
+
+#500:to:570;from:440,460,490;x=890.3;y=896.7;size=0.833;
+Divergence of the Einstein tensor
+$\nabla_a G^{ab}=0$
+
+#510:from:110,410;x=1047.5;y=743.2
+Equation of geodesic\\deviation
+$\frac{D^2\xi^a}{Du^2}+R^a_{\; cbd}\xi^b\dot x^c\dot x^d=0$
+
+#520:from:660;to:530,540,640;x=1318.2;y=124.5;size=1.44;
+Energy-momentum tensor $T_\munu$
+\scriptsize(symmetric)
+\\\tiny\begin{tabular}{l|l}$T^{00}$ Energy density&$T^{0j}$ Energy flux\\\hline
+$T^{i0}$ Momentum density&$T^{ij}$ Rate of flow of\\&momentum per unit area\end{tabular}
+
+#530:to:550;from:520;x=1492.7;y=222.6;size=0.694;
+Energy-momentum tensor\\of a perfect fluid
+$T^\munu=\left(\rho +\tfrac p{c^2}\right)u^\mu u^\nu-pg^\munu$\scriptsize\vspace{1pt}
+$[T^\munu]=\begin{pmatrix}\rho c^2&0&0&0\\0&p&0&0\\0&0&p&0\\0&0&0&p\end{pmatrix}$
+
+#540:to:550,570,690;from:520;x=1466.1;y=400.1;size=1.44;
+"Conservation" of energy and momentum
+$\nabla_\mu T^\munu=0$
+
+#550:to:560;from:530,540;x=1599.0;y=297.1;size=0.694;
+Relativistic perfect\\fluid equations
+\textsc{Equation of continuity}
+$\nabla_\mu(\rho u^\mu)+\tfrac{p}{c^2}\nabla_\mu u^\mu=0$
+\textsc{Equation of motion}
+$(\rho+\tfrac{p}{c^2})u^\mu\nabla_\mu u^\nu=(g^\munu-\tfrac{u^\mu u^\nu}{c^2})\partial_\mu p$
+
+#560:from:550,580;x=1739.3;y=220.1;size=0.694;
+Classical perfect\\fluid equations
+\textsc{Equation of continuity}
+$\nabla_\mu(\rho u^\mu)=0 \iff \frac{\partial\rho}{\partial t} t+\vec\nabla\cdot(\rho\vec u)=0$
+\textsc{Equation of motion}
+$\rho u^\mu(\nabla_\mu u^i)=g^{ij}\partial_jp \ \overset{g=\eta}{\Longrightarrow}\ \rho\left(\tfrac\partial{\partial t}+\vec u\cdot\vec\nabla\right)\vec u=-\vec\nabla p$
+
+#570:to:590,600,620;from:490,540,500;x=1220.0;y=858.0;size=2.488;
+Einstein equation
+\redbox{$\displaystyle R_\munu-\tfrac 12g_\munu R=-\tfrac{8\pi G}{c^4}T_\munu$}
+
+#580:to:560,610,710;x=1906.6;y=272.3
+Newtonian\\mechanics
+
+#590:to:600;from:570;x=1425.5;y=727.7
+Scalar Einstein equation
+$R=\kappa T$ where $T=T^\mu_{\ \mu},\ \kappa =\tfrac{8\pi G}{c^4}$
+
+#600:to:610;from:590,570;x=1534.5;y=802.2
+Alternative form\\of Einstein equation
+\bbox{$R_\munu=-\kappa(T_\munu-\tfrac 12Tg_\munu)$}
+
+#610:to:630;from:600,580;x=1526.1;y=586.3
+Weak-field limit\\(Newtonian gravity)
+$g_\munu=\eta_\munu+h_\munu\text{ , }\ |h_\munu|\ll 1$
+$R_{00}\approx -\partial_i\Gamma^i_{00}\text{ ,  }\ \Gamma^i_{00}\approx \tfrac 12\delta^{ij}\partial_j h_{00}$
+$\tfrac 12\delta^{ij}\partial_i\partial_j h_{00}=\tfrac 12\kappa\rho c^2\ ,\quad  h_{00}=\tfrac{2\Phi}{c^2}$
+\bbox{$\vec \nabla^2=4\pi G\rho$}
+
+#620:to:630;from:570;x=1559.0;y=893.1
+Cosmological constant $\Lambda$
+\bbox{$\displaystyle R_\munu-\tfrac 12g_\munu R+\Lambda g_\munu=-\kappa T_\munu$}
+
+#630:from:620,610;x=1661.3;y=713.4;size=0.694;
+Newtonian gravity\\with cosmological constant
+$\vec \nabla^2\Phi=4\pi G\rho-\Lambda c^2$
+$\vec g=-\vec\nabla\Phi=-\frac{GM}{r^2}\hat{\vec{r}}+\frac{c^2\Lambda r}{3}\hat{\vec{r}}$
+
+#640:to:680;from:520;x=1264.6;y=269.8;size=0.694;
+Energy-momentum\\tensor of dust
+\normalsize$\bvec T(x)=\rho (x)\bvec u(x)\otimes\bvec u(x)$
+$T^\munu=\rho u^\mu u^\nu$
+
+#650:from:670;to:660;x=945.5;y=408.4;size=0.833;
+4-velocity
+$\bvec u=\fracdd{\bvec s}{\tau}=\fracdd{x^\mu}\tau\bvec e_\mu\ ,\quad \bvec u\cdot\bvec u=c^2$
+$[u^\mu]=\gamma_u\left(c,\fracdd{x^1}t,\fracdd{x^2}t,\fracdd{x^3}t\right)=\gamma_u(c,\vec u)$
+
+#660:to:520;from:650;x=1116.6;y=399.7;size=0.694;
+4-momentum
+\textsc{Massive particle}
+$\bvec p=m_0\bvec u\ ,\quad \bvec p\cdot\bvec p=m_0^2c^2$
+\textsc{Massless particle}
+$[p^\mu]=(E/c,\vec p)$
+$\bvec p=\bar h\bvec k\ ,\quad [k^\mu]=2\pi/\lambda(1,\vec n)$
+
+#670:from:700;to:650,220;x=838.6;y=305.3
+Tangent vector to a curve $x^a(u)$
+$\bvec t=\fracdd{x^a}{u}\bvec e_a$
+
+#680:to:690;from:640;x=1255.6;y=388.8;size=0.694;
+Energy-momentum\\tensor of a point-particle
+$T^\munu(x)=\frac m{\sqrt{-g}}\int \fracdd{z^\mu}\tau\fracdd{z^\nu}\tau\delta^4(x-z(\tau))\de \tau$
+
+#690:from:680,540,110;x=1187.4;y=546.0;size=1.2;
+Equations of motion for a free particle
+$\ddot x^\mu+\Gamma^\mu_{\;\nusi}\dot x^\nu\dot x^\sigma=0$
+
+#700:to:190,670;from:420;x=723.2;y=267.1
+Curve with parameter u
+$x^a(u)$
+
+#710:to:730,720;from:580;x=1856.2;y=366.5;size=0.579;
+Hamilton's principle
+$S=\int_{t_1}^{t_2}L(q^a,\dot q^a,t)\de t$
+
+#720:to:740;from:710,730;x=1767.4;y=475.9;size=0.694;
+Lagrangian for a particle of mass $m$
+$L=T-V=\tfrac 12mg_{ab}\dot q^a\dot q^b-V$
+
+#730:to:720,740;from:710;x=1909.1;y=440.2;size=0.482;
+Euler-Lagrange equations
+\\\begin{tabular}{cc}\textsc{Discrete}
+&$\displaystyle \frac{\partial L}{\partial q^a}-\fracdd{}{t}\left(\frac{\partial L}{\partial \dot q^a}\right)=0$\vspace{2pt}\\
+\textsc{Fields}&$\displaystyle \frac{\partial \mathcal L}{\partial \Phi^a}-\partial_\mu
+\left(\frac{\partial \mathcal L}{\partial (\partial_\mu\Phi^a)}\right)=0$
+\end{tabular}
+
+#740:from:730,720;x=1797.2;y=590.8
+Newton's second law in an arbitrary coordinate system
+$m(\ddot q^a+\Gamma^a_{\ bc}\dot q^b \dot q^c)=-g^{ab}\partial_b V$
+
+#750:to:400;from:90;x=582.4;y=498.2
+Riemann normal coordinates (Local Cartesian coordinates)
+at point P
+$g_{ab}(P)=\eta_{ab}$
+$\partial_cg_{ab}(P)=0 \Longrightarrow \Gamma^a_{\ bc}=0$
+
+#760:from:50,90,100;x=242.3;y=557.0;size=1.2;
+Metric co.=Affine co.
+\redbox{$\Gamma^a_{bc}=\frac{1}{2}g^{ad}(\partial_bg_{dc}+\partial_cg_{bd}-\partial_dg_{bc})$}

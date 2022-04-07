@@ -38,3 +38,77 @@ Hamilton equations $\Rightarrow \dot L(z)=[L(z),M(z)]$
 #7:;x=83.0;y=465.0
 Conserved charges
 $Q_n=TrL^n$
+
+#17:to:27,37,47,87;x=1714.0;y=499.6;size=1.728;
+Quantum Yang-Baxter equation (qYBE)
+\redbox{$R_{12}(z_1-z_2)R_{13}(z_1)R_{23}(z_2)=R_{23}(z_2)R_{13}(z_1)R_{12}(z_1-z_2)$}
+
+#27:to:57,67;from:17,87;x=1439.9;y=874.3
+Rational solutions
+Example: XXX
+$R(z)=\begin{pmatrix}z+i&0&0&0\\0&z&i&0\\0&i&z&0\\0&0&0&z+i\end{pmatrix}$
+
+#37:to:57,67;from:17,87;x=1672.3;y=884.7
+Trigonometric solutions
+Example : XXZ
+$R(z)=\begin{pmatrix}sh(z+\eta)&0&0&0\\0&sh(z)&sh(\eta)&0\\0&sh(\eta)&sh(z)&0\\0&0&0&sh(z+\eta)\end{pmatrix}$
+
+#47:to:57,67;from:17,87;x=1998.5;y=891.7
+Elliptic solutions
+Example : XYZ
+$R(z)=\begin{pmatrix}sn(z+\eta)&0&0&ksn(z)sn(\eta)sn(z+\eta)\\0&sn(z)&sn(\eta)&0\\0&sn(\eta)&sn(z)&0\\ksn(z)sn(\eta)sn(z+\eta)&0&0&sn(z+\eta)\end{pmatrix}$
+where $sn(z)=sn(z,k)=sin(A(z,k))$ is the Jacobi sine function
+
+#57:from:27,37,47;x=1568.2;y=1054.7
+Regularity
+$R(0)\varpropto P$
+
+#67:from:47,37,27;x=1804.2;y=1075.6
+Braiding unitarity
+$R_\albe(z)R_{\beta\alpha}(-z)=g(z)\mathbb{I}$
+
+#87:to:97,27,37,47;from:17;x=1714.0;y=669.6
+Solution $R(z)$
+
+#97:from:87;x=1398.2;y=638.4
+Simplest Hamiltonian
+$\mathbf{H}=\sum_{i=1}^LH_{i,i+1}$
+$H_{i,i+1}\varpropto P_{i,i+1}\frac{\de R}{\de z}(0)+f\mathbb{I}$
+
+#107:to:117,137;x=1175.8;y=1036.6
+RLL equation
+\redbox{$R_{\alpha\beta}(z_\alpha-z_\beta)\mathcal L_{\alpha,j}(z_\alpha)\mathcal L_{\beta,j}(z_\beta)=\mathcal L_{\beta,j}(z_\beta)\mathcal L_{\alpha,j}(z_\alpha)R_{\alpha\beta}(z_\alpha-z_\beta)$}
+
+#117:to:127;from:107;x=1042.1;y=1152.4
+Quantum Lax operator
+$|v_{i+1}\rangle=\mathcal L_i|v_i\rangle$
+
+#127:to:137,147;from:117;x=1185.4;y=1241.9
+Monodromy matrix
+$\mathcal T_\alpha(z)=\mathcal L_{\alpha,N}(z)\mathcal L_{\alpha,N-1}(z)...\mathcal L_{\alpha,1}(z)$
+
+#137:from:127,107;x=1381.2;y=1345.3
+RTT equation
+\redbox{$R_{\alpha\beta}(z_\alpha-z_\beta)\mathcal T_{\alpha}(z_\alpha)\mathcal T_{\beta}(z_\beta)=\mathcal T_{\beta}(z_\beta)\mathcal T_{\alpha}(z_\alpha)R_{\alpha\beta}(z_\alpha-z_\beta)$}
+
+#147:to:157,167;from:127;x=1107.1;y=1384.4
+Transfer matrix
+$t(z)=\mathrm{Tr}_\alpha\mathcal T_\alpha(z)$
+$\mathrm{log}(t(z))=\sum_l Q_lz^l$
+
+#157:to:177;from:147;x=1221.5;y=1483.7
+Charges
+$Q_{l+1}=\frac{\de ^l}{\de z^l}\mathrm{log}(t(z))\arrowvert_{z=0}$
+
+#167:to:177;from:147;x=1014.9;y=1494.0
+Eigenvalues of the transfer matrix
+$t(z)|\Lambda\rangle=\Lambda(z)|\Lambda\rangle$
+
+#177:from:167,157;x=1119.5;y=1568.4
+Eigenvalues of the charges
+$\Lambda_{Q_{n+1}}=\frac{\de^n}{\de z^n}\mathrm{log}(\Lambda(z))\arrowvert_{z=0}$
+
+#187:x=1012.7;y=1690.9
+Algebraic Bethe ansatz (ABA)
+The ABA is a very powerful tool to find the eigenvalues
+and the eigenvectors of the transfer matrix

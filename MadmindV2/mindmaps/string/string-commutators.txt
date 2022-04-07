@@ -1,0 +1,11 @@
+\begin{tabular}{c|ccccccc}
+    $\{,\}$ & $p^+$ & $p^-$ & $p^j$ & $x^j$ & $x^-$ & $\alpha_m^j$ & $\alpha_m^-$ \\
+    \hline
+    $p^+$ & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+    $p^-$ & 0 & 0 & 0 & $-\frac{p^i}{p^+}$ & $-\frac{p^-}{p^+}$ & $\frac{2\pi iT}{p^+}m\alpha_m^j$ & $\frac{2\pi iT}{p^+}m\alpha_m^-$ \\
+    $p^i$ & 0 & 0 & 0 & $\delta^{ij}$ & 0 & 0 & 0 \\
+    $x^i$ & 0 & $\frac{p^i}{p^+}$ & $\delta^{ij}$ & 0 & 0 & 0 & $\frac{\alpha_m^i}{p^+}$ \\
+    $x^-$ & -1 & $\frac{p^-}{p^+}$ & 0 & 0 & 0 & 0 & $\frac{\alpha_m^-}{p^+}$ \\
+    $\alpha_n^i$ & 0 & $-\frac{2\pi iT}{p^+}n\alpha_n^i$ & 0 & 0 & 0 & $-in\delta^{ij}\delta_{n+m}$ & $-i\frac{\sqrt{4\pi T}}{p^+}n\alpha_{n+m}^i$ \\
+    $\alpha_n^-$ & 0 & $-\frac{2\pi iT}{p^+}n\alpha_n^-$ & 0 & $-\frac{\alpha_n^i}{p^+}$ & $-\frac{\alpha_n^-}{p^+}$ & $i\frac{\sqrt{4\pi T}}{p^+}m\alpha_{n+m}^i$ & $\{\alpha_n^-,\alpha_m^-\}$ \\
+\end{tabular}

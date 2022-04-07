@@ -1,13 +1,10 @@
-from PyQt5 import QtWidgets
+# PyQt imports
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint, QRect,QSize
 from PyQt5.QtGui import QPixmap,QPainter,QColor
-from PyQt5.QtSvg import *
+# Local imports
 from Mindmap import Mindmap
 from LatexMaker import LatexMaker
-import glob
-import sys
-import os
 
 POTPARAMS="settings/potParams.json"
 VIDEOPARAMS="settings/videoParams.json"
@@ -23,10 +20,10 @@ class Scene (QGraphicsScene):
         self.hoveredObject=None
 
 
-    def initMindmap(self,tab,contents):
+    def initMindmap(self,tab,contents,progress=None):
         latexMaker=LatexMaker(LATEXCOMMANDS)
         mmName=tab.tabName
-        self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,tab=tab)
+        self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,tab=tab,progress=progress)
         self.mindmap.draw(self)
 
 

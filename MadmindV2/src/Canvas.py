@@ -1,13 +1,11 @@
+import numpy as np
+# PyQt imports
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint, QRect,QSize
 from PyQt5.QtGui import QPixmap,QPainter,QColor
-from PyQt5.QtSvg import *
-import numpy as np
+# Local imports
 from Scene import Scene
-import glob
-import sys
-import os
 
 
 class Canvas(QGraphicsView):
@@ -28,10 +26,10 @@ class Canvas(QGraphicsView):
         self.minimap.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.minimap.scale(0.1,0.1)
         self.minimap.setWindowOpacity(0.5)
-        self.show()
+        self.hide()
 
-    def initMindmap(self,tab,contents):
-        self.scene.initMindmap(tab,contents)
+    def initMindmap(self,tab,contents,progress=None):
+        self.scene.initMindmap(tab,contents,progress)
 
     def mousePressEvent(self, event):
         if event.button()== Qt.MouseButton.RightButton :
@@ -43,7 +41,7 @@ class Canvas(QGraphicsView):
 
 
     def wheelEvent(self, event):
-        if (QApplication.keyboardModifiers() and Qt.ControlModifier):
+        if (QApplication.keyboardModifiers() == Qt.ControlModifier):
             delta=event.angleDelta().y()
             zoom=1.015
             if delta>0:

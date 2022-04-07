@@ -1,60 +1,116 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt, QPoint, QRect,QSize
-from PyQt5.QtGui import QPixmap,QPainter,QTextCursor
-from PyQt5.QtSvg import *
-import glob
-import sys
 import os
-
-from matplotlib.widgets import Widget
-
+from time import sleep
+# PyQt imports
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import Qt, QPoint, QRect,QSize,QTimer
+from PyQt5.QtGui import QPixmap,QPainter,QTextCursor
+# Local imports
 from Canvas import Canvas
+from utils import contains
 
 class Tab (QWidget):
     def __init__(self,tabId,tabWidget):
         super().__init__()
         self.tabId=tabId
         self.tabWidget=tabWidget
-        self.canvas=None
-        # Buttons
-        widget=QWidget(self)
-        self.vbox=QVBoxLayout(self)
-        # self.vbox.setStyleSheet("border: 0px")
+        self.tabText=self.getTabText()
+        self.timer=QTimer(self)
+        self.timer.timeout.connect(self.save)
+        # Canvas
+        self.canvas=Canvas(self)
+        # Text Edit Area
+        self.textEdit=QTextEdit(self)
+        self.textEdit.hide()
+        # VBox
+        vbox=QVBoxLayout(self)
+        # Open existing Mindmap
+        openLabel=QLabel("Open an existing mindmap :")
+        openLabel.setAlignment(Qt.AlignLeft)
+        vbox.addWidget(openLabel)
+        self.choiceWidget=QWidget(self)
         mindmapList=os.listdir("mindmaps")
         self.buttongroup = QButtonGroup()
-        self.buttongroup.buttonClicked[QAbstractButton].connect(self.loadMindmap)
+        self.buttongroup.buttonClicked[QAbstractButton].connect(self.loadChosenMindmap)
         for i,mmName in enumerate(mindmapList) :
             button=QPushButton(mmName,self)
             self.buttongroup.addButton(button, 1)
             # button.setFont(QtGui.QFont("Sanserif", 15))
-            self.vbox.addWidget(button)
-        # self.vbox.setGeometry(QRect(0,0,100,100))
-        widget.setLayout(self.vbox)
-        widget.setGeometry(QRect(0,0,200,40*len(self.buttongroup.buttons())))
-        # self.setLayout(self.vbox)
+            vbox.addWidget(button)
+        # New Mindmap option
+        newLabel=QLabel("Create a new mindmap :")
+        vbox.addWidget(newLabel)
+        self.newLineEdit=QLineEdit()
+        newButton=QPushButton("Create")
+        newButton.clicked.connect(self.createNewMindmap)
+        hbox=QHBoxLayout()
+        hbox.addWidget(self.newLineEdit)
+        hbox.addWidget(newButton)
+        vbox.addLayout(hbox)
 
-    def loadMindmap(self,button):
-        self.tabName=button.text()
-        for button in self.buttongroup.buttons():
-           self.vbox.removeWidget(button)
-           button.deleteLater()
-        self.tabWidget.setTabText(self.tabId,self.tabName)
-        loading=QLabel("Loading...",self)
-        self.vbox.addWidget(loading)
-        self.vbox.update()
-        # Canvas
-        self.canvas=Canvas(self)
-        # Text Editor
-        f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'r')
+        self.choiceWidget.setLayout(vbox)
+        self.choiceWidget.setGeometry(QRect(10,10,250,40*len(self.buttongroup.buttons())))
+
+    def setTabText(self,text,temp=False):
+        if not temp :
+            self.tabText=text
+        self.tabWidget.setTabText(self.tabId,text)
+
+    def getTabText(self):
+        return self.tabWidget.tabText(self.tabId)
+
+    def loadChosenMindmap(self,button):
+        self.loadMindmap(button.text())
+
+    def createNewMindmap(self):
+        name=self.newLineEdit.text()
+        if contains(name,'\n','/','\\'):
+            print("Invalid mindmap name.")
+        else:
+            dirPath="mindmaps/"+name
+            if os.path.isdir(dirPath):
+                print("This mindmap already exists.")
+            else :
+                os.mkdir(dirPath)
+                os.mkdir(dirPath+"/cache")
+                f=open(dirPath+"/"+name+".txt",'w')
+                try :
+                    template=open("templates/headers.txt",'r')
+                    headers=template.read()
+                    template.close()
+                except:pass
+                f.write(headers)
+                f.close()
+            self.loadMindmap(name)
+
+
+    def loadMindmap(self,MindmapName):
+        self.tabName=MindmapName
+        self.setTabText(self.tabName)
+        self.choiceWidget.setParent(None)
+        # for button in self.buttongroup.buttons():
+        #    vbox.removeWidget(button)
+        #    button.deleteLater()
+        loadingWidget=QWidget(self)
+        loadingVBox=QVBoxLayout()
+        loadingLabel=QLabel("Loading...")
+        loadingVBox.addWidget(loadingLabel,Qt.AlignBottom)
+        loadingProgress=QProgressBar()
+        loadingVBox.addWidget(loadingProgress,Qt.AlignTop)
+        loadingWidget.setLayout(loadingVBox)
+        loadingWidget.setLayout(loadingVBox)
+        loadingWidget.show()
+        # vbox.addWidget(loading)
+        # vbox.update()
+        f=open("mindmaps/"+MindmapName+"/"+MindmapName+".txt",'r')
         contents=f.read()
         f.close()
-        self.textEdit=QTextEdit(self)
+        self.canvas.initMindmap(self,contents,loadingProgress)
+        loadingWidget.setParent(None)
+        self.canvas.show()
         self.textEdit.setPlainText(contents)
         self.textEdit.setGeometry(self.parent().width()-402,self.parent().height()-202,400,200)
         self.textEdit.show()
-        self.canvas.initMindmap(self,contents)
-        self.vbox.removeWidget(loading)
+        self.timer.start(15000)
 
     def goTo(self,target):
         if isinstance(target,int):
@@ -112,8 +168,13 @@ class Tab (QWidget):
         self.textEdit.setPlainText(contents)
 
     def keyPressEvent(self, e):
-        if (e.key()==Qt.Key_S) and (QApplication.keyboardModifiers() and Qt.ControlModifier):
-            f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')
-            f.write(self.textEdit.toPlainText())
-            f.close()
+        if (e.key()==Qt.Key_S) and (QApplication.keyboardModifiers()==Qt.ControlModifier):
+            self.save()
+        elif (e.key()==Qt.Key_W) and (QApplication.keyboardModifiers()== Qt.ControlModifier):
+            self.tabWidget.removeTab(self.tabId)
         return super().keyPressEvent(e)
+
+    def save (self):
+        f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')
+        f.write(self.textEdit.toPlainText())
+        f.close()

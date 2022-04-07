@@ -1,15 +1,6 @@
 import numpy as np
-from math import ceil
-from time import sleep,time
-import os
-from io import BytesIO
-from latex import build_pdf
-from matplotlib import lines
-import matplotlib.pyplot as plt
-from pdf2image import convert_from_path
-import drawSvg as draw
-from glob import glob
 import json
+# import matplotlib.pyplot as plt
 
 def norm(P):
     return np.sqrt(P.x()**2+P.y()**2)

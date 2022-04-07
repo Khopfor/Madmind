@@ -13,7 +13,10 @@
 "nurho":"\\newcommand\\nurho{{\\nu\\rho}}",
 "musi":"\\newcommand\\musi{{\\mu\\sigma}}",
 "nusi":"\\newcommand\\nusi{{\\nu\\sigma}}",
-"colorBox": "\\newcommand\\redbox[1]{\\fcolorbox{red}{white}{#1}}",
+"colbox":"\\newcommand\\colbox[2]{\\vspace{1.5pt}\\fcolorbox{#1}{white}{#2}}",
+"redbox": "\\newcommand\\redbox[1]{\\colbox{red}{#1}}",
+"bluebox":"\\newcommand\\bluebox[1]{\\colbox{blue}{#1}}",
+"bbox":"\\newcommand\\bbox[1]{\\colbox{black}{#1}}",
 "eom":"\\newcommand\\eom{\\textsc{eom}}",
 "lb":"\\newcommand\\lb{\\{}",
 "rb":"\\newcommand\\rb{\\}}",
@@ -24,5 +27,9 @@
 "phispi":"\\newcommand\\phispi{\\phi_\\alpha}",
 "phiSpi":"\\newcommand\\phiSpi{\\phi^\\alpha}",
 "chispi":"\\newcommand\\chispi{\\bar\\chi_\\alpha}",
-"chiSpi":"\\newcommand\\chiSpi{\\bar\\chi^\\alpha}"
+"chiSpi":"\\newcommand\\chiSpi{\\bar\\chi^\\alpha}",
+"bvec":"\\newcommand\\bvec[1]{\\mathbf #1}",
+"bve":"\\newcommand\\bve{\\mathbf e}",
+"bvv":"\\newcommand\\bvv{\\mathbf v}",
+"fracdd":"\\newcommand\\fracdd[2]{\\frac{\\de {#1}}{\\de {#2}}}"
 }

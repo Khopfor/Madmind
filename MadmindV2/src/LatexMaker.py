@@ -1,5 +1,5 @@
 import latextools
-import re
+# Local imports
 from utils import *
 
 class LatexMaker ():
