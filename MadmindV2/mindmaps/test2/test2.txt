@@ -6,5 +6,5 @@
 #0:to:10;;size=3.583;
 COUCOU
 
-#10:from:0;x=374.0;y=410.0;size=2.488;
+#10:from:0;x=822.0;y=612.0;size=2.488;
 HEYHEYHEY

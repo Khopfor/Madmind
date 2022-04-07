@@ -20,6 +20,7 @@ class Tab (QWidget):
         self.canvas=Canvas(self)
         # Text Edit Area
         self.textEdit=QTextEdit(self)
+        self.textEdit.setFontFamily("monospace")
         self.textEdit.hide()
         # VBox
         vbox=QVBoxLayout(self)

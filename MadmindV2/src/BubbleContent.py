@@ -18,6 +18,7 @@ class BubbleContent(QTextEdit):
         # self.setPalette(QPalette(QColor(255,0,0,100),QColor(255,255,255,100)))
         self.setStyleSheet("background-color:rgba(255,255,255,0);")
         self.setFontFamily("monospace")
+        self.setFontPointSize(11)
         self.hide()
 
     def showTextEdit(self):
