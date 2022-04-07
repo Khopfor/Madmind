@@ -1,4 +1,4 @@
-latextools==0.4.4
-numpy==1.18.5
-PyQt5==5.15.4
-scipy==1.5.2
+latextools==0.4.6
+numpy==1.22.3
+PyQt5==5.15.6
+scipy==1.8.0

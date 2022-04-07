@@ -1,3 +1,4 @@
+from math import ceil
 import latextools
 # Local imports
 from utils import *
