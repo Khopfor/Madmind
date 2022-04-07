@@ -1,0 +1,11 @@
+### WINDOWS INSTALLATION INSTRUCTIONS ###
+
+1) Copy the following line in the terminal and press 'Enter' :
+
+	python -m pip install requirements.txt
+	
+2) Run the program by entering the following lines in the terminal :
+
+	cd <path to the program directory>
+	cd ./MadmindV2
+	python ./src/main.py
