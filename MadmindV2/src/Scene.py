@@ -11,8 +11,8 @@ VIDEOPARAMS="settings/videoParams.json"
 LATEXCOMMANDS="settings/latexCommands.json"
 
 class Scene (QGraphicsScene):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,parent):
+        super().__init__(parent)
         self.w=2000
         self.h=2000
         self.setSceneRect(0,0,self.w,self.h)
@@ -26,6 +26,9 @@ class Scene (QGraphicsScene):
         self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,tab=tab,progress=progress)
         self.mindmap.draw(self)
 
+    # def mousePressEvent(self, event):
+    #     if event.button()== Qt.MouseButton.RightButton :
+    #     return super().mousePressEvent(event)
 
     def mouseMoveEvent(self, event):
         self.mousePos=event.scenePos()
@@ -38,9 +41,15 @@ class Scene (QGraphicsScene):
             y=self.mousePos.y()#*self.sceneRect().height()
             self.mindmap.newBubble(x,y,self)
             self.update()
-        elif event.key()== Qt.Key.Key_S:
+        elif event.key()== Qt.Key.Key_S and QApplication.keyboardModifiers()==Qt.KeyboardModifier.ControlModifier:
+            self.parent().parent().save
+        elif event.key()== Qt.Key.Key_S and not QApplication.keyboardModifiers():
             for bub in self.mindmap.bubbles.values():
                 bub.toggleShadow()
+        elif event.key()==Qt.Key.Key_Delete :
+            self.mindmap.deleteSelection()
+        elif event.key()==Qt.Key.Key_Escape:
+            self.mindmap.deselectAll()
         elif self.hoveredObject :
             if event.key()==Qt.Key.Key_Plus:
                 self.hoveredObject.grow()

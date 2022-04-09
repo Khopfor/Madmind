@@ -11,7 +11,7 @@ from Scene import Scene
 class Canvas(QGraphicsView):
     def __init__(self,tab):
         super().__init__(tab)
-        self.scene=Scene()
+        self.scene=Scene(self)
         self.setScene(self.scene)
         self.setRenderHints(QPainter.Antialiasing)
         self.scale(0.5,0.5)
@@ -25,7 +25,10 @@ class Canvas(QGraphicsView):
         self.minimap.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.minimap.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.minimap.scale(0.1,0.1)
-        self.minimap.setWindowOpacity(0.5)
+        self.opacityEffet=QGraphicsOpacityEffect(self.minimap)
+        self.opacityEffet.setOpacity(0.9)
+        self.minimap.setGraphicsEffect(self.opacityEffet)
+        # self.minimap.setWindowOpacity(0.5)
         self.hide()
 
     def initMindmap(self,tab,contents,progress=None):
@@ -38,6 +41,10 @@ class Canvas(QGraphicsView):
             self.scale(0.5,0.5)
         else :
             return super().mousePressEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        self.minimap.update()
+        return super().mouseReleaseEvent(event)
 
 
     def wheelEvent(self, event):

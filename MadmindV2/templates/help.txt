@@ -1,0 +1,25 @@
+HELP
+
+
+Ctrl+S       Save
+
+Ctrl+CLICK   Select an item
+
+Esc          Deselect all
+
+Del          Delete selected
+             items
+
+Shift+CLICK  Create edges to
+             clicked bubble
+             from selected
+             ones
+
++/-          Increase/Decrease 
+             size of bubble
+
+L            Lens effect on
+             selected items
+
+H            Display/Hide
+             this help

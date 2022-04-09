@@ -5,17 +5,17 @@
 |Optimize : no
 |Tolerance : None
 
-#0:from:920; to:1,920;size=2;x=296.0;y=41.0
+#0:from:920; to:1,920,990;size=2;x=800.0;y=50.0
 \textbf{String}
 
-#1: to:2;x=690.5;y=145.5
+#1: to:2;x=554.9;y=126.6
 Worldsheet
 
-#110: from:0;color=772244;x=795.1;y=174.9
+#110: from:0;color=772244;x=724.2;y=125.0
 Closed string
 $\sigma \in [0,2\pi]$
 
-#120: from:0;color=442277;x=897.2;y=158.6
+#120: from:0;color=442277;x=800.0;y=91.1
 Open string
 $\sigma \in [0,\pi]$
 
@@ -23,86 +23,92 @@ $\sigma \in [0,\pi]$
 Neumann \textsc{BC}
 $X'^\mu(\tau,0)=X'^\mu(\tau,\pi)=0$
 
-#101: from:1;size=0.6;x=531.2;y=139.0
+#101: from:1;size=0.6;x=414.5;y=101.6
 Nambu-Goto action
 $S=-T\int \de^2\sigma\sqrt{-det\gamma_\albe}$
 
-#2: to:3,4,5;size=1.25;x=447.7;y=223.8
+#2:from:990; to:3,4,5,950;size=1.5;x=455.5;y=220.2
 Polyakov action
-\redbox{$S=-T\int \de^2\sigma\sqrt{-h}g_\munu(X)h^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
+\redbox{$\displaystyle S=-\frac T2 \int \de^2\sigma\sqrt{-h}g_\munu(X)h^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
 
-#201: from:2;x=763.1;y=330.7
+#201: from:2;x=714.7;y=275.1
 Equations of motion for $X^\mu$
-$\partial_\alpha (\sqrt{-h}h^\albe\partial_\beta X_\mu)=0$
+$\partial_\alpha (\sqrt{-h}h^\albe\partial_\beta X^\mu)=0$
 $\iff \nabla^2X^\mu=0$
 
-#202: from:201,302;x=344.7;y=557.4
+#202: from:201,970,203;x=381.5;y=533.1
 EOM for $X^\mu$ in unit gauge
-$(\partial_\tau^2-\partial_\sigma^2)X^\mu=\partial_-\partial_+X^\mu=0$
+$\partial_\alpha\partial^\alpha X^\mu=(\partial_\tau^2-\partial_\sigma^2)X^\mu=\partial_-\partial_+X^\mu=0$
 
-#203: from:202;to:601;size=0.5;x=492.1;y=593.1
-lightcone coordinates
-$\sigma^+=\tau+\sigma \qquad \sigma^-=\tau-\sigma$
+#203: from:202;to:601,202;size=0.864;x=501.6;y=592.8
+lightcone\\coordinates
+$\sigma^\pm=\tau\pm\sigma$
 
-#3: ;x=153.7;y=242.2
+#3:to:960; ;x=111.9;y=240.5
 Reparam invariance
-$(\tau,\sigma)\rightarrow\xi^\alpha(\tau,\sigma)$
+$\sigma^\alpha\rightarrow\xi^\alpha(\sigma)$
+\footnotesize\textsc{Infinitesimal tranfo : }$\sigma'^\alpha=\sigma^\alpha-\xi^\alpha(\sigma)$
+$\delta X^\mu(\sigma)=\xi^\alpha\partial_\alpha X^\mu$
+$\delta h_\albe=\xi^\gamma\partial_\gamma h_\albe+h_{\alpha\gamma}\partial_\beta\xi^\gamma+h_{\beta\gamma}\partial_\alpha\xi^\gamma$
+$\delta h^\albe=\xi^\gamma\partial_\gamma h^\albe-h^{\alpha\gamma}\partial_\gamma\xi^\beta-h^{\beta\gamma}\partial_\gamma\xi^\alpha$
+$\delta(\sqrt{-h})=\partial_\alpha(\xi^\alpha\sqrt{-h})$
 
 #301: from:3;x=139.7;y=369.6
 Conformal gauge
-$h_\albe(\tau,\sigma)=\Omega^2(\tau,\sigma)\eta_\albe$
+$h_\albe(\sigma)=e^{2\Lambda(\sigma)}\eta_\albe$
 
-#302: from:301;x=237.6;y=447.2
+#302:to:960,970; from:301;x=237.6;y=447.2
 Unit gauge
 $h_\albe=\eta_\albe$
 
-#303: from:302;size=0.8;x=453.4;y=434.8
+#303:from:970;size=0.8;x=719.4;y=436.3
 Remaining gauge freedom
 Reparam of special type $\sigma^\pm=\xi^\pm(\sigma^\pm)$
 where $\xi^\pm$ are periodic in $\sigma$
-This freedom is fixed by imposing the light-cone gauge
+This freedom is fixed by imposing\\the light-cone gauge
 
-#4: to:302;x=250.0;y=293.5
+#4: to:302,960;x=287.3;y=331.5
 Weyl invariance
-$h_\albe(\sigma)\rightarrow e^{-2\Lambda(\sigma)}h_\albe$
+$h_\albe(\sigma)\rightarrow e^{2\Lambda(\sigma)}h_\albe$
+\footnotesize\textsc{Infinitesimally : }$h'_\albe=(1+2\Lambda(\sigma))h_\albe$
+$\delta h_\albe=2\Lambda h_\albe$
 
-#5: ;x=518.6;y=340.1;size=0.833;
+#5:to:6; ;x=518.6;y=340.1;size=0.833;
 Stress-energy tensor
 $T_\albe=-\frac{1}{T\sqrt{-h}}\frac{\delta S}{\delta h_\albe}$
 
-#501: from:4,5;size=0.5;x=391.3;y=326.1
+#501: from:4,5;size=0.5;x=414.2;y=334.9
 Traceless $T_{\alpha\beta}$
 $T^\alpha_\alpha=0$
 
-#510: from:5;x=777.7;y=441.5
+#510: from:5;x=671.8;y=345.2;size=0.694;
 Equations of motion for $h_{\alpha\beta}$
-$T_\albe=0$
-$\iff \partial_\alpha X^\mu\partial_\beta X_\mu=\frac{1}{2}h_\albe h^{\gamma\delta}\partial_\gamma X^\mu\partial_\delta X_\mu$
+\scriptsize$T_\albe=0\iff \partial_\alpha X^\mu\partial_\beta X_\mu=\frac{1}{2}h_\albe h^{\gamma\delta}\partial_\gamma X^\mu\partial_\delta X_\mu$
 
-#6: from:302;x=589.8;y=536.6;size=1.2;
+#6: from:5,970;x=588.7;y=520.2;size=1.2;
 Virasoro constraints
-(= \eom for $h_\albe$ in unit gauge)
-$T_{00}=T_{11}=\dot{X}^2+X'^2=0$
-$T_{01}=T_{10}=\dot{X}\cdot X'=0$
+\scriptsize($\eom$ for $h_\albe$ in unit gauge)
+\\\normalsize\begin{tabular}{lc}$T_{00}=T_{11}=$&$\dot{X}^2+X'^2=0$\\
+$T_{01}=T_{10}=$&$\dot{X}\cdot X'=0$\end{tabular}
 
-#601: from:6;size=0.75;x=694.1;y=676.7
+#601: from:6;size=0.75;x=624.8;y=644.8
 Virasoro constraints in lightcone coordinates
 $(\partial_+X)^2=(\partial_-X)^2=0$
 
-#7: from:202;x=435.6;y=649.6
+#7: from:202;x=391.3;y=622.5
 Solution of the EOM
 $X^\mu(\tau,\sigma)=X^\mu_L(\sigma^+)+X^\mu_R(\sigma^-)$
 
-#8: from:7,110;size=0.833;color=772244;x=444.2;y=820.8
+#8: from:7,110;size=0.833;color=772244;x=446.3;y=737.6
 Solution for closed string
-$X^\mu_{\overset{L}{R}}(\sigma^\pm)=\frac{1}{2} x^\mu+\frac{1}{4\pi T}p^\mu\sigma^{\pm}+\frac{i}{\sqrt{2\pi T}}\sum_{n\neq 0}\frac{1}{n}\alpha^\mu_{\overset{L}{R}\overset{n}{}} e^{-in\sigma^{\pm}}$
-\redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\frac{p^\mu}{2\pi T}\tau+\frac{i}{\sqrt{2\pi T}}\sum_{n\neq 0}\frac{1}{n}\left(\alpha^\mu_n e^{-in\sigma^{-}}+\bar\alpha^\mu_n e^{-in\sigma^{+}}\right)$}
+$X^\mu_{\overset{L}{^R}}(\sigma^\pm)=\tfrac 12 x^\mu+\tfrac{\alpha'}2 p^\mu\sigma^{\pm}+i\sqrt\frac{\alpha'}2\sum_{n\neq 0}\frac{1}{n}{\alpha^\mu_{n,}}_{\overset{L}{^R}} e^{-in\sigma^{\pm}}$
+\redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\alpha'p^\mu\tau+i\sqrt\frac{\alpha'}{2}\sum_{n\neq 0}\frac{1}{n}\left(\alpha^\mu_n e^{-in\sigma^{-}}+\bar\alpha^\mu_n e^{-in\sigma^{+}}\right)$}
 
-#801: from:8;size=0.75;color=772244;x=351.9;y=990.6
+#801: from:8;size=0.75;color=772244;x=360.2;y=858.2
 Closed string zero modes
-$\alpha_0^\mu=\bar\alpha_0^\mu=\frac{p^\mu}{\sqrt{4\pi T}}$
+$\alpha_0^\mu=\bar\alpha_0^\mu=\frac{p^\mu}{\sqrt{4\pi T}}=\sqrt{\frac{\alpha'}2}p^\mu$
 
-#802: from:8,801;color=772244;x=539.9;y=1008.0
+#802: from:8,801;color=772244;x=535.8;y=886.6
 Oscillators Poisson relations
 $\{\alpha_m^\mu,\alpha_n^\nu\}=\{\bar\alpha_m^\mu,\bar\alpha_n^\nu\}=-im\delta_{m+n}\eta^\munu$
 $\{\alpha_m^\mu,\bar\alpha_n^\nu\}=0$
@@ -136,7 +142,7 @@ Poisson brakets of the light-cone modes\\
 \end{tabular}\\
 $\{\alpha_n^-,\alpha_m^-\}=\frac{-i\sqrt{4\pi T}}{p^+}-(m-n)\alpha_{m+n}^-$
 
-#10: from:8,9;size=0.8;x=698.4;y=908.1
+#10: from:8,9;size=0.8;x=618.7;y=803.7
 Reality condition
 $(\alpha^\mu_n)^*=\alpha^\mu_{-n}$
 
@@ -168,12 +174,11 @@ $\lb L_m,\bar L_n\rb =0$
 Virasoro constraints in terms of $L_n$
 $\forall n \in \mathbb{Z}, L_n=\bar L_n=0$
 
-#20: from:303;x=889.6;y=537.7
-Light-cone gauge
-Light-cone gauge coordinates
+#20: from:303;x=873.2;y=516.4
+Spacetime\\lightcone coordinates
 $X^\pm=\frac{1}{\sqrt{2}}(X^0\pm X^{d-1})$
 
-#21: from:20;x=995.0;y=423.7
+#21: from:20;x=1095.2;y=429.9
 Light-cone gauge fixing for closed string
 $X^+=\frac{p^+}{2\pi T}\tau \qquad P^+=\frac{p^+}{2\pi}=const$
 
@@ -190,13 +195,29 @@ Dependence of the $\alpha^-_n$
 $\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\alpha_{n-m}^i\alpha_m^i$
 $\bar\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\bar\alpha_{n-m}^i\bar\alpha_m^i$
 
-#920:to:0,121;from:0;x=1263.9;y=144.1
-Heloise c'est vraiment l'amour de ma vie
-Ca c'est sur à $I_{confiance}=1000$
-
 #930:x=1217.2;y=1643.7
 Superstring action
 $S=\frac{1}{2\pi}\int \de^2\sigma\left(\partial_\alpha X^\mu\partial_\beta X^\nu h^\albe\eta_\munu+2i\bar\Phi^\mu\rho^\alpha\partial_\alpha\Phi_\mu-\bar\xi_\alpha\rho^\beta\rho^\alpha\Phi^\mu[\partial_\beta X_\mu-\tfrac i4 \bar\xi^\beta\Phi_\mu]\right)$
 
 #940:x=922.6;y=1814.8
 Reparam symmetry
+
+#950:from:2;x=264.9;y=132.2
+Poincaré invariance
+
+#960:from:4,3,302;x=66.6;y=444.3;size=0.579;
+Conformal Killing equation
+$\xi^\gamma\partial_\gamma h_\albe+h_{\alpha\gamma}\partial_\beta\xi^\gamma+h_{\beta\gamma}\partial_\alpha\xi^\gamma=2\Lambda h_\albe$
+$\partial_\alpha \xi_\beta+\partial_\beta \xi_\alpha=2\Lambda \eta_\albe$
+
+#970:to:303,202,6;from:302;x=417.8;y=425.8;size=1.2;
+Polyakov action in unit gauge
+\bbox{$S=-\frac T2 \int \de^2\sigma g_\munu(X)\partial_\alpha X^\mu\partial^\alpha X^\nu$}
+
+#980:x=876.7;y=387.9
+Static gauge
+$X^0\equiv t=R\tau$
+
+#990:to:2;from:0;x=637.0;y=150.6
+String\\tension
+$T=\frac{1}{2\pi\alpha'}$

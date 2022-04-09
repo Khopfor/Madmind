@@ -65,13 +65,13 @@ class MainWindow(QDialog):
     def keyPressEvent(self, event):
         if (event.key()==Qt.Key_T) and (QApplication.keyboardModifiers()== Qt.ControlModifier):
             self.createNewTab()
-        return super().keyPressEvent(event)
+        # return super().keyPressEvent(event)
 
 
 def window():
     app=QApplication(sys.argv)
     win=MainWindow()
     win.show()
-    sys.exit(app.exec_())
+    app.exec_()
 
 window()

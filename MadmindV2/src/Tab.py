@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint, QRect,QSize,QTimer
 from PyQt5.QtGui import QPixmap,QPainter,QTextCursor
 # Local imports
+from TextEdit import TextEdit
+from Help import Help
 from Canvas import Canvas
 from utils import contains
 
@@ -19,9 +21,9 @@ class Tab (QWidget):
         # Canvas
         self.canvas=Canvas(self)
         # Text Edit Area
-        self.textEdit=QTextEdit(self)
-        self.textEdit.setFontFamily("monospace")
-        self.textEdit.hide()
+        self.textEdit=TextEdit(self)
+        # Help
+        self.help=Help(self)
         # VBox
         vbox=QVBoxLayout(self)
         # Open existing Mindmap
@@ -132,47 +134,17 @@ class Tab (QWidget):
         if self.canvas!=None:
             self.canvas.setGeometry(0,0,w,h)
             self.canvas.minimap.setGeometry(self.canvas.width()-202,2,200,200)
-            self.textEdit.setGeometry(self.parent().width()-402,self.parent().height()-202,400,200)
+            self.textEdit.updateGeom()
+            self.help.updateGeom()
 
-    def writeNewEdge(self,e):
-        def insertId (id1,id2,way):
-            contents=self.textEdit.toPlainText()
-            idIndex=contents.find("#"+str(id1)+":")
-            endLineIndex=contents.find('\n',idIndex)
-            if endLineIndex==-1:toIndex=contents.find(way+':',idIndex)
-            else :toIndex=contents.find(way+':',idIndex,endLineIndex)
-            if toIndex==-1:
-                colonIndex=contents.find(':',idIndex)
-                contents=contents[:colonIndex+1]+way+":"+str(id2)+';'+contents[colonIndex+1:]
-            else:
-                semicolonIndex=contents.find(';',toIndex)
-                contents=contents[:semicolonIndex]+','+str(id2)+contents[semicolonIndex:]
-            self.textEdit.setPlainText(contents)
-        insertId(e.fr.id,e.to.id,'to')
-        insertId(e.to.id,e.fr.id,'from')
-
-    def writeNewSize(self,bub):
-        size=str(round(bub.size,3))
-        contents=self.textEdit.toPlainText()
-        idIndex=contents.find("#"+str(bub.id)+":")
-        endLineIndex=contents.find('\n',idIndex)
-        if endLineIndex==-1:sizeIndex=contents.find("size",idIndex)
-        else :sizeIndex=contents.find("size",idIndex,endLineIndex)
-        if sizeIndex==-1:
-            if endLineIndex==-1:
-                contents=contents+';size='+size
-            else :
-                contents=contents[:endLineIndex]+";size="+size+';'+contents[endLineIndex:]
-        else:
-            semicolonIndex=contents.find(';',sizeIndex)
-            delimIndex=contents.find('=',sizeIndex,semicolonIndex)
-            if delimIndex!=-1:
-                contents=contents[:delimIndex+1]+size+contents[semicolonIndex:]
-        self.textEdit.setPlainText(contents)
+    def toggleHelp(self):
+        self.help.toggle()
 
     def keyPressEvent(self, e):
         if (e.key()==Qt.Key_S) and (QApplication.keyboardModifiers()==Qt.ControlModifier):
             self.save()
+        elif (e.key()==Qt.Key_H):
+            self.toggleHelp()
         elif (e.key()==Qt.Key_W) and (QApplication.keyboardModifiers()== Qt.ControlModifier):
             self.tabWidget.removeTab(self.tabId)
         return super().keyPressEvent(e)
@@ -181,3 +153,57 @@ class Tab (QWidget):
         f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')
         f.write(self.textEdit.toPlainText())
         f.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # def writeNewEdge(self,e):
+    #     def insertId (id1,id2,way):
+    #         contents=self.textEdit.toPlainText()
+    #         idIndex=contents.find("#"+str(id1)+":")
+    #         endLineIndex=contents.find('\n',idIndex)
+    #         if endLineIndex==-1:toIndex=contents.find(way+':',idIndex)
+    #         else :toIndex=contents.find(way+':',idIndex,endLineIndex)
+    #         if toIndex==-1:
+    #             colonIndex=contents.find(':',idIndex)
+    #             contents=contents[:colonIndex+1]+way+":"+str(id2)+';'+contents[colonIndex+1:]
+    #         else:
+    #             semicolonIndex=contents.find(';',toIndex)
+    #             contents=contents[:semicolonIndex]+','+str(id2)+contents[semicolonIndex:]
+    #         self.textEdit.setPlainText(contents)
+    #     insertId(e.fr.id,e.to.id,'to')
+    #     insertId(e.to.id,e.fr.id,'from')
+
+    # def writeNewSize(self,bub):
+    #     size=str(round(bub.size,3))
+    #     contents=self.textEdit.toPlainText()
+    #     idIndex=contents.find("#"+str(bub.id)+":")
+    #     endLineIndex=contents.find('\n',idIndex)
+    #     if endLineIndex==-1:sizeIndex=contents.find("size",idIndex)
+    #     else :sizeIndex=contents.find("size",idIndex,endLineIndex)
+    #     if sizeIndex==-1:
+    #         if endLineIndex==-1:
+    #             contents=contents+';size='+size
+    #         else :
+    #             contents=contents[:endLineIndex]+";size="+size+';'+contents[endLineIndex:]
+    #     else:
+    #         semicolonIndex=contents.find(';',sizeIndex)
+    #         delimIndex=contents.find('=',sizeIndex,semicolonIndex)
+    #         if delimIndex!=-1:
+    #             contents=contents[:delimIndex+1]+size+contents[semicolonIndex:]
+    #     self.textEdit.setPlainText(contents)

@@ -3,8 +3,12 @@
 |Width : 2000
 |BubbleColor : #778899
 
-#0:to:10;;size=3.583;
-COUCOU
+#0:from:20;to:30;x=1052.0;y=324.0;size=5.160
+Yay
 
-#10:from:0;x=822.0;y=612.0;size=2.488;
-HEYHEYHEY
+#20:to:0,30;x=482.0;y=466.0;size=2.488
+J'aime les tests
+$test=<3$
+
+#30:from:0,20;x=718.0;y=760.0;size=12.839
+Prout

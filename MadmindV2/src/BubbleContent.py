@@ -18,7 +18,7 @@ class BubbleContent(QTextEdit):
         # self.setPalette(QPalette(QColor(255,0,0,100),QColor(255,255,255,100)))
         self.setStyleSheet("background-color:rgba(255,255,255,0);")
         self.setFontFamily("monospace")
-        self.setFontPointSize(11)
+        self.setFontPointSize(10)
         self.hide()
 
     def showTextEdit(self):
@@ -31,6 +31,7 @@ class BubbleContent(QTextEdit):
         self.selectAll()
         self.setAlignment(Qt.AlignCenter)
         self.setFontFamily("monospace")
+        self.setFontPointSize(10)
         self.show()
 
     def makeInnerLatexSvg (self):

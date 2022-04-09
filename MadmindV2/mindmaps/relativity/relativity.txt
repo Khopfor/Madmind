@@ -5,67 +5,68 @@
 |Optimize : no
 |Tolerance : None
 
-#0:to:380;;size=1.728;x=900;y=100
-General Relativity
+#0:to:380;;size=2.074;x=900;y=100
+General\\Relativity
 
-#10:to:40,120,30;from:20,420;x=529.7;y=216.2;size=1.728;
+#10:to:40,120,30,890;from:20,420;x=494.4;y=207.5;size=1.44;
 Metric tensor
 $g_{ab}(x)=\mathbf e_a(x)\cdot\mathbf e_b(x)$
 
-#20:from:30,330;to:30,10,50;x=317.3;y=175.3
-Coordinate basis vectors
+#20:from:30,330;to:30,10,50;x=283.8;y=158.5
+Coordinate basis\\vectors
 $\mathbf e_a=\mathrm{lim}\frac{\delta s}{\delta x^a}$
 
-#30:from:20,10;to:40,20,430;x=474.7;y=130.5
+#30:from:20,10;to:40,20,430;x=419.5;y=140.2
 Line element
 $\de \mathbf s =\mathbf e_a(x)\de x^a$
 
-#50:from:20;to:70,80,160,130,760;x=354.4;y=309.6;size=1.44;
+#50:from:20;to:70,80,160,130,760;x=316.6;y=287.4;size=1.2;
 Christoffel symbol \\ (Affine connection)
 $\partial_c \mathbf e_a=\Gamma^b_{ac}\mathbf e_b \iff \Gamma^b_{ac}=\mathbf e^b\cdot\partial_c\mathbf e_a$
 
-#60:to:70;x=67.3;y=237.9;size=0.833;
-Coordinate transformation
+#60:to:70,890;x=79.5;y=136.5;size=0.833;
+Coordinate\\transformation
 $x^a \rightarrow x'^a$
 $\mathbf e'_a=\frac{\partial x^b}{\partial x'^a}\mathbf e_b$
 
-#70:from:60,50;x=102.4;y=341.6;size=0.694;
+#70:from:60,50;x=98.8;y=299.5;size=0.694;
 Transformation of the affine connection
 $\Gamma'^a_{bc}=\frac{\partial x'^a}{\partial x^d}\frac{\partial x^f}{\partial x'^b}\frac{\partial x^g}{\partial x'^c}\Gamma^d_{fg}-\frac{\partial x^d}{\partial x'^b}\frac{\partial x^f}{\partial x'^c}\frac{\partial^2 x'^a}{\partial x^d\partial x^f}$
 
-#80:to:90;from:50;x=355.2;y=404.4;size=0.694;
+#80:to:90;from:50;x=209.0;y=348.6;size=0.694;
 Torsion tensor
 $T^b_{ac}=\Gamma^b_{ac}-\Gamma^b_{ca}$
 
-#90:to:760,750;from:80;x=337.7;y=465.6;size=0.832;
+#90:to:760,750;from:80;x=161.2;y=398.0;size=0.832;
 Torsionless\\manifold
 $T^b_{ac}=0$
 
-#100:to:760;from:120;x=464.0;y=421.9;size=0.578;
+#100:to:760;from:120;x=309.3;y=395.7;size=0.578;
 Metric connection
 $\begin{Bmatrix}a\\bc\end{Bmatrix}=\tfrac{1}{2}g^{ad}(\partial_bg_{dc}+\partial_cg_{bd}-\partial_dg_{bc})$
 
-#110:to:510,690;from:210,220;x=946.7;y=620.5;size=1.728;
+#110:to:510,690;from:210,220;x=943.8;y=610.0;size=1.44;
 Geodesic equation
 \redbox{$\displaystyle\frac{\de^2x^a}{\de u^2}+\Gamma^a_{bc}\frac{\de x^b}{\de u}\frac{\de x^c}{\de u}=0$}
 \small$\dot t_a=\frac 12(\partial_a g_{cd})t^ct^d$
 
-#120:to:100;from:10;x=513.3;y=365.2;size=0.578;
+#120:to:100;from:10;x=474.3;y=339.4;size=0.832;
 Derivative of metric tensor
 $\partial_c g_{ab}=(\partial_c\mathbf e_a)\cdot\mathbf e_b+\mathbf e_a\cdot(\partial_c\mathbf e_b)$
 $\partial_c g_{ab}=\Gamma^d_{ac} g_{db}+\Gamma^d_{bc} g_{ad}$
 
-#130:from:50;to:140,150,180,350,410;x=451.5;y=620.5;size=1.2;
+#130:from:50;to:140,150,180,350,410;x=351.7;y=617.8;size=1.44;
 Covariant derivative
 $\partial_b\mathbf v=\nabla_bv^a$
 \vspace{2pt}\bbox{$\displaystyle\nabla_bv^a=\partial_bv^a+\Gamma^a_{cb}v^c$}
+$\displaystyle\nabla_bv_a=\partial_bv_a-\Gamma^c_{ba}v_c$
 
-#140:to:170;from:130,160;x=106.0;y=710.0;size=1.0;
+#140:to:170;from:130,160;x=114.9;y=759.3;size=1.0;
 Differential operators
 \\\small\begin{tabular}{rl}\hline
 \textsc{Gradient}&$\nabla\phi=\nabla_a\phi\mathbf e^a=\partial_a\phi\bve^a$\\\textsc{Divergence}&$\nabla\cdot\bvv=\nabla_av^a=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}v^a)$\\\textsc{Laplacian}&$\nabla^2\phi=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}g^{ab}\partial_b\phi)$\\\textsc{Curl}&$(\mathrm{curl}\bvv)_{ab}=\nabla_av_b-\nabla_bv_a$\\\textsc{D'Alembertian}&$\square^2=g^\munu\nabla_\mu\nabla_\nu$\\\hline\end{tabular}
 
-#160:to:150,140;from:50;x=76.3;y=505.1;size=0.482;
+#160:to:150,140;from:50;x=34.7;y=401.1;size=0.482;
 Contraction of\\the connection
 $\Gamma^a_{ab}=\frac{1}{\sqrt{|g|}}\partial_b\sqrt{|g|}$
 
@@ -74,15 +75,15 @@ Intrinsic derivative
 $\frac{\de\bvv}{\de u}=\frac{\mathrm Dv^a}{\mathrm D u}\bve_a$
 \vspace{2pt}\bbox{$\displaystyle\frac{\mathrm Dv^a}{\mathrm D u}=\frac{\de v^a}{\de u}+\Gamma^a_{bc}v^b\frac{\de x^c}{\de u}$}
 
-#200:to:220;from:190;x=740.4;y=542.8;size=0.833;
-Parallel transport
+#200:to:220;from:190;x=798.3;y=524.5;size=0.833;
+Parallel\\transport
 $\frac{\de\bvv}{\de u}=0$
 
-#210:from:40,430;to:110;x=847.6;y=484.2;size=0.694;
+#210:from:40,430;to:110;x=887.7;y=496.7;size=0.578;
 Lagrangian for geodesic
 $L=\left(\fracdd su\right)^2= g_{ab}\fracdd{x^a}{u}\fracdd{x^b}{u}$
 
-#220:from:200,670;to:110;x=741.2;y=635.5;size=0.833;
+#220:from:200,670;to:110;x=761.2;y=630.1;size=0.833;
 Parallel-transported\\tangent vector
 $\fracdd {\mathbf t}u=0 \quad \Rightarrow \quad \frac{Dt^a}{Du}=0$
 
@@ -127,8 +128,8 @@ $\nabla_\mu A^\mu=0$
 Field equations in Lorenz gauge
 $\square^2A_\mu=\mu_0j_\mu$
 
-#330:to:20,420;x=418.7;y=74.7
-Differential geometry
+#330:to:20,420;x=357.9;y=68.6;size=1.44;
+Differential\\geometry
 
 #340:from:320;x=487.0;y=1731.6
 Maxwell equations
@@ -157,36 +158,36 @@ Metric in a local inertial\\coordinate system $X^\mu$
 whose origin is at P
 $g_\munu(X)=\eta_\munu+\frac 12(\partial_\sigma\partial_\rho g_\munu)_PX^\sigma X^\rho+...$
 
-#410:to:440,450,460,470,510;from:130;x=607.3;y=747.2;size=1.2;
+#410:to:440,450,460,470,510,770;from:130;x=528.4;y=770.3;size=1.2;
 Curvature tensor (Riemann tensor)
 $\nabla_c\nabla_bv_a-\nabla_b\nabla_cv_a=R^d_{\ abc}v_d$
 \bbox{$R^d_{\ abc}=\partial_b \Gamma^d_{ac}-\partial_c \Gamma^d_{ab}+\Gamma^e_{ac}\Gamma^d_{eb}-\Gamma^e_{ab}\Gamma^d_{ec}$}
 \small $\displaystyle R_{abcd}=\tfrac 12\left(\partial_d\partial_ag_{bc}-\partial_d\partial_bg_{ac}+\partial_c\partial_bg_{ad}-\partial_c\partial_ag_{bd}\right)$\\$-g^{ef}\left(\Gamma_{eac}\Gamma_{fbd}-\Gamma_{ead}\Gamma_{fbc}\right)$
 
-#420:from:390,330;to:430,10,700;x=710.5;y=150.8
+#420:from:390,330;to:430,10,700;x=666.5;y=143.2;size=1.2;
 Pseudo-Riemannian\\manifold
 
 #430:from:420,30;to:210;x=624.5;y=327.4
 Pseudo-Riemannian\\interval
 $\de s^2=g_{ab}(x)\de x^a\de x^b$
 
-#440:to:450,500;from:410;x=766.8;y=847.6;size=0.833;
+#440:to:450,500;from:410;x=708.8;y=867.1;size=0.833;
 Symmetric properties
 $R_{abcd}=-R_{bacd}$
 $R_{abcd}=-R_{abdc}$
 $R_{abcd}=R_{cdab}$
 $R_{abcd}+R_{acdb}+R_{adbc}=0$
 
-#450:from:410,440;x=395.2;y=899.4;size=0.833;
+#450:from:410,440;x=331.7;y=894.4;size=0.833;
 Number of independant components
 $N^2(N^2-1)/12$
 \\\begin{tabular}{lccc}\hline Nb of dimensions&2&3&4\\Nb of independant components&1&6&20\\\hline\end{tabular}
 
-#460:to:500;from:410;x=911.2;y=804.0;size=0.833;
+#460:to:500;from:410;x=851.0;y=814.7;size=0.833;
 Bianchi identity
 $\nabla_eR_{abcd}+\nabla_cR_{abde}+\nabla_dR_{abec}=0$
 
-#470:to:480,490;from:410;x=633.2;y=893.1;size=1.2;
+#470:to:480,490;from:410;x=567.7;y=906.5;size=1.2;
 Ricci tensor
 \scriptsize (symmetric)
 \normalsize \bbox{$R_{ab}=R^c_{\; abc}$}
@@ -200,7 +201,7 @@ Einstein tensor
 \scriptsize (symmetric)
 \normalsize \bbox{$G^{ab}=R^{ab}-\frac 12g^{ab}R$}
 
-#500:to:570;from:440,460,490;x=890.3;y=896.7;size=0.833;
+#500:to:570;from:440,460,490;x=854.0;y=897.4;size=0.833;
 Divergence of the Einstein tensor
 $\nabla_a G^{ab}=0$
 
@@ -248,7 +249,7 @@ Newtonian\\mechanics
 Scalar Einstein equation
 $R=\kappa T$ where $T=T^\mu_{\ \mu},\ \kappa =\tfrac{8\pi G}{c^4}$
 
-#600:to:610;from:590,570;x=1534.5;y=802.2
+#600:to:610,830;from:590,570;x=1486.6;y=811.4
 Alternative form\\of Einstein equation
 \bbox{$R_\munu=-\kappa(T_\munu-\tfrac 12Tg_\munu)$}
 
@@ -322,12 +323,76 @@ Euler-Lagrange equations
 Newton's second law in an arbitrary coordinate system
 $m(\ddot q^a+\Gamma^a_{\ bc}\dot q^b \dot q^c)=-g^{ab}\partial_b V$
 
-#750:to:400;from:90;x=582.4;y=498.2
-Riemann normal coordinates (Local Cartesian coordinates)
-at point P
-$g_{ab}(P)=\eta_{ab}$
-$\partial_cg_{ab}(P)=0 \Longrightarrow \Gamma^a_{\ bc}=0$
+#750:to:400,770;from:90;x=444.2;y=456.6
+Riemann normal coordinates\\(Local Cartesian coordinates)
+At $O$ all geodesics of the form $x^a(s)=sa^a$
+$g_{ab}(O)=\eta_{ab}$
+$\partial_cg_{ab}(O)=0\Longrightarrow\ \Gamma^a_{\ bc}(O)=0$
+$\partial_d\Gamma^a_{\ bc}+\partial_b\Gamma^a_{\ cd}+\partial_c\Gamma^a_{\ db}=0$
 
-#760:from:50,90,100;x=242.3;y=557.0;size=1.2;
+#760:from:50,90,100;x=197.4;y=485.1;size=1.2;
 Metric co.=Affine co.
 \redbox{$\Gamma^a_{bc}=\frac{1}{2}g^{ad}(\partial_bg_{dc}+\partial_cg_{bd}-\partial_dg_{bc})$}
+
+#770:from:750,410;x=577.7;y=590.8;size=1.0;
+Expansion of the metric\\in Riemann normal coordinates
+$g_\munu(x)=\eta_\munu+\frac 12(\partial_\sigma\partial_\rho g_\munu)_Ox^\sigma x^\rho+...$
+$g_\munu(x)=\eta_\munu-\frac 13(R_{\mu\sigma\nu\rho})_Ox^\sigma x^\rho+...$
+
+#780:to:790,870;x=1828.0;y=736.0
+Stationary spacetime
+The $g_\munu$ are independent of $x^0$
+
+#790:to:820;from:780;x=1776.0;y=842.0
+Static spacetime
+$-$ Stationary
+$-$ $ds^2$ invariant under $x^0\longrightarrow -x^0$
+
+#800:to:810;x=1922.0;y=880.0;size=0.833;
+Isotropic spacetime
+$ds^2$ depends only on
+rotational invariants of the $x^i$
+and their differentials namely
+$\vec x\cdot\vec x\equiv r^2,\ d\vec x\cdot d\vec x,\ \vec x\cdot d\vec x$
+
+#810:to:820,860;from:800;x=1874.0;y=1026.0;size=0.694;
+Most general spatially isotropic metric
+$ds^2=A(t,r)dt^2-B(t,r)dt\vec x\cdot d\vec x-C(t,r)(\vec x\cdot d\vec x)^2-D(t,r)d\vec x^2$
+$ds^2=A(t,r)dt^2-B(t,r)dr-r^2(d\theta^2+\sin^2\theta d\phi^2)$
+
+#820:to:850;from:810,790;x=1680.0;y=968.0
+Most general isotropic and static metric
+$ds^2=A(r)dt^2-B(r)dr-r^2(d\theta^2+\sin^2\theta d\phi^2)$
+
+#830:to:850;from:600;x=1412.7;y=947.7
+Empty-space\\Einstein equation
+$R_\munu=0$
+
+#840:to:880;from:850,860;x=1482.0;y=1142.0
+Schwarzschild metric
+\redbox{$\displaystyle ds^2=\left(1-\frac{R_S}r\right)c^2dt^2-\left(1-\frac{R_S}r\right)^{-1}dr^2-r^2d\theta^2-r^2\sin^2\theta d\phi^2$}
+\vspace{1pt}\small with $R_S=\frac{2GM}{c^2}=2\mu$
+
+#850:to:840;from:830,820;x=1496.0;y=1020.0;size=0.579;
+Empty-space solution for an isotropic and static metric
+$A(r)=\alpha\left(1+\frac kr\right),\ B(r)=\left(1+\frac kr\right)^{-1}$
+
+#860:to:840;from:810;x=1716.0;y=1086.0;size=0.694;
+Birkhoff's theorem
+The spacetime geometry
+outside a general spherically
+symmetric matter distribution is
+the Schwarzschild geometry
+
+#870:to:880;from:780;x=1874.1;y=1152.3;size=0.694;
+Gravitational redshift\\in stationary spacetime\\and $g_{0i}(\vec x)=0$
+$\frac{\nu_R}{\nu_E}=\left(\frac{g_{00}(\vec x_E)}{g_{00}(\vec x_R)}\right)^{1/2}$
+
+#880:from:870,840;x=1726.1;y=1243.9
+Gravitational redshift\\in Schwarzschild spactime
+\bbox{$\displaystyle\frac{\nu_R}{\nu_E}=\frac{\Delta\tau_E}{\Delta\tau_R}=\left(\frac{1-2GM/(r_Ec^2)}{1-2GM/(r_Rc^2)}\right)^{1/2}$}
+\small$\frac{\nu_R}{\nu_E}=\frac 1{1+z}\iff z=\frac{\nu_E}{\nu_R}-1$
+
+#890:from:10,60;x=173.2;y=220.0
+Transformation of\\the metric tensor
+$g'_{ab}(x')=\frac{\partial x^c}{\partial x'^a}\frac{\partial x^d}{\partial x'^b}g_{cd}(x)$

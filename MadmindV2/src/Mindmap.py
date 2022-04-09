@@ -1,4 +1,6 @@
 from math import ceil
+
+from numpy import isin
 # Local imports
 from Bubble import Bubble
 from Edge import Edge
@@ -15,6 +17,7 @@ class Mindmap():
         self.lastId=-10
         self.newEdgeFr=None
         self.bubbleColor=None
+        self.selected={}
 
         ### Headers and settings ###
         self.readHeaders(contents)
@@ -95,12 +98,23 @@ class Mindmap():
             self.newEdgeFr=None
             bubble.shine(False)
         else :
-            newEdge=Edge(self.newEdgeFr,bubble,bubbles=self.bubbles)
+            newEdge=Edge(self.newEdgeFr,bubble,mindmap=self)
             if self.newEdgeFr.addEdge(newEdge) and bubble.addEdge(newEdge) :
                 self.tab.canvas.scene.addItem(newEdge)
-                self.tab.writeNewEdge(newEdge)
+                # self.tab.writeNewEdge(newEdge)
             self.newEdgeFr.shine(False)
             self.newEdgeFr=None
+
+    def newEdges(self,bubble):
+        for object in self.selected.values():
+            if object != bubble and isinstance(object,Bubble):
+                newEdge=Edge(object,bubble,mindmap=self)
+                if object.addEdge(newEdge) and bubble.addEdge(newEdge) :
+                    self.tab.canvas.scene.addItem(newEdge)
+                    # self.tab.writeNewEdge(newEdge)
+                    object.updateStr()
+                    bubble.updateStr()
+        self.deselectAll()
 
     def constructEdges(self,progress=None):
         Nbub=len(self.bubbles)
@@ -123,3 +137,21 @@ class Mindmap():
         for bub in self.bubbles.values() :
             scene.addItem(bub)
             bub.drawEdges(scene)
+
+    def select(self,object):
+        if object.id in self.selected :
+            del self.selected[object.id]
+            object.shine(0)
+        else :
+            self.selected[object.id]=object
+            object.shine(1)
+
+    def deselectAll(self):
+        for object in self.selected.values():
+            object.shine(0)
+        self.selected={}
+
+    def deleteSelection(self):
+        for object in self.selected.values():
+            object.delete(self.tab.canvas.scene)
+        self.selected={}

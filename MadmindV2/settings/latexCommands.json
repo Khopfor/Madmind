@@ -31,5 +31,6 @@
 "bvec":"\\newcommand\\bvec[1]{\\mathbf #1}",
 "bve":"\\newcommand\\bve{\\mathbf e}",
 "bvv":"\\newcommand\\bvv{\\mathbf v}",
-"fracdd":"\\newcommand\\fracdd[2]{\\frac{\\de {#1}}{\\de {#2}}}"
+"fracdd":"\\newcommand\\fracdd[2]{\\frac{\\de {#1}}{\\de {#2}}}",
+"alp":"\\newcommand\\alp{\\alpha\\'}"
 }

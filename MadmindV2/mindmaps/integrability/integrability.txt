@@ -1,21 +1,21 @@
 |MindMap title : Integrability
 |Height : 2000
 |Width : 2000
-|BubbleColor : #33BBEE
+|BubbleColor : #705040
 |Optimize : yes
 |Tolerance : 0.2
 
 #0: to:1,2;x=255.0;y=66.0
 \textbf{Dynamical systems}
 
-#1:;x=353.0;y=144.0
-Non-integrable systems
+#1:;x=327.1;y=106.3
+Non-integrable\\systems
 
-#2: to:3;x=135.0;y=139.0
+#2: to:3;x=148.1;y=108.1
 Integrable systems
 = exactly solvable
 
-#3: to:4,7;x=87.0;y=305.0
+#3: to:4,7;x=129.0;y=240.8
 Liouville integrability
 \scriptsize Liouville theorem :
 \scriptsize \textsc{If} $\forall i,j {F_i,F_j}=0$
@@ -26,54 +26,55 @@ Liouville integrability
 #4: to:5,6;x=276.0;y=313.0
 Lax pair
 
-#5: to:7,8;x=313.0;y=480.0
+#5: to:7,8,317;x=453.3;y=245.3
 Constant Lax pair $(L,M)$
 Hamilton equations $\Rightarrow \dot L=[L,M]$
 
-#6: to:16;x=510.0;y=360.0;size=1.0;
+#6: to:16;x=253.5;y=466.1;size=1.0;
 Lax pair with spectral parameter
 $(L(z),M(z)), z\in \mathbb{C}$
 Hamilton equations $\Rightarrow \dot L(z)=[L(z),M(z)]$
 
-#7:;x=83.0;y=465.0
-Conserved charges
+#7:;x=290.7;y=201.7
+Conserved\\charges
 $Q_n=TrL^n$
 
-#17:to:27,37,47,87;x=1714.0;y=499.6;size=1.728;
+#17:from:227;to:87;x=1435.1;y=369.2;size=1.728;
 Quantum Yang-Baxter equation (qYBE)
-\redbox{$R_{12}(z_1-z_2)R_{13}(z_1)R_{23}(z_2)=R_{23}(z_2)R_{13}(z_1)R_{12}(z_1-z_2)$}
+\scriptsize (difference form)
+\normalsize\redbox{$R_{12}(z_1-z_2)R_{13}(z_1)R_{23}(z_2)=R_{23}(z_2)R_{13}(z_1)R_{12}(z_1-z_2)$}
 
-#27:to:57,67;from:17,87;x=1439.9;y=874.3
+#27:to:57,67,197;from:87;x=1251.0;y=614.3
 Rational solutions
 Example: XXX
-$R(z)=\begin{pmatrix}z+i&0&0&0\\0&z&i&0\\0&i&z&0\\0&0&0&z+i\end{pmatrix}$
+$R(z)=z\mathbb{I}+iP=\begin{pmatrix}z+i&0&0&0\\0&z&i&0\\0&i&z&0\\0&0&0&z+i\end{pmatrix}$
 
-#37:to:57,67;from:17,87;x=1672.3;y=884.7
+#37:to:57,67,207;from:87;x=1533.6;y=705.2
 Trigonometric solutions
 Example : XXZ
 $R(z)=\begin{pmatrix}sh(z+\eta)&0&0&0\\0&sh(z)&sh(\eta)&0\\0&sh(\eta)&sh(z)&0\\0&0&0&sh(z+\eta)\end{pmatrix}$
 
-#47:to:57,67;from:17,87;x=1998.5;y=891.7
+#47:to:57,67,217;from:87;x=1799.0;y=516.9
 Elliptic solutions
 Example : XYZ
 $R(z)=\begin{pmatrix}sn(z+\eta)&0&0&ksn(z)sn(\eta)sn(z+\eta)\\0&sn(z)&sn(\eta)&0\\0&sn(\eta)&sn(z)&0\\ksn(z)sn(\eta)sn(z+\eta)&0&0&sn(z+\eta)\end{pmatrix}$
 where $sn(z)=sn(z,k)=sin(A(z,k))$ is the Jacobi sine function
 
-#57:from:27,37,47;x=1568.2;y=1054.7
+#57:from:27,37,47;x=1461.9;y=556.5
 Regularity
 $R(0)\varpropto P$
 
-#67:from:47,37,27;x=1804.2;y=1075.6
+#67:from:47,37,27;x=1565.7;y=589.7
 Braiding unitarity
 $R_\albe(z)R_{\beta\alpha}(-z)=g(z)\mathbb{I}$
 
-#87:to:97,27,37,47;from:17;x=1714.0;y=669.6
+#87:to:97,27,37,47;from:17;x=1498.2;y=510.5
 Solution $R(z)$
 
-#97:from:87;x=1398.2;y=638.4
+#97:to:197,207,217;from:87;x=1101.2;y=479.4
 Simplest Hamiltonian
 $\mathbf{H}=\sum_{i=1}^LH_{i,i+1}$
-$H_{i,i+1}\varpropto P_{i,i+1}\frac{\de R}{\de z}(0)+f\mathbb{I}$
+$H_{i,i+1}\propto P_{i,i+1}\mathcal L'(0)+f\mathbb{I}$
 
 #107:to:117,137;x=1175.8;y=1036.6
 RLL equation
@@ -91,8 +92,8 @@ $\mathcal T_\alpha(z)=\mathcal L_{\alpha,N}(z)\mathcal L_{\alpha,N-1}(z)...\math
 RTT equation
 \redbox{$R_{\alpha\beta}(z_\alpha-z_\beta)\mathcal T_{\alpha}(z_\alpha)\mathcal T_{\beta}(z_\beta)=\mathcal T_{\beta}(z_\beta)\mathcal T_{\alpha}(z_\alpha)R_{\alpha\beta}(z_\alpha-z_\beta)$}
 
-#147:to:157,167;from:127;x=1107.1;y=1384.4
-Transfer matrix
+#147:to:157,167;from:127;x=1109.8;y=1380.5
+Quantum\\Transfer matrix
 $t(z)=\mathrm{Tr}_\alpha\mathcal T_\alpha(z)$
 $\mathrm{log}(t(z))=\sum_l Q_lz^l$
 
@@ -112,3 +113,82 @@ $\Lambda_{Q_{n+1}}=\frac{\de^n}{\de z^n}\mathrm{log}(\Lambda(z))\arrowvert_{z=0}
 Algebraic Bethe ansatz (ABA)
 The ABA is a very powerful tool to find the eigenvalues
 and the eigenvectors of the transfer matrix
+
+#197:from:27,97;x=1272.4;y=764.1
+Hamiltonian for XXX
+$\bvec H\propto\sum_{i=1}^L \vec\sigma_i\cdot\vec\sigma_{i+1}$
+
+#207:from:37,97;x=1568.9;y=846.5
+Hamiltonian for XXZ
+$\bvec H\propto\sum_{i=1}^L \sigma^x_i\sigma^x_{i+1} +\sigma^y_i\sigma^y_{i+1}+\Delta \sigma^z_i\sigma^z_{i+1}$
+
+#217:from:47,97;x=1840.7;y=728.8
+Hamiltonian for XYZ
+$\bvec H\propto\sum_{i=1}^L J_x\sigma^x_i\sigma^x_{i+1} +J_y\sigma^y_i\sigma^y_{i+1}+J_z \sigma^z_i\sigma^z_{i+1}$
+
+#227:to:17;x=1146.2;y=188.4
+Quantum Yang-Baxter equation (qYBE)
+$R_{12}(z_1,z_2)R_{13}(z_1,z_3)R_{23}(z_2,z_3)=R_{23}(z_2,z_3)R_{13}(z_1,z_3)R_{12}(z_1,z_2)$
+
+#237:from:347;x=835.8;y=496.0
+Classical Yang-Baxter\\Equation (cYBE)
+$[r_{12},r_{13}+r_{23}]+[r_{13},r_{23}]=0$
+
+#247:to:257;x=630.5;y=735.0
+Spectral parameter dependent cYBE
+$[r_{12}(z_1,z_2),r_{13}(z_1,z_3)+r_{23}(z_2,z_3)]+[r_{13}(z_1,z_3),r_{23}(z_2,z_3)]=0$
+
+#257:from:247;x=953.9;y=805.8;size=1.2;
+Spectral parameter dependent cYBE
+\scriptsize (difference form)
+\normalsize\redbox{$[r_{12}(z_1-z_2),r_{13}(z_1)+r_{23}(z_2)]+[r_{13}(z_1),r_{23}(z_2)]=0$}
+
+#267:to:277;x=338.9;y=698.6
+Monodromy matrix
+$T(t;z)=\overset\leftarrow\exp\left(-\int_0^{2\pi}\mathcal L_x(x,t;z)dx\right)$
+
+#277:to:287;from:267;x=438.8;y=842.2
+Transfert matrix
+$t(z)=\mathrm{Tr}(T(z))$
+$t(z)=\sum_{i=1}Q_iz^i$
+
+#287:from:277;x=559.6;y=933.9
+Involution of the charges
+$\{t(z_1),t(z_2)\}=0$
+$\{Q_i,Q_j\}=0$
+
+#297:x=755.5;y=916.1
+rTT equation
+$\{T_1(z_1),T_2(z_2)\}=[r_{12}(z_1,z_2),T_1(z_1)T_2(z_2)]$
+
+#307:x=566.9;y=96.3
+Hamiltonian equations
+
+#317:to:337;from:5;x=618.7;y=195.3
+Solution of Lax equation
+$L(t)=G(t)L(0)G(t)^{-1}$\vspace{2pt}
+$M(t)=\dot G(t)G(t)^{-1}$
+
+#327:x=810.4;y=213.5;size=0.833;
+Jacobi identity
+$\{L_1,\{L_2,L_3\}\}+\{L_3,\{L_1,L_2\}\}+\{L_2,\{L_3,L_1\}\}=0$
+
+#337:from:317;x=584.2;y=320.7
+Diagonalizing L
+$L=U\Lambda U^{-1}$
+
+#347:to:237;x=672.3;y=429.7;size=0.694;
+Assumptions on the $r$-matrix
+1) $r_{ij}=-r_{ji}$
+2) $r$ doesn't depend on
+the dynamical variables
+
+#357:x=770.4;y=330.7
+Poisson bracket $\{L_1,L_2\}$
+$\{L_1,L_2\}=[r_{12},L_1]-[r_{12},L_2]$
+
+#367:x=512.4;y=434.3;size=1.2;
+$r$-matrix
+$r_{12}=q_{12}+\tfrac 12[k_{12},L_2]$
+\vspace{2pt}\footnotesize $k_{12}=\{U_1,U_2\}U_1^{-1}U_2^{-1}$
+$q_{12}=U_2\{U_1,\Lambda_2\}U_2^{-1}U_1^{-1}$

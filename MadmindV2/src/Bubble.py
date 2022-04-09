@@ -122,12 +122,12 @@ class Bubble(QGraphicsEllipseItem):
     def constructEdges(self,bubbles):
         for toid in self.toLinks :
             if toid in bubbles:
-                newEdge=Edge(self,bubbles[toid],bubbles=bubbles)
+                newEdge=Edge(self,bubbles[toid],mindmap=self.mindmap)
                 self.addEdge(newEdge)
                 bubbles[toid].addEdge(newEdge)
         for frid in self.fromLinks :
             if frid in bubbles:
-                newEdge=Edge(bubbles[frid],self,bubbles=bubbles)
+                newEdge=Edge(bubbles[frid],self,mindmap=self.mindmap)
                 self.addEdge(newEdge)
                 bubbles[frid].addEdge(newEdge)
         # print(self.edges)
@@ -144,7 +144,7 @@ class Bubble(QGraphicsEllipseItem):
 
     def optimizeEdges(self):
         for e in self.edges.values():
-            e.optimizePath(self.mindmap.bubbles)
+            e.optimizePath()
 
     def setEllipseSize (self,w=None,h=None):
         if self.content.innerSvg and w!=None and h!=None:
@@ -166,12 +166,14 @@ class Bubble(QGraphicsEllipseItem):
     def shrink(self):
         self.size/=1.2
         self.setScale(self.size)
-        self.tab.writeNewSize(self)
+        # self.tab.writeNewSize(self)
+        self.updateStr()
 
     def grow(self):
         self.size*=1.2
         self.setScale(self.size)
-        self.tab.writeNewSize(self)
+        # self.tab.writeNewSize(self)
+        self.updateStr()
 
     def magnify(self,bool):
         if bool:
@@ -208,10 +210,11 @@ class Bubble(QGraphicsEllipseItem):
     ### Mouse ###
     def mousePressEvent(self, event):
         # self.tab.goTo(self.id)
-        if (QApplication.keyboardModifiers() and Qt.ShiftModifier):
+        if (QApplication.keyboardModifiers() == Qt.ShiftModifier):
             # self.setBrush(Qt.red)
-            self.mindmap.newEdge(self)
-
+            self.mindmap.newEdges(self)
+        elif event.button()== Qt.MouseButton.LeftButton and (QApplication.keyboardModifiers() == Qt.ControlModifier):
+            self.mindmap.select(self)
 
     def mouseMoveEvent(self, event):
         # orig=event.lastScenePos()
@@ -224,8 +227,8 @@ class Bubble(QGraphicsEllipseItem):
         self.updateEdges()
 
     def mouseReleaseEvent(self, event):
-        self.writePos()
         self.optimizeEdges()
+        self.updateStr()
         self.moving=False
 
     def mouseDoubleClickEvent(self,event):
@@ -280,9 +283,24 @@ class Bubble(QGraphicsEllipseItem):
         #     blur=QGraphicsBlurEffect()
         #     self.setGraphicsEffect(blur)
 
+    def toString (self):
+        frList,toList=[],[]
+        for edgeId in self.edges:
+            if edgeId[0]==self.id: toList.append(edgeId[1])
+            else: frList.append(edgeId[0])
+        frStr=""
+        if frList!=[]:
+            frStr="from:"+str(frList)[1:-1].replace(' ','')+";"
+        toStr=""
+        if toList!=[]:
+            toStr="to:"+str(toList)[1:-1].replace(' ','')+";"
 
+        s=("#{}:"+frStr+toStr+"x={:.1f};y={:.1f};size={:.3f}\n").format(self.id,self.scenePos().x(),self.scenePos().y(),self.size)
+        s+=self.content.toPlainText()
+        return s
 
-
+    def updateStr(self):
+        self.tab.textEdit.updateBubble(self)
 
 
 
@@ -329,29 +347,40 @@ class Bubble(QGraphicsEllipseItem):
         lines=desc[1:]
         return lines
 
-    def writePos (self):
-        if self.tab and self.id:
-            xStr=str(round(self.scenePos().x(),1))
-            yStr=str(round(self.scenePos().y(),1))
-            lines=self.tab.textEdit.toPlainText().split('\n')
-            index=None
-            for i,l in enumerate(lines):
-                if "#"+str(self.id)+':' in l:
-                    index=i
-                    break
-            if index!=None :
-                [idPart,par]=lines[index].split(':',1)
-                par=par.split(';')
-                newX,newY=False,False
-                for i,s in enumerate(par):
-                    if "x" in s and "=" in s :
-                        par[i]="x="+xStr
-                        newX=True
-                    if "y" in s and "=" in s :
-                        par[i]="y="+yStr
-                        newY=True
-                if not newX : par.append("x="+xStr)
-                if not newY : par.append("y="+yStr)
-                lines[index]=idPart+':'+';'.join(par)
-                contents='\n'.join(lines)
-                self.tab.textEdit.setPlainText(contents)
+    # def writePos (self):
+    #     if self.tab and self.id:
+    #         xStr=str(round(self.scenePos().x(),1))
+    #         yStr=str(round(self.scenePos().y(),1))
+    #         lines=self.tab.textEdit.toPlainText().split('\n')
+    #         index=None
+    #         for i,l in enumerate(lines):
+    #             if "#"+str(self.id)+':' in l:
+    #                 index=i
+    #                 break
+    #         if index!=None :
+    #             [idPart,par]=lines[index].split(':',1)
+    #             par=par.split(';')
+    #             newX,newY=False,False
+    #             for i,s in enumerate(par):
+    #                 if "x" in s and "=" in s :
+    #                     par[i]="x="+xStr
+    #                     newX=True
+    #                 if "y" in s and "=" in s :
+    #                     par[i]="y="+yStr
+    #                     newY=True
+    #             if not newX : par.append("x="+xStr)
+    #             if not newY : par.append("y="+yStr)
+    #             lines[index]=idPart+':'+';'.join(par)
+    #             contents='\n'.join(lines)
+    #             self.tab.textEdit.setPlainText(contents)
+
+    def removeEdge(self,edge):
+        if edge.id in self.edges:
+            del self.edges[edge.id]
+            self.updateStr()
+
+    def delete (self,scene):
+        while len(self.edges)>0:
+            self.edges.popitem()[1].delete(scene)
+        self.tab.textEdit.removeBubble(self)
+        scene.removeItem(self)
