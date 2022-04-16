@@ -1,6 +1,5 @@
 from math import ceil
-
-from numpy import isin
+import multiprocessing as mp
 # Local imports
 from Bubble import Bubble
 from Edge import Edge
@@ -85,31 +84,30 @@ class Mindmap():
 
 
     # Constructs the bubbles
-    def constructBubbles (self,contents,progress=None):          
-        # if type(contents)==type(""):
-        #     lines=contents.splitlines()
-        # i=0
-        # while '#0' not in lines[i]:
-        #     i+=1
-        # contents='\n'.join(lines[i:]).split('#')
-
+    def constructBubbles (self,contents,progress=None):
         if "#0:" in contents :
             contents=contents[contents.find("#0:"):].split('#')
             Ntot=len(contents)
-            for i,desc in enumerate(contents) :
-                if desc!='' and "¤" not in desc :
+            for i,descr in enumerate(contents) :
+                if descr!='' and "¤" not in descr :
+                    # def f(desc):
+                    #     print("yay")
                     # try :
-                    id=int(desc.split(':',1)[0])
+                    id=int(descr.split(':',1)[0])
                     if id in self.bubbles :
                         print("ID Error : ID '"+str(id)+"' not unique.")
                     else :
-                        self.bubbles[id]=Bubble(desc='#'+desc,latexMaker=self.latexMaker,tab=self.tab,mindmap=self,color=self.bubbleColor)
+                        self.bubbles[id]=Bubble(desc='#'+descr,latexMaker=self.latexMaker,tab=self.tab,mindmap=self,color=self.bubbleColor)
                         self.lastId=max(self.lastId,id)
                         # print("Bubble",id,"created at",self.bubbles[id].scenePos())
                     # except :
                     #     print("Invalid entry : ",desc)
                     if progress!=None:
                         progress.setValue(ceil(i/Ntot*50))
+                        # print(progress.value())
+                    # p=mp.Process(target=f,args=(descr,))
+                    # p.start()
+                    # p.join()
 
 
     def newEdges(self,bubble):
@@ -157,6 +155,12 @@ class Mindmap():
             if object != movedBubble:
                 if isinstance(object,Bubble):
                     object.relativeMove(delta)
+
+    def releaseSelected(self,movedBubble):
+        for object in self.selected.values():
+            if object != movedBubble:
+                if isinstance(object,Bubble):
+                    object.mouseReleaseEvent(None)
 
     def deselectAll(self):
         for object in self.selected.values():

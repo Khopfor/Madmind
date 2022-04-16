@@ -225,13 +225,13 @@ class Bubble(QGraphicsEllipseItem):
 
 
     def move(self,pos):
+        self.moving=True
         self.setPos(pos)
         self.magnify(0)
         self.updateEdges()
         self.lastPos=pos
 
     def relativeMove(self,delta):
-        print(delta)
         self.move(self.scenePos()+delta)
 
 
@@ -240,9 +240,11 @@ class Bubble(QGraphicsEllipseItem):
         self.mindmap.moveSelected(self,event.scenePos()-event.lastScenePos())
 
     def mouseReleaseEvent(self, event):
-        self.optimizeEdges()
-        self.updateStr()
-        self.moving=False
+        if self.moving :
+            self.moving=False
+            self.optimizeEdges()
+            self.updateStr()
+            self.mindmap.releaseSelected(self)
 
     def mouseDoubleClickEvent(self,event):
         if event.button() == Qt.LeftButton:

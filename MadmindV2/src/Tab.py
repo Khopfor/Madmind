@@ -93,9 +93,6 @@ class Tab (QWidget):
         self.tabName=MindmapName
         self.setTabText(self.tabName)
         self.choiceWidget.setParent(None)
-        # for button in self.buttongroup.buttons():
-        #    vbox.removeWidget(button)
-        #    button.deleteLater()
         loadingWidget=QWidget(self)
         loadingVBox=QVBoxLayout()
         loadingLabel=QLabel("Loading...")
@@ -105,8 +102,6 @@ class Tab (QWidget):
         loadingWidget.setLayout(loadingVBox)
         loadingWidget.setLayout(loadingVBox)
         loadingWidget.show()
-        # vbox.addWidget(loading)
-        # vbox.update()
         f=open("mindmaps/"+MindmapName+"/"+MindmapName+".txt",'r')
         contents=f.read()
         f.close()
@@ -162,7 +157,7 @@ class Tab (QWidget):
             f.write(self.textEdit.toPlainText())
             f.close()
             self.keepText=self.textEdit.toPlainText()
-            if time()-self.lastSvgTime>2*60 or (user and time()-self.lastSvgTime>60):
+            if time()-self.lastSvgTime>2*60 or (user and time()-self.lastSvgTime>20):
                 self.lastSvgTime=time()
                 os.system("python src/SvgMaker.py "+self.tabName+" &")
 

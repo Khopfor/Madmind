@@ -1,9 +1,7 @@
 |MindMap title : Relativity
-|Height : 2000
+|Height : 3000
 |Width : 2000
 |BubbleColor : #44AA44
-|Optimize : no
-|Tolerance : None
 
 #0:to:380;x=854.0;y=78.0;size=2.074
 General\\Relativity
@@ -238,7 +236,7 @@ $\nabla_\mu(\rho u^\mu)=0 \iff \frac{\partial\rho}{\partial t} t+\vec\nabla\cdot
 \textsc{Equation of motion}
 $\rho u^\mu(\nabla_\mu u^i)=g^{ij}\partial_jp \ \overset{g=\eta}{\Longrightarrow}\ \rho\left(\tfrac\partial{\partial t}+\vec u\cdot\vec\nabla\right)\vec u=-\vec\nabla p$
 
-#570:from:490,500,540;to:590,600,620,1000;x=1220.0;y=858.0;size=2.488
+#570:from:490,500,540;to:590,600,620,1000;x=1202.5;y=841.3;size=2.488
 Einstein equation
 \redbox{$\displaystyle R_\munu-\tfrac 12g_\munu R=-\tfrac{8\pi G}{c^4}T_\munu$}
 
@@ -478,7 +476,7 @@ General solution of the linearized equations
 Gravitational Maxwell equations
 \\\redbox{\begin{tabular}{ll}$\vec\nabla\cdot\vec E_g=-4\pi G\rho$&$\vec\nabla\times\vec E_g=0$\\$\vec\nabla\cdot\vec B_g=0$&$\vec\nabla\times\vec B_g=-\frac{16\pi G}{c^2}\vec j$\end{tabular}}
 
-#1080:x=897.3;y=1567.3;size=1.000
+#1080:x=912.2;y=1543.6;size=0.694
 Compact-source approximation
 $\bar h^\munu(ct,\vec x)=-\frac{4G}{c^4r}\int T^\munu(ct-r,\vec y)d^3\vec y$
 

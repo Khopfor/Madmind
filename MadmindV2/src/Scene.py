@@ -36,6 +36,8 @@ class Scene (QGraphicsScene):
         self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,tab=tab,progress=progress)
         self.updateBgColor()
         self.updateSceneRect()
+        m=min(self.mindmap.width,self.mindmap.height)
+        self.parent().scale(2000/m,2000/m)
         self.mindmap.draw(self)
         self.dynamicBgTimer.start(200)
 
