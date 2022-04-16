@@ -32,5 +32,13 @@
 "bve":"\\newcommand\\bve{\\mathbf e}",
 "bvv":"\\newcommand\\bvv{\\mathbf v}",
 "fracdd":"\\newcommand\\fracdd[2]{\\frac{\\de {#1}}{\\de {#2}}}",
-"alp":"\\newcommand\\alp{\\alpha\\'}"
+"alp":"\\newcommand\\alp{\\alpha\\'}",
+"laxcox":"\\newcommand\\laxcox{\\mathcal L_x}",
+"laxcot":"\\newcommand\\laxcot{\\mathcal L_t}",
+"cala":"\\newcommand\\cala{\\mathcal A}",
+"calb":"\\newcommand\\calb{\\mathcal B}",
+"calc":"\\newcommand\\calc{\\mathcal C}",
+"cald":"\\newcommand\\cald{\\mathcal D}",
+"bra":"\\newcommand\\bra[1]{\\langle {#1}|}",
+"ket":"\\newcommand\\ket[1]{|{#1}\\rangle }"
 }

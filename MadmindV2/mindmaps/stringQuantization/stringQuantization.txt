@@ -5,54 +5,54 @@
 |Optimize : yes
 |Tolerance : 5
 
-#0: to:t1100,t1200;x=0;y=700;size=2;color=green
+#0:to:1100,1200;x=766.0;y=132.0;size=2.000
 Quantization of the string
 
-#1100: size=1.6;x=-300;y=550;color=green
+#1100:from:0;to:2000;x=1036.0;y=210.0;size=1.600
 Covariant quantization
 Canonical quantize then apply Virasoro
 constraints as operator constraints.
 
-#1200: size=1.6;x=300;y=550;color=green
+#1200:from:0;to:1201,1210,1220,1230;x=460.0;y=202.0;size=1.600
 Lightcone quantization
 Solve constraints in the classical
 theory then quantize
 
-#1201: from:1200;color=green
+#1201:from:1200;to:1240;x=482.0;y=632.0;size=1.000
 Level operator
 $\displaystyle N=\sum_{i=1}^{D-2}\sum_{n>0}\alpha^i_{-n}\alpha^i_n$
 $\displaystyle\bar N=\sum_{i=1}^{D-2}\sum_{n>0}\bar\alpha^i_{-n}\bar\alpha^i_n$
 
-#1210: from:1200;color=green
+#1210:from:1200;x=274.0;y=288.0;size=1.000
 Commutation relations
 $[x^i,p^j]=i\delta^{ij} \quad [x^-,p^+]=-i$
 $[\alpha^i_n,\alpha^j_m]=[\bar\alpha^i_n,\bar\alpha^j_m]=n\delta^{ij}\delta_{n+m}$
 
-#1220: from:1200;color=green
+#1220:from:1200;x=262.0;y=932.0;size=1.000
 Fock space
 Built by acting with
 $\alpha^i_{-n}$ and $\bar\alpha^i_{-n}$ with $n>0$
 The Hilbert space is positive definite
 $\rightarrow$ no ghosts
 
-#1230: from:1200;color=green
+#1230:from:1200;to:2010;x=774.0;y=364.0;size=1.000
 Vaccuum state $|0,p\rangle$
 $\hat p^\mu|0;p\rangle=p^\mu|0;p\rangle$
 $\alpha^i_n|0;p\rangle=\bar\alpha^i_n|0;p\rangle=0$
 
-#1240: from:1201;color=green
+#1240:from:1201;to:2000;x=490.0;y=810.0;size=1.000
 Level matching condition
 Mass of states in lightcone gauge
 $M^2=\frac{4}{\alpha'}(N-a)=\frac{4}{\alpha'}(\bar N-a)$
 
-#2000: from:1240,l1100;x=0;y=0;size=1.6;color=green
+#2000:from:1240,1100;to:2010,2020,2100;x=890.0;y=984.0;size=1.600
 The string spectrum
 
-#2010: from:2000,1230;color=green
+#2010:from:2000,1230;x=964.0;y=764.0;size=1.000
 Tachyon
 $M^2=-\frac{1}{\alpha'}\frac{D-2}{6}$
 
-#2020: from:2000;color=green
+#2020:from:2000;to:2022,3000;x=762.0;y=568.0;size=1.000
 First excited states
 \textit{$(D-2)^2$ massless particle states}
 $\bar\alpha_{-1}^i\alpha_{-1}^i|0;p\rangle$
@@ -61,29 +61,29 @@ $N=\bar N=1 \Rightarrow M^2=0$
 #2021: from:2020;size=0.5;color=green¤
 $M^2=\frac{4}{\alpha'}(1-\frac{D-2}{24})$
 
-#2022: from:2020;size=0.75;color=green
+#2022:from:2020;to:2030,2040,2050;x=1084.0;y=454.0;size=0.750
 representation
 \textbf{24} $\otimes$  \textbf{24} representation of $SO(24)$
 Decomposed in 3 irreducible representations
 traceless symmetric $\oplus$ anti-symmetric $\oplus$ singlet (=trace)
 
-#2030: from:2022;color=green
+#2030:from:2022;x=1132.0;y=718.0;size=1.000
 Graviton $G_\munu(X)$
 Traceless symmetric spin 2 particle
 
-#2040: from:2022;color=green
+#2040:from:2022;x=1168.0;y=320.0;size=1.000
 Kalb-Ramond field $B_\munu(X)$
 Anti-symmetric tensor field
 
-#2050: from:2022;color=green
+#2050:from:2022;x=898.0;y=372.0;size=1.000
 Dilaton $\Phi(X)$
 Scalar field (trace)
 
-#2100: from:2000;color=green
+#2100:from:2000;x=730.0;y=778.0;size=1.000
 Higher excited states
 
-#3000:from:2020;color=green
+#3000:from:2020;to:3010;x=598.0;y=654.0;size=1.000
 D=26
 
-#3010: from:3000;color=green
+#3010:from:3000;x=708.0;y=726.0;size=1.000
 Compactified dimensions

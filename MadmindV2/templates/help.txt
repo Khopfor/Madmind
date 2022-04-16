@@ -1,6 +1,8 @@
 HELP
 
 
+N	 New bubble
+
 Ctrl+S       Save
 
 Ctrl+CLICK   Select an item

@@ -5,7 +5,7 @@
 |Optimize : no
 |Tolerance : None
 
-#0:from:920; to:1,920,990;size=2;x=800.0;y=50.0
+#0:to:1,990,110,120,1010;x=661.7;y=51.9;size=2.880
 \textbf{String}
 
 #1: to:2;x=554.9;y=126.6
@@ -15,11 +15,11 @@ Worldsheet
 Closed string
 $\sigma \in [0,2\pi]$
 
-#120: from:0;color=442277;x=800.0;y=91.1
+#120:from:0;to:121;x=825.1;y=128.7;size=1.000
 Open string
 $\sigma \in [0,\pi]$
 
-#121: from:120,920;color=442277;x=980.9;y=224.8
+#121:from:120;x=820.7;y=200.4;size=1.000
 Neumann \textsc{BC}
 $X'^\mu(\tau,0)=X'^\mu(\tau,\pi)=0$
 
@@ -36,12 +36,12 @@ Equations of motion for $X^\mu$
 $\partial_\alpha (\sqrt{-h}h^\albe\partial_\beta X^\mu)=0$
 $\iff \nabla^2X^\mu=0$
 
-#202: from:201,970,203;x=381.5;y=533.1
+#202:from:201,970,203;to:203,7;x=278.3;y=526.8;size=1.000
 EOM for $X^\mu$ in unit gauge
 $\partial_\alpha\partial^\alpha X^\mu=(\partial_\tau^2-\partial_\sigma^2)X^\mu=\partial_-\partial_+X^\mu=0$
 
-#203: from:202;to:601,202;size=0.864;x=501.6;y=592.8
-lightcone\\coordinates
+#203:from:202;to:202,601,303,1170;x=416.3;y=614.8;size=0.864
+Worldsheet\\lightcone coordinates
 $\sigma^\pm=\tau\pm\sigma$
 
 #3:to:960; ;x=111.9;y=240.5
@@ -57,23 +57,23 @@ $\delta(\sqrt{-h})=\partial_\alpha(\xi^\alpha\sqrt{-h})$
 Conformal gauge
 $h_\albe(\sigma)=e^{2\Lambda(\sigma)}\eta_\albe$
 
-#302:to:960,970; from:301;x=237.6;y=447.2
+#302:from:301,4;to:960,970,6;x=237.6;y=447.2;size=1.000
 Unit gauge
 $h_\albe=\eta_\albe$
 
-#303:from:970;size=0.8;x=719.4;y=436.3
+#303:from:203,970;to:21,22;x=676.3;y=446.2;size=0.800
 Remaining gauge freedom
 Reparam of special type $\sigma^\pm=\xi^\pm(\sigma^\pm)$
 where $\xi^\pm$ are periodic in $\sigma$
 This freedom is fixed by imposing\\the light-cone gauge
 
-#4: to:302,960;x=287.3;y=331.5
+#4:from:2;to:302,960,501;x=287.3;y=331.5;size=1.000
 Weyl invariance
 $h_\albe(\sigma)\rightarrow e^{2\Lambda(\sigma)}h_\albe$
 \footnotesize\textsc{Infinitesimally : }$h'_\albe=(1+2\Lambda(\sigma))h_\albe$
 $\delta h_\albe=2\Lambda h_\albe$
 
-#5:to:6; ;x=518.6;y=340.1;size=0.833;
+#5:from:2;to:6,501,510;x=518.6;y=340.1;size=0.833
 Stress-energy tensor
 $T_\albe=-\frac{1}{T\sqrt{-h}}\frac{\delta S}{\delta h_\albe}$
 
@@ -81,125 +81,128 @@ $T_\albe=-\frac{1}{T\sqrt{-h}}\frac{\delta S}{\delta h_\albe}$
 Traceless $T_{\alpha\beta}$
 $T^\alpha_\alpha=0$
 
-#510: from:5;x=671.8;y=345.2;size=0.694;
+#510:from:5;x=671.8;y=345.2;size=0.694
 Equations of motion for $h_{\alpha\beta}$
 \scriptsize$T_\albe=0\iff \partial_\alpha X^\mu\partial_\beta X_\mu=\frac{1}{2}h_\albe h^{\gamma\delta}\partial_\gamma X^\mu\partial_\delta X_\mu$
 
-#6: from:5,970;x=588.7;y=520.2;size=1.2;
+#6:from:5,970,302;to:601,15;x=530.1;y=537.6;size=1.200
 Virasoro constraints
 \scriptsize($\eom$ for $h_\albe$ in unit gauge)
 \\\normalsize\begin{tabular}{lc}$T_{00}=T_{11}=$&$\dot{X}^2+X'^2=0$\\
 $T_{01}=T_{10}=$&$\dot{X}\cdot X'=0$\end{tabular}
 
-#601: from:6;size=0.75;x=624.8;y=644.8
-Virasoro constraints in lightcone coordinates
+#601:from:203,6;to:13,23;x=715.4;y=571.6;size=0.900
+Virasoro constraints\\in lightcone coordinates
 $(\partial_+X)^2=(\partial_-X)^2=0$
+\footnotesize$ (\partial_-X)^2=\alpha'\sum_nL_ne^{-in\sigma^-}=0$
+$\textstyle(\partial_+X)^2=\alpha'\sum_n\bar L_ne^{-in\sigma^-}=0$
 
-#7: from:202;x=391.3;y=622.5
+#7:from:202;to:8,9;x=271.7;y=629.8;size=1.000
 Solution of the EOM
 $X^\mu(\tau,\sigma)=X^\mu_L(\sigma^+)+X^\mu_R(\sigma^-)$
 
-#8: from:7,110;size=0.833;color=772244;x=446.3;y=737.6
+#8:from:7,110;to:801,802,10;x=358.9;y=762.5;size=0.833
 Solution for closed string
 $X^\mu_{\overset{L}{^R}}(\sigma^\pm)=\tfrac 12 x^\mu+\tfrac{\alpha'}2 p^\mu\sigma^{\pm}+i\sqrt\frac{\alpha'}2\sum_{n\neq 0}\frac{1}{n}{\alpha^\mu_{n,}}_{\overset{L}{^R}} e^{-in\sigma^{\pm}}$
 \redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\alpha'p^\mu\tau+i\sqrt\frac{\alpha'}{2}\sum_{n\neq 0}\frac{1}{n}\left(\alpha^\mu_n e^{-in\sigma^{-}}+\bar\alpha^\mu_n e^{-in\sigma^{+}}\right)$}
 
-#801: from:8;size=0.75;color=772244;x=360.2;y=858.2
+#801:from:8;to:802;x=346.7;y=886.0;size=0.750
 Closed string zero modes
 $\alpha_0^\mu=\bar\alpha_0^\mu=\frac{p^\mu}{\sqrt{4\pi T}}=\sqrt{\frac{\alpha'}2}p^\mu$
 
-#802: from:8,801;color=772244;x=535.8;y=886.6
+#802:from:8,801;to:14;x=503.2;y=877.0;size=0.694
 Oscillators Poisson relations
 $\{\alpha_m^\mu,\alpha_n^\nu\}=\{\bar\alpha_m^\mu,\bar\alpha_n^\nu\}=-im\delta_{m+n}\eta^\munu$
 $\{\alpha_m^\mu,\bar\alpha_n^\nu\}=0$
 $\{x^\mu,p^\nu\}=\eta^\munu$
 
-#9: from:7,121;color:442277;x=908.1;y=853.8
+#9:from:7;to:901,902,10;x=114.4;y=687.8;size=0.833
 Open string solution with Neumann \textsc{BC}
 \redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\frac{p^\mu}{\pi T}\tau+\frac{i}{\sqrt{\pi T}}\sum_{n\neq 0}\frac{1}{n}\alpha^\mu_n e^{-in\tau}\co (n\sigma)$}
 
-#901: from:9;size=0.75;color:442277;x=1078.6;y=963.5
+#901:from:9;to:902;x=51.3;y=766.1;size=0.521
 Open string zero mode
 $\alpha_0^\mu=\frac{p^\mu}{\sqrt{\pi T}}$
 
-#902: from:9,901;color=442277;x=888.5;y=1002.6
+#902:from:9,901;x=103.4;y=839.4;size=0.833
 Oscillators Poisson relations
 $\{\alpha_m^\mu,\alpha_n^\nu\}=-im\delta_{m+n}\eta^\munu$
 $\{x^\mu,p^\nu\}=\eta^\munu$
 
-#910: from:902;size=0.597;x=726.7;y=1163.4
-Poisson brakets of the light-cone modes\\
+#910:to:1090;x=947.4;y=943.2;size=0.597
+Poisson brakets of the lightcone modes\\
 \begin{tabular}{c|ccccccc}
-    $\{,\}$ & $p^+$ & $p^-$ & $p^j$ & $x^j$ & $x^-$ & $\alpha_m^j$ & $\alpha_m^-$ \\
-    \hline
+    $\{,\}$ & $p^+$ & $p^-$ & $p^j$ & $x^j$ & $x^-$ & $\alpha_m^j$ & $\alpha_m^-$ \\\hline
     $p^+$ & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-    $p^-$ & 0 & 0 & 0 & $-\frac{p^i}{p^+}$ & $-\frac{p^-}{p^+}$ & $\frac{2\pi iT}{p^+}m\alpha_m^j$ & $\frac{2\pi iT}{p^+}m\alpha_m^-$ \\
+    $p^-$ & 0 & 0 & 0 & $-\frac{p^j}{p^+}$ & $-\frac{p^-}{p^+}$ & $\frac{2\pi iT}{p^+}m\alpha_m^j$ & $\frac{2\pi iT}{p^+}m\alpha_m^-$ \\
     $p^i$ & 0 & 0 & 0 & $\delta^{ij}$ & 0 & 0 & 0 \\
     $x^i$ & 0 & $\frac{p^i}{p^+}$ & $\delta^{ij}$ & 0 & 0 & $\frac{\delta^{ij}\delta_m}{4\pi T}$ & $\frac{\alpha_m^i}{p^+}$ \\
     $x^-$ & $-1$ & $\frac{p^-}{p^+}$ & 0 & 0 & 0 & 0 & $\frac{\alpha_m^-}{p^+}$ \\
     $\alpha_n^i$ & 0 & $-\frac{2\pi iT}{p^+}n\alpha_n^i$ & 0 & $-\frac{\delta^{ij}\delta_n}{4\pi T}$ & 0 & $-in\delta^{ij}\delta_{n+m}$ & $-i\frac{\sqrt{4\pi T}}{p^+}n\alpha_{n+m}^i$ \\
-    $\alpha_n^-$ & 0 & $-\frac{2\pi iT}{p^+}n\alpha_n^-$ & 0 & $-\frac{\alpha_n^i}{p^+}$ & $-\frac{\alpha_n^-}{p^+}$ & $i\frac{\sqrt{4\pi T}}{p^+}m\alpha_{n+m}^i$ & $\{\alpha_n^-,\alpha_m^-\}$ \\
+    $\alpha_n^-$ & 0 & $-\frac{2\pi iT}{p^+}n\alpha_n^-$ & 0 & $-\frac{\alpha_n^j}{p^+}$ & $-\frac{\alpha_n^-}{p^+}$ & $i\frac{\sqrt{4\pi T}}{p^+}m\alpha_{n+m}^j$ & $\{\alpha_n^-,\alpha_m^-\}$ \\
 \end{tabular}\\
-$\{\alpha_n^-,\alpha_m^-\}=\frac{-i\sqrt{4\pi T}}{p^+}-(m-n)\alpha_{m+n}^-$
+$\{\alpha_n^-,\alpha_m^-\}=\frac{-i\sqrt{4\pi T}}{p^+}(m-n)\alpha_{m+n}^-$
 
-#10: from:8,9;size=0.8;x=618.7;y=803.7
+#10:from:8,9;x=169.8;y=772.2;size=0.800
 Reality condition
 $(\alpha^\mu_n)^*=\alpha^\mu_{-n}$
 
-#12: to:131,132;size=0.5;x=1319.8;y=575.7
+#12:to:131,132;x=1170.8;y=735.3;size=0.500
 $T_{++}=\frac{(P_\mu+TX'_\mu)^2}{8T^2}$
 $T_{--}=\frac{(P_\mu-TX'_\mu)^2}{8T^2}$
 
-#13:;x=1137.3;y=681.1
+#13:from:601,131,132;to:14,15,1000,1130;x=724.1;y=692.8;size=1.000
 Virasoro generators
 $L_n=\frac{1}{2}\sum_m\alpha_{n-m}\cdot \alpha_m$
 $\bar L_n=\frac{1}{2}\sum_m\bar\alpha_{n-m}\cdot \bar\alpha_m$
 
-#131: to:13;size=0.5;x=1227.4;y=606.1
+#131:from:12;to:13;x=1078.3;y=692.9;size=0.500
 Virasoro generators for an open string
 $L_m=2T\int^\pi_0\de\sigma(e^{im\sigma^+}T_{++})+e^{im\sigma_-}T_{--})$
 
-#132: to:13;size=0.5;x=1266.5;y=773.4
+#132:from:12;to:13;x=1053.0;y=801.1;size=0.500
 Virasoro generators for a closed string
 $L_m=2T\int^{2\pi}_0\de\sigma T_{--}(\sigma)e^{-im\sigma^-}$
 $\bar L_m=2T\int^{2\pi}_0\de\sigma T_{++}(\sigma)e^{-im\sigma^+}$
 
-#14: from:13;size=0.8;x=1339.3;y=657.2
+#14:from:13,802;x=730.5;y=929.2;size=0.800
 Witt algebra
 $\lb L_m,L_n\rb =-i(m-n)L_{m+n}$
 $\lb \bar L_m,\bar L_n\rb =-i(m-n)L_{m+n}$
 $\lb L_m,\bar L_n\rb =0$
 
-#15: from:13,6;x=773.4;y=605.0
+#15:from:6,13;to:1000;x=530.1;y=674.7;size=1.000
 Virasoro constraints in terms of $L_n$
 $\forall n \in \mathbb{Z}, L_n=\bar L_n=0$
 
-#20: from:303;x=873.2;y=516.4
+#20:to:21,22,23;x=795.6;y=371.1;size=0.694
 Spacetime\\lightcone coordinates
 $X^\pm=\frac{1}{\sqrt{2}}(X^0\pm X^{d-1})$
+\scriptsize$\eta_\munu=\begin{pmatrix}0&0&0&-1\\0&1&0&0\\0&0&1&0\\-1&0&0&0\end{pmatrix}$
 
-#21: from:20;x=1095.2;y=429.9
-Light-cone gauge fixing for closed string
-$X^+=\frac{p^+}{2\pi T}\tau \qquad P^+=\frac{p^+}{2\pi}=const$
+#21:from:303,20;x=946.0;y=430.1;size=1.000
+Light-cone gauge fixing
+\scriptsize (closed string)
+\normalsize$X^+=x^++\alpha'p^+\tau \qquad P^+=\frac{p^+}{2\pi}=const$
 
-#22: from:20;x=1087.3;y=564.8
-Light-cone gauge fixing for open string
-$X^+=\frac{p^+}{\pi T}\tau \qquad P^+=\frac{p^+}{\pi}=const$
+#22:from:20,303;x=837.7;y=487.0;size=0.579
+Light-cone gauge fixing
+\scriptsize (open string)
+\normalsize $X^+=\frac{p^+}{\pi T}\tau \qquad P^+=\frac{p^+}{\pi}=const$
 
-#23: from:20,601;x=903.7;y=713.7
-Consequence of Virasoro constraints
-$\partial_\pm X^-=\frac{2\pi T}{p^+}(\partial_\pm X^i)^2$
+#23:from:20,601;to:1070;x=931.8;y=597.3;size=0.833
+Consequence of\\Virasoro constraints
+$\partial_\pm X^-=\frac{1}{\alpha'p^+}(\partial_\pm X^i)^2$
+\footnotesize ie up to an integration constant ($x^-$) $X^-$ is
+completely determined in terms of the other fields.
+\small$\displaystyle\alpha_n^-=\frac 1{\sqrt{2\alpha'}p^+}\sum_{m=-\infty}^\infty\alpha_{n-m}^i\alpha_{i,m}$
+$\bar\alpha_n^-=\frac 1{\sqrt{2\alpha'}p^+}\sum_{m=-\infty}^\infty\bar\alpha_{n-m}^i\bar\alpha_{i,m}$
 
-#24: from:23;x=1142.7;y=849.4
-Dependence of the $\alpha^-_n$
-$\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\alpha_{n-m}^i\alpha_m^i$
-$\bar\alpha_n^-=\frac{\sqrt{\pi T}}{p^+}\sum_{m=-\infty}^\infty\bar\alpha_{n-m}^i\bar\alpha_m^i$
-
-#930:x=1217.2;y=1643.7
+#930:x=1487.7;y=1602.3;size=1.000
 Superstring action
 $S=\frac{1}{2\pi}\int \de^2\sigma\left(\partial_\alpha X^\mu\partial_\beta X^\nu h^\albe\eta_\munu+2i\bar\Phi^\mu\rho^\alpha\partial_\alpha\Phi_\mu-\bar\xi_\alpha\rho^\beta\rho^\alpha\Phi^\mu[\partial_\beta X_\mu-\tfrac i4 \bar\xi^\beta\Phi_\mu]\right)$
 
-#940:x=922.6;y=1814.8
+#940:x=1209.6;y=1694.2;size=1.000
 Reparam symmetry
 
 #950:from:2;x=264.9;y=132.2
@@ -210,14 +213,132 @@ Conformal Killing equation
 $\xi^\gamma\partial_\gamma h_\albe+h_{\alpha\gamma}\partial_\beta\xi^\gamma+h_{\beta\gamma}\partial_\alpha\xi^\gamma=2\Lambda h_\albe$
 $\partial_\alpha \xi_\beta+\partial_\beta \xi_\alpha=2\Lambda \eta_\albe$
 
-#970:to:303,202,6;from:302;x=417.8;y=425.8;size=1.2;
+#970:from:302;to:202,303,6;x=417.8;y=425.8;size=1.200
 Polyakov action in unit gauge
 \bbox{$S=-\frac T2 \int \de^2\sigma g_\munu(X)\partial_\alpha X^\mu\partial^\alpha X^\nu$}
 
-#980:x=876.7;y=387.9
+#980:x=907.1;y=344.1;size=1.000
 Static gauge
 $X^0\equiv t=R\tau$
 
 #990:to:2;from:0;x=637.0;y=150.6
 String\\tension
 $T=\frac{1}{2\pi\alpha'}$
+
+#1000:from:13,15;to:1080;x=589.9;y=779.4;size=0.833
+Level matching condition\\(Mass expressions)
+$L_0=\bar L_0=0$
+$M^2=\frac 4{\alpha'}\sum_{n>0}\alpha_n\cdot\alpha_{-n}=\frac 4{\alpha'}\sum_{n>0}\bar\alpha_n\cdot\bar\alpha_{-n}$
+
+#1010:from:0;to:1020,1030;x=1486.5;y=87.3;size=1.440
+Quantization\\of the string
+
+#1020:from:1010;x=1356.6;y=178.7;size=1.000
+Lightcone quantization
+Solve constraints in the classical
+theory then quantize
+
+#1030:from:1010;to:1040;x=1648.5;y=192.2;size=1.000
+Covariant quantization
+Canonical quantize then apply Virasoro
+constraints as operator constraints.
+
+#1040:from:1030;to:1050;x=1771.1;y=306.4;size=0.694
+Canonical equal-time\\commutation relations
+of $X^\mu$ and $\Pi_\mu=\frac 1{2\pi\alpha'}\dot X_\mu$
+$[X^\mu(\sigma,\tau),\Pi_\nu(\sigma',\tau)]=i\delta(\sigma-\sigma')\delta^\mu_\nu$
+$[X^\mu(\sigma,\tau),X^\nu(\sigma',\tau)]=0$
+$[\Pi_\mu(\sigma,\tau),\Pi_\nu(\sigma',\tau)]=0$
+
+#1050:from:1040;to:1060;x=1863.6;y=406.2;size=0.833
+Canonical commutators of the modes
+$[x^\mu,p_\nu]=i\delta^\mu_\nu$
+$[\alpha^\mu_n,\alpha^\nu_m]=[\bar\alpha^\mu_n,\bar\alpha^\nu_m]=n\eta^\munu\delta^\mu_\nu$
+
+#1060:from:1050;x=1829.3;y=535.0;size=1.000
+Creation and annihilation\\operators
+$a^\mu_n=\frac{\alpha_n^\mu}{\sqrt n}\ ,\ a_n^{\mu\dag}=\frac{\alpha^\mu_{-n}}{\sqrt n} \qquad n>0$
+$[a_n,a_m^\dag]=\eta^\munu\delta_{nm}$
+
+#1070:from:23,1080;to:1080;x=914.5;y=747.3;size=0.579
+$\alpha^-_0$ and $\bar\alpha^-_0$ equations (Expression of $p^-$)
+\small$\displaystyle p^-=\frac 1{p^+}\left(p^ip_i+\frac 1{2\alpha'}\sum_{n\neq 0}\alpha^i_n\alpha_{i,n}\right)=\frac 1{p^+}\left(p^ip_i+\frac 1{2\alpha'}\sum_{n\neq 0}\bar\alpha^i_n\bar\alpha_{i,n}\right)$
+
+#1080:from:1000,1070;to:1070;x=778.3;y=833.2;size=0.694
+Level matching condition\\in lightcone gauge
+$M^2=2p^+p^--p^ip_i=\frac 4{\alpha'}\sum_{n>0}\alpha^i_{-n}\alpha_{i,n}=\frac 4{\alpha'}\sum_{n>0}\bar\alpha^i_{-n}\bar\alpha_{i,n}$
+
+#1090:from:910;x=1272.5;y=886.1;size=0.694
+Commutators of the lightcone modes\\
+\begin{tabular}{c|ccccccc}
+    $[,]$ & $p^+$ & $p^-$ & $p^j$ & $x^j$ & $x^-$ & $\alpha_m^j$ & $\alpha_m^-$ \\\hline
+    $p^+$ & 0 & 0 & 0 & 0 & i & 0 & 0 \\
+    $p^-$ & 0 & 0 & 0 & $-i\frac{p^j}{p^+}$ & $-i\frac{p^-}{p^+}$ & $-\frac{2\pi iT}{p^+}m\alpha_m^j$ & $-\frac{2\pi iT}{p^+}m\alpha_m^-$ \\
+    $p^i$ & 0 & 0 & 0 & $-i\delta^{ij}$ & 0 & 0 & 0 \\
+    $x^i$ & 0 & $i\frac{p^i}{p^+}$ & $i\delta^{ij}$ & 0 & 0 & $i\frac{\delta^{ij}\delta_m}{4\pi T}$ & $i\frac{\alpha_m^i}{p^+}$ \\
+    $x^-$ & $-i$ & $i\frac{p^-}{p^+}$ & 0 & 0 & 0 & 0 & $i\frac{\alpha_m^-}{p^+}$ \\
+    $\alpha_n^i$ & 0 & $-\frac{2\pi iT}{p^+}n\alpha_n^i$ & 0 & $-i\frac{\delta^{ij}\delta_n}{4\pi T}$ & 0 & $n\delta^{ij}\delta_{n+m}$ & $\frac{\sqrt{4\pi T}}{p^+}n\alpha_{n+m}^i$ \\
+    $\alpha_n^-$ & 0 & $\frac{2\pi T}{p^+}n\alpha_n^-$ & 0 & $-i\frac{\alpha_n^j}{p^+}$ & $-i\frac{\alpha_n^-}{p^+}$ & $-\frac{\sqrt{4\pi T}}{p^+}m\alpha_{n+m}^j$ & $[\alpha_n^-,\alpha_m^-]$ \\
+\end{tabular}\\
+$[\alpha_n^-,\alpha_m^-]=\frac{\sqrt{4\pi T}}{p^+}(m-n)\alpha_{m+n}^-+\frac{4\pi T}{(p^+)^2}\frac{D-2}{12}m(m^2-1)\delta_{m+n}$
+
+#1100:to:1110;x=1623.1;y=536.5;size=0.833
+Level operators
+$\displaystyle N=\sum_{i=1}^{D-2}\sum_{n>0}\alpha^i_{-n}\alpha^i_n$
+$\displaystyle\bar N=\sum_{i=1}^{D-2}\sum_{n>0}\bar\alpha^i_{-n}\bar\alpha^i_n$
+
+#1110:from:1100;x=1493.4;y=629.1;size=1.000
+Level matching condition\\(Mass of states)
+$M^2=\frac{4}{\alpha'}(N-a)=\frac{4}{\alpha'}(\bar N-a)$
+
+#1120:from:1130;to:1140;x=1489.6;y=437.3;size=1.000
+Ordering ambiguity\\in $L_0$, $\bar L_0$
+$L_0=\tfrac 12\alpha_0^2-a+\sum_n\alpha_{-n}\cdot\alpha_n$
+
+#1130:from:13;to:1120,1140;x=1288.1;y=388.5;size=1.000
+Quantum\\Virasoro operators
+$L_n=\frac{1}{2}\sum_m:\alpha_{n-m}\cdot \alpha_m:$
+$\bar L_n=\frac{1}{2}\sum_m:\bar\alpha_{n-m}\cdot \bar\alpha_m:$
+
+#1140:from:1130,1120;x=1333.8;y=528.7;size=1.000
+Virasoro algebra
+$[L_m,L_n]=(m-n)L_{m+n}+\left(\frac D{12}m^3+(2a-\frac D{12})\right)\delta_{m+n}$
+
+#1150:x=194.5;y=1104.9;size=1.000
+String\\interactions
+
+#1160:to:1170;x=86.9;y=1180.9;size=1.000
+Wick rotation
+$\tau \longrightarrow -i\tau$
+
+#1170:from:1160,203;to:1180;x=212.7;y=1228.9;size=1.000
+Wick rotated\\lightcone coordinates
+$\sigma^\pm\longrightarrow-i(\tau\pm i\sigma)$
+$w=\tau+i\sigma\ ,\ \bar w=\tau-i\sigma$
+
+#1180:from:1170;to:1190;x=161.3;y=1353.5;size=1.000
+Radial quantization
+$z=e^w\ ,\ \bar z=e^{\bar w}$
+Flat metric  $ds^2=dzd\bar z$
+Time translations $\iff$ Dilatations
+
+#1190:from:1180;x=335.1;y=1477.1;size=1.000
+Stereographic projection
+$ds^2=\frac{4dzd\bar z}{(1+|z|^2)^2}$
+$z=\cot \tfrac\theta 2e^{i\phi}$
+$ds^2=d\theta^2+\sin^2\theta d\phi^2$
+
+#1200:to:1210,1220;x=101.4;y=1465.6;size=0.694
+Riemann surface
+One-dimensional complex manifold.
+Homeomorphic to a sphere with handles.
+Euler characteristic $\chi$
+Gauss-Bonnet theorem : $\chi(\mathcal M)=\tfrac 1{4\pi}\int_\mathcal{M}\sqrt hR$
+
+#1210:from:1200;x=288.9;y=1578.5;size=1.000
+Riemann\\sphere
+
+#1220:from:1200;x=112.9;y=1573.2;size=1.000
+Genus
+The number of handles $g$.
+$\chi=2-2g$

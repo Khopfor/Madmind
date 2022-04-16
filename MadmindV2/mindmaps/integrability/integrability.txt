@@ -5,190 +5,360 @@
 |Optimize : yes
 |Tolerance : 0.2
 
-#0: to:1,2;x=255.0;y=66.0
-\textbf{Dynamical systems}
+#0:to:427,437;x=756.3;y=58.8;size=1.736
+Mechanical\\systems
 
-#1:;x=327.1;y=106.3
-Non-integrable\\systems
-
-#2: to:3;x=148.1;y=108.1
+#2:from:417;to:3,377,387;x=245.7;y=202.9;size=1.000
 Integrable systems
 = exactly solvable
 
-#3: to:4,7;x=129.0;y=240.8
+#3:from:2,7;x=162.6;y=341.5;size=1.000
 Liouville integrability
-\scriptsize Liouville theorem :
-\scriptsize \textsc{If} $\forall i,j {F_i,F_j}=0$
-\scriptsize \textsc{then} $\exists (p_i,q_i)\rightarrow(F_i,\phi_i) |$
-\scriptsize $$\dot F_i={H,F_i}=0$$
-\scriptsize $\dot \phi_i={H,\phi_i}=\frac{\partial H}{\partial F_i}=\Omega_i$
+\small Liouville theorem : \textit{If} $F_i$ are $n$ indep int of 
+motion differentiable in involution $\{F_i,F_j\}=0$
+\textit{then} $\exists (p_i,q_i)\mapsto(F_i,\phi_i)$ such that
+\\\begin{tabular}{rl}$\dot F_i=\{H,F_i\}=0\Rightarrow$&$ F_i=f_i=const$\\
+$\dot \phi_i=\{H,\phi_i\}=\frac{\partial H}{\partial F_i}=\Omega_i\Rightarrow$&$ \phi_i=\phi_{i_0}+t\frac{\partial H}{\partial F_i}$\end{tabular}
 
-#4: to:5,6;x=276.0;y=313.0
-Lax pair
-
-#5: to:7,8,317;x=453.3;y=245.3
+#5:from:377;to:7,317;x=340.7;y=370.4;size=1.000
 Constant Lax pair $(L,M)$
-Hamilton equations $\Rightarrow \dot L=[L,M]$
+\scriptsize ($N\times N$ matrices)
+$\dot L=[L,M]$
 
-#6: to:16;x=253.5;y=466.1;size=1.0;
+#6:from:377;to:407,317,507;x=472.5;y=368.3;size=1.000
 Lax pair with spectral parameter
-$(L(z),M(z)), z\in \mathbb{C}$
-Hamilton equations $\Rightarrow \dot L(z)=[L(z),M(z)]$
+\scriptsize ($N\times N$ matrices)
+$(L(z),M(z)),\  z\in \mathbb{C}$
+$\dot L(z)=[L(z),M(z)]$
 
-#7:;x=290.7;y=201.7
-Conserved\\charges
-$Q_n=TrL^n$
+#7:from:5;to:3,397;x=94.8;y=476.3;size=1.000
+Conserved charges
+$F_k=TrL^k\ \Rightarrow \dot F_k=0$
 
-#17:from:227;to:87;x=1435.1;y=369.2;size=1.728;
+#17:from:227;to:87;x=1365.3;y=408.9;size=1.440
 Quantum Yang-Baxter equation (qYBE)
 \scriptsize (difference form)
 \normalsize\redbox{$R_{12}(z_1-z_2)R_{13}(z_1)R_{23}(z_2)=R_{23}(z_2)R_{13}(z_1)R_{12}(z_1-z_2)$}
 
-#27:to:57,67,197;from:87;x=1251.0;y=614.3
+#27:from:87;to:57,67,197;x=1401.8;y=644.1;size=0.833
 Rational solutions
 Example: XXX
 $R(z)=z\mathbb{I}+iP=\begin{pmatrix}z+i&0&0&0\\0&z&i&0\\0&i&z&0\\0&0&0&z+i\end{pmatrix}$
 
-#37:to:57,67,207;from:87;x=1533.6;y=705.2
+#37:from:87;to:57,67,207;x=1603.5;y=615.1;size=0.833
 Trigonometric solutions
 Example : XXZ
 $R(z)=\begin{pmatrix}sh(z+\eta)&0&0&0\\0&sh(z)&sh(\eta)&0\\0&sh(\eta)&sh(z)&0\\0&0&0&sh(z+\eta)\end{pmatrix}$
 
-#47:to:57,67,217;from:87;x=1799.0;y=516.9
+#47:from:87;to:57,67,217;x=1787.2;y=508.3;size=0.833
 Elliptic solutions
 Example : XYZ
 $R(z)=\begin{pmatrix}sn(z+\eta)&0&0&ksn(z)sn(\eta)sn(z+\eta)\\0&sn(z)&sn(\eta)&0\\0&sn(\eta)&sn(z)&0\\ksn(z)sn(\eta)sn(z+\eta)&0&0&sn(z+\eta)\end{pmatrix}$
 where $sn(z)=sn(z,k)=sin(A(z,k))$ is the Jacobi sine function
 
-#57:from:27,37,47;x=1461.9;y=556.5
+#57:from:27,37,47;x=1405.5;y=536.9;size=1.000
 Regularity
 $R(0)\varpropto P$
 
-#67:from:47,37,27;x=1565.7;y=589.7
+#67:from:27,37,47;x=1524.5;y=519.7;size=1.000
 Braiding unitarity
 $R_\albe(z)R_{\beta\alpha}(-z)=g(z)\mathbb{I}$
 
-#87:to:97,27,37,47;from:17;x=1498.2;y=510.5
+#87:from:17;to:27,37,47,97;x=1311.9;y=534.2;size=1.000
 Solution $R(z)$
 
-#97:to:197,207,217;from:87;x=1101.2;y=479.4
+#97:from:87,637;to:197,207,217;x=1536.5;y=861.9;size=1.000
 Simplest Hamiltonian
 $\mathbf{H}=\sum_{i=1}^LH_{i,i+1}$
 $H_{i,i+1}\propto P_{i,i+1}\mathcal L'(0)+f\mathbb{I}$
 
-#107:to:117,137;x=1175.8;y=1036.6
+#107:to:117,137;x=1058.0;y=552.1;size=1.000
 RLL equation
 \redbox{$R_{\alpha\beta}(z_\alpha-z_\beta)\mathcal L_{\alpha,j}(z_\alpha)\mathcal L_{\beta,j}(z_\beta)=\mathcal L_{\beta,j}(z_\beta)\mathcal L_{\alpha,j}(z_\alpha)R_{\alpha\beta}(z_\alpha-z_\beta)$}
 
-#117:to:127;from:107;x=1042.1;y=1152.4
+#117:from:107;to:127;x=1069.1;y=667.7;size=1.000
 Quantum Lax operator
 $|v_{i+1}\rangle=\mathcal L_i|v_i\rangle$
 
-#127:to:137,147;from:117;x=1185.4;y=1241.9
+#127:from:117;to:137,147;x=1191.3;y=762.0;size=1.000
 Monodromy matrix
-$\mathcal T_\alpha(z)=\mathcal L_{\alpha,N}(z)\mathcal L_{\alpha,N-1}(z)...\mathcal L_{\alpha,1}(z)$
+$\mathcal T_\alpha(z)=\mathcal L_{\alpha,N}(z)\mathcal L_{\alpha,N-1}(z)...\mathcal L_{\alpha,1}(z)=\begin{pmatrix}\mathcal A(z)&\mathcal B(z)\\\mathcal C(z)&\mathcal D(z)\end{pmatrix}$
 
-#137:from:127,107;x=1381.2;y=1345.3
+#137:from:107,127;to:627,677;x=909.9;y=802.9;size=1.000
 RTT equation
 \redbox{$R_{\alpha\beta}(z_\alpha-z_\beta)\mathcal T_{\alpha}(z_\alpha)\mathcal T_{\beta}(z_\beta)=\mathcal T_{\beta}(z_\beta)\mathcal T_{\alpha}(z_\alpha)R_{\alpha\beta}(z_\alpha-z_\beta)$}
 
-#147:to:157,167;from:127;x=1109.8;y=1380.5
+#147:from:127;to:157,167,627,697;x=970.2;y=962.6;size=1.000
 Quantum\\Transfer matrix
-$t(z)=\mathrm{Tr}_\alpha\mathcal T_\alpha(z)$
+$t(z)=\mathrm{Tr}_\alpha\mathcal T_\alpha(z)=\mathcal A(z)+\mathcal D(z)$
 $\mathrm{log}(t(z))=\sum_l Q_lz^l$
 
-#157:to:177;from:147;x=1221.5;y=1483.7
+#157:from:147;to:177,617,637;x=907.9;y=1075.6;size=1.000
 Charges
 $Q_{l+1}=\frac{\de ^l}{\de z^l}\mathrm{log}(t(z))\arrowvert_{z=0}$
 
-#167:to:177;from:147;x=1014.9;y=1494.0
+#167:from:147,697,707;to:177;x=1031.1;y=1265.9;size=1.000
 Eigenvalues of the transfer matrix
 $t(z)|\Lambda\rangle=\Lambda(z)|\Lambda\rangle$
 
-#177:from:167,157;x=1119.5;y=1568.4
+#177:from:157,167;to:647;x=977.0;y=1387.1;size=1.000
 Eigenvalues of the charges
 $\Lambda_{Q_{n+1}}=\frac{\de^n}{\de z^n}\mathrm{log}(\Lambda(z))\arrowvert_{z=0}$
 
-#187:x=1012.7;y=1690.9
+#187:to:677,717;x=1372.7;y=1003.0;size=1.000
 Algebraic Bethe ansatz (ABA)
-The ABA is a very powerful tool to find the eigenvalues
-and the eigenvectors of the transfer matrix
+\small The ABA is a method to systematically construct 
+the eigensystem of the transfer matrix and hence
+to find the spectrum of the Hamiltonian and
+all the other charges.
+\scriptsize To achieve this the existence of a pseudo-vacuum $|0\rangle$
+is fundamental.
 
-#197:from:27,97;x=1272.4;y=764.1
+#197:from:27,97;x=1488.1;y=755.9;size=0.833
 Hamiltonian for XXX
 $\bvec H\propto\sum_{i=1}^L \vec\sigma_i\cdot\vec\sigma_{i+1}$
 
-#207:from:37,97;x=1568.9;y=846.5
+#207:from:37,97;x=1661.7;y=725.0;size=0.833
 Hamiltonian for XXZ
 $\bvec H\propto\sum_{i=1}^L \sigma^x_i\sigma^x_{i+1} +\sigma^y_i\sigma^y_{i+1}+\Delta \sigma^z_i\sigma^z_{i+1}$
 
-#217:from:47,97;x=1840.7;y=728.8
+#217:from:47,97;x=1802.5;y=645.0;size=0.833
 Hamiltonian for XYZ
 $\bvec H\propto\sum_{i=1}^L J_x\sigma^x_i\sigma^x_{i+1} +J_y\sigma^y_i\sigma^y_{i+1}+J_z \sigma^z_i\sigma^z_{i+1}$
 
-#227:to:17;x=1146.2;y=188.4
+#227:from:557;to:17;x=1252.8;y=272.6;size=1.000
 Quantum Yang-Baxter equation (qYBE)
 $R_{12}(z_1,z_2)R_{13}(z_1,z_3)R_{23}(z_2,z_3)=R_{23}(z_2,z_3)R_{13}(z_1,z_3)R_{12}(z_1,z_2)$
 
-#237:from:347;x=835.8;y=496.0
+#237:from:347,327,357;x=228.4;y=767.5;size=1.000
 Classical Yang-Baxter\\Equation (cYBE)
 $[r_{12},r_{13}+r_{23}]+[r_{13},r_{23}]=0$
 
-#247:to:257;x=630.5;y=735.0
+#247:from:327,527,357;to:257;x=405.8;y=841.6;size=1.000
 Spectral parameter dependent cYBE
 $[r_{12}(z_1,z_2),r_{13}(z_1,z_3)+r_{23}(z_2,z_3)]+[r_{13}(z_1,z_3),r_{23}(z_2,z_3)]=0$
 
-#257:from:247;x=953.9;y=805.8;size=1.2;
+#257:from:247;x=432.3;y=981.1;size=1.200
 Spectral parameter dependent cYBE
 \scriptsize (difference form)
 \normalsize\redbox{$[r_{12}(z_1-z_2),r_{13}(z_1)+r_{23}(z_2)]+[r_{13}(z_1),r_{23}(z_2)]=0$}
 
-#267:to:277;x=338.9;y=698.6
+#267:from:487;to:277,567,297;x=843.8;y=425.1;size=1.000
 Monodromy matrix
 $T(t;z)=\overset\leftarrow\exp\left(-\int_0^{2\pi}\mathcal L_x(x,t;z)dx\right)$
 
-#277:to:287;from:267;x=438.8;y=842.2
+#277:from:267;to:287;x=716.0;y=583.1;size=1.000
 Transfert matrix
 $t(z)=\mathrm{Tr}(T(z))$
 $t(z)=\sum_{i=1}Q_iz^i$
 
-#287:from:277;x=559.6;y=933.9
+#287:from:277,297;x=662.3;y=768.6;size=1.000
 Involution of the charges
 $\{t(z_1),t(z_2)\}=0$
 $\{Q_i,Q_j\}=0$
 
-#297:x=755.5;y=916.1
+#297:from:267,587;to:287;x=821.4;y=691.3;size=1.000
 rTT equation
 $\{T_1(z_1),T_2(z_2)\}=[r_{12}(z_1,z_2),T_1(z_1)T_2(z_2)]$
 
-#307:x=566.9;y=96.3
+#307:from:417;to:377;x=493.0;y=208.0;size=0.694
 Hamiltonian equations
+$\dot q^k=\frac{\partial H}{\partial p_k}\ ,\quad \dot p_k=-\frac{\partial H}{\partial q^k}$
 
-#317:to:337;from:5;x=618.7;y=195.3
+#317:from:5,6;to:337;x=360.9;y=466.9;size=0.694
 Solution of Lax equation
 $L(t)=G(t)L(0)G(t)^{-1}$\vspace{2pt}
 $M(t)=\dot G(t)G(t)^{-1}$
+\footnotesize Time evolution of $L(z)$ is iso-spectral
+ie the set of eigenvalues $\lambda_k(z)$
+is an integral of motion for all z
 
-#327:x=810.4;y=213.5;size=0.833;
+#327:to:237,247;x=93.6;y=832.1;size=0.833
 Jacobi identity
-$\{L_1,\{L_2,L_3\}\}+\{L_3,\{L_1,L_2\}\}+\{L_2,\{L_3,L_1\}\}=0$
+$\{L_1,\{L_2,L_3\}\}+cyclic=0$
 
-#337:from:317;x=584.2;y=320.7
+#337:from:317;to:367;x=221.4;y=496.9;size=1.000
 Diagonalizing L
 $L=U\Lambda U^{-1}$
 
-#347:to:237;x=672.3;y=429.7;size=0.694;
+#347:from:367;to:237;x=384.7;y=676.7;size=0.694
 Assumptions on the $r$-matrix
 1) $r_{ij}=-r_{ji}$
 2) $r$ doesn't depend on
 the dynamical variables
 
-#357:x=770.4;y=330.7
+#357:from:397,367,407;to:397,237,247;x=208.4;y=664.8;size=0.694
 Poisson bracket $\{L_1,L_2\}$
-$\{L_1,L_2\}=[r_{12},L_1]-[r_{12},L_2]$
+$\{L_1,L_2\}=[r_{12},L_1]-[r_{21},L_2]$
+$\{L_1(z_1),L_2(z_2)\}=[r_{12}(z_1,z_2),L_1(z_1)]-[r_{21}(z_2,z_1),L_2(z_2)]$
 
-#367:x=512.4;y=434.3;size=1.2;
+#367:from:337;to:347,357;x=320.5;y=568.4;size=1.200
 $r$-matrix
 $r_{12}=q_{12}+\tfrac 12[k_{12},L_2]$
 \vspace{2pt}\footnotesize $k_{12}=\{U_1,U_2\}U_1^{-1}U_2^{-1}$
 $q_{12}=U_2\{U_1,\Lambda_2\}U_2^{-1}U_1^{-1}$
+
+#377:from:2,307;to:5,6;x=372.4;y=271.3;size=1.000
+Lax equation
+\scriptsize (Reformulation of Hamiltonian eqns)
+$\dot L=[L,M]$
+
+#387:from:2;x=87.3;y=203.7;size=0.401
+Example : The harmonic oscillator
+\small$H=\frac 1{2m}p^2+\frac{\omega^2}{2m}q^2$
+A constant Lax pair is : $L=\begin{pmatrix}p&\omega q\\\omega q&-p\end{pmatrix}\ ,\ M=\begin{pmatrix}0&-\omega/2\\\omega/2 &0\end{pmatrix}$
+Lax eqn $\Rightarrow$ $\eom$ : $\dot p=-\omega^2q\ ,\ \dot q=p$
+$F_1=0\ ,\quad F_2=2p^2+2\omega^2q^2=4mH$
+$F_3=0\ ,\quad F_4=2(p^2+\omega^2q^2)^2=8m^2H^2$
+A spectral Lax pair is : $L(z)=\begin{pmatrix}p+z\omega q&\omega q-zp\\\omega q-zp&-p-z\omega q\end{pmatrix}\ ,\ M=\begin{pmatrix}0&-\omega/2\\\omega/2 &0\end{pmatrix}$
+Lax eqn $\Rightarrow$ $\eom$ : $\dot p=-\omega^2q\ ,\ \dot q=p$
+$F_1(z)=0\ ,\quad F_2(z)=4(1+z^2)mH=(1+z^2)F_2(0)$
+$F_3(z)=0\ ,\quad F_4(z)=8(1+z^2)^2m^2H^2=(1+z^2)^2F_4(0)$
+
+#397:from:7,357;to:357;x=86.5;y=578.7;size=1.000
+Charges\\in involution
+$\{F_k,F_l\}=0$
+
+#407:from:6;to:357,527,587;x=454.2;y=596.0;size=1.000
+$r$-matrix with\\spectral parameter
+$r_{12}(z_1,z_2)$
+
+#417:from:427;to:307,457,2;x=393.8;y=127.5;size=1.000
+Classical system\\with finite number of dof
+Phase space of dimension $2n$
+
+#427:from:0;to:417,447;x=594.9;y=114.7;size=1.440
+Classical\\systems
+
+#437:from:0;to:657;x=921.0;y=108.7;size=1.440
+Quantum\\systems
+
+#447:from:427;to:467;x=710.4;y=166.6;size=1.000
+Classical fields\\(infinite number of dof)
+\scriptsize in (1+1) dimensions
+
+#457:from:417;x=202.9;y=101.0;size=1.000
+Non-integrable\\systems
+\footnotesize Mostly chaotic systems
+
+#467:from:447;to:477;x=661.7;y=266.8;size=0.694
+Infinite-dimensional integrability
+For such systems integrability requires
+infinitely many integrals of motion
+in involution. But comparing infinities
+is subtle hence there is no clear notion
+of integrability for field theories.
+
+#477:from:467;x=849.9;y=277.0;size=0.833
+Well-known integrable\\field theory models
+\textsc{Korteweg-de-Vries (KdV) equation}
+\textsc{Non-linear Schrödinger equation}
+\textsc{Sine-Gordon equation}
+\textsc{Non-linear sigma models}
+
+#487:to:497,267;x=704.8;y=367.8;size=1.000
+Lax connection
+$\laxcox(t,x;z)\, \ \laxcot(t,x;z)$
+
+#497:from:487;x=609.3;y=446.5;size=1.000
+Zero curvature condition
+\scriptsize (satisfied iff the $\eom$ hold)
+\normalsize$\displaystyle \partial_t\laxcox-\partial_x\laxcot+[\laxcot,\laxcox]=0$
+
+#507:from:6,567;to:517;x=560.6;y=534.4;size=1.000
+Lax pair for fields
+$L(z)=T(t;z)\ ,\             M(z)=\laxcot(0,t;z)$
+
+#517:from:507;x=576.4;y=616.8;size=1.000
+Conserved charges
+$F_k(z)=\mathrm{Tr}T(z)^k$
+
+#527:from:407;to:247;x=497.0;y=726.3;size=1.000
+Assumptions on the $r(z)$-matrix
+1) $r_{ij}(z_i,z_j)=-r_{ji}(z_j,z_i)$
+2) $r$ doesn't depend on
+the dynamical variables
+
+#537:from:657;x=1109.1;y=95.9;size=1.000
+Heisenberg spin chain
+
+#547:x=968.5;y=358.9;size=1.000
+Bäcklund transformations
+generate solutions
+
+#557:from:657;to:227;x=1098.4;y=209.0;size=1.000
+R-matrix
+
+#567:from:267,577;to:507;x=702.3;y=501.5;size=0.694
+Temporal evolution of $T$
+$\partial_tT(t;z)=[T(t;z),\laxcot(0,t;z)]$
+
+#577:to:567;x=923.0;y=486.1;size=0.579
+Periodic boundary\\conditions
+
+#587:from:407;to:297;x=621.4;y=675.0;size=0.402
+$r$-matrix such that
+$\{\mathcal L_{x,1}(x_1,z_1),\mathcal L_{x,2}(x_2,z_2)\}=[r_{12}(z_1,z_2),\mathcal L_{x,1}(x_1,z_1)+\mathcal L_{x,2}(x_2,z_2)]\delta(x_1-x_2)$
+
+
+
+#607:x=1660.8;y=88.1;size=1.000
+Coordinate Bethe ansatz (CBA)
+\bbox{$f(m_1,...,m_2)=\sum_{\sigma\in S_M}\exp\left[i\sum_{j=1}^Mk_{\sigma(j)}m_j+\tfrac i2\sum_{i<j}\theta_{\sigma(i)\sigma(j)}\right]$}
+For $M=2$ : $f(m_1,m_2)=Ae^{i(k_1m_1+k_2m_2)}+Be^{i(k_2m_1+k_1m_2)}$
+
+#617:from:157,627;x=785.3;y=1020.8;size=1.000
+Quantum charges\\in involution
+$[Q_k,Q_l]=0$
+
+#627:from:137,147;to:617;x=809.3;y=914.0;size=1.000
+Involution of the transfert matrix
+$[t(z_1),t(z_2)]=0$
+
+#637:from:157;to:97;x=1304.4;y=866.3;size=1.000
+Hamiltonian
+$\mathbf H=Q_2=\frac d{dz}\log t(z)|_{z=0}=t^{-1}(0)t'(0)$
+
+#647:from:177;x=1137.9;y=1415.9;size=1.000
+Eigenvalues of the Hamiltonian
+
+#657:from:437;to:537,557;x=985.9;y=178.3;size=1.000
+Integrable\\quantum systems
+
+#667:from:687;to:697;x=1398.1;y=1176.2;size=1.000
+Bethe states
+$|\Lambda(z_1,...,z_m)\rangle=\calb(z_1)\calb(z_2)...\calb(z_m)|0\rangle$
+\vspace{2pt}\scriptsize For general $\{z_i\}$ the state is not  an eigenvector
+of $t(z)$. Let's see for which values it is.
+
+#677:from:137,187;to:687,697;x=1155.7;y=1037.9;size=1.000
+Commutation relations
+$[\calb(z),\calb(z_1)]=0$
+$\cala(z)\calb(z_1)=...$
+$\cald(z)\calb(z_1)=...$
+
+#687:from:677;to:667;x=1275.5;y=1100.9;size=1.000
+$\calb(z)$ as a creation operator
+
+#697:from:667,147,677;to:167,707;x=1170.8;y=1179.0;size=0.694
+Acting with $t(z)$ on the Bethe states
+\small $t(z)|\Lambda(z_1,...,z_m)\rangle=(\cala(z)+\cald(z))\calb(z_1)\calb(z_2)...\calb(z_m)|0\rangle$
+We use the comm relations to find
+\small $t(z)|\Lambda(z_1,...,z_m)\rangle=\Lambda(z_1,...,z_m)\calb(z_1)\calb(z_2)...\calb(z_m)|0\rangle+\sum_{i=1}^m\left(\mathcal U_i^{(\cala)}(z,\{z_i\})+\mathcal U_i^{(\cald)}(z,\{z_i\})\right)\calb(z)\calb(z_1)\calb(z_2)...\calb(z_m)|0\rangle$
+
+#707:from:697;to:167;x=1216.0;y=1282.4;size=1.000
+Bethe equations
+$\mathcal U^{(\cala)}_i=-\mathcal U^{(\cald)}_i$
+
+#717:from:187;x=1639.8;y=1095.5;size=0.694
+Example : XXZ
+\small\textsc{Commutation relations}
+$\cala(z)\calb(z_1)=\frac{\sinh(\eta)}{\sinh(z-z_1)}\calb(z)\cala(z_1)+\frac{\sinh(z-z_1-\eta)}{\sinh(z-z_1)}\calb(z_1)\cala(z)$
+$\cald(z)\calb(z_1)=-\frac{\sinh(\eta)}{\sinh(z-z_1)}\calb(z)\cald(z_1)+\frac{\sinh(z-z_1+\eta)}{\sinh(z-z_1)}\calb(z_1)\cald(z)$
+\vspace{3pt}\textsc{Unwanted terms}
+$\mathcal U^{(\cala)}_i=\sinh^L(z_i+\eta)\frac{\sinh \eta}{\sinh(z-z_i)}\prod_{k\neq i}^m\frac{\sinh(z_i-z_k-\eta)}{\sinh(z_i-z_k)}$
+$\mathcal U^{(\cald)}_i=-\sinh^L(z_i)\frac{\sinh \eta}{\sinh(z-z_i)}\prod_{k\neq i}^m\frac{\sinh(z_i-z_k+\eta)}{\sinh(z_i-z_k)}$
+\vspace{3pt}\textsc{Bethe equations}
+$\left(\frac{\sinh (z_i+\eta)}{\sinh z_i}\right)^L=\prod_{k\neq i}^m\frac{\sinh(z_i-z_k+\eta)}{\sinh(z_i-z_k-\eta)}$
+\vspace{3pt}\textsc{Eigenvalue of the transfert matrix}
+$\Lambda(z,\{z_i\})=\sinh^L(z+\eta)\prod_{i=1}^m\frac{\sinh(z-z_i-\eta)}{\sinh(z-z_i)}+\sinh^L(z)\prod_{k= i}^m\frac{\sinh(z-z_i+\eta)}{\sinh(z-z_i)}$

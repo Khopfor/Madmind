@@ -1,6 +1,7 @@
 |MindMap title : <title>
 |Height : 2000
 |Width : 2000
+|BgColor : #faf2e8
 |BubbleColor : #778899
 
 #0:

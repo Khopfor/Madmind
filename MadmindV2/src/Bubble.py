@@ -1,7 +1,7 @@
 # PyQt imports
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF,QRectF
-from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen,QIntValidator,QPalette
+from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen,QIntValidator,QPalette,QFont
 from PyQt5.QtSvg import *
 # Local imports
 from utils import *
@@ -23,12 +23,17 @@ class Bubble(QGraphicsEllipseItem):
         self.moving=False
         self.lensed=False
         self.idLabel=None
+        self.lastPos=self.scenePos()
         self.setZValue(4)
         self.setAcceptHoverEvents(True)
         self.setFlag(QGraphicsItem.ItemIsSelectable)
 
         # Content
-        self.content=BubbleContent(self,latexMaker=latexMaker)
+        self.innerSvg=None
+        if self.tab :
+            self.content=BubbleContent(self,latexMaker=latexMaker)
+        else :
+            self.latexMaker=latexMaker
 
         # Edges
         self.toLinks=[]
@@ -72,20 +77,24 @@ class Bubble(QGraphicsEllipseItem):
 
     def descInit (self,desc):
         lines=self.constructFromDesc(desc)
-        self.content.setContent(lines)
-        self.setEllipseSize()
-        self.initIdLabel()
+        if self.tab:
+            self.content.setContent(lines)
+            self.setEllipseSize()
+            self.initIdLabel()
+        else :
+            self.content=lines
     
 
     def initIdLabel(self):
         self.idLabel=QGraphicsTextItem(str(self.id),self)
+        self.idLabel.setFont(QFont("monospace",6,5,1))
         self.setIdLabelPos()
         self.idLabel.hide()
 
 
     def setIdLabelPos(self):
         if self.idLabel:
-            self.idLabel.setPos(-self.idLabel.boundingRect().width()/2*self.idLabel.scale(),-self.idLabel.boundingRect().height()*self.idLabel.scale()-self.b)
+            self.idLabel.setPos(-self.idLabel.boundingRect().width()/2,-self.idLabel.boundingRect().height()*4/5-self.b)
 
 
     # def setId(self):
@@ -108,6 +117,8 @@ class Bubble(QGraphicsEllipseItem):
             pen.setColor(QColor(self.color))
         self.setPen(pen)
         self.setBrush(QColor(250,250,250))
+        if self.idLabel:
+            self.idLabel.setDefaultTextColor(self.pen().color())
 
     # def addEdge (self,alter):
     #     if alter.id not in self.edges:
@@ -148,8 +159,8 @@ class Bubble(QGraphicsEllipseItem):
 
     def setEllipseSize (self,w=None,h=None):
         if self.content.innerSvg and w!=None and h!=None:
-            self.a=max(np.sqrt(w*(h+w)),5)
-            self.b=max(np.sqrt(h*(h+w)),5)
+            self.a=max(np.sqrt(w*(h+w)),20/self.size)
+            self.b=max(np.sqrt(h*(h+w)),20/self.size)
         # self.b=max(self.b,self.a/2.5)
         self.setRect(-self.a,-self.b,2*self.a,2*self.b)
         self.setIdLabelPos()
@@ -157,22 +168,18 @@ class Bubble(QGraphicsEllipseItem):
         # self.b*=self.size
 
 
-
-    def move(self,dx,dy):
-        x0=self.scenePos().x()
-        y0=self.scenePos().y()
-        self.setPos(QPoint(x0+dx,y0+dy))
-
     def shrink(self):
         self.size/=1.2
         self.setScale(self.size)
         # self.tab.writeNewSize(self)
+        self.updateEdges()
         self.updateStr()
 
     def grow(self):
         self.size*=1.2
         self.setScale(self.size)
         # self.tab.writeNewSize(self)
+        self.updateEdges()
         self.updateStr()
 
     def magnify(self,bool):
@@ -216,15 +223,21 @@ class Bubble(QGraphicsEllipseItem):
         elif event.button()== Qt.MouseButton.LeftButton and (QApplication.keyboardModifiers() == Qt.ControlModifier):
             self.mindmap.select(self)
 
-    def mouseMoveEvent(self, event):
-        # orig=event.lastScenePos()
-        # updated=event.scenePos()
-        # dx=updated.x()-orig.x()
-        # dy=updated.y()-orig.y()
-        # self.move(dx,dy)
-        self.setPos(event.scenePos())
+
+    def move(self,pos):
+        self.setPos(pos)
         self.magnify(0)
         self.updateEdges()
+        self.lastPos=pos
+
+    def relativeMove(self,delta):
+        print(delta)
+        self.move(self.scenePos()+delta)
+
+
+    def mouseMoveEvent(self, event):
+        self.move(event.scenePos())
+        self.mindmap.moveSelected(self,event.scenePos()-event.lastScenePos())
 
     def mouseReleaseEvent(self, event):
         self.optimizeEdges()
@@ -302,7 +315,10 @@ class Bubble(QGraphicsEllipseItem):
     def updateStr(self):
         self.tab.textEdit.updateBubble(self)
 
-
+    def getInnerSvg(self):
+        if not self.innerSvg:
+            self.innerSvg=self.latexMaker.makeLatexSvg(self.content)
+        return self.innerSvg
 
 
 

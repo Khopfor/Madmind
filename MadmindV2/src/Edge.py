@@ -9,7 +9,7 @@ from utils import *
 
 
 class Edge (QGraphicsPathItem):
-    def __init__(self,fr,to,text='',style=None,mindmap=None):
+    def __init__(self,fr,to,text='',style=None,mindmap=None,color=None):
         super().__init__()
         self.fr=fr
         self.to=to
@@ -19,6 +19,8 @@ class Edge (QGraphicsPathItem):
         self.setZValue(0)
         self.width=1.3
         self.color=QColor(5,5,5)
+        if color:
+            self.color=QColor(*color)
         pen=self.pen()
         pen.setWidthF(self.width)
         pen.setColor(self.color)
@@ -84,6 +86,12 @@ class Edge (QGraphicsPathItem):
         else:
             self.setGraphicsEffect(None)
 
+    def changeColor(self,color):
+        pen=self.pen()
+        pen.setColor(QColor(*color))
+        self.setPen(pen)
+
+
     def updateWidth(self):
         pen=self.pen()
         pen.setWidthF(self.width)
@@ -115,7 +123,7 @@ class Edge (QGraphicsPathItem):
             X0=np.array(self.params)
             def f(X):
                 return self.energy(X)
-            bounds=[(None,None),(1.1,50),(1.1,50),(None,None)]
+            bounds=[(None,None),(1.1,40),(1.1,40),(None,None)]
             res=minimize(f,X0,bounds=bounds)
             self.params,success,msg=res.x,res.success,res.message
             # print("Success :",success,"|",msg,res.x,self.params)

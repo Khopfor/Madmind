@@ -1,5 +1,6 @@
 import os
-from time import sleep
+import subprocess
+from time import sleep, time
 # PyQt imports
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint, QRect,QSize,QTimer
@@ -16,12 +17,14 @@ class Tab (QWidget):
         self.tabId=tabId
         self.tabWidget=tabWidget
         self.tabText=self.getTabText()
+        self.lastSvgTime=0
         self.timer=QTimer(self)
         self.timer.timeout.connect(self.save)
         # Canvas
         self.canvas=Canvas(self)
         # Text Edit Area
         self.textEdit=TextEdit(self)
+        self.keepText=""
         # Help
         self.help=Help(self)
         # VBox
@@ -142,17 +145,27 @@ class Tab (QWidget):
 
     def keyPressEvent(self, e):
         if (e.key()==Qt.Key_S) and (QApplication.keyboardModifiers()==Qt.ControlModifier):
-            self.save()
+            self.save(True)
         elif (e.key()==Qt.Key_H):
             self.toggleHelp()
         elif (e.key()==Qt.Key_W) and (QApplication.keyboardModifiers()== Qt.ControlModifier):
             self.tabWidget.removeTab(self.tabId)
         return super().keyPressEvent(e)
 
-    def save (self):
-        f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')
-        f.write(self.textEdit.toPlainText())
-        f.close()
+    def save (self,user=False):
+        if self.keepText!=self.textEdit.toPlainText():
+            if user :
+                self.canvas.scene.mindmap.readHeaders(self.textEdit.toPlainText())
+                self.canvas.scene.updateBgColor()
+                self.canvas.scene.updateSceneRect()
+            f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')
+            f.write(self.textEdit.toPlainText())
+            f.close()
+            self.keepText=self.textEdit.toPlainText()
+            if time()-self.lastSvgTime>2*60 or (user and time()-self.lastSvgTime>60):
+                self.lastSvgTime=time()
+                os.system("python src/SvgMaker.py "+self.tabName+" &")
+
 
 
 

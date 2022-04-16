@@ -80,3 +80,5 @@ def cleanStr (s,toRemove=[]):
 # print(Bezier(0.5,P0,P1,P2,P3))
 # print(Bezier(1,P0,P1,P2,P3))
 # print(lengthBezier(P0,P1,P2,P3))
+
+print(rgb_to_hex((250,242,232)))
