@@ -1,0 +1,52 @@
+|MindMap title : Research Project
+|Height : 2000
+|Width : 2000
+|BgColor : #faf2e8
+|BubbleColor : #4466AA
+
+#0:to:50;x=1385.1;y=441.2;size=1.000
+Large D limit
+$D=n+3$
+
+#10:to:80;x=325.4;y=212.3;size=1.000
+Schwarzschild-Tangherlini metric\\(D dimensional Schwarzschild BH)
+\redbox{$\displaystyle ds^2=-\left(1-\frac{r_0^{D-3}}{r^{D-3}}\right)dt^2+\left(1-\frac{r_0^{D-3}}{r^{D-3}}\right)^{-1}dr^2+r^2d\Omega^2_{D-2}$}
+
+#20:to:40;x=1021.8;y=634.8;size=1.000
+Einstein-Hilbert action
+
+#30:to:40;x=1198.8;y=564.3;size=1.000
+2D Reduction
+
+#40:from:20,30;to:50;x=1197.0;y=642.8;size=1.000
+2D dilaton gravity action
+
+#50:from:40,0;x=1370.0;y=680.0;size=1.000
+2D string action
+
+#60:from:70;x=889.0;y=295.8;size=1.000
+Hawking temperature
+$T_H=\frac\kappa{2\pi}=\frac{n}{4\pi r_0}=\frac \lambda{2\pi}$
+
+#70:to:60;x=1097.2;y=236.5;size=1.000
+Surface gravity for Schwarzschild BH
+$\kappa=\frac 1{2r_0}$
+
+#80:from:10,90;x=177.0;y=344.0;size=1.000
+Mass of S-T BH
+$M=\frac{(D-2)\Omega_{D-2}}{16\pi G}r_0$
+
+#90:to:80;x=83.8;y=279.5;size=0.694
+Area of unit $(D-2)$-sphere
+$\Omega_{D-2}=\frac{2\pi^{\tfrac{D-1}2}}{\Gamma(\tfrac{D-1}2)}$
+
+#100:x=564.8;y=460.1;size=1.000
+Myers-Perry metrics\\(D dimensional spinning BH)
+$\displaystyle ds^2=-dt^2+\frac{r_0 r}{\Pi F}\left(dt+\sum_{i=1}^n a_i\mu_i^2d\phi_i\right)^2+\frac{\Pi F}{\Pi-\mu r}dr^2+\sum_{i=1}^n(r^2+a_i^2)(d\mu_i^2+\mu_i^2d\phi_i^2)$
+$+r^2d\alpha^2\delta_{D\mathrm{mod}2}$\vspace{3pt}
+$F=1-\sum_{i=1}^n\frac{a_i^2\mu_i^2}{r^2+a_i^2}\ ,\quad\Pi=\prod_{i=1}^n(r^2+a_i^2)$
+
+#110:x=452.5;y=734.4;size=1.000
+Myers-Perry metrics with a single rotation
+$\displaystyle ds^2=-dt^2+\frac{r_0 r}{r^{2(n-1)}(r^2+a^2) F}\left(dt+a\mu^2d\phi\right)^2+\frac{\Pi (1-\frac{a^2\mu^2}{r^2+a^2})}{\Pi-\mu r}dr^2+\sum_{i=1}^n(r^2+a_i^2)(d\mu_i^2+\mu_i^2d\phi_i^2)$
+$+r^2d\alpha^2\delta_{D\mathrm{mod}2}$

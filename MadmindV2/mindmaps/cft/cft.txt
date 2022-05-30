@@ -1,0 +1,53 @@
+|MindMap title : Conformal Field Theory
+|Height : 2000
+|Width : 2000
+|BgColor : #faf2e8
+|BubbleColor : #778899
+
+#0:to:10;x=344.9;y=260.3;size=1.000
+Conformal\\field theory
+
+#10:from:0;x=460.5;y=353.3;size=1.000
+Conformal invariance
+
+#20:x=281.3;y=393.1;size=1.000
+Conformal transformations
+\small Lorentz rot, translations,
+scale, conf inv, conf boosts
+
+#30:to:70,60,40;x=525.9;y=463.9;size=1.000
+Local operators
+$\mathcal O$
+
+#40:from:30;to:60;x=276.7;y=508.3;size=1.000
+Conformal weights $h,\bar h$
+$\mathcal O'(z,\bar z)=s^h\bar s^{\bar h}\mathcal O(sz,\bar s\bar z)$
+Scaling dimension $\Delta=h+\bar h$
+Conformal spin $\Delta=h-\bar h$
+
+#50:from:60;to:90;x=352.1;y=785.3;size=1.000
+Quasi-primary operators
+\footnotesize Transforms as follows for a $SL(2,\mathbb C)$ Möbius tranformation
+\normalsize $\mathcal O'(z,\bar z)=\left(\dfrac{dz'}{dz}\right)^h\left(\dfrac{d\bar z'}{d\bar z}\right)^{\bar h}\mathcal O(z',\bar z')$
+
+#60:from:30,40;to:50,80;x=378.1;y=623.0;size=1.000
+Primary operators
+\footnotesize Transforms as follows for all tranformations
+\normalsize $\mathcal O'(z,\bar z)=\left(\dfrac{dz'}{dz}\right)^h\left(\dfrac{d\bar z'}{d\bar z}\right)^{\bar h}\mathcal O(z',\bar z')$
+
+#70:from:30;to:80,100;x=680.3;y=575.5;size=1.000
+Operator product expansion
+$\langle \mathcal O_1(\xi_1)\mathcal O_2(\xi_2)\dots\rangle=\sum_iC^i_{12}(\xi_2-\xi_1)\langle\mathcal O_i(\xi_1)\dots\rangle$
+
+#80:from:60,70;x=550.5;y=713.1;size=1.000
+Primary $\mathcal O$ OPE
+$T(z)\mathcal O(w,\bar w)=\frac{h\mathcal O(w,\bar w)}{(z-w)^2}+\frac{\partial \mathcal O(w,\bar w)}{z-w}+\dots$
+
+#90:from:50;to:100;x=568.0;y=855.9;size=1.000
+Stress-energy tensor $T$
+$T=-\frac 1{\alpha'}(\partial X)^2 \quad \bar T=-\frac 1{\alpha'}(\bar \partial \bar X)^2$
+
+#100:from:70,90;x=802.3;y=785.0;size=1.000
+$TT$ OPE
+$T(z)T(w)=\frac{c/2}{(z-w)^4}+\frac{2T(w)}{(z-w)^2}+\frac{\partial T(w)}{z-w}+\dots$
+

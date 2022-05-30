@@ -1,127 +1,127 @@
 |MindMap title : Supersymmetry
 |Height : 2000
-|Width : 2000
+|Width : 2500
 |Bg color : #f3eee9
-|Optimize : yes
-|Tolerance : 5
 
-#0:to:10,230;x=200;y=150;size=2.986;
+#0:to:10,230;x=1267.0;y=69.1;size=3.583
 Supersymmetry
 
-#10:to:230;from:0;x=1367.302325947081;y=265.0683401349506
+#10:from:0;to:230;x=1552.7;y=130.5;size=1.200
 Fermionic generators
 $Q_\alpha^I,\bar Q_{\dot\alpha}^I$
 with $I=1,...,\mathcal{N}$
 transforming in (1/2,0) and (0,1/2)
 
-#20:from:30,210;to:30,50,240;x=387.879926297862;y=272.23234932778706
+#20:from:30,210,240;to:30,50,240,310;x=422.1;y=267.7;size=1.440
 Poincaré group
 $SO(1,3)\times R^{1,3}$
 10 generators packed in $M_\munu$ and $P_\mu$
 3 boosts $\displaystyle K_i=M_{0i}$
 3 spatial rotations $\displaystyle J_i=\epsilon^{ijk}M_{jk}/2$
 4 translations $\displaystyle P_\mu$
+$g(\omega,x)=\exp(-ix^\mu P_\mu)\exp(-\tfrac i2\omega^\munu M_\munu)$
 
-#30:from:40,20;to:40,20,120;x=429.84055157019014;y=760.4084043253602;size=1.2;
+#30:from:20,40;to:20,40,120;x=364.2;y=545.7;size=1.728
 Lorentz group
 $SO(1,3)$
 $\eta_\munu\Lambda^\mu_\lambda\Lambda^\nu_\sigma=\eta_{\lambda\sigma}$
 
-#40:to:30,70,80;from:30,80;x=356.15359987244324;y=920.0634663371451
+#40:from:30,80;to:30,70,80;x=275.6;y=684.9;size=1.000
 $SU(2)\times SU(2)^\ast$
 $[J^\pm_i,J^\pm_j]=i\epsilon^{ijk}J_k^\pm$
 $[J^\pm_i,J^\mp_j]=0$
 
-#50:to:60,270,280;from:20;x=275.30263898185984;y=382.7627768744074;size=0.694;
+#50:from:20;to:60,270,280;x=201.1;y=319.2;size=0.578
 Casimirs of Poincaré algebra
 $C_1=-P_\mu P^\mu$
 $C_2=W_\lambda W^\lambda$
 with $W^\lambda=\epsilon^{\lambda\mu\nu\sigma}J_\munu P_\sigma/2$
 
-#60:from:50,260;x=160.67849189647583;y=329.5444228704791;size=0.402;
+#60:from:50,260;x=74.5;y=303.8;size=0.335
 Stability (little) group of $p^\mu$
 Lie algebra formed by the independant
 components of the Pauli-Lubanski vector
 
-#70:to:80;from:40;x=165.79564131993047;y=937.4617743768908;size=0.833;
+#70:from:40;to:80;x=113.9;y=669.4;size=0.833
 Casimirs of $SU(2)\times SU(2)^\ast$
 $\sum_i(J^+_i)^2 \quad \sum_i(J^-_i)^2$
 
-#80:to:90,100,110,40,140,150;from:70,40;x=290.6540872522238;y=1075.6248088101663;size=0.694;
+#80:from:40,70;to:40,90,100,110,140,150;x=222.2;y=796.0;size=0.694
 Representations of $SU(2)\times SU(2)^\ast$
 $(n,m)$
 $Dim=(2n+1)(2m+1)$
 $Spin=n+m$
 
-#90:from:80;x=95.17897927625638;y=1007.055006535874;size=0.694;
+#90:from:80;x=84.4;y=774.9;size=0.694
 4-vector $\displaystyle\left(1/2,1/2\right)$
 Spin content $0\oplus 1$
 Ex : Poincaré translation generators
 
-#100:from:80;x=117.69443673945682;y=1079.71852834893;size=0.694;
+#100:from:80;x=99.9;y=843.8;size=0.694
 2-form
 6 indep components
 Ex : $M_\munu$,$F_\munu$
 
-#110:from:80;x=148.39733328018468;y=1148.2883306232222;size=0.694;
+#110:from:80;x=109.7;y=922.6;size=0.694
 2-rank symmetric and traceless tensor
 A scale and 9 indep components
 Ex : $T_\munu$
 
-#120:to:130;from:30;x=538.3241193474286;y=924.1571858759088
+#120:from:30;to:130;x=454.3;y=693.3;size=1.000
 $SL(2,C)\sim Spin(1,3)$
 Double cover of $SO(1,3)$
 Homomorphism $\Lambda^\mu_\nu(A)=\frac{1}{2}Tr(\bar\sigma^\mu A\sigma_\nu A^\dag)$
 
-#130:to:140,150;from:120;x=468.7308871884454;y=1103.2574156968212
+#130:from:120;to:140,150;x=399.4;y=843.8;size=1.000
 Spinor
 Object carrying the basic
 reps of $SL(2,C)$
 
-#140:to:160,170;from:130,80;x=350.0130205642977;y=1215.8347030128234;size=0.694;
+#140:from:80,130;to:160,170;x=271.4;y=950.7;size=0.694
 Self or fundamental repr $(1/2,0)$
 $\psi_\alpha\rightarrow\psi_\alpha'=A^\beta_\alpha\psi_\beta$
 $\psi_\alpha$ are Grassmann numbers
 $J_i=\sigma_i/2$, $K_i=i\sigma_i/2$
 
-#150:to:160,170;from:130,80;x=613.0345009298665;y=1227.0924317444237;size=0.694;
+#150:from:80,130;to:160,170;x=500.7;y=956.3;size=0.694
 CC or anti-fundamental repr $(0,1/2)$
 $\bar\psi_{\dot\alpha}\rightarrow\bar\psi_{\dot\alpha}'=A^{\ast\dot\beta}_\alpha\bar\psi_{\dot\beta}$
 $\bar\psi_{\dot\alpha}$ are Grassmann ----
 $J_i=\sigma_i/2$, $K_i=-i\sigma_i/2$
 
-#160:from:140,150;x=824.8844870608887;y=1457.3641557998828;size=0.694;
+#160:from:140,150;x=731.8;y=1103.9;size=1.200
 Properties of spinors\\
-\begin{tabular}{cc}
+\bbox{\begin{tabular}{cc}
 $\psi^\alpha=\epsilon^{\alpha\beta}\psi_\beta$ 
 		& $\bar\psi^{\dot\alpha}=\epsilon^{\dot\alpha\dot\beta}\bar\psi_{\dot\beta}$\\
 $\psi\chi=\chi\psi$ & $\bar\psi\bar\chi=\bar\chi\bar\psi$\\
 $(\psi_\alpha)^\dag=\bar\psi_{\dot\alpha}$ & $(\psi\chi)^\dag=\bar\psi\bar\chi$\\
-$\chi\sigma^\mu\bar\psi=-\bar\psi\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\psi)^\ast=\psi\bar\sigma^\mu\bar\chi$ \\
-$\chi\sigma^\mu\bar\sigma^\nu\psi=\psi\sigma^\nu\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\sigma^\nu\psi)^\ast=\bar\psi\bar\sigma^\nu\sigma^\mu\bar\chi$
-\end{tabular}
+$\chi\sigma^\mu\bar\psi=-\bar\psi\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\psi)^\dag=\psi\sigma^\mu\bar\chi$ \\
+$\chi\sigma^\mu\bar\sigma^\nu\psi=\psi\sigma^\nu\bar\sigma^\mu\chi$ & $(\chi\sigma^\mu\bar\sigma^\nu\psi)^\dag=\bar\psi\bar\sigma^\nu\sigma^\mu\bar\chi$\\
+$\psi^2=\psi^\alpha\psi_\alpha=\epsilon^\albe\psi_\beta\psi_\alpha=-2\psi_1\psi_2$&$\bar\psi^2=\spicc\psi\Spicc\psi=\epsilon^\dab\bar\psi_{\dot\alpha}\bar\psi_{\dot\beta}=2\bar\psi_1\bar\psi_2$
+\end{tabular}}
 
-#170:to:190,200;from:140,150;x=471.8011768425182;y=1347.8571581379533
+#170:from:140,150;to:190,200;x=375.5;y=1046.3;size=1.000
 Dirac spinor
 $(1/2,0)\oplus (0,1/2)$
 $\Psi=\begin{pmatrix}\psi_\alpha\\\bar\chi^{\dot\alpha}\end{pmatrix}$
 
-#180:to:190;x=220.0374252085497;y=1466.575024762101;size=0.833;
+#180:to:190;x=102.7;y=1175.7;size=0.833
 Chirality matrix $\gamma_5$
 $\gamma_5=i\gamma_0\gamma_1\gamma_2\gamma_3=\begin{pmatrix}\mathbf{1}&0\\0&-\mathbf{1}\end{pmatrix}$
 
-#190:from:170,180;x=384.80963664378925;y=1505.4653603803563;size=0.833;
+#190:from:170,180;x=282.7;y=1144.8;size=0.833
 Weyl spinors
 \\\begin{tabular}{cc}
 chirality + & chirality -\\
 $\begin{pmatrix}\psi_\alpha\\0\end{pmatrix}$&$\begin{pmatrix}0\\\bar\chi^{\dot\alpha}\end{pmatrix}$
 \end{tabular}
 
-#200:from:170;x=583.3550342738295;y=1497.2779213028289;size=0.833;
+#200:from:170;x=452.9;y=1139.2;size=0.833
 Majorana spinor
 $\Psi=\begin{pmatrix}\psi_\alpha\\\bar\psi^{\dot\alpha}\end{pmatrix}$
 
-#210:to:20,220;x=663.1825652797219;y=216.96713555447693
+#210:to:20,220;x=560.7;y=80.1;size=1.000
 Coleman-Mandula theorem
 Under several assumptions, the only
 symmetries of the $S$-matrix are
@@ -130,7 +130,7 @@ symmetries of the $S$-matrix are
 - Internal symmetries $B_l$
 \end{tabular}
 
-#220:to:230;from:210;x=778.8301422497968;y=339.7787217173884
+#220:from:210;to:230;x=801.0;y=184.9;size=1.000
 Poincaré $\times$ Internal algebra
 \\\begin{tabular}{rl}
 $[B_l,B_m]=$&$if_{lm}^nB_n$\\
@@ -138,12 +138,12 @@ $[B_l,M_\munu]=$&0\\
 $[B_l,P_\mu]=$&0\\
 \end{tabular}
 
-#230:to:250;from:0,10,220,240;x=983.5161191879827;y=517.85552165361;size=1.728;
+#230:from:0,10,220,240;to:250,330;x=1182.6;y=331.7;size=1.728
 SUSY algebra
 Graded Lie algebra of grade n=1
 $L=L_0\oplus L_1$
 with $L_0=$Poincaré and $L_1=(Q_\alpha^I,\bar Q_{\dot\alpha}^I)$
-\\\begin{tabular}{rl}
+\\\redbox{\begin{tabular}{rl}
 $[P_\mu,Q_\alpha^I]$=&$[P_\mu,\bar Q_{\dot\alpha}^I]=0$\\
 $[Q_\alpha^I,M_\munu]=$&$i(\sigma_\munu)_\alpha^\beta Q_\beta^I$\\
 $[\bar Q^{\dot\alpha I},M_\munu]=$&$i(\bar\sigma_\munu)^{\dot\alpha}_{\dot\beta} Q^{\dot\beta I}$\\
@@ -151,40 +151,155 @@ $\{\spi Q^I,\spicc Q^J\}=$&$2\delta^{IJ}\sigma^\mu_\ada P_\mu$\\
 $\{\spi Q^I,\spi Q^J\}=$&$\epsilon_\albe Z^{IJ}$\\
 $\{\spicc Q^I,\spicc Q^J\}=$&$\epsilon_{\dot\alpha\dot\beta}\bar Z^{IJ}$\\
 $[Z^{IJ},\cdot ]=0$ & $Z^{IJ}=-Z^{JI}$
-\end{tabular}
+\end{tabular}}
 
-#240:to:230;from:20;x=629.4093790849213;y=434.9577009936448;size=0.833;
+#240:from:20;to:230,20;x=746.6;y=315.5;size=0.833
 Poincaré algebra
-\\\begin{tabular}{rl}
+\\\bbox{\begin{tabular}{rl}
 $[P_\mu,P_\nu]=$&0\\
 $[M_\munu,M_\rhosi]=$&$i(\eta_\murho M_\nusi+\eta_\nusi M_\murho-\eta_\nurho M_\musi-\eta_\musi M_\nurho)$\\
 $[M_\munu,P_\rho]=$&$i(\eta_\murho P_\nu-\eta_\nurho P_\mu)$
-\end{tabular}
+\end{tabular}}
 
-#250:from:230;x=1384.7006339868267;y=430.86398145488107
+#250:from:230;x=1689.4;y=279.5;size=1.000
 Particle multiplet
 The consequence of the SUSY algebra is that any repr gives also a reducible repr of the Poincaré algebra and so to several particles gathered in a so-called multiplet. All particles of a multiplet have the same mass and multiplets with a finite number of particles contain the same number of bosonic and fermionic states.
 
-#260:from:280;to:60,270;x=134.06931489451168;y=458.49658834153615;size=0.694;
+#260:from:280;to:60,270;x=122.4;y=399.4;size=0.578
 Wigner's method of induced representation
 1. Choice of $p^\mu$ and construction of a repr of its stability group.
 2. Boosting the repr to a repr of the full SUSY algebra by using the other generators.
 
-#270:from:260,50;x=154.53791258833027;y=610.9876411604845;size=0.694;
+#270:from:50,260;x=90.0;y=500.7;size=0.578
 Massless unitary representation
 $C_1=0$
 $p=(E,0,0,E) E>0$
 $C_2=W_1^2+W_2^2$
 $[W^{1,2},J_3]=\pm iW^{2,1}$ 2D Euclidean algebra
 
-#280:from:50;to:260;x=318.2866941388789;y=610.9876411604845;size=0.694;
+#280:from:50;to:260;x=232.1;y=476.8;size=0.578
 Massive unitary representation
 $C_1=-p^2=M^2$
 $p=(M,0,0,0) \; E>0$
 $W_0=0$, $W^i=MJ^i$ 3D Euclidean 
 
-#290:x=1096.0934065039849;y=928.2509054146725
+#290:x=1452.4;y=360.4;size=0.579
 Massless representation
 $p^\mu=(E,0,0,E)$
 $\{\spi Q^I,\spicc Q^J\}=4E\delta^{IJ}\begin{pmatrix}1&0\\0&0\end{pmatrix}$
 $a^I=\frac{1}{\sqrt{4E}}Q^I_1$, $(a^I)^\dag=\frac{1}{\sqrt{4E}}\bar Q^I_1$
+
+#300:to:310,320;x=795.1;y=419.3;size=1.000
+Left/Right coset
+A left coset $C_l(g)$ of $H$ in $G$ is
+$C_l(g)=gH$
+
+#310:from:300,20;x=620.1;y=516.2;size=1.000
+Minkowski space
+\small Coset space of Lorentz group in the Poincaré group
+ie the set of equivalence classes $[\exp(-ix^\mu P_\mu)]$
+$\text{4D Minkowski}\equiv\frac{\text{Poincaré group}}{\text{Lorentz group}}\sim \mathbb R^{1,3}$
+
+#320:from:300,330;to:350,370,380;x=847.8;y=661.9;size=1.000
+$\mathcal N=1$ Superspace
+$\mathcal N=1\ \text{Superspace}\equiv\frac{\mathcal N=1\ \text{Poincaré supergroup}}{\text{Lorentz group}\times\text{R-symmetry}}$
+
+#330:from:230;to:320;x=1004.4;y=556.0;size=1.000
+$\mathcal N=1$ Poincaré supergroup
+$g(\omega,x|\theta,\bar \theta)=\exp(-ix^\mu P_\mu+i(\theta^\alpha Q_\alpha+\spicc{\theta}\Spicc Q))\exp(-\tfrac i2\omega^\munu M_\munu)$
+
+#340:to:360;x=1480.5;y=554.4;size=1.000
+Action of a SUSY transformation with parameters $(\epsilon^\alpha,\Spicc\epsilon)$
+$\exp(i(\epsilon Q+\bar\epsilon\bar Q))\exp(-ix^\mu P_\mu+i(\theta Q+\bar\theta\bar Q))=$
+$\exp(-i(x^\mu-i\theta\sigma^\mu\bar\epsilon+i\epsilon\sigma^\mu\bar\theta)P_\mu+i((\theta+\epsilon)Q+(\bar\theta+\bar\epsilon)\bar Q))$
+So $(x^\mu|\theta,\bar\theta)\overset{(\epsilon,\bar\epsilon)}{\longrightarrow}(x'^\mu|\theta',\bar\theta')=(x^\mu-i\theta\sigma^\mu\bar\epsilon+i\epsilon\sigma^\mu\bar\theta|\theta+\epsilon,\bar\theta+\bar\epsilon)$
+
+#350:from:320;to:360,390;x=1063.1;y=677.1;size=1.000
+Superfield
+Field on superspace
+$\Phi=\Phi(x|\theta,\bar\theta)$
+
+#360:from:350,340;x=1285.4;y=680.5;size=1.000
+Infinitesimal SUSY transfo on superfields
+$Q_\alpha=\pdf{}{\theta^\alpha}-i(\sigma^\mu\bar\theta)_\alpha\partial_\mu\ ,\quad\spicc Q=\pdf{}{\Spicc\theta}-i(\bar\sigma^\mu\theta)_{\dot\alpha}\partial_\mu$
+
+#370:from:320;to:380;x=698.8;y=784.8;size=1.000
+Covariant derivatives on superspace
+\bbox{$D_\alpha=\pdf{}{\theta^\alpha}+i(\sigma^\mu\bar\theta)_\alpha\partial_\mu\ ,\quad\spicc D=-\pdf{}{\Spicc\theta}+i(\bar\sigma^\mu\theta)_{\dot\alpha}\partial_\mu$}
+\vspace{2pt}\footnotesize$[\delta_\epsilon,D_\alpha]=[\delta_{\bar\epsilon},D_\alpha]=[\delta_{\epsilon},\spicc D]=[\delta_{\bar\epsilon},\spicc D]=0$
+$\{Q_\alpha,D_\alpha\}=\{Q_\alpha,\spicc D\}=\{\spicc Q,D_\alpha\}=\{\spicc Q,\spicc D\}=0$
+$\{D_\alpha,\spicc D\}=-2i\sigma^\mu_{\alpha\bar\alpha}\partial_\mu\ ,\quad \{D_\alpha,D_\beta\}=\{\spicc D,\bar D_{\dot\beta}\}=0$
+
+#380:from:320,370;to:410;x=949.1;y=869.3;size=1.000
+Integration on superspace
+$I=\int d^4xd^2\theta d^2\bar\theta\Phi(x|\theta,\bar\theta)=-\tfrac 14\int d^4xD^2\bar D^2\Phi(x|\theta,\bar\theta)$
+Manifestly SUSY inv : $\delta_\epsilon I=0$
+
+#390:from:350;to:400,480;x=1143.7;y=778.6;size=1.000
+Scalar superfield
+8 complex bosonic fields : $\phi(x)$, $F(x)$, $G(x)$, $D(x)$, $A_\mu(x)$
+8 complex fermionic fields  : $\chi(x)$, $\lambda(x)$, $\bar\psi(x)$, $\bar\tau(x)$
+
+#400:from:390;to:410,420;x=1167.4;y=951.4;size=1.000
+Chiral superfield
+$\spicc D\Phi(x|\theta,\bar\theta)=0$
+\small $\Phi(y|\theta)=\phi(y)+\sqrt{2}\chi(y)\theta+\theta^2F(y)$ with $y^\mu=x^\mu+i\theta\sigma^\mu\bar\theta$
+\normalsize 4 real bosonic fields = 2 complex scalar $\phi$, $F$
+4 real fermionic dof = 1 Weyl spinor $\chi$
+
+#410:from:380,400;to:430;x=1204.1;y=1125.3;size=1.200
+Free Wess-Zumino model
+\redbox{$\displaystyle S=-4\int d^4xd^2\bar\theta d^2\theta\,\Phi_I^\dag\Phi^I=\int d^4x(-\partial_\mu\phi_I^\ast\partial^\mu\phi^I-i\bar\chi_I\bar\sigma^\mu\partial_\mu\chi^I+F_I^\ast F^I)$}
+
+#420:from:400;to:430,450;x=1452.5;y=1030.3;size=1.000
+Superpotential $\mathcal W(\Phi)$
+Most general renormalizable superpotential
+$\mathcal W(\Phi)=c_I\Phi^I+\tfrac12m_{IJ}\Phi^I\Phi^J+\tfrac13f_{IJK}\Phi^I\Phi^J\Phi^K$
+R-symmetry inv action $\Rightarrow\ R(\mathcal W)=2$
+
+#430:from:410,420;x=1288.4;y=1300.3;size=1.000
+Interacting Wess-Zumino model
+$S=\int d^4x\Bigl[-\partial_\mu\phi_I^\ast\partial^\mu\phi^I-i\bar\chi_I\bar\sigma^\mu\partial_\mu\chi^I-\tfrac12(m_{IJ}+2f_{IJK}\phi^K)\chi^I\chi^J$
+$\qquad-\tfrac12(m_{IJ}^\ast+2f^\ast_{IJK}\phi^{\dag K})\chi^I\chi^J-\sum_{I=1}^N|c_I+m_{IJ}\phi^J+f_{IJK}\phi^J\phi^K|^2\Bigr]$
+
+#440:to:450;x=1582.1;y=1116.7;size=1.000
+Kähler potential $\mathcal K(\Phi^\dag,\Phi)$
+Reality condition
+$\mathcal K^\ast(z^\ast,z)=\mathcal K(z,z^\ast)$
+
+#450:from:420,440;x=1502.2;y=1214.9;size=1.000
+Supersymmetric NLSM
+((effective model))
+\small $S=\tfrac14\int d^4xd^2\theta d^2\bar\theta\mathcal K(\Phi^\dag,\Phi)+\tfrac12\int d^4xd^2\theta\mathcal W(\Phi)+h.c.$
+
+#460:x=1637.9;y=685.6;size=1.000
+Action of the R-symmetry charges
+$\exp(i\alpha R)\exp(-ix^\mu P_\mu+i\theta Q+i\bar\theta\bar Q)\exp(-i\alpha R)=\exp(-x^\mu P_\mu+ie^{-i\alpha}\theta Q+ie^{i\alpha}\bar\theta\bar Q)$
+On a chiral superfield : $\Phi\rightarrow\Phi'(y'|\theta')=e^{iq\alpha}\Phi(y'|e^{-i\alpha\theta})$
+
+#470:x=1484.8;y=785.6;size=0.694
+R-symmetry charges of the superspace coordinates
+$R(\theta)=1\ ,\quad R(\bar\theta)=-1\ ,\quad R(d\theta)=-1\ ,\quad R(d\bar\theta)=1$
+
+#480:from:390;to:490;x=1419.7;y=895.6;size=1.000
+Vector superfield\\(real superfield)
+$V(x|\theta,\bar\theta)=V(x|\theta,\bar\theta)^\dag$
+Equivalence relation $V\sim V' \iff V-V'=\Phi+\Phi^\dag$
+\textsc{WZ gauge} : $V=A_\mu\theta\sigma^\mu\bar\theta-i\bar\theta^2\theta\lambda+i\theta^2\bar\theta\bar\lambda+\tfrac12\theta^2\bar\theta^2 D$
+
+#490:from:480;to:510,500;x=1693.9;y=938.9;size=0.833
+Field strength
+((chiral superfield of spin 1/2))
+\textsc{Abelian version}
+$W_\alpha=-\frac 14\bar D^2D_\alpha V\ ,\quad \spicc W=-\frac 14D^2\spicc D V$\vspace{2pt}
+\textsc{Non-Abelian version}
+$W_\alpha=-\frac 14\bar D^2(e^{-V}D_\alpha e^V)\ ,\quad \spicc W=-\frac 14D^2(e^{-V}\spicc D e^V)$\vspace{2pt}
+\small $\bar D_{\dot\beta}W_\alpha=0\ ,\quad D_\beta\spicc W=0$
+
+#500:from:490;x=1959.2;y=954.2;size=1.000
+Non-Abellian $\mathcal N=1$ SYM
+$S=\frac 1{32}\int d^4xd^2\theta\,\mathrm{Tr}(W^2)+h.c.$
+
+#510:from:490;x=1877.8;y=1092.2;size=1.000
+Abelian $\mathcal N=1$ SYM
+$S=\frac14\int d^4xd^2\theta d^2\bar\theta\, W^2+h.c.=\int d^4x\left(-\tfrac14 F^\munu F_\munu-i\lambda\sigma^\mu\partial_\mu\bar\lambda+\tfrac12 D^2\right)+h.c.$

@@ -27,7 +27,7 @@ Coordinate\\transformation
 $x^a \rightarrow x'^a$
 $\mathbf e'_a=\frac{\partial x^b}{\partial x'^a}\mathbf e_b$
 
-#70:from:60,50;x=98.8;y=299.5;size=0.694;
+#70:from:50,60;x=107.3;y=301.6;size=0.694
 Transformation of the affine connection
 $\Gamma'^a_{bc}=\frac{\partial x'^a}{\partial x^d}\frac{\partial x^f}{\partial x'^b}\frac{\partial x^g}{\partial x'^c}\Gamma^d_{fg}-\frac{\partial x^d}{\partial x'^b}\frac{\partial x^f}{\partial x'^c}\frac{\partial^2 x'^a}{\partial x^d\partial x^f}$
 
@@ -64,7 +64,7 @@ Differential operators
 \\\small\begin{tabular}{rl}\hline
 \textsc{Gradient}&$\nabla\phi=\nabla_a\phi\mathbf e^a=\partial_a\phi\bve^a$\\\textsc{Divergence}&$\nabla\cdot\bvv=\nabla_av^a=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}v^a)$\\\textsc{Laplacian}&$\nabla^2\phi=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}g^{ab}\partial_b\phi)$\\\textsc{Curl}&$(\mathrm{curl}\bvv)_{ab}=\nabla_av_b-\nabla_bv_a$\\\textsc{D'Alembertian}&$\square^2=g^\munu\nabla_\mu\nabla_\nu$\\\hline\end{tabular}
 
-#160:from:50;to:140;x=56.7;y=401.1;size=0.482
+#160:from:50;to:140;x=45.1;y=410.7;size=0.482
 Contraction of\\the connection
 $\Gamma^a_{ab}=\frac{1}{\sqrt{|g|}}\partial_b\sqrt{|g|}$
 
@@ -129,7 +129,7 @@ $\square^2A_\mu=\mu_0j_\mu$
 #330:to:20,420;x=357.9;y=68.6;size=1.44;
 Differential\\geometry
 
-#340:from:320;x=508.4;y=1822.3;size=1.000
+#340:from:320;x=488.1;y=1825.7;size=1.000
 Maxwell equations
 \\\redbox{\begin{tabular}{ll}$\vec\nabla\cdot\vec E=\frac\rho{\epsilon_0}$&$\vec\nabla\times\vec E=-\frac{\partial\vec B}{\partial t}$\\$\vec\nabla\cdot\vec B=0$&$\vec\nabla\times\vec B=\mu_0\vec j+\mu_0\epsilon_0\frac{\partial\vec E}{\partial t}$\end{tabular}}
 
@@ -387,7 +387,7 @@ Gravitational redshift\\in stationary spacetime\\and $g_{0i}(\vec x)=0$
 $\frac{\nu_R}{\nu_E}=\left(\frac{g_{00}(\vec x_E)}{g_{00}(\vec x_R)}\right)^{1/2}$
 
 #880:from:840,870;x=1656.5;y=1202.4;size=1.200
-Gravitational redshift\\in Schwarzschild spactime
+Gravitational redshift\\in Schwarzschild spacetime
 \bbox{$\displaystyle\frac{\nu_R}{\nu_E}=\frac{\Delta\tau_E}{\Delta\tau_R}=\left(\frac{1-2GM/(r_Ec^2)}{1-2GM/(r_Rc^2)}\right)^{1/2}$}
 \small$\frac{\nu_R}{\nu_E}=\frac 1{1+z}\iff z=\frac{\nu_E}{\nu_R}-1$
 
@@ -424,7 +424,7 @@ $r^2\dot\Phi=h$
 Weak gravitational field
 $g_\munu=\eta_\munu+h_\munu\ ,\ |h_\munu|\ll 1$
 
-#960:from:950,410;to:970;x=563.6;y=1102.2;size=0.579
+#960:from:410,950;to:970;x=524.7;y=1101.8;size=0.579
 Linearized Riemann tensor
 \small$R^\sigma_{\ \mu\nu_rho}=\tfrac 12\left(\partial_\mu\partial_\nu h^\sigma_\rho+\partial_\rho\partial^\sigma h_\munu-\partial_\nu\partial^\sigma h_\murho-\partial_\rho\partial_\mu h^\sigma_\nu\right)$
 
@@ -463,12 +463,12 @@ $\partial_\mu \bar h^\munu=0$
 Simplified linearized\\Einstein equations
 \bbox{$\square^2\bar h_\munu=-2\kappa T_\munu$}
 
-#1050:from:1030,1040;to:1060,1100;x=929.6;y=1261.7;size=0.694
+#1050:from:1030,1040;to:1060,1100;x=934.8;y=1256.5;size=0.694
 Solutions of linearized\\equations in vacuo $\square^2\bar h^\munu=0$
 $\bar h^\munu_{homo}(x)=\mathcal {R}e\left(\int  A^\munu(\vec k)\exp(ik_\sigma x^\sigma)d^3\vec k\right)$
 $k^\sigma k_\sigma=0\ ,\ A^\munu k_\nu=0$
 
-#1060:from:1040,1050;x=1146.4;y=1260.6;size=0.833
+#1060:from:1040,1050;x=1170.0;y=1266.3;size=0.833
 General solution of the linearized equations
 \bbox{$\displaystyle\bar h^\munu(ct,\vec x)=\bar h^\munu_{homo}(x)-\frac{4G}{c^4}\int \frac{T^\munu(ct-|\vec x-\vec y|,\vec y)}{|\vec x-\vec y|}d^3\vec y$}
 

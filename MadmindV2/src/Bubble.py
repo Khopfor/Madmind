@@ -24,7 +24,7 @@ class Bubble(QGraphicsEllipseItem):
         self.lensed=False
         self.idLabel=None
         self.lastPos=self.scenePos()
-        self.setZValue(4)
+        self.setZValue(5)
         self.setAcceptHoverEvents(True)
         self.setFlag(QGraphicsItem.ItemIsSelectable)
 
@@ -132,13 +132,25 @@ class Bubble(QGraphicsEllipseItem):
 
     def constructEdges(self,bubbles):
         for toid in self.toLinks :
+            if '(' in toid :
+                [toid,w]=[int(v) for v in toid[:-1].split('(')]
+                w/=10
+            else :
+                toid=int(toid)
+                w=None
             if toid in bubbles:
-                newEdge=Edge(self,bubbles[toid],mindmap=self.mindmap)
+                newEdge=Edge(self,bubbles[toid],mindmap=self.mindmap,width=w)
                 self.addEdge(newEdge)
                 bubbles[toid].addEdge(newEdge)
         for frid in self.fromLinks :
+            if '(' in frid :
+                [frid,w]=[int(v) for v in frid[:-1].split('(')]
+                w/=10
+            else :
+                frid=int(frid)
+                w=None
             if frid in bubbles:
-                newEdge=Edge(bubbles[frid],self,mindmap=self.mindmap)
+                newEdge=Edge(bubbles[frid],self,mindmap=self.mindmap,width=w)
                 self.addEdge(newEdge)
                 bubbles[frid].addEdge(newEdge)
         # print(self.edges)
@@ -301,14 +313,24 @@ class Bubble(QGraphicsEllipseItem):
     def toString (self):
         frList,toList=[],[]
         for edgeId in self.edges:
-            if edgeId[0]==self.id: toList.append(edgeId[1])
-            else: frList.append(edgeId[0])
+            t=int(self.edges[edgeId].width*10)
+            e=''
+            if t!=13:
+                e="({})".format(t)
+            if edgeId[0]==self.id:
+                e=str(edgeId[1])+e
+                toList.append(e)
+            elif edgeId[1]==self.id:
+                e=str(edgeId[0])+e
+                frList.append(e)
+            else :
+                print("Error in edge id :",edgeId)
         frStr=""
         if frList!=[]:
-            frStr="from:"+str(frList)[1:-1].replace(' ','')+";"
+            frStr="from:"+str(frList)[1:-1].replace(' ','').replace("'",'')+";"
         toStr=""
         if toList!=[]:
-            toStr="to:"+str(toList)[1:-1].replace(' ','')+";"
+            toStr="to:"+str(toList)[1:-1].replace(' ','').replace("'",'')+";"
 
         s=("#{}:"+frStr+toStr+"x={:.1f};y={:.1f};size={:.3f}\n").format(self.id,self.scenePos().x(),self.scenePos().y(),self.size)
         s+=self.content.toPlainText()
@@ -335,9 +357,9 @@ class Bubble(QGraphicsEllipseItem):
         for a in args :
             if contains(a,"to","t"):
                 for k in a.split(':',1)[1].split(','):
-                    self.toLinks.append(int(k))
+                    self.toLinks.append(k)
             elif contains(a,"from","fr","f"):
-                self.fromLinks=[int(k) for k in a.split(':')[1].split(',')]
+                self.fromLinks=[k for k in a.split(':')[1].split(',')]
             elif contains(a,"size","s"):
                 if ':' in a : self.size=float(a.split(':')[1])
                 elif '=' in a : self.size=float(a.split('=')[1])
@@ -394,10 +416,11 @@ class Bubble(QGraphicsEllipseItem):
 
     def removeEdge(self,edge):
         if edge.id in self.edges:
-            del self.edges[edge.id]
+            self.edges.pop(edge.id)
             self.updateStr()
 
     def delete (self,scene):
+        self.hide()
         while len(self.edges)>0:
             self.edges.popitem()[1].delete(scene)
         self.tab.textEdit.removeBubble(self)

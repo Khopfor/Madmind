@@ -33,6 +33,7 @@ class TextEdit (QTextEdit):
             else :
                 text=text[0:startIndex]+bub.toString()
             self.setPlainText(text)
+            self.parent().save()
         else:
             print("Error while updating bubble : ID",bub.id,"doesn't exist.")
 

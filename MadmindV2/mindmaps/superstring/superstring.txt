@@ -1,43 +1,259 @@
-|MindMap title : SuperstringTheory
+|MindMap title : Superstring Theory
 |Height : 2000
-|Width : 2000
-|Bg color : #f3eee9
-|Optimize : yes
-|Tolerance : 5
+|Width : 2200
+|BgColor : #faf2e8
+|BubbleColor : #FF9999
 
-#0: x=870;y=150;color=pink
-String
-
-#100:x=870.0;from:0;color=pink;y=262.0
-Bosonic string
-
-#200:x=874.0;from:100;color=pink;y=349.0
+#0:to:10,20;x=541.3;y=75.2;size=2.488
 Superstring
 
-#300: from:200;color=pink;x=766.0;y=447.0
-Type II
-Both left and right-moving
-worldsheet fermions
-$N=2$ Supersymmetry
+#10:from:0;to:30;x=411.8;y=190.4;size=1.440
+Green-Schwarz\\formalism (GS)
+Make the target space
+supersymmetric (superspace)
 
-#310:from:300;color=pink;x=689.0;y=572.0
-Type IIA
+#20:from:0;to:240,250,260,460(4);x=691.6;y=185.0;size=1.440
+Ramond-Neveu-Schwarz\\formalism(RNS)
+Introduce fermions on
+the world-sheet
 
-#320:from:300;color=pink;x=781.0;y=571.0
-Type IIB
+#30:from:10;to:40,50,60,70;x=272.3;y=314.5;size=1.200
+Green-Schwarz action
+\redbox{$S=\int d^2\sigma\sqrt{-h}h^\albe\eta_\munu\Pi_\alpha^\mu\Pi_\beta^\nu$}
+\small $\Pi_\alpha^\mu=\partial_\alpha X^\mu+\delta^{IJ}\gamma^\mu_{mn}\Theta_I^m\partial_\alpha\Theta_J^n$
 
-#400: from:200;color=pink;x=985.0;y=443.0
-Heterotic
-Just right-moving fermions
-$N=1$ Supersymmetry
+#40:from:30;x=106.3;y=313.0;size=1.000
+Diffeomorphism\\invariance
 
-#410:from:400;color=pink;x=1096.0;y=564.0
-Heterotic $SO(32)$
-$SO(32)$ Yang-Mills theory
+#50:from:30;x=118.2;y=371.4;size=1.000
+Supersymmetry
 
-#420:from:400;color=pink;x=923.0;y=562.0
-Heterotic $E_8\times E_8$
-$E_8\times E_8$ Yang-Mills field
+#60:from:30;x=155.8;y=416.9;size=1.000
+$\kappa$ symmetry
 
-#1000:from:310,320,410,420;x=892.0;y=784.0;color=pink
-M-Theory
+#70:from:30;x=329.4;y=441.3;size=1.000
+Green-Schwarz action\\in lightcone gauge
+$S=\int d^2\sigma\left(\partial_LX^i\partial_RX_i+\tfrac 12\Theta_1\partial_R\Theta_1+\tfrac 12\Theta_2\partial_L\Theta_2\right)$
+
+#80:from:260;to:120,90,100,110,130,140,300,310;x=742.6;y=529.8;size=1.440
+RNS Superstring action
+\small\redbox{$S=-\frac 1{4\pi\alpha'}\int d^2\sigma e\left(h^\albe\partial_\alpha X^\mu\partial_\beta X_\mu+2i\bar\psi^\mu\rho^\alpha\partial_\alpha\psi_\mu-\bar\chi_\alpha\rho^\beta\rho^\alpha\psi^\mu(\partial_\beta X_\mu-\tfrac i4\bar\chi_\beta\psi_\mu)\right)$}
+
+#90:from:80;to:270;x=525.8;y=630.2;size=0.694
+Local supersymmetry
+
+#100:from:80;to:280;x=589.7;y=665.0;size=0.694
+Weyl invariance
+
+#110:from:80;to:280;x=670.8;y=669.2;size=0.694
+Super Weyl invariance
+
+#120:from:80;to:270;x=429.6;y=614.4;size=0.694
+Local Lorentz symmetry
+
+#130:from:80;x=401.4;y=557.2;size=0.694
+Reparametrization
+
+#140:from:80,280;to:340;x=767.4;y=851.7;size=1.728
+RNS action in superunit gauge
+\bbox{$S=-\frac 1{8\pi}\int d^2\sigma\left(\partial_\alpha X^\mu\partial^\alpha X_\mu+2i\bar\psi^\mu\rho^\alpha\partial_\alpha\psi_\mu\right)$}
+
+#150:to:190,220,230,260;x=1116.5;y=114.7;size=0.833
+Vielbein / Tetrad $e_a^\alpha(x)$
+((invertible $D\times D$ matrix dependent on $x$))
+\small Basis transformation relating the
+basis $\partial_\alpha$ and the free falling one.
+Creates an orthonormal basis $e_a=e_a^\alpha\partial_\alpha$
+such that $e_a\cdot e_b=h_\albe e_a^\alpha e_b^\beta=\eta^{ab}$
+
+#160:from:240;to:170,190,180,560;x=966.5;y=197.7;size=0.833
+Two-dimensional\\Dirac matrices
+$\{\rho^a,\rho^b\}=2\eta^{ab}\mathbb I$
+\scriptsize $\rho^0=\begin{pmatrix}0&1\\-1&0\end{pmatrix}\quad \rho^1=\begin{pmatrix}0&1\\1&0\end{pmatrix}$
+
+#170:from:160;x=948.2;y=125.5;size=0.579
+Matrix $\bar \rho$
+((Two-dimensional equivalent of $\gamma^5$))
+$\bar\rho=\rho^0\rho^1=\text{Diag}(1,-1)$
+
+#180:from:160,250,240;to:550;x=850.8;y=241.6;size=0.482
+2D Majorana spinor
+Majorana condition : $\psi^\dag\rho^0=\psi^tC=\psi^t\rho^0$
+2D Majorana spinor = spinor with real components.
+
+#190:from:150,160;x=1070.1;y=198.7;size=0.482
+Dirac matrices with curved indices
+$\rho^\alpha=e^\alpha_a\rho^a$
+$\{\rho^\alpha,\rho^\beta\}=2h^\albe$
+
+#200:to:210,230;x=1284.7;y=106.8;size=0.694
+Spin connection $\omega^a_{\alpha b}$
+((plays the same role as the Christoffel connection $\Gamma^\gamma_\albe$))
+\small Gauge field of the local Lorentz symmetry.
+Transforms as $\omega=\Lambda\omega_\alpha\Lambda^{-1}-\partial_\alpha\Lambda\Lambda^{-1}$
+
+#210:from:200;to:220;x=1254.0;y=261.1;size=0.833
+Covariant derivative
+$D_\alpha V^a=\partial_\alpha V^a+\omega_{\alpha b}^aV^b$
+
+#220:from:150,210;to:230;x=1130.9;y=235.6;size=0.482
+Covariant derivative of the vielbein
+$D_\alpha e^a_\beta=\partial_\alpha e^a_\beta-\Gamma_\albe^\gamma e^a_\gamma+\omega_{\alpha b}^a e^b_\beta=0$
+
+#230:from:150,200,220;x=1213.6;y=184.0;size=0.335
+Spin connection in terms of the vielbein
+\footnotesize $\omega_\alpha^{ab}=\tfrac 12 e^{\beta a}(\partial_\alpha e^b_\beta-\partial_\beta e^b_\alpha)-\tfrac 12 e^{\beta b}(\partial_\alpha e^a_\beta-\partial_\beta e^a_\alpha)-\tfrac12 e^{\lambda a}e^{\gamma b}(\partial_\lambda e_{\gamma c}-\partial_\gamma e_{\lambda c})e^c_\alpha$
+
+#240:from:20;to:160,180;x=863.0;y=133.6;size=1.000
+Worldsheet
+
+#250:from:20;to:180,260,430;x=773.9;y=282.1;size=1.000
+Spinors
+
+#260:from:20,150,250;to:80;x=755.0;y=380.3;size=1.000
+Superpartners of the existing bosonic fields
+$X^\mu \leftrightsquigarrow \psi^\mu (Majorana)$
+$e^a_\alpha \leftrightsquigarrow \chi_\alpha (Gravitino)$
+
+#270:from:90,120;to:280;x=452.0;y=712.3;size=1.000
+Superconformal gauge
+$e^a_\alpha=e^\phi\delta^a_\alpha\ ,\quad \chi_\alpha=\lambda\rho_\alpha$
+
+#280:from:100,110,270;to:140,290;x=561.0;y=776.8;size=1.000
+Superunit gauge
+$e^a_\alpha=\delta^a_\alpha\ ,\quad \chi_\alpha=\rho_\alpha$
+
+#290:from:280;x=474.5;y=880.8;size=0.833
+Remaining gauge freedom
+Same as bosonic case plus
+$\delta X^\mu=i\bar\epsilon\psi^\mu$
+$\delta\psi^\mu=\tfrac12\rho^\alpha\partial_\alpha X^\mu\epsilon$
+$\delta\bar\psi^\mu=-\tfrac12\bar\epsilon\rho^\alpha\partial_\alpha X^\mu$
+with $\epsilon$ satisfying
+$\rho^\beta\rho_\alpha\partial_\beta\epsilon=0 \iff \epsilon^\pm=\epsilon^\pm(\sigma^\pm)$
+
+#300:from:80;to:320,400;x=1002.8;y=633.7;size=0.833
+Stress-energy tensor
+$T_\albe=-\frac {2\pi}e\frac{\delta S}{\delta e^\beta_a}e_{\alpha a}$
+\footnotesize $T_\albe=\tfrac12\partial_\alpha X^\mu\partial_\beta X_\mu-\eta_\albe\partial_\gamma X^\mu\partial^\gamma X_\mu$
+$+\tfrac i4\bar\psi^\mu(\rho_\alpha\partial_\beta +\rho_\beta\partial_\alpha)\psi_\mu$
+
+#310:from:80;to:320,400;x=816.8;y=698.4;size=1.000
+Supercurrent
+$G_\alpha=-i\frac{2\pi}e\frac{\delta S}{\delta\bar\chi^\alpha}$
+$G_\alpha=\tfrac 14\rho^\beta\rho_\alpha\psi^\mu\partial_\beta X_\mu$
+
+#320:from:300,310;x=1000.7;y=737.6;size=1.000
+SuperVirasoro constraints
+$T_\albe=\rho^\alpha G_\alpha=0$
+
+#330:to:340;x=1006.8;y=910.6;size=0.833
+Worldsheet\\lightcone coordinates
+$\sigma^\pm=\tau\pm\sigma$
+
+#340:from:140,330;to:350,370;x=696.2;y=999.2;size=1.000
+Action in lightcone coordinates
+$S=\frac 1{2\pi}\int d^2\sigma\left[\partial_+X\cdot\partial_-X+i(\psi_+\cdot\partial_-\psi_++\psi_-\cdot\partial_+\psi_-)\right]$
+
+#350:from:340;to:360;x=700.5;y=1114.0;size=1.000
+$\eom$ in lightcone\\coordinates
+$\partial_+\partial_-X^\mu=0$
+$\partial_-\psi^\mu_+=\partial_+\psi^\mu_-=0$
+
+#360:from:350;to:410;x=763.8;y=1223.0;size=1.000
+Solution of the $\eom$
+$X^\mu(\sigma)=X_L^\mu(\sigma^+)+X_R^\mu(\sigma^-)$\vspace{2pt}
+$\displaystyle\psi^\mu(\sigma)=\begin{pmatrix}\psi_+^\mu(\sigma^+)\\\psi_-^\mu(\sigma^-)\end{pmatrix}$
+
+#370:from:340;to:380,390;x=943.3;y=1009.4;size=0.833
+Closed string\\boundary conditions
+$\psi_+(\sigma)=\pm\psi_+(\sigma+2\pi)$
+$\psi_-(\sigma)=\pm\psi_-(\sigma+2\pi)$\vspace{3pt}
+$\Rightarrow \psi_\pm(\sigma+2\pi)=e^{2\pi i\theta_\pm}\psi_\pm(\sigma)$
+
+#380:from:370;x=830.6;y=1095.1;size=0.833
+Ramond boundary conditions (R)
+((periodic boundary conditions))
+$\theta=0$
+
+#390:from:370;x=1033.4;y=1106.8;size=0.833
+Neveu-Schwarz\\boundary conditions (NS)
+((anti-periodic boundary conditions))
+$\theta=\tfrac12$
+
+#400:from:300,310;to:450,480(6);x=1148.2;y=827.0;size=1.000
+SuperVirasoro generators
+\small $L_m=\tfrac 1{2\pi}\int d\sigma e^{-im\sigma}T_{--}\ ,\quad G_m=\tfrac 1{\pi}\int d\sigma e^{-im\sigma}G_{-}$\vspace{3pt}
+\normalsize $\textstyle L_m=\tfrac12\sum_n\alpha_{-n}\cdot\alpha_{m+n}+\tfrac12\sum_n\left(n+\tfrac m2\right)b_{-n}\cdot b_{m+n}$
+$\textstyle G_m=\sum_n\alpha_{-n}\cdot b_{m+n}$
+
+#410:from:360;to:420,440;x=747.0;y=1348.0;size=1.000
+Solution mode expansion
+$\psi_+=\sum_{n\in\mathbb Z+\theta}\bar b_ne^{-in\sigma^+}$
+$\psi_-=\sum_{n\in\mathbb Z+\theta}b_ne^{-in\sigma^-}$
+
+#420:from:410;x=920.7;y=1332.8;size=1.000
+Reality condition
+$b^\dag_n=b_{-n}\ ,\quad \bar b^\dag_n=\bar b_{-n}$
+
+#430:from:250;to:440(4),470(6);x=1059.1;y=464.3;size=0.833
+Poisson bracket for the fermionic field
+$\{\psi^\mu_\pm(\sigma),\psi^\nu_\pm(\sigma')\}=-2\pi i\delta(\sigma-\sigma')\eta^\munu$
+
+#440:from:410,430(4);to:450;x=962.9;y=1234.7;size=1.000
+Modes Poisson brackets
+$\{b^\mu_m,b^\nu_n\}=-i\eta^\munu\delta_{m+n}$
+$\{\bar b^\mu_m,\bar b^\nu_n\}=-i\eta^\munu\delta_{m+n}$
+$\{b^\mu_m,\bar b^\nu_n\}=0$
+
+#450:from:400,440;x=1114.8;y=1004.3;size=1.000
+SuperWitt algebra
+$\{L_m,L_n\}=-i(m-n)L_{m+n}$
+$\{L_m,G_n\}=-i(\tfrac m2-n)G_{m+n}$
+$\{G_m,G_n\}=-2iL_{m+n}$
+
+#460:from:20(4);to:510,520;x=1663.6;y=251.8;size=2.074
+Quantization of the superstring
+
+#470:from:430(6),510;to:490;x=1850.1;y=483.6;size=1.000
+Anti-commutator for fermions
+$\{\psi^\mu_\pm(\sigma),\psi^\nu_\pm(\sigma')\}=2\pi \delta(\sigma-\sigma')\eta^\munu$
+$\{b^\mu_r,b^\nu_s\}=\eta^\munu$
+
+#480:from:400(6);to:490;x=1685.3;y=556.9;size=1.000
+SuperVirasoro operators
+((introducing normal ordering for $L_0$))
+
+#490:from:470,480;x=1800.3;y=706.4;size=1.000
+SuperVirasoro algebra
+$[L_m,L_n]=(m-n)L_{m+n}+\frac D{8}m(m^2-2\omega)\delta_{m+n}$
+$[L_m,G_r]=\left(\frac m2-r\right)G_{m+r}$
+$\{G_r,G_s\}=2L_{r+s}+\frac D2\left(r^2-\frac\omega 2\right)\delta_{r+s}$
+
+#500:x=1600.2;y=445.6;size=1.000
+Level operator
+$N=N_\alpha+N_b$
+$N_\alpha=\sum_{n=1}^\infty\alpha_{-n}\alpha_n$
+$N_b=\sum_{r-\theta>0}^\infty rb_{-r}b_r$
+
+#510:from:460;to:470;x=1865.5;y=344.1;size=1.440
+Canonical quantization
+$\{\,,\}_P\rightarrow [\,,]$ for bosons
+$\{\,,\}_P\rightarrow \{\,,\}$ for fermions
+
+#520:from:460;x=1447.1;y=341.4;size=1.440
+Lightcone gauge\\quantization
+
+#530:x=1620.1;y=797.8;size=1.000
+Consistency of the quantum theory
+$a_{NS}=\tfrac12\ ,\quad a_R=0\ ,\quad D=10$
+
+
+#550:from:180;x=967.7;y=346.1;size=1.000
+Spin-flip identity
+\small Let have two 2D Majorana spinors $\psi_1$ and $\psi_2$
+\normalsize \bbox{$\bar\psi_1\rho^{\alpha_1}\cdots\rho^{\alpha_n}\psi_2=(-1)^n\bar\psi_2\rho^{\alpha_n}\cdots\rho^{\alpha_1}\psi_1$}
+
+#560:from:160;x=1023.2;y=275.4;size=1.000
+Identity
+$\rho^\alpha\rho_\beta\rho_\alpha=0$

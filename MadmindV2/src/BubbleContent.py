@@ -1,4 +1,6 @@
 import os
+import string
+from typing import Iterable
 # PyQt imports
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
@@ -41,24 +43,22 @@ class BubbleContent(QTextEdit):
         cachePath="mindmaps/"+self.bubble.tab.tabName+"/cache/"
         if not os.path.isdir(cachePath):
             os.mkdir(cachePath)
-        pdfPath=cachePath+"tempSnippet.pdf"
-        svgPath=cachePath+"tempSnippet.svg"
-        try :
-            self.latexMaker.makePdf(lines,pdfPath,self.bubble.id==0)
-        except Exception as e:
-            print("Latex error in content of bubble",self.bubble.id)
-            print("Latex error :",e)
-            self.latexMaker.makePdf(["LATEX ERROR"],pdfPath,self.bubble.id==0)
-        os.system('pdf2svg '+pdfPath+" "+svgPath)
-        f=open(svgPath,'r')
-        svgCode=f.read()
-        f.close()
-        codeParts=svgCode.split('</defs>')
-        codeParts[0]=codeParts[0].replace('</symbol>','').replace('>\n<path','').replace('<symbol','<path').replace('</g style','</g><path style')
-        svgCode='</defs>'.join(codeParts)
-        f=open(svgPath,'w')
-        f.write(svgCode)
-        f.close()
+        hash=self.makeIdCode(lines)
+        pdfPath=cachePath+hash+".pdf"
+        svgPath=cachePath+hash+".svg"
+        if not os.path.isfile(svgPath):
+            if not os.path.isfile(pdfPath):
+                try :
+                    self.latexMaker.makePdf(lines,pdfPath,self.bubble.id==0)
+                except Exception as e:
+                    print("Latex error in content of bubble",self.bubble.id)
+                    print("Latex error :",e)
+                    self.latexMaker.makePdf(["LATEX ERROR"],pdfPath,self.bubble.id==0)
+                os.system('pdf2svg '+pdfPath+" "+svgPath)
+                self.fixSvg(svgPath)
+            else:
+                os.system('pdf2svg '+pdfPath+" "+svgPath)
+                self.fixSvg(svgPath)
         if self.innerSvg!=None:
             for item in self.bubble.childItems():
                 if isinstance(item,QGraphicsSvgItem):
@@ -71,6 +71,8 @@ class BubbleContent(QTextEdit):
         self.bubble.setEllipseSize(w,h)
         self.innerSvg.moveBy(-w,-h)
         self.innerSvg.show()
+        if os.path.isfile(pdfPath):
+            os.remove(pdfPath)
 
     def getPlainText(self):
         return self.text
@@ -80,6 +82,7 @@ class BubbleContent(QTextEdit):
             self.innerSvg.hide()
 
     def setContent(self,text=None):
+        self.hide()
         if text!=None :
             if type(text)==type([]):
                 self.setPlainText('\n'.join(text))
@@ -90,7 +93,6 @@ class BubbleContent(QTextEdit):
             contentText=contentText[:-1]
         contentText=self.fixCode(contentText)
         self.setPlainText(contentText)
-        self.hide()
         self.makeInnerLatexSvg()
         if text==None:
             text=self.bubble.tab.textEdit.toPlainText()
@@ -106,13 +108,18 @@ class BubbleContent(QTextEdit):
                     else :
                         text=text[:k+1]+self.toPlainText()+'\n'+text[j:]
                 self.bubble.tab.textEdit.setPlainText(text)
-            # lines=self.bubble.tab.textEdit.toPlainText().splitlines()
-            # i=0
-            # while "#"+str(self.bubble.id)+':' not in lines[i]:i+=1
-            # j=i+1
-            # while j<len(lines) or lines[j]!='\n':j+=1
-            # lines=lines[:i+1]+self.toPlainText().splitlines()+lines[j:]
-            # self.bubble.tab.textEdit.setPlainText('\n'.join(lines))
+
+    def fixSvg(self,svgPath):
+        f=open(svgPath,'r')
+        svgCode=f.read()
+        f.close()
+        codeParts=svgCode.split('</defs>')
+        codeParts[0]=codeParts[0].replace('</symbol>','').replace('>\n<path','').replace('<symbol','<path').replace('</g style','</g><path style')
+        svgCode='</defs>'.join(codeParts)
+        f=open(svgPath,'w')
+        f.write(svgCode)
+        f.close()
+
 
     def fixCode (self,code):
         money=code.count('$')
@@ -126,9 +133,35 @@ class BubbleContent(QTextEdit):
         return code
 
     def mouseDoubleClickEvent(self, event):
-        self.setContent()
+        self.clearFocus()
+        try:
+            self.setContent()
+            self.bubble.tab.save()
+            self.bubble.optimizeEdges()
+        except Exception as e:
+            print(e)
         return super().mouseDoubleClickEvent(event)
 
     def focusOutEvent(self, event):
         self.setContent()
         return super().focusOutEvent(event)
+
+    def makeIdCode (self,lines):
+        def hashFunc (s):
+            h=0
+            k=0
+            for i,c in enumerate(s) :
+                h+=ord(c)
+                k+=ord(c)*i
+            k=k%10
+            return h,k
+        code=str(self.bubble.id)+'#'
+        key=0
+        if isinstance(lines,str):
+            lines=[lines]
+        for l in lines:
+            h,k=hashFunc(l)
+            code+=str(h)
+            key+=k
+        code+=str(key)
+        return code

@@ -50,7 +50,7 @@ class Canvas(QGraphicsView):
     def wheelEvent(self, event):
         if (QApplication.keyboardModifiers() == Qt.ControlModifier):
             delta=event.angleDelta().y()
-            zoom=1.03
+            zoom=1.045
             C=self.mapToScene(self.width()/2,self.height()/2)
             P=self.mapToScene(event.pos())
             if delta>0:

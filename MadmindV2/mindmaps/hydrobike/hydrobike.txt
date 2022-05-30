@@ -1,0 +1,197 @@
+|MindMap title : Hydrofoil Bike
+|Height : 3000
+|Width : 3000
+|BgColor : #faf2e8
+|BubbleColor : #6699BB
+
+#0:x=2383.8;y=380.4;size=1.000
+Hydrobike
+$M$
+
+#10:from:30,190;to:170;x=2225.1;y=850.7;size=1.000
+Rear foil
+$m_R\vec a_R=\vec F_{h_R}+\vec W$
+$J_R\ddot\theta=M_{h_R}$
+
+#20:from:350;to:30;x=1869.7;y=788.9;size=1.000
+3D drag force
+$D=\tfrac 12\rho_{\mathrm w}S_RU^2Cx_{3D}$
+
+#30:from:20,110,270;to:10;x=2086.5;y=790.1;size=1.440
+Hydrodynamic\\force
+$\vec F_h=L\vec u_z-D\vec u_x$
+
+#40:from:340;to:310;x=2150.8;y=317.3;size=0.833
+Diederich formula
+$k_{\alpha_{3D}}=\dfrac{\pi\lambda}{1+\sqrt{1+\left(\dfrac{\pi\lambda}{k_\alpha\cos\varphi}\right)^2}}$
+
+#50:to:60,310;x=1543.4;y=303.8;size=0.833
+2D unsteady inviscid lift coefficient
+((Bonnet model))
+\footnotesize $\tilde Cz=\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha}\Re\left (\left [\cx\theta -\dl{\dot{\cx h}}+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+
+#60:from:50;to:350;x=1401.9;y=500.5;size=1.000
+2D unsteady inviscid drag coefficient
+((Bonnet model))
+$\tilde Cx=\tilde Cz\theta-\oz{Cz}\oz{\theta}+\frac\pi2\dl{\dot{\theta}}\left(-\frac{1}{4}\dl{\dot{\theta}}+2\oz{\theta}\right)+Cz^i\left(-2\oz{\theta}+\frac{1}{2}\dl{\dot{\theta}}-\frac{Cz^i}{k_\alpha}\right)$
+
+#100:to:130,360;x=1668.7;y=541.9;size=0.833
+2D steady viscid drag coefficient
+((xfoil))
+$Cx_{steady_{2D}}(\alpha)$
+
+#110:from:300;to:30;x=2111.0;y=687.8;size=1.000
+3D lift force
+$L=\tfrac 12\rho_{\mathrm w} S_RU^2Cz_{3D}$
+
+#130:from:100;x=1646.5;y=454.5;size=0.579
+2D unsteady viscid lift coefficient
+$Cz_{2D}=Cz_{inv}+Cx_{static}(\alpha)\, \sin(\alpha_h)$
+
+#140:from:190;to:180;x=2450.1;y=883.2;size=1.000
+Bike frame
+$m_B\vec a_B=\vec P+\vec F_R+\vec F_F+\vec F_s+\vec F_a$
+
+#150:x=2532.8;y=431.1;size=1.000
+3D aerodynamic force
+$\vec F_a=-\tfrac 12\rho_{\mathrm a}S_BU^2Cz_B\vec u_{x_0}$
+
+#160:x=2571.0;y=613.6;size=1.000
+Front foil
+$m_F\vec a_F=\vec F_{h_F}-\vec F_F$
+$J_F\ddot\theta=M_{h_F}$
+
+#170:from:10;to:180;x=2248.8;y=978.0;size=1.000
+Rear foil equations of motion
+$m_R\vec a_R=\vec F_{h_R}+\vec W$
+$J_R\ddot\theta=M_{h_R}$
+
+#180:from:140,170;to:220,230;x=2446.7;y=1072.6;size=1.000
+Simplified rear foil-bike frame system
+We want to find the frequency function $\omega(U)$,
+the amplitudes $A_{\theta_R}$ and $A_{h_R}$ and
+the axis position $x_{A_R}$ giving the best
+propulsive efficiency $\eta_{prop}(A_{\theta_R},A_{h_R},\omega,x_{A_R},\phi)=\frac{-Cx}{-Cz\dot h-Cm\dot\theta}$.
+
+#190:to:10,140;x=2316.9;y=753.0;size=1.000
+Springs force
+$F_s=kl_s$
+
+#200:from:220;x=1994.2;y=1428.0;size=1.000
+Static regime
+$\tfrac 12\rho_{\mathrm w} S_RU^2Cz_{3D}(\oz\theta_R)=m_Bg\quad\Longrightarrow\ \oz\theta_R(U)$
+$M_{h_R}(\oz\theta_R,x_{A_R})=-\kappa(\oz\theta_R+cste)\quad\Longrightarrow\ \kappa(x_{A_R},U)$
+
+#210:from:220;x=2308.0;y=1413.2;size=1.000
+Periodic regime
+
+#220:from:180;to:200,210;x=2213.3;y=1268.1;size=0.833
+Constant speed flying mode
+$0=-D_R-D_{CBR}-F_a$
+$m_R\ddot z_R=L_R-F_R+F_s$
+$0=M_{h_R}+M_{ps}$
+$m_B\ddot z_B=-P+F_R-F_s$
+$\Downarrow$
+$\tfrac 12\rho_{\mathrm w}S_RU^2Cx_{2D}(\theta_R,\dot\theta_R,\ddot\theta_R,\dot z_R,\ddot z_R)=-\tfrac 12\rho_{\mathrm w}S_{CBR}U^2Cx_{CBR}-\tfrac12\rho_{\mathrm a}S_BU^2Cx_B$
+$m_R\ddot z_R=-\tfrac 12\rho_{\mathrm w} S_RU^2Cz_{3D}(\theta_R,\dot\theta_R,\ddot\theta_R,\dot z_R,\ddot z_R)-F_R+k(z_R-z_B+cste)$
+$0=M_{h_R}(\theta_R,\dot\theta_R,\ddot\theta_R,\dot z_R,\ddot z_R)+\kappa(\theta_R+cste)$
+$m_B\ddot z_B=m_Bg+F_R-k(z_R-z_B+cste)$
+
+#230:from:180;to:240;x=2634.2;y=1262.7;size=1.000
+Floating mode $\oz\theta=0$
+$M\ddot x=-D_R-D_{CBR}-D_{floaters}-F_a$
+$m_R\ddot z_R=L_R+W+F_s$
+$0=M_{h_R}+M_{ps}$
+$\Downarrow$
+$M\ddot x=-\tfrac 12\rho_{\mathrm w}S_R\dot x^2Cx_{2D}(\theta_R,\dot\theta_R,\ddot\theta_R,\dot z_R,\ddot z_R)-\tfrac 12\rho_{\mathrm w}S_{CBR}\dot x^2Cx_{CBR}-\tfrac 12\rho_{\mathrm w}S_{floaters}\dot x^2Cx_{floaters}-\tfrac12\rho_{\mathrm a}S_B\dot x^2Cx_B$
+$m_R\ddot z_R=-\tfrac 12\rho_{\mathrm w} S_R\dot x^2Cz_{3D}(\theta_R,\dot\theta_R,\ddot\theta_R,\dot z_R,\ddot z_R)+W+k(z_R-z_B+cste)$
+$0=M_{h_R}(\theta_R,\dot\theta_R,\ddot\theta_R,\dot z_R,\ddot z_R)+\kappa\theta_R$
+
+#240:from:230;to:250;x=2598.1;y=1507.9;size=1.000
+Periodic regime
+$M\ddot x=-\tfrac 12\rho_{\mathrm w}S_R\dot x^2Cx_{2D}(\omega,A_\theta,A_h,\phi,x_A)-\tfrac 12\rho_{\mathrm w}S_{CBR}\dot x^2Cx_{CBR}-\tfrac 12\rho_{\mathrm w}S_{floaters}\dot x^2Cx_{floaters}-\tfrac12\rho_{\mathrm a}S_B\dot x^2Cx_B$
+$m_R\ddot z_R=-\tfrac 12\rho_{\mathrm w} S_R\dot x^2Cz_{3D}(\omega,A_\theta,A_h,\phi,x_A)+W$
+$0=M_{h_R}(\omega,A_\theta,A_h,\phi,x_A)+\kappa\theta_R$
+
+#250:from:240;to:260;x=2583.1;y=1712.0;size=1.000
+Simplified constant speed periodic regime
+$0=-\tfrac 12\rho_{\mathrm w}S_RU^2Cx_{2D}(\omega,A_\theta,A_h,\phi,x_A)-\tfrac 12\rho_{\mathrm w}S_{CBR}U^2Cx_{CBR}-\tfrac 12\rho_{\mathrm w}S_{floaters}U^2Cx_{floaters}-\tfrac12\rho_{\mathrm a}S_BU^2Cx_B$
+$0=-\tfrac 12\rho_{\mathrm w} S_RU^2Cz_{3D}(\omega,A_\theta,A_h,\phi,x_A)+W(\omega)$
+$0=M_{h_R}(\omega,A_\theta,A_h,\phi,x_A)+\kappa\theta_R$
+We want $\omega,A_h,\kappa,x_A$ so that they maximize the speed $U$
+and/or the propulsive efficiency $\eta_{prop}={\overline {Cx}}/{\overline W}$.
+
+#260:from:250;x=2530.0;y=1895.2;size=1.000
+Compact form
+$Cx_{2D}(U,\omega,A_\theta,A_h,\phi,x_A)=C_1$
+$U^2Cz_{3D}(U,\omega,A_\theta,A_h,\phi,x_A)=C_2W(\omega)$
+$U^2Cm_A(U,\omega,A_\theta,A_h,\phi,x_A)=C_3\kappa\theta_R$
+
+#270:from:280,290;to:30;x=1938.2;y=847.7;size=1.000
+3D moment
+
+#280:to:270;x=1715.3;y=873.8;size=1.000
+2D static moment
+coefficient
+
+#290:to:270;x=1388.6;y=1062.2;size=1.200
+2D unsteady inviscid moment coefficient
+((Bonnet model))
+\footnotesize $Cm_A(\dl t) = \oz{Cm_A}+\frac{\pi}{2}\left[\left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\theta}}-\left(\frac{1}{2}-\dl{x}_A\right)\dl{\ddot{h}}+\left(\frac{9}{32}-\dl{x}_A+{\dl{x}_A}^2\right)\dl{\ddot{\theta}}\right]+\left(\frac{1}{4}-\dl{x}_A\right)Cz^i$
+
+#300:from:310,360;to:110;x=1976.8;y=565.7;size=1.000
+3D unsteady viscid lift coefficient
+((3DSUPER model))
+$Cz_{3D}=Cz_{inv_{3D}}+Cx_{static}(\alpha)\sin(\alpha_h)$
+$Cz_{3D}=Cx_{steady_{3D}}(\alpha)\sin(\alpha_h)+\frac{\pi}{2}\cos \theta\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha_{3D}}\cos \theta\;\Re\left (\left [\cx\alpha+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+
+#310:from:40,50;to:300;x=1895.8;y=378.5;size=1.200
+3D unsteady inviscid lift coefficient
+\footnotesize $Cz_{inv_{3D}}=\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha_{3D}}\Re\left (\left [\cx\alpha+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+
+#320:to:340;x=2145.8;y=130.3;size=0.833
+Prandtl lifting line
+$Cz=\pi\lambda A_1$
+$Cz_\alpha=\frac{\pi\lambda}{1+\dfrac{\pi\lambda}{k_\alpha}}$
+
+#330:to:340;x=2316.5;y=152.8;size=0.833
+Slender\\bodies theory
+$Cz_\alpha=\frac{\pi\lambda}{2}$
+
+#340:from:320,330;to:40;x=2223.6;y=223.1;size=0.578
+Helmbold formula
+$Cz_{\alpha}=\frac{\pi\lambda}{1+\sqrt{1+\left(\dfrac{\pi\lambda}{k_\alpha}\right)^2}}$
+
+#350:from:60,360;to:20;x=1369.5;y=751.5;size=1.200
+3D unsteady viscid drag coefficient
+((3DSUPER model))
+$Cx_{3D}=Cx_{steady_{3D}}\cos(\alpha_h)+\tilde Cx$
+$Cx_{3D}=\left(Cx_{steady_{2D}}(\alpha)+\frac{Cz_{{VE}_{3D}}^2}{\pi\lambda e}\right)\cos(\alpha_h)+\tilde Cz\sin\theta-\oz{Cz}\sin\oz{\theta}+\frac\pi2\dl{\dot{\theta}}\left(-\frac{1}{4}\dl{\dot{\theta}}+2\oz{\theta}\right)+Cz^i\left(-2\oz{\theta}+\frac{1}{2}\dl{\dot{\theta}}-\frac{Cz^i}{k_\alpha}\right)$
+
+#360:from:100;to:350,300;x=1711.2;y=663.1;size=0.833
+3D steady viscid drag coefficient
+$Cx_{steady_{3D}}=Cx_{steady_{2D}}(\alpha)+\frac{Cz_{{VE}_{3D}}^2}{\pi\lambda e}$
+\footnotesize $\cos(\alpha_h)=\tfrac{1}{\sqrt{1+({\dot h}^\ast)^2}}=\tfrac{({\dot h}^\ast)^2}2+O\left(({\dot h}^\ast)^4\right)$
+\footnotesize $\alpha=\theta+\alpha_h$
+
+#370:x=521.3;y=197.2;size=1.000
+Conception\\Veloafoil
+
+#380:x=245.2;y=336.4;size=1.000
+Etude forme du foil
+- Forme aile
+- Loi moment
+- Ressort/Loi de raideur
+
+#390:x=441.2;y=345.1;size=1.000
+Etude dynamique foil arrière
+((PyDy))
+- Optimisation rendement prop $\omega(U),\,$
+- Oscillations
+$\Rightarrow$ 
+
+#400:x=655.6;y=335.2;size=1.000
+Etude statique globale
+((Tableur))
+- PdF Décollage
+- PdF Croisière

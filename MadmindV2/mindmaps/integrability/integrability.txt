@@ -319,7 +319,7 @@ $[t(z_1),t(z_2)]=0$
 Hamiltonian
 $\mathbf H=Q_2=\frac d{dz}\log t(z)|_{z=0}=t^{-1}(0)t'(0)$
 
-#647:from:177;x=1137.9;y=1415.9;size=1.000
+#647:from:177;x=1211.8;y=1393.5;size=1.000
 Eigenvalues of the Hamiltonian
 
 #657:from:437;to:537,557;x=985.9;y=178.3;size=1.000

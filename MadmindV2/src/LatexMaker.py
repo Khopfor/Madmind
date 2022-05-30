@@ -56,6 +56,10 @@ class LatexMaker ():
             for i in range (1,len(lines)) :
                 if "\\begin{tabular" in lines[i]:
                     newline=False
+                elif lines[i][:2]=="((" and lines[i][-2:]=="))":
+                    lines[i]="\\scriptsize "+lines[i][1:-1]
+                    if i+1<len(lines):
+                        lines[i+1]="\\normalsize "+lines[i+1]
                 latexCode+=newline*("\\\\ "+subTextSize)
                 try:
                     if lines[i][0]=='$'and lines[i][1]!='$':

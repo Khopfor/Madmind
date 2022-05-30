@@ -28,11 +28,14 @@ class Progress():
 
 class SvgMaker():
     def __init__(self,mmName):
+        path="mindmaps/{}/{}".format(mmName,mmName)
         print("Making svg for mindmap {}...".format(mmName))
         print(" 0%",end='\r')
-        f=open("mindmaps/{}/{}.txt".format(mmName,mmName),'r')
+        os.system("cp "+path+".txt "+path+"_copy.txt")
+        f=open(path+"_copy.txt",'r')
         contents=f.read()
         f.close()
+        os.remove(path+"_copy.txt")
         latexMaker=LatexMaker(LATEXCOMMANDS)
         progress=Progress(self.printProgress)
         self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,progress=progress)
@@ -77,7 +80,7 @@ class SvgMaker():
                 svg.draw(draw.Lines(A1.x(),-A1.y(),P3.x(),-P3.y(),A2.x(),-A2.y(),fill="None",stroke="black",stroke_width=1.3,stroke_linecap='round',stroke_linejoin='round'),z=2)
                 # svg.draw(arrow,z=5)
             progress.incr(15/Ntot)
-        svgpath="mindmaps/{}/{}.svg".format(mmName,mmName)
+        svgpath=path+".svg"
         svg.saveSvg(svgpath)
         print("Svg ready !")
         # self.minify(svgpath)

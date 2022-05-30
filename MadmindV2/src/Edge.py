@@ -6,19 +6,23 @@ from PyQt5.QtCore import Qt, QPoint,QPointF, QRect,QSize,QSizeF
 from PyQt5.QtGui import QPixmap,QPainter,QColor,QPen,QPainterPath,QPolygonF
 # Local imports
 from utils import *
-
+import sip
+import gc
 
 class Edge (QGraphicsPathItem):
-    def __init__(self,fr,to,text='',style=None,mindmap=None,color=None):
+    def __init__(self,fr,to,text='',style=None,mindmap=None,color=None,width=1.3):
         super().__init__()
         self.fr=fr
         self.to=to
         self.id=(self.fr.id,self.to.id)
         self.params=[1,5,5,1]
         self.opti=True
-        self.setZValue(0)
-        self.width=1.3
-        self.color=QColor(5,5,5)
+        self.setZValue(3)
+        if width==None:
+            width=1.3
+        self.width=width
+        lightness=max(0,int(100-self.width**2*8))
+        self.color=QColor(lightness,lightness,lightness)
         if color:
             self.color=QColor(*color)
         pen=self.pen()
@@ -93,12 +97,18 @@ class Edge (QGraphicsPathItem):
 
 
     def updateWidth(self):
+        lightness=max(0,int(100-self.width**2*8))
+        self.color=QColor(lightness,lightness,lightness)
         pen=self.pen()
         pen.setWidthF(self.width)
+        pen.setColor(self.color)
         self.setPen(pen)
         arrowPen=self.arrow.pen()
         arrowPen.setWidthF(self.width)
+        arrowPen.setColor(self.color)
         self.arrow.setPen(arrowPen)
+        self.fr.updateStr()
+        self.to.updateStr()
 
 
     def updatePath(self):
@@ -123,7 +133,7 @@ class Edge (QGraphicsPathItem):
             X0=np.array(self.params)
             def f(X):
                 return self.energy(X)
-            bounds=[(None,None),(1.1,40),(1.1,40),(None,None)]
+            bounds=[(None,None),(1.1,5),(1.1,5),(None,None)]
             res=minimize(f,X0,bounds=bounds)
             self.params,success,msg=res.x,res.success,res.message
             # print("Success :",success,"|",msg,res.x,self.params)
@@ -234,6 +244,11 @@ class Edge (QGraphicsPathItem):
         return super().hoverEnterEvent(event)
 
     def delete(self,scene):
+        # print("Edge :",self.id,"about to be deleted.")
+        self.shine(0)
         self.fr.removeEdge(self)
         self.to.removeEdge(self)
-        scene.removeItem(self)
+        # scene.removeItem(self)
+        self.hide()
+        # sip.delete(self)
+        # print("Edge deleted")

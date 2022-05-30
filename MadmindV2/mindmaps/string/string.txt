@@ -1,50 +1,48 @@
 |MindMap title : String Theory
-|Height : 2000
-|Width : 2000
+|Height : 2500
+|Width : 2500
 |BubbleColor : #992299
-|Optimize : no
-|Tolerance : None
 
-#0:to:1,990,110,120,1010;x=661.7;y=51.9;size=2.880
+#0:to:1(48),990,110,120,1010;x=1007.9;y=79.3;size=4.147
 \textbf{String}
 
-#1: to:2;x=554.9;y=126.6
+#1:from:0(48);to:101,2(48);x=859.2;y=137.9;size=1.000
 Worldsheet
 
-#110: from:0;color=772244;x=724.2;y=125.0
+#110:from:0;to:8;x=1060.6;y=173.3;size=1.000
 Closed string
 $\sigma \in [0,2\pi]$
 
-#120:from:0;to:121;x=825.1;y=128.7;size=1.000
+#120:from:0;to:121;x=1161.5;y=177.0;size=1.000
 Open string
 $\sigma \in [0,\pi]$
 
-#121:from:120;x=820.7;y=200.4;size=1.000
+#121:from:120;x=1179.9;y=252.6;size=1.000
 Neumann \textsc{BC}
 $X'^\mu(\tau,0)=X'^\mu(\tau,\pi)=0$
 
-#101: from:1;size=0.6;x=414.5;y=101.6
+#101:from:1;x=720.4;y=155.3;size=0.600
 Nambu-Goto action
 $S=-T\int \de^2\sigma\sqrt{-det\gamma_\albe}$
 
-#2:from:990; to:3,4,5,950;size=1.5;x=455.5;y=220.2
+#2:from:1(48),990;to:3,4(48),5,950,201;x=787.5;y=264.7;size=1.500
 Polyakov action
-\redbox{$\displaystyle S=-\frac T2 \int \de^2\sigma\sqrt{-h}g_\munu(X)h^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
+\redbox{$\displaystyle S=-\frac T2 \int \de^2\sigma\sqrt{-h}g_\munu(X) h^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
 
-#201: from:2;x=714.7;y=275.1
+#201:from:2;to:202;x=1051.1;y=323.4;size=1.000
 Equations of motion for $X^\mu$
 $\partial_\alpha (\sqrt{-h}h^\albe\partial_\beta X^\mu)=0$
 $\iff \nabla^2X^\mu=0$
 
-#202:from:201,970,203;to:203,7;x=278.3;y=526.8;size=1.000
+#202:from:201,970(35),203;to:203,7(35);x=592.7;y=578.5;size=1.000
 EOM for $X^\mu$ in unit gauge
 $\partial_\alpha\partial^\alpha X^\mu=(\partial_\tau^2-\partial_\sigma^2)X^\mu=\partial_-\partial_+X^\mu=0$
 
-#203:from:202;to:202,601,303,1170;x=416.3;y=614.8;size=0.864
+#203:from:202;to:202,601,303;x=761.8;y=662.4;size=0.720
 Worldsheet\\lightcone coordinates
 $\sigma^\pm=\tau\pm\sigma$
 
-#3:to:960; ;x=111.9;y=240.5
+#3:from:2;to:960,301;x=448.3;y=288.8;size=1.000
 Reparam invariance
 $\sigma^\alpha\rightarrow\xi^\alpha(\sigma)$
 \footnotesize\textsc{Infinitesimal tranfo : }$\sigma'^\alpha=\sigma^\alpha-\xi^\alpha(\sigma)$
@@ -53,83 +51,81 @@ $\delta h_\albe=\xi^\gamma\partial_\gamma h_\albe+h_{\alpha\gamma}\partial_\beta
 $\delta h^\albe=\xi^\gamma\partial_\gamma h^\albe-h^{\alpha\gamma}\partial_\gamma\xi^\beta-h^{\beta\gamma}\partial_\gamma\xi^\alpha$
 $\delta(\sqrt{-h})=\partial_\alpha(\xi^\alpha\sqrt{-h})$
 
-#301: from:3;x=139.7;y=369.6
+#301:from:3;to:302;x=476.1;y=417.9;size=1.000
 Conformal gauge
 $h_\albe(\sigma)=e^{2\Lambda(\sigma)}\eta_\albe$
 
-#302:from:301,4;to:960,970,6;x=237.6;y=447.2;size=1.000
+#302:from:301,4(48);to:960,970(48),6,1230;x=567.8;y=496.8;size=1.000
 Unit gauge
 $h_\albe=\eta_\albe$
 
-#303:from:203,970;to:21,22;x=676.3;y=446.2;size=0.800
+#303:from:203,970;to:21,22;x=1012.7;y=494.5;size=0.800
 Remaining gauge freedom
 Reparam of special type $\sigma^\pm=\xi^\pm(\sigma^\pm)$
 where $\xi^\pm$ are periodic in $\sigma$
 This freedom is fixed by imposing\\the light-cone gauge
 
-#4:from:2;to:302,960,501;x=287.3;y=331.5;size=1.000
+#4:from:2(48);to:302(48),960,501;x=623.7;y=379.8;size=1.000
 Weyl invariance
 $h_\albe(\sigma)\rightarrow e^{2\Lambda(\sigma)}h_\albe$
 \footnotesize\textsc{Infinitesimally : }$h'_\albe=(1+2\Lambda(\sigma))h_\albe$
 $\delta h_\albe=2\Lambda h_\albe$
 
-#5:from:2;to:6,501,510;x=518.6;y=340.1;size=0.833
+#5:from:2;to:6,501,510;x=855.0;y=388.4;size=0.833
 Stress-energy tensor
 $T_\albe=-\frac{1}{T\sqrt{-h}}\frac{\delta S}{\delta h_\albe}$
 
-#501: from:4,5;size=0.5;x=414.2;y=334.9
+#501:from:4,5;x=750.6;y=383.2;size=0.500
 Traceless $T_{\alpha\beta}$
 $T^\alpha_\alpha=0$
 
-#510:from:5;x=671.8;y=345.2;size=0.694
+#510:from:5;x=1008.2;y=393.5;size=0.694
 Equations of motion for $h_{\alpha\beta}$
 \scriptsize$T_\albe=0\iff \partial_\alpha X^\mu\partial_\beta X_\mu=\frac{1}{2}h_\albe h^{\gamma\delta}\partial_\gamma X^\mu\partial_\delta X_\mu$
 
-#6:from:5,970,302;to:601,15;x=530.1;y=537.6;size=1.200
+#6:from:302,5,970(48);to:601(48),15;x=866.5;y=585.9;size=1.200
 Virasoro constraints
 \scriptsize($\eom$ for $h_\albe$ in unit gauge)
 \\\normalsize\begin{tabular}{lc}$T_{00}=T_{11}=$&$\dot{X}^2+X'^2=0$\\
 $T_{01}=T_{10}=$&$\dot{X}\cdot X'=0$\end{tabular}
 
-#601:from:203,6;to:13,23;x=715.4;y=571.6;size=0.900
+#601:from:203,6(48);to:13,23;x=1051.8;y=619.9;size=0.900
 Virasoro constraints\\in lightcone coordinates
 $(\partial_+X)^2=(\partial_-X)^2=0$
 \footnotesize$ (\partial_-X)^2=\alpha'\sum_nL_ne^{-in\sigma^-}=0$
 $\textstyle(\partial_+X)^2=\alpha'\sum_n\bar L_ne^{-in\sigma^-}=0$
 
-#7:from:202;to:8,9;x=271.7;y=629.8;size=1.000
+#7:from:202(35);to:8(35),9,1320;x=628.1;y=688.5;size=1.000
 Solution of the EOM
 $X^\mu(\tau,\sigma)=X^\mu_L(\sigma^+)+X^\mu_R(\sigma^-)$
+$X^\mu=\sqrt{\alpha'}\sum_n\beta_n^\mu(\tau)e^{-in\sigma}$
 
-#8:from:7,110;to:801,802,10;x=358.9;y=762.5;size=0.833
+#8:from:110,7(35);to:801,802(35),10;x=676.3;y=850.5;size=0.833
 Solution for closed string
 $X^\mu_{\overset{L}{^R}}(\sigma^\pm)=\tfrac 12 x^\mu+\tfrac{\alpha'}2 p^\mu\sigma^{\pm}+i\sqrt\frac{\alpha'}2\sum_{n\neq 0}\frac{1}{n}{\alpha^\mu_{n,}}_{\overset{L}{^R}} e^{-in\sigma^{\pm}}$
 \redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\alpha'p^\mu\tau+i\sqrt\frac{\alpha'}{2}\sum_{n\neq 0}\frac{1}{n}\left(\alpha^\mu_n e^{-in\sigma^{-}}+\bar\alpha^\mu_n e^{-in\sigma^{+}}\right)$}
 
-#801:from:8;to:802;x=346.7;y=886.0;size=0.750
+#801:from:8;to:1070;x=850.5;y=923.4;size=0.750
 Closed string zero modes
 $\alpha_0^\mu=\bar\alpha_0^\mu=\frac{p^\mu}{\sqrt{4\pi T}}=\sqrt{\frac{\alpha'}2}p^\mu$
 
-#802:from:8,801;to:14;x=503.2;y=877.0;size=0.694
+#802:from:8(35),1330;to:14,910(35);x=675.0;y=989.5;size=0.833
 Oscillators Poisson relations
 $\{\alpha_m^\mu,\alpha_n^\nu\}=\{\bar\alpha_m^\mu,\bar\alpha_n^\nu\}=-im\delta_{m+n}\eta^\munu$
 $\{\alpha_m^\mu,\bar\alpha_n^\nu\}=0$
 $\{x^\mu,p^\nu\}=\eta^\munu$
 
-#9:from:7;to:901,902,10;x=114.4;y=687.8;size=0.833
+#9:from:7;to:902,10;x=517.5;y=738.4;size=0.402
 Open string solution with Neumann \textsc{BC}
 \redbox{$\displaystyle X^\mu(\tau,\sigma)=x^\mu+\frac{p^\mu}{\pi T}\tau+\frac{i}{\sqrt{\pi T}}\sum_{n\neq 0}\frac{1}{n}\alpha^\mu_n e^{-in\tau}\co (n\sigma)$}
+(($\alpha_0^\mu=\frac{p^\mu}{\sqrt{\pi T}}$))
 
-#901:from:9;to:902;x=51.3;y=766.1;size=0.521
-Open string zero mode
-$\alpha_0^\mu=\frac{p^\mu}{\sqrt{\pi T}}$
-
-#902:from:9,901;x=103.4;y=839.4;size=0.833
+#902:from:9,1330;x=450.9;y=778.6;size=0.335
 Oscillators Poisson relations
 $\{\alpha_m^\mu,\alpha_n^\nu\}=-im\delta_{m+n}\eta^\munu$
 $\{x^\mu,p^\nu\}=\eta^\munu$
 
-#910:to:1090;x=947.4;y=943.2;size=0.597
+#910:from:802(35),1070;to:1090(35);x=1266.9;y=997.2;size=0.597
 Poisson brakets of the lightcone modes\\
 \begin{tabular}{c|ccccccc}
     $\{,\}$ & $p^+$ & $p^-$ & $p^j$ & $x^j$ & $x^-$ & $\alpha_m^j$ & $\alpha_m^-$ \\\hline
@@ -143,54 +139,54 @@ Poisson brakets of the lightcone modes\\
 \end{tabular}\\
 $\{\alpha_n^-,\alpha_m^-\}=\frac{-i\sqrt{4\pi T}}{p^+}(m-n)\alpha_{m+n}^-$
 
-#10:from:8,9;x=169.8;y=772.2;size=0.800
+#10:from:8,9;x=473.8;y=831.6;size=0.800
 Reality condition
 $(\alpha^\mu_n)^*=\alpha^\mu_{-n}$
 
-#12:to:131,132;x=1170.8;y=735.3;size=0.500
+#12:to:131(4),132(4);x=1223.9;y=733.7;size=0.097
 $T_{++}=\frac{(P_\mu+TX'_\mu)^2}{8T^2}$
 $T_{--}=\frac{(P_\mu-TX'_\mu)^2}{8T^2}$
 
-#13:from:601,131,132;to:14,15,1000,1130;x=724.1;y=692.8;size=1.000
+#13:from:601,131(4),132(4);to:14,15,1000,1130;x=1060.5;y=741.1;size=1.000
 Virasoro generators
 $L_n=\frac{1}{2}\sum_m\alpha_{n-m}\cdot \alpha_m$
 $\bar L_n=\frac{1}{2}\sum_m\bar\alpha_{n-m}\cdot \bar\alpha_m$
 
-#131:from:12;to:13;x=1078.3;y=692.9;size=0.500
+#131:from:12(4);to:13(4);x=1180.0;y=715.1;size=0.081
 Virasoro generators for an open string
 $L_m=2T\int^\pi_0\de\sigma(e^{im\sigma^+}T_{++})+e^{im\sigma_-}T_{--})$
 
-#132:from:12;to:13;x=1053.0;y=801.1;size=0.500
+#132:from:12(4);to:13(4);x=1172.1;y=744.1;size=0.097
 Virasoro generators for a closed string
 $L_m=2T\int^{2\pi}_0\de\sigma T_{--}(\sigma)e^{-im\sigma^-}$
 $\bar L_m=2T\int^{2\pi}_0\de\sigma T_{++}(\sigma)e^{-im\sigma^+}$
 
-#14:from:13,802;x=730.5;y=929.2;size=0.800
+#14:from:802,13;x=977.4;y=940.2;size=0.556
 Witt algebra
 $\lb L_m,L_n\rb =-i(m-n)L_{m+n}$
 $\lb \bar L_m,\bar L_n\rb =-i(m-n)L_{m+n}$
 $\lb L_m,\bar L_n\rb =0$
 
-#15:from:6,13;to:1000;x=530.1;y=674.7;size=1.000
+#15:from:6,13;to:1000;x=866.5;y=723.0;size=1.000
 Virasoro constraints in terms of $L_n$
 $\forall n \in \mathbb{Z}, L_n=\bar L_n=0$
 
-#20:to:21,22,23;x=795.6;y=371.1;size=0.694
+#20:to:21,22,23;x=1132.0;y=419.4;size=0.694
 Spacetime\\lightcone coordinates
 $X^\pm=\frac{1}{\sqrt{2}}(X^0\pm X^{d-1})$
 \scriptsize$\eta_\munu=\begin{pmatrix}0&0&0&-1\\0&1&0&0\\0&0&1&0\\-1&0&0&0\end{pmatrix}$
 
-#21:from:303,20;x=946.0;y=430.1;size=1.000
+#21:from:303,20;x=1282.4;y=478.4;size=1.000
 Light-cone gauge fixing
 \scriptsize (closed string)
 \normalsize$X^+=x^++\alpha'p^+\tau \qquad P^+=\frac{p^+}{2\pi}=const$
 
-#22:from:20,303;x=837.7;y=487.0;size=0.579
+#22:from:303,20;x=1174.1;y=535.3;size=0.579
 Light-cone gauge fixing
 \scriptsize (open string)
 \normalsize $X^+=\frac{p^+}{\pi T}\tau \qquad P^+=\frac{p^+}{\pi}=const$
 
-#23:from:20,601;to:1070;x=931.8;y=597.3;size=0.833
+#23:from:601,20;to:1070;x=1258.6;y=636.9;size=0.833
 Consequence of\\Virasoro constraints
 $\partial_\pm X^-=\frac{1}{\alpha'p^+}(\partial_\pm X^i)^2$
 \footnotesize ie up to an integration constant ($x^-$) $X^-$ is
@@ -198,77 +194,76 @@ completely determined in terms of the other fields.
 \small$\displaystyle\alpha_n^-=\frac 1{\sqrt{2\alpha'}p^+}\sum_{m=-\infty}^\infty\alpha_{n-m}^i\alpha_{i,m}$
 $\bar\alpha_n^-=\frac 1{\sqrt{2\alpha'}p^+}\sum_{m=-\infty}^\infty\bar\alpha_{n-m}^i\bar\alpha_{i,m}$
 
-#930:x=1487.7;y=1602.3;size=1.000
-Superstring action
-$S=\frac{1}{2\pi}\int \de^2\sigma\left(\partial_\alpha X^\mu\partial_\beta X^\nu h^\albe\eta_\munu+2i\bar\Phi^\mu\rho^\alpha\partial_\alpha\Phi_\mu-\bar\xi_\alpha\rho^\beta\rho^\alpha\Phi^\mu[\partial_\beta X_\mu-\tfrac i4 \bar\xi^\beta\Phi_\mu]\right)$
 
-#940:x=1209.6;y=1694.2;size=1.000
+
+#940:x=2366.5;y=1963.1;size=1.000
 Reparam symmetry
 
-#950:from:2;x=264.9;y=132.2
+#950:from:2;x=548.2;y=207.0;size=1.000
 Poincaré invariance
 
-#960:from:4,3,302;x=66.6;y=444.3;size=0.579;
+#960:from:3,302,4;x=433.7;y=492.6;size=0.579
 Conformal Killing equation
 $\xi^\gamma\partial_\gamma h_\albe+h_{\alpha\gamma}\partial_\beta\xi^\gamma+h_{\beta\gamma}\partial_\alpha\xi^\gamma=2\Lambda h_\albe$
 $\partial_\alpha \xi_\beta+\partial_\beta \xi_\alpha=2\Lambda \eta_\albe$
 
-#970:from:302;to:202,303,6;x=417.8;y=425.8;size=1.200
-Polyakov action in unit gauge
-\bbox{$S=-\frac T2 \int \de^2\sigma g_\munu(X)\partial_\alpha X^\mu\partial^\alpha X^\nu$}
+#970:from:302(48);to:202(35),303,6(48);x=741.7;y=474.4;size=1.200
+Polyakov action in unit\\gauge and flat spacetime
+\bbox{$S=-\frac T2 \int \de^2\sigma \eta_\munu\partial_\alpha X^\mu\partial^\alpha X^\nu$}
 
-#980:x=907.1;y=344.1;size=1.000
+#980:x=1243.5;y=392.4;size=1.000
 Static gauge
 $X^0\equiv t=R\tau$
 
-#990:to:2;from:0;x=637.0;y=150.6
+#990:from:0;to:2;x=975.8;y=180.3;size=1.000
 String\\tension
 $T=\frac{1}{2\pi\alpha'}$
 
-#1000:from:13,15;to:1080;x=589.9;y=779.4;size=0.833
+#1000:from:13,15;to:1080;x=926.3;y=827.7;size=0.833
 Level matching condition\\(Mass expressions)
 $L_0=\bar L_0=0$
 $M^2=\frac 4{\alpha'}\sum_{n>0}\alpha_n\cdot\alpha_{-n}=\frac 4{\alpha'}\sum_{n>0}\bar\alpha_n\cdot\bar\alpha_{-n}$
 
-#1010:from:0;to:1020,1030;x=1486.5;y=87.3;size=1.440
+#1010:from:0;to:1020,1030;x=1840.4;y=178.9;size=1.440
 Quantization\\of the string
 
-#1020:from:1010;x=1356.6;y=178.7;size=1.000
+#1020:from:1010;to:1090;x=1661.4;y=253.4;size=1.000
 Lightcone quantization
 Solve constraints in the classical
 theory then quantize
 
-#1030:from:1010;to:1040;x=1648.5;y=192.2;size=1.000
+#1030:from:1010;to:1040;x=2132.9;y=252.5;size=1.000
 Covariant quantization
 Canonical quantize then apply Virasoro
 constraints as operator constraints.
 
-#1040:from:1030;to:1050;x=1771.1;y=306.4;size=0.694
+#1040:from:1030;to:1050;x=2217.3;y=324.3;size=0.578
 Canonical equal-time\\commutation relations
 of $X^\mu$ and $\Pi_\mu=\frac 1{2\pi\alpha'}\dot X_\mu$
 $[X^\mu(\sigma,\tau),\Pi_\nu(\sigma',\tau)]=i\delta(\sigma-\sigma')\delta^\mu_\nu$
 $[X^\mu(\sigma,\tau),X^\nu(\sigma',\tau)]=0$
 $[\Pi_\mu(\sigma,\tau),\Pi_\nu(\sigma',\tau)]=0$
 
-#1050:from:1040;to:1060;x=1863.6;y=406.2;size=0.833
-Canonical commutators of the modes
+#1050:from:1040;to:1060;x=2297.3;y=377.0;size=0.578
+Canonical commutators\\of the modes
 $[x^\mu,p_\nu]=i\delta^\mu_\nu$
 $[\alpha^\mu_n,\alpha^\nu_m]=[\bar\alpha^\mu_n,\bar\alpha^\nu_m]=n\eta^\munu\delta^\mu_\nu$
 
-#1060:from:1050;x=1829.3;y=535.0;size=1.000
+#1060:from:1050;x=2285.9;y=470.8;size=0.694
 Creation and annihilation\\operators
 $a^\mu_n=\frac{\alpha_n^\mu}{\sqrt n}\ ,\ a_n^{\mu\dag}=\frac{\alpha^\mu_{-n}}{\sqrt n} \qquad n>0$
 $[a_n,a_m^\dag]=\eta^\munu\delta_{nm}$
 
-#1070:from:23,1080;to:1080;x=914.5;y=747.3;size=0.579
+#1070:from:801,23,1080;to:1080,910;x=1242.7;y=793.9;size=0.695
 $\alpha^-_0$ and $\bar\alpha^-_0$ equations (Expression of $p^-$)
 \small$\displaystyle p^-=\frac 1{p^+}\left(p^ip_i+\frac 1{2\alpha'}\sum_{n\neq 0}\alpha^i_n\alpha_{i,n}\right)=\frac 1{p^+}\left(p^ip_i+\frac 1{2\alpha'}\sum_{n\neq 0}\bar\alpha^i_n\bar\alpha_{i,n}\right)$
 
-#1080:from:1000,1070;to:1070;x=778.3;y=833.2;size=0.694
+#1080:from:1000,1070;to:1070;x=1114.7;y=881.5;size=0.694
 Level matching condition\\in lightcone gauge
 $M^2=2p^+p^--p^ip_i=\frac 4{\alpha'}\sum_{n>0}\alpha^i_{-n}\alpha_{i,n}=\frac 4{\alpha'}\sum_{n>0}\bar\alpha^i_{-n}\bar\alpha_{i,n}$
+\footnotesize The lc gauge allow us to get rid of the tachyons as now $M^2\ge0$
 
-#1090:from:910;x=1272.5;y=886.1;size=0.694
+#1090:from:910(35),1020;x=1561.0;y=581.1;size=0.833
 Commutators of the lightcone modes\\
 \begin{tabular}{c|ccccccc}
     $[,]$ & $p^+$ & $p^-$ & $p^j$ & $x^j$ & $x^-$ & $\alpha_m^j$ & $\alpha_m^-$ \\\hline
@@ -282,63 +277,278 @@ Commutators of the lightcone modes\\
 \end{tabular}\\
 $[\alpha_n^-,\alpha_m^-]=\frac{\sqrt{4\pi T}}{p^+}(m-n)\alpha_{m+n}^-+\frac{4\pi T}{(p^+)^2}\frac{D-2}{12}m(m^2-1)\delta_{m+n}$
 
-#1100:to:1110;x=1623.1;y=536.5;size=0.833
+#1100:to:1110;x=2070.2;y=483.3;size=0.833
 Level operators
 $\displaystyle N=\sum_{i=1}^{D-2}\sum_{n>0}\alpha^i_{-n}\alpha^i_n$
 $\displaystyle\bar N=\sum_{i=1}^{D-2}\sum_{n>0}\bar\alpha^i_{-n}\bar\alpha^i_n$
 
-#1110:from:1100;x=1493.4;y=629.1;size=1.000
+#1110:from:1100,1120;to:1340(25);x=1999.2;y=815.0;size=1.000
 Level matching condition\\(Mass of states)
-$M^2=\frac{4}{\alpha'}(N-a)=\frac{4}{\alpha'}(\bar N-a)$
+$M^2=\frac{4}{\alpha'}(N-a)=\frac{4}{\alpha'}(\bar N-\bar a)$
 
-#1120:from:1130;to:1140;x=1489.6;y=437.3;size=1.000
+#1120:from:1130;to:1140,1110;x=1981.2;y=377.0;size=0.833
 Ordering ambiguity\\in $L_0$, $\bar L_0$
 $L_0=\tfrac 12\alpha_0^2-a+\sum_n\alpha_{-n}\cdot\alpha_n$
+$\bar L_0=\tfrac 12\alpha_0^2-\bar a+\sum_n\alpha_{-n}\cdot\alpha_n$
 
-#1130:from:13;to:1120,1140;x=1288.1;y=388.5;size=1.000
+#1130:from:13;to:1120,1140;x=1814.0;y=365.2;size=1.000
 Quantum\\Virasoro operators
 $L_n=\frac{1}{2}\sum_m:\alpha_{n-m}\cdot \alpha_m:$
 $\bar L_n=\frac{1}{2}\sum_m:\bar\alpha_{n-m}\cdot \bar\alpha_m:$
 
-#1140:from:1130,1120;x=1333.8;y=528.7;size=1.000
+#1140:from:1120,1130;x=1876.7;y=470.5;size=0.694
 Virasoro algebra
 $[L_m,L_n]=(m-n)L_{m+n}+\left(\frac D{12}m^3+(2a-\frac D{12})\right)\delta_{m+n}$
 
-#1150:x=194.5;y=1104.9;size=1.000
+#1150:to:1170,1680;x=1016.1;y=1192.4;size=2.489
 String\\interactions
 
-#1160:to:1170;x=86.9;y=1180.9;size=1.000
+#1160:to:1170;x=548.9;y=1356.8;size=1.000
 Wick rotation
 $\tau \longrightarrow -i\tau$
 
-#1170:from:1160,203;to:1180;x=212.7;y=1228.9;size=1.000
+#1170:from:1150,1160;to:1180;x=706.2;y=1295.3;size=1.000
 Wick rotated\\lightcone coordinates
-$\sigma^\pm\longrightarrow-i(\tau\pm i\sigma)$
+$\sigma^\pm\longrightarrow -i\tau\pm\sigma=-i(\tau\pm i\sigma)$
 $w=\tau+i\sigma\ ,\ \bar w=\tau-i\sigma$
 
-#1180:from:1170;to:1190;x=161.3;y=1353.5;size=1.000
+#1180:from:1170;to:1190,1510;x=666.0;y=1419.5;size=1.000
 Radial quantization
-$z=e^w\ ,\ \bar z=e^{\bar w}$
+$z=e^w=e^{\tau+i\sigma}\ ,\ \bar z=e^{\bar w}=e^{\tau-i\sigma}$
 Flat metric  $ds^2=dzd\bar z$
 Time translations $\iff$ Dilatations
 
-#1190:from:1180;x=335.1;y=1477.1;size=1.000
+#1190:from:1180,1570;to:1210;x=643.5;y=1523.6;size=0.578
 Stereographic projection
 $ds^2=\frac{4dzd\bar z}{(1+|z|^2)^2}$
 $z=\cot \tfrac\theta 2e^{i\phi}$
 $ds^2=d\theta^2+\sin^2\theta d\phi^2$
 
-#1200:to:1210,1220;x=101.4;y=1465.6;size=0.694
+#1200:to:1210,1220,1520;x=482.6;y=1576.9;size=0.694
 Riemann surface
 One-dimensional complex manifold.
 Homeomorphic to a sphere with handles.
 Euler characteristic $\chi$
-Gauss-Bonnet theorem : $\chi(\mathcal M)=\tfrac 1{4\pi}\int_\mathcal{M}\sqrt hR$
 
-#1210:from:1200;x=288.9;y=1578.5;size=1.000
+#1210:from:1190,1200;x=598.6;y=1619.4;size=1.000
 Riemann\\sphere
 
-#1220:from:1200;x=112.9;y=1573.2;size=1.000
+#1220:from:1200;to:1540;x=487.4;y=1694.0;size=1.000
 Genus
-The number of handles $g$.
+The number $g$ of handles.
 $\chi=2-2g$
+
+#1230:from:302;to:1250;x=247.1;y=401.3;size=1.000
+Non linear sigma model
+\scriptsize (in unit gauge)
+\normalsize \redbox{$\displaystyle S=-\frac T2 \int \de^2\sigma g_\munu(X)\eta^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
+
+#1240:to:1260,1250;x=93.0;y=451.2;size=0.579
+Background field method
+$X=X_0+\sqrt{\alpha'}\delta X$
+\footnotesize $X_0$ : background, $\delta X$ : quantum excitations
+
+#1250:from:1230,1240,1260;x=151.9;y=607.5;size=0.578
+Expansion of the action
+$S=-\frac 1{4\pi}\int d^2\sigma\left[g_\munu(X_0)\partial(\delta X^\mu)\partial(\delta X^\nu)+\frac{\alpha'}3R_{\mu\rho\nu\sigma}\delta X^\mu\delta X^\nu\delta X^\rho\delta X^\sigma+\dots\right]$
+
+#1260:from:1240;to:1250;x=202.7;y=523.3;size=0.579
+Metric in Riemann\\normal coordinates
+$g_\munu(x)=\eta_\munu-\frac {\alpha'}3 R_{\mu\sigma\nu\rho}(X_0)\delta X^\sigma \delta X^\rho+...$
+
+#1270:to:1280;x=190.3;y=1017.8;size=1.000
+Metric $\beta$-function
+$\beta_{\sigma\rho}(g)=\mu\frac{\partial}{\partial\mu}g_{\sigma\rho}(X_0,\mu)$
+
+#1280:from:1270,1290;x=248.4;y=1124.5;size=1.000
+Einstein equations in vacuum
+$R_\munu=0$
+
+#1290:to:1280;x=411.7;y=1024.6;size=1.000
+Conformal invariance
+$\beta(g)=0$
+
+#1300:x=479.2;y=1132.6;size=1.000
+Low-energy effective action\\of the bosonic string
+$S=A\int d^{26}X\sqrt{-g}e^{-2\Phi}\left[R-\tfrac 1{12}H^2+4(\partial\Phi)^2\right]$
+
+#1310:to:1330;x=317.4;y=694.4;size=1.000
+Hamiltonian formalism
+
+#1320:from:7;to:1330;x=457.4;y=676.0;size=0.579
+Lagrangian in terms of $\beta_n$
+$L=\tfrac12\sum_n\left(\dot\beta_n\cdot\dot\beta_{-n}-n^2\beta_n\cdot\beta{-n}\right)$
+
+#1330:from:1310,1320;to:802,902;x=349.9;y=828.7;size=0.579
+Canonical Poisson bracket
+$\pi_n=\dot \beta_n\ ,\ \{\beta_m^\mu,\pi_n^\nu\}=\eta^\munu\delta_{m+n}$
+$x^\mu=\sqrt{\alpha'}\beta_0^\mu\ ,\ p^\mu=\frac{\pi_0^\mu}\kappa$
+$\alpha_n^\mu=\frac{n\beta_n^\mu}{i\sqrt 2}+\frac{\pi_n^\mu}{\sqrt 2}$
+
+#1340:from:1110(25);to:1350,1360(25),1410,1420;x=2004.3;y=942.6;size=1.000
+String spectrum
+
+#1350:from:1340;to:1370,1490;x=1762.6;y=1083.6;size=1.200
+Level zero $N=\bar N=0$ Tachyon/Vacuum state $\ket{0;q}$
+((spin zero))
+$M^2=-\tfrac 4{\alpha'}a$
+
+#1360:from:1340(25),1370;to:1380(25),1390(25),1400(25);x=2019.9;y=1104.2;size=1.000
+First level $N=\bar N=1$
+$\ket{ab;q}=\alpha_{-1}^a\bar \alpha_{-1}^b\ket{0;q}$
+$M^2=\tfrac 2{\alpha'}\sqrt{1-a}$
+
+#1370:from:1350;to:1360;x=1937.6;y=1043.0;size=0.579
+Physical states
+$\Rightarrow$ $a=\bar a=0$
+
+#1380:from:1360(25);to:1690;x=1824.1;y=1246.8;size=1.440
+Symmetric traceless\\(Graviton)
+((massless spin 2))
+$\ket{\epsilon;q}=\epsilon_\munu(\alpha_{-1}^\mu\bar\alpha_{-1}^\nu+\alpha_{-1}^\nu\bar\alpha_{-1}^\mu)\ket{0;q}$
+
+#1390:from:1360(25);x=2051.2;y=1279.9;size=1.200
+Anti-symmetric\\(Kalb-Ramond)
+\scriptsize (massless spin 1)
+\normalsize $B_\munu$
+\scriptsize Generalisation of emg field
+
+#1400:from:1360(25);x=2181.3;y=1211.3;size=1.200
+Scalar\\(dilation)
+((massless spin 0))
+$\Phi$
+
+#1410:from:1340;x=2151.1;y=1095.7;size=1.000
+Higher levels
+
+#1420:from:1340;x=2160.5;y=983.5;size=1.000
+Regge trajectories
+$M^2=\frac{2S-4a}{\alpha'}$
+
+#1430:to:1440;x=2034.6;y=1748.5;size=1.000
+D=26
+
+#1440:from:1430;to:1450,1460;x=1959.8;y=1867.5;size=1.000
+Compactification
+Tiny compact dimensions
+
+#1450:from:1440;to:1460;x=1973.1;y=2068.8;size=1.000
+Winding modes
+$X(\sigma+2\pi)=X(\sigma)+2\pi Rm$
+\scriptsize $X=x+\alpha'\left(\frac nR\mp \frac{mR}{\alpha'}\right)\tau+modes$
+$M^2=\frac 4{\alpha'}(N^{L/R}-a)+\left(\frac nR\mp \frac{mR}{\alpha'}\right)^2$
+$N-\bar N=nm$
+\normalsize \bbox{$M^2=\frac 4{\alpha'}(\tfrac{N+\bar N}2-a)+\frac {n^2}{R^2} +\frac{m^2R^2}{(\alpha')^2}$}
+
+#1460:from:1440,1450;x=2169.4;y=1832.5;size=1.000
+Kaluza-Klein modes\\(KK modes)
+$M^2=\frac 4{\alpha'}(N-a)+\frac {n^2}{R^2}$
+
+#1470:x=2348.2;y=1882.4;size=1.000
+Mass gaps comparison
+
+#1480:x=2226.0;y=1949.0;size=1.000
+T-duality
+
+#1490:from:1350,1680,1700;to:1500,1560;x=1182.2;y=1466.3;size=1.000
+Tachyon\\state operator
+((primary))
+$\mathcal O_q(z,\bar z)=:\exp(iq_\mu X^\mu(z,\bar z)):$
+
+#1500:from:1490;to:1600;x=1310.8;y=1533.5;size=0.578
+State operator OPE
+$T(z)\mathcal O_q(w,\bar w)=\frac{\tfrac 14\alpha'q^2\mathcal O_q(w,\bar w)}{(z-w)^2}+\frac{\partial \mathcal O_q(w,\bar w)}{z-w}+\dots$
+
+#1510:from:1180;to:1700;x=835.4;y=1348.8;size=0.694
+radial quantization $\eom$
+$\partial_z\partial_{\bar z}X=0$
+$X(z,\bar z)=X(z)+\bar X(\bar z)$
+
+#1520:from:1200;x=362.0;y=1651.4;size=0.833
+Gauss-Bonnet theorem
+$\chi(\mathcal M)=\frac 1{4\pi}\int_\mathcal{M}\sqrt hR$
+
+#1530:x=608.0;y=1989.7;size=1.000
+String coupling constant $g_s$
+$S_{string}=S_{Polyakov}+\lambda\chi$
+$e^{iS_{string}}=e^{i\lambda\chi}e^{iS_{Polyakov}}=g_s^\chi e^{iS_{Polyakov}}$
+$g_s=e^{i\lambda}$
+
+#1540:from:1220;to:1550;x=467.3;y=1805.2;size=1.000
+Moduli space $\mathcal M_g$
+$\mathcal M_g=\frac{\text{all metrics}}{\text {diffeo}\times \text{Weyl}}$
+
+#1550:from:1540;x=444.8;y=1924.6;size=1.000
+Torus moduli space
+$\mathcal M_{g=1}=\frac{\text{Teichmüller}}{PSL(2,\mathbb Z)}$
+
+#1560:from:1490;to:1580,1600,1640;x=1043.7;y=1574.6;size=1.440
+Tachyon\\vertex operator
+((primary))
+$V_q=g_s\int d^2z\calo_q(z,\bar z)$
+
+#1570:to:1190,1590,1630;x=851.7;y=1541.4;size=1.440
+Conformal\\invariance
+
+#1580:from:1560,1590,1600;x=1153.5;y=1661.8;size=0.833
+Tachyon
+$q^2=\frac 1{\alpha'}\ \Rightarrow \ M^2=-\frac 1{\alpha'}$
+
+#1590:from:1570;to:1580,1620;x=1058.4;y=1700.3;size=0.694
+Conformal weights
+$(h,\bar h)=(1,1)$
+
+#1600:from:1500,1560;to:1580;x=1222.6;y=1599.5;size=0.694
+State operator\\conformal weights
+$h=\bar h=\alpha'q^2$
+
+#1610:to:1620;x=1387.9;y=1659.0;size=1.200
+First level\\vertex operator
+((primary))
+$V_q=g_s\zeta_\munu\int d^2z\partial X^\mu\bar\partial X^\nu \calo_q(z,\bar z)$
+
+#1620:from:1590,1610;x=1155.8;y=1756.9;size=1.000
+Massless states
+$q^2=0$
+$q^\mu\zeta_\munu=q^\nu\zeta_\munu=0$
+
+#1630:from:1570;to:1650;x=812.8;y=1641.4;size=0.833
+Propagator
+$\langle\calo_{q_1}(z_1,\bar z_1)\calo_{q_2}(z_2,\bar z_2)\rangle=\frac{\delta(q_1+q_2)}{|z_1-z_2|^{\alpha'q_1\cdot q_2}}$
+
+#1640:from:1560;to:1660;x=913.5;y=1750.1;size=1.200
+Veneziano amplitude
+((tachyon scattering amplitude))
+$\cala_n=\frac 1{g_s^2}\langle V_1\dots V_n\rangle=g_s^{n-2}\int d^{2n}z\langle \calo_1\dots\calo_n\rangle$
+
+#1650:from:1630;to:1660;x=661.1;y=1752.3;size=1.000
+n-point correlator
+$\langle\calo_1\dots\calo_2\rangle=\delta^D(q)\prod_{j<k}|z_j-z_k|^{\alpha'q_j\cdot q_k}$
+
+#1660:from:1670,1640,1650;x=913.5;y=1923.3;size=1.000
+Virasoro-Shapiro amplitude\\(Four-point tachyon scattering amplitude)
+((closed string))
+$\cala_4=g_s^2\delta^D(q)\int d^2z|z|^{\alpha'q_2\cdot q_4}|1-z|^{\alpha'q_3\cdot q_4}$
+\bbox{$\displaystyle \cala_4=g_s^2\delta^D(q)\frac{\Gamma(-1-\alpha's/4)\Gamma(-1-\alpha't/4)\Gamma(-1-\alpha'u/4)}{\Gamma(2+\alpha's/4)\Gamma(2+\alpha't/4)\Gamma(2+\alpha'u/4)}$}
+
+#1670:to:1660;x=1212.4;y=1859.9;size=0.833
+Mandelstam invariants
+$s=-(q_1+q_2)^2\ ,\ t=-(q_1+q_4)^2\ ,\ u=-(q_1+q_3)^2$
+$s+t+u=-\tfrac{16}{\alpha'}$
+
+#1680:from:1150;to:1490,1690;x=1360.4;y=1271.7;size=1.200
+State-operator\\map
+
+#1690:from:1380,1680;x=1568.6;y=1350.9;size=1.000
+Graviton vertex operator
+$\calo^\munu=:(\partial X^\mu\bar\partial X^\nu +\partial X^\nu\bar\partial X^\mu )e^{iq\cdot X}:$
+$V=\int d^2\xi\tfrac 12\epsilon\calo^\munu$
+
+#1700:from:1510;to:1490;x=962.4;y=1425.8;size=0.833
+Radial quantization solution
+$X(z,\bar z)=x+\tfrac{\alpha'}2 p\ln(z\bar z)+i\sqrt{\frac{\alpha'}2}\sum_n\frac 1n (\alpha_n z^{-n}+\bar\alpha_n\bar z^{-n})$
+
+#1710:x=358.8;y=1334.5;size=1.000
+String propagator
+((flat spacetime))
+$\langle X^\mu(\sigma)X^\nu(\sigma') \rangle=-\alpha'\eta^\munu\ln(|\sigma-\sigma'|)$

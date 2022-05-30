@@ -1,0 +1,27 @@
+|MindMap title : Project Bibliography
+|Height : 2000
+|Width : 2000
+|BgColor : #faf2e8
+|BubbleColor : #778899
+
+#0:x=789.7;y=74.3;size=1.000
+Bibliography
+
+#10:to:20;x=634.8;y=369.5;size=1.000
+Large D gravity and low D strings
+\textit{Emparan, Grumiller, Tanabe} (2013)
+
+#20:from:10;x=759.8;y=504.4;size=1.000
+String scale black holes at large D
+\textit{Chen, Maldacena} (2021)
+
+#30:x=904.7;y=311.5;size=0.833
+Anti-de Sitter Space, Thermal Phase Transition, And Confinement In Gauge Theories
+\textit{Witten} (1998)
+
+#40:x=986.1992033488913;y=470.91238360093985
+The Silence of the Little Strings
+\textit{Parnachev, Starinets} (2005)
+
+#50:x=614.9;y=206.5;size=1.000
+S. W. Hawking and D. Page, “Thermodynamics Of Black Holes In Anti-de Sitter Space,” Commun. Math. Phys. 87 (1983) 577.

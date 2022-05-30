@@ -1,0 +1,65 @@
+|MindMap title : JdP
+|Height : 2000
+|Width : 2000
+|BgColor : #faf2e8
+|BubbleColor : #778899
+
+#0:x=140.0;y=108.0;size=1.000
+Indice initial
+
+#10:x=1008.7;y=662.6;size=1.000
+Ouverture du cadeau-trésor
+
+#20:x=665.6;y=348.1;size=1.000
+Code python du python
+\small H doit coder un code en Python
+pour déchiffrer long fichier texte
+contenant un long texte avec des
+indices parsemé de "prout" qu'elle
+doit enlever
+
+#30:x=447.9892064479287;y=519.1927889297187
+Code-barre magasin
+A la suite d'un indice sur le produit,
+H doit aller chercher le numéro du
+code-barre de ce produit
+
+#40:x=763.4606343880816;y=506.33658653717333
+Découverte du cadeau-trésor
+enterré ?
+sous le lit ?
+
+#50:x=626.0;y=593.4;size=1.000
+Physique théorique
+
+#60:x=459.85647019489375;y=659.6220766021379
+Le morse qui parle
+Morse qui parle morse
+(vidéo ?)
+
+#70:x=630.0;y=691.3;size=1.000
+Coup de fil
+
+#80:x=1015.6;y=327.3;size=1.000
+Taekwondo
+Noms pattern ITF et poomsae WTF
+
+#90:x=813.9;y=245.3;size=1.000
+Wikipedia
+
+#100:x=906.9;y=424.3;size=1.000
+Equation enfants
+(Aymeric+Héloïse)$\times 26082018$=Amour+$N\times$enfants
+
+#110:x=241.3;y=420.3;size=1.000
+Coordonnées GPS
+Coordonnées d'une statue, d'un banc,...
+avec écriteau
+
+#120:x=229.43376577465668;y=599.2968192217324
+Avion Supaero
+Cacher qqch dans un avion de Sup
+
+#130:x=259.10192514206915;y=718.9583953369629
+Unicode
+Symbole u2608

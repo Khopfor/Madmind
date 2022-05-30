@@ -4,6 +4,7 @@ import multiprocessing as mp
 from Bubble import Bubble
 from Edge import Edge
 from utils import cleanStr, contains, hex_to_rgb
+import gc
 
 class Mindmap():
     def __init__(self,name,contents,latexMaker=None,tab=None,progress=None):
@@ -113,7 +114,7 @@ class Mindmap():
     def newEdges(self,bubble):
         for object in self.selected.values():
             if object != bubble and isinstance(object,Bubble):
-                newEdge=Edge(object,bubble,mindmap=self,color=self.contrastedColor())
+                newEdge=Edge(object,bubble,mindmap=self)#,color=self.contrastedColor())
                 if object.addEdge(newEdge) and bubble.addEdge(newEdge) :
                     self.tab.canvas.scene.addItem(newEdge)
                     # self.tab.writeNewEdge(newEdge)
@@ -128,7 +129,7 @@ class Mindmap():
             bub.constructEdges(self.bubbles)
             if progress!=None:
                 progress.setValue(50+ceil(i/Nbub*50))
-        self.updateEdgeColor()
+        # self.updateEdgeColor()
 
 
     # Counts the bubbles
@@ -150,6 +151,14 @@ class Mindmap():
             self.selected[object.id]=object
             object.shine(1)
 
+    def growSelected(self):
+        for object in self.selected.values():
+            object.grow()
+
+    def shrinkSelected(self):
+        for object in self.selected.values():
+            object.shrink()
+
     def moveSelected(self,movedBubble,delta):
         for object in self.selected.values():
             if object != movedBubble:
@@ -162,6 +171,12 @@ class Mindmap():
                 if isinstance(object,Bubble):
                     object.mouseReleaseEvent(None)
 
+    def selectAll(self):
+        self.deselectAll()
+        for bub in self.bubbles.values():
+            self.select(bub)
+        print("All bubbles selected !")
+
     def deselectAll(self):
         for object in self.selected.values():
             object.shine(0)
@@ -171,3 +186,5 @@ class Mindmap():
         for object in self.selected.values():
             object.delete(self.tab.canvas.scene)
         self.selected={}
+        gc.collect()
+        print("Objects deleted !",self.selected)

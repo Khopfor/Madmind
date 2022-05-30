@@ -1,0 +1,108 @@
+|MindMap title : <title>
+|Height : 2000
+|Width : 2000
+|BgColor : #faf2e8
+|BubbleColor : #778899
+
+#0:to:20,30,70,80,100,150,230;x=859.0;y=85.8;size=2.488
+Théorie des profils minces
+
+#20:from:0,200;to:60;x=1133.0;y=217.2;size=1.000
+Fluide\\incompressible
+((hypothèse))
+$\rho =cste$
+
+#30:from:0;to:50;x=328.7;y=173.9;size=1.000
+Inviscid\\fluid
+((hypothesis))
+$Re=\infty$
+
+#40:to:50;x=183.8;y=182.0;size=1.000
+Navier-Stokes
+
+#50:from:40,30;to:60;x=249.0;y=317.9;size=1.000
+Euler equations
+$\pdf\rho t+\nabla\cdot(\rho\vec V)=0$
+$\pdf{\rho\vec V}{t}+\nabla\cdot(\rho \vec V\otimes\vec V)=-\nabla p$
+
+#60:from:20,50,70;to:110;x=1002.4;y=344.0;size=1.000
+$\eom$
+$\nabla\cdot\vec V=0$
+$\rho(\vec V\cdot\nabla)\vec V=-\nabla p$
+
+#70:from:0;to:60;x=994.1;y=259.0;size=1.000
+Steady flow
+((hypothesis))
+
+#80:from:0;to:120;x=622.1;y=259.0;size=1.000
+Potential flow\\(irrotational velocity field)
+$\vec V=\nabla\phi$
+
+#90:to:130;x=539.9;y=499.2;size=1.000
+Pressure coefficient
+$C_p=\frac{p-p_\infty}{\frac12\rho V_\infty}$
+
+#100:from:0;to:130,170;x=738.9;y=306.6;size=1.000
+Small perturbations
+$\vec V=\vec V_\infty+\begin{pmatrix}u\\v\end{pmatrix}\ ,\ |u|,|v|\ll\vec V_\infty$
+$\phi=V_\infty x+\varphi\ ,\ |\varphi|\ll V_\infty$
+
+#110:from:60;to:120;x=540.7;y=348.8;size=1.000
+Bernoulli theorem
+((Along a streamline))
+$\tfrac12 \rho V^2+p=cste$
+
+#120:from:110,80;to:130;x=667.1;y=396.1;size=1.000
+Irrotational\\Bernoulli theorem
+((Everywhere))
+$\tfrac12 \rho V^2+p=\tfrac12 \rho V_\infty^2+p_\infty$
+
+#130:from:120,90,100;to:140,180;x=756.5;y=494.2;size=1.000
+Pressure coefficient\\relation
+$C_p=1-\frac{V^2}{V_\infty^2}\approx-\frac{2u}{V_\infty}$
+
+#140:from:130;x=654.2;y=644.0;size=1.000
+Lifting problem
+$C_{p_s}$
+Vortex linear density $\gamma dx_0$
+
+#150:from:0;to:170;x=577.9;y=91.9;size=1.000
+Thin airfoil
+$y(x)\ll 1$
+$\delta(x)=\frac{dy}{dx}(x)$
+
+#160:to:170;x=884.7;y=199.0;size=1.000
+Gliding condition
+$\vec V\cdot\vec n=0$
+\tiny $\vec n=(-dy,dx)/\sqrt {(dy^2+dx^2)}$
+
+#170:from:100,150,160;x=735.1;y=208.8;size=1.000
+Linearized\\gliding condition
+$v=V_\infty\delta(x)$
+
+#180:from:130;x=928.6;y=638.7;size=1.000
+Thick problem
+$C_{p_e}$
+Source linear density $\sigma dx_0$
+
+#190:x=791.4;y=728.4;size=1.000
+Profile velocity field
+
+#200:to:20,230;x=1444.6;y=98.6;size=1.728
+Théorie de la ligne portante
+
+#210:x=1605.1;y=474.2;size=1.000
+Vitesse du fluide entraîné par la tige en rotation
+\textsc{Tige infinie} $\vec V(r,\phi)=\frac\Gamma{2\pi r}\vec e_\phi$
+\textsc{Tige semi infinie} $\vec V(r,\phi)=\frac\Gamma{4\pi r}\vec e_\phi$
+
+#220:x=1696.0;y=314.3;size=1.000
+Circulation
+((Intensité rotatoire de la tige))
+$\displaystyle\Gamma=\int_0^{\delta R}dr\int_0^{2\pi}d\phi\omega(r,\phi)$
+
+#230:from:0,200;x=1255.3;y=202.0;size=1.000
+Problème 2D
+((hypothèse))
+
+#240:x=1324.4;y=359.2;size=1.000

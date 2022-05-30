@@ -79,7 +79,7 @@ Anti-symmetric tensor field
 Dilaton $\Phi(X)$
 Scalar field (trace)
 
-#2100:from:2000;x=730.0;y=778.0;size=1.000
+#2100:from:2000;x=730.0;y=828.0;size=1.000
 Higher excited states
 
 #3000:from:2020;to:3010;x=598.0;y=654.0;size=1.000

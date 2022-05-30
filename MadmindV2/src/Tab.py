@@ -113,7 +113,7 @@ class Tab (QWidget):
         self.textEdit.show()
         if self.tabWidget.parent().width()<700:
             self.tabWidget.parent().resize(1000,900)
-        self.timer.start(15000)
+        self.timer.start(60000)
 
     def goTo(self,target):
         if isinstance(target,int):
@@ -153,6 +153,7 @@ class Tab (QWidget):
                 self.canvas.scene.mindmap.readHeaders(self.textEdit.toPlainText())
                 self.canvas.scene.updateBgColor()
                 self.canvas.scene.updateSceneRect()
+            print("Saving.")
             f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')
             f.write(self.textEdit.toPlainText())
             f.close()

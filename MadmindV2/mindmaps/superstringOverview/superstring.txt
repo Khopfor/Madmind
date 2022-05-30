@@ -1,0 +1,43 @@
+|MindMap title : Superstring Theories Overview
+|Height : 2000
+|Width : 2000
+|Bg color : #f3eee9
+|Optimize : yes
+|Tolerance : 5
+
+#0: x=870;y=150;color=pink
+String
+
+#100:x=870.0;from:0;color=pink;y=262.0
+Bosonic string
+
+#200:x=874.0;from:100;color=pink;y=349.0
+Superstring
+
+#300: from:200;color=pink;x=766.0;y=447.0
+Type II
+Both left and right-moving
+worldsheet fermions
+$N=2$ Supersymmetry
+
+#310:from:300;color=pink;x=689.0;y=572.0
+Type IIA
+
+#320:from:300;color=pink;x=781.0;y=571.0
+Type IIB
+
+#400: from:200;color=pink;x=985.0;y=443.0
+Heterotic
+Just right-moving fermions
+$N=1$ Supersymmetry
+
+#410:from:400;color=pink;x=1096.0;y=564.0
+Heterotic $SO(32)$
+$SO(32)$ Yang-Mills theory
+
+#420:from:400;color=pink;x=923.0;y=562.0
+Heterotic $E_8\times E_8$
+$E_8\times E_8$ Yang-Mills field
+
+#1000:from:310,320,410,420;x=892.0;y=784.0;color=pink
+M-Theory
