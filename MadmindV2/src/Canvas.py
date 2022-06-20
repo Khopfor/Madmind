@@ -31,8 +31,8 @@ class Canvas(QGraphicsView):
         # self.minimap.setWindowOpacity(0.5)
         self.hide()
 
-    def initMindmap(self,tab,contents,progress=None):
-        self.scene.initMindmap(tab,contents,progress)
+    def initMindmap(self,tab,dirPath,progress=None):
+        self.scene.initMindmap(tab,dirPath,progress)
 
     def mousePressEvent(self, event):
         if event.button()== Qt.MouseButton.RightButton :

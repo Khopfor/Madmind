@@ -27,8 +27,8 @@ class Progress():
             self.printFunc(self.progress)
 
 class SvgMaker():
-    def __init__(self,mmName):
-        path="mindmaps/{}/{}".format(mmName,mmName)
+    def __init__(self,mmName,path):
+        path+="/{}".format(mmName)
         print("Making svg for mindmap {}...".format(mmName))
         print(" 0%",end='\r')
         os.system("cp "+path+".txt "+path+"_copy.txt")
@@ -38,7 +38,7 @@ class SvgMaker():
         os.remove(path+"_copy.txt")
         latexMaker=LatexMaker(LATEXCOMMANDS)
         progress=Progress(self.printProgress)
-        self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,progress=progress)
+        self.mindmap=Mindmap(mmName,contents=contents,latexMaker=latexMaker,progress=progress)
         xmin,xmax,ymin,ymax=None,None,None,None
         k=3/4
         Ntot=self.mindmap.countBubbles()
@@ -134,4 +134,4 @@ class SvgMaker():
 
 
 
-SvgMaker(argv[1])
+SvgMaker(argv[1],argv[2])

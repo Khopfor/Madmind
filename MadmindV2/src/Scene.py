@@ -3,7 +3,7 @@ from math import ceil, sin
 from time import time
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint, QRect,QSize,QTimer
-from PyQt5.QtGui import QPixmap,QPainter,QColor,QFont
+from PyQt5.QtGui import QPixmap,QPainter,QColor,QFont,QKeyEvent
 # Local imports
 from Mindmap import Mindmap
 from LatexMaker import LatexMaker
@@ -35,10 +35,10 @@ class Scene (QGraphicsScene):
         self.trend=1
 
 
-    def initMindmap(self,tab,contents,progress=None):
+    def initMindmap(self,tab,dirPath,progress=None):
         latexMaker=LatexMaker(LATEXCOMMANDS)
         mmName=tab.tabName
-        self.mindmap=Mindmap(mmName,contents,latexMaker=latexMaker,tab=tab,progress=progress)
+        self.mindmap=Mindmap(mmName,dirPath=dirPath,latexMaker=latexMaker,tab=tab,progress=progress)
         self.updateSceneRect()
         m=min(self.mindmap.width,self.mindmap.height)
         self.parent().scale(2000/m,2000/m)
@@ -98,6 +98,7 @@ class Scene (QGraphicsScene):
 
 
     def keyPressEvent(self, event):
+        propagate=True
         if event.key()== Qt.Key.Key_N:
             x=self.mousePos.x()#*self.sceneRect().width()
             y=self.mousePos.y()#*self.sceneRect().height()
@@ -108,8 +109,13 @@ class Scene (QGraphicsScene):
         elif event.key()== Qt.Key.Key_S and not QApplication.keyboardModifiers():
             for bub in self.mindmap.bubbles.values():
                 bub.toggleShadow()
-        elif event.key()== Qt.Key.Key_A and QApplication.keyboardModifiers():
+        elif event.key()== Qt.Key.Key_A and QApplication.keyboardModifiers()==Qt.KeyboardModifier.ControlModifier:
             self.mindmap.selectAll()
+        # elif event.key()== Qt.Key.Key_F and QApplication.keyboardModifiers()==Qt.KeyboardModifier.ControlModifier:
+        #     self.mindmap.search()
+        elif event.key()==Qt.Key.Key_C:
+            if len(self.mindmap.selected.values())>0:
+                self.mindmap.colorize(QColorDialog(QColor(list(self.mindmap.selected.values())[-1].color)).getColor())
         elif event.key()==Qt.Key.Key_Delete :
             self.mindmap.deleteSelection()
         elif event.key()==Qt.Key.Key_Escape:
@@ -125,8 +131,15 @@ class Scene (QGraphicsScene):
                 for bub in self.mindmap.bubbles.values():
                     if bub!=self.hoveredObject:
                         bub.toggleBlur(1)
+        elif event.key()==Qt.Key.Key_Down and QApplication.keyboardModifiers()==Qt.KeyboardModifier.ControlModifier:
+            self.mindmap.changeLevelSelected(1)
+            propagate=False
+        elif event.key()==Qt.Key.Key_Up and QApplication.keyboardModifiers()==Qt.KeyboardModifier.ControlModifier:
+            self.mindmap.changeLevelSelected(-1)
+            propagate=False
         elif event.key()==Qt.Key.Key_Plus:
             self.mindmap.growSelected()
         elif event.key()==Qt.Key.Key_Minus:
             self.mindmap.shrinkSelected()
-        return super().keyPressEvent(event)
+        if propagate :
+            return super().keyPressEvent(event)

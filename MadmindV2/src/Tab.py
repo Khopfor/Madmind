@@ -9,7 +9,7 @@ from PyQt5.QtGui import QPixmap,QPainter,QTextCursor
 from TextEdit import TextEdit
 from Help import Help
 from Canvas import Canvas
-from utils import contains
+from utils import contains,findDir
 
 class Tab (QWidget):
     def __init__(self,tabId,tabWidget):
@@ -29,20 +29,7 @@ class Tab (QWidget):
         self.help=Help(self)
         # VBox
         vbox=QVBoxLayout(self)
-        # Open existing Mindmap
-        openLabel=QLabel("Open an existing mindmap :")
-        openLabel.setAlignment(Qt.AlignLeft)
-        vbox.addWidget(openLabel)
-        self.choiceWidget=QWidget(self)
-        mindmapList=os.listdir("mindmaps")
-        self.buttongroup = QButtonGroup()
-        self.buttongroup.buttonClicked[QAbstractButton].connect(self.loadChosenMindmap)
-        for i,mmName in enumerate(mindmapList) :
-            button=QPushButton(mmName,self)
-            self.buttongroup.addButton(button, 1)
-            # button.setFont(QtGui.QFont("Sanserif", 15))
-            vbox.addWidget(button)
-        # New Mindmap option
+        ### New Mindmap option ###
         newLabel=QLabel("Create a new mindmap :")
         vbox.addWidget(newLabel)
         self.newLineEdit=QLineEdit()
@@ -52,9 +39,60 @@ class Tab (QWidget):
         hbox.addWidget(self.newLineEdit)
         hbox.addWidget(newButton)
         vbox.addLayout(hbox)
+        ### Open existing Mindmap ###
+        openLabel=QLabel("Open an existing mindmap :")
+        openLabel.setAlignment(Qt.AlignLeft)
+        vbox.addWidget(openLabel)
+        self.choiceWidget=QWidget(self)
+        # tree={}
+        # def makeTree (dirName,parents,path):
+        #     mmdir=False
+        #     ls=os.listdir(path)
+        #     for o in ls :
+        #         if ".txt" in o :
+        #             mmdir=True
+        #     if mmdir :
+        #         b=tree
+        #         for p in parents:
+        #             b=b[p]
+        #         b=b.append(dirName)
+        #     else :
+        #         for o in ls:
+        #             if os.path.isdir(path+"/"+o):
+        #                 print(o)
+        #                 makeButtons(o,path+"/"+o)
+        # makeTree("mindmaps",[],"mindmaps")
+        def makeButtons (dirName,path):
+            mmdir=False
+            ls=os.listdir(path)
+            for o in ls :
+                if ".txt" in o :
+                    mmdir=True
+            if mmdir :
+                button=QPushButton(dirName,self)
+                button.clicked.connect(lambda:self.loadChosenMindmap(button))
+                vbox.addWidget(button)
+            else :
+                widget=QLabel(dirName,self)
+                vbox.addWidget(widget)
+                for o in ls:
+                    if os.path.isdir(path+"/"+o):
+                        makeButtons(o,path+"/"+o)
+        makeButtons("mindmaps","mindmaps")
+        # mindmapList=os.listdir("mindmaps")
+        # self.buttongroup = QButtonGroup()
+        # self.buttongroup.buttonClicked[QAbstractButton].connect(self.loadChosenMindmap)
+        # for i,mmName in enumerate(mindmapList) :
+        #     button=QPushButton(mmName,self)
+        #     self.buttongroup.addButton(button, 1)
+        #     # button.setFont(QtGui.QFont("Sanserif", 15))
+        #     vbox.addWidget(button)
 
+        self.setLayout(vbox)
         self.choiceWidget.setLayout(vbox)
-        self.choiceWidget.setGeometry(QRect(10,10,250,40*len(self.buttongroup.buttons())))
+        self.choiceWidget.setGeometry(QRect(10,10,250,40*20))
+
+        
 
     def setTabText(self,text,temp=False):
         if not temp :
@@ -100,15 +138,11 @@ class Tab (QWidget):
         loadingProgress=QProgressBar()
         loadingVBox.addWidget(loadingProgress,Qt.AlignTop)
         loadingWidget.setLayout(loadingVBox)
-        loadingWidget.setLayout(loadingVBox)
         loadingWidget.show()
-        f=open("mindmaps/"+MindmapName+"/"+MindmapName+".txt",'r')
-        contents=f.read()
-        f.close()
-        self.canvas.initMindmap(self,contents,loadingProgress)
+        self.canvas.initMindmap(self,dirPath=findDir(MindmapName,"mindmaps"),progress=loadingProgress)
         loadingWidget.setParent(None)
         self.canvas.show()
-        self.textEdit.setPlainText(contents)
+        self.textEdit.setPlainText(self.canvas.scene.mindmap.getContents())
         self.textEdit.setGeometry(self.parent().width()-402,self.parent().height()-202,400,200)
         self.textEdit.show()
         if self.tabWidget.parent().width()<700:
@@ -154,13 +188,13 @@ class Tab (QWidget):
                 self.canvas.scene.updateBgColor()
                 self.canvas.scene.updateSceneRect()
             print("Saving.")
-            f=open("mindmaps/"+self.tabName+"/"+self.tabName+".txt",'w')
+            f=open(self.canvas.scene.mindmap.dirPath+"/"+self.tabName+".txt",'w')
             f.write(self.textEdit.toPlainText())
             f.close()
             self.keepText=self.textEdit.toPlainText()
             if time()-self.lastSvgTime>2*60 or (user and time()-self.lastSvgTime>20):
                 self.lastSvgTime=time()
-                os.system("python src/SvgMaker.py "+self.tabName+" &")
+                os.system("python src/SvgMaker.py "+self.tabName+" "+self.canvas.scene.mindmap.dirPath+" &")
 
 
 

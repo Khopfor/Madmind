@@ -2,6 +2,7 @@ import sys
 # PyQt imports
 from PyQt5.QtWidgets import QApplication,QMainWindow, QDialog, QAction, QTabWidget, QWidget,QVBoxLayout,QStyle
 from PyQt5.QtCore import Qt,pyqtSignal
+from PyQt5.QtGui import QIcon
 # Local imports
 from Tab import Tab
 
@@ -13,6 +14,8 @@ class MainWindow(QDialog):
         super(MainWindow,self).__init__()
         self.setGeometry(150,100,500,600)
         self.setWindowTitle("Madmind")
+        self.setWindowIcon(QIcon("icons/AppIcon.svg"))
+        self.setWindowIconText("Madmind")
         self.setWindowFlags(Qt.WindowMinimizeButtonHint|Qt.WindowMaximizeButtonHint|Qt.WindowCloseButtonHint)
         self.initUI()
         # self.setAutoFillBackground(True)
@@ -24,7 +27,7 @@ class MainWindow(QDialog):
         # self.label.move(50,50)
 
         vbox=QVBoxLayout()
-        # print(vbox.getContentsMargins())
+        # print(vbox.getContentsMargins())  
         self.tabNb=0
         self.tabs={}
         self.tabWidget=QTabWidget(self)

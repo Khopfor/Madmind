@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import json
 # import matplotlib.pyplot as plt
@@ -70,6 +71,18 @@ def cleanStr (s,toRemove=[]):
             newS+=s[i]
     return newS
 
+def findDir (name,path,cur=""):
+    if os.path.isdir(path):
+        if cur==name:
+            return path
+        else :
+            res=""
+            for elem in os.listdir(path):
+                res+=findDir(name,path+"/"+elem,elem)
+            return res
+    else :
+        return ""
+
 # print(contains("aymeric","dfd","qs","aytge"))
 
 # P0=np.array([0,0])
@@ -81,4 +94,6 @@ def cleanStr (s,toRemove=[]):
 # print(Bezier(1,P0,P1,P2,P3))
 # print(lengthBezier(P0,P1,P2,P3))
 
-print(rgb_to_hex((250,242,232)))
+# print(rgb_to_hex((250,242,232)))
+
+# print(findDir("cft",'mindmaps'))

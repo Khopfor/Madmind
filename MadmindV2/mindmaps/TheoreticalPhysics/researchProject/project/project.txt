@@ -1,0 +1,182 @@
+|MindMap title : Research Project
+|Height : 2000
+|Width : 2000
+|BgColor : #faf2e8
+|BubbleColor : #4466AA
+
+#0:to:50,160;x=728.9;y=605.4;size=1.200;color=#4466AA;level=2
+Large D limit
+$D=n+3$
+
+#10:to:80;x=1295.0;y=1222.6;size=0.694;color=#44e3d8
+Schwarzschild-Tangherlini metric\\(D dimensional Schwarzschild BH)
+\redbox{$\displaystyle ds^2=-\left(1-\frac{r_0^{D-3}}{r^{D-3}}\right)dt^2+\left(1-\frac{r_0^{D-3}}{r^{D-3}}\right)^{-1}dr^2+r^2d\Omega^2_{D-2}$}
+
+#20:from:210,290;to:40;x=216.6;y=260.2;size=1.000;color=#3eaa38
+Einstein-Hilbert action in arbitrary D
+$I=\frac {c^{\frac{3D}2-2}}{16\pi G_D}\int d^Dx\sqrt{-g}R=\frac\hbar{2l_P^{D-2}}\int d^Dx\sqrt{-g}R$
+\vspace{5pt}\small $G_D=(8\pi G\hbar)^{\frac D2-1}/\hbar$
+
+#30:to:40,50;x=534.1;y=412.0;size=1.000;color=#4466AA;level=2
+2D Reduction
+
+#40:from:20,30;to:50;x=309.6;y=490.5;size=1.000;color=#3eaa38
+2D dilaton gravity action
+$I=\frac {\Omega_{n+1}r_0^{n+1}}{16\pi G}\int d^2x\sqrt{-g}e^{-2\Phi}\left(R+\frac{4n}{n+1}(\nabla\Phi)^2+\frac{n(n+1)}{r_0^2}e^{-4\Phi/(n+1)}\right)$
+
+#50:from:0,30,40,200;to:220;x=601.2;y=686.8;size=1.000;color=#ff9999
+2D string action
+$I=\frac {1}{16\pi G_2}\int d^2x\sqrt{-g}e^{-2\Phi}\left(R+4(\nabla\Phi)^2+4\lambda^2\right)$
+
+#60:to:190;x=551.5;y=1094.5;size=0.833;color=#4466AA
+Hawking\\temperature
+$T_H=\frac\kappa{2\pi}$
+
+#70:from:140;to:190;x=660.6;y=1000.0;size=0.694;color=#4466AA
+Surface gravity of cigar
+$\kappa=\frac 1{\sqrt {k\alpha'}}$
+
+#80:from:10,90;x=1150.1;y=1316.7;size=0.694;color=#44e3d8
+Mass of S-T BH
+$M=\frac{(D-2)\Omega_{D-2}}{16\pi G}r_0$
+
+#90:to:80;x=1103.9;y=1396.4;size=0.482;color=#44e3d8
+Area of unit $(D-2)$-sphere
+$\Omega_{D-2}=\frac{2\pi^{\tfrac{D-1}2}}{\Gamma(\tfrac{D-1}2)}$
+
+#100:x=1388.3;y=1383.8;size=0.694;color=#44e3d8
+Myers-Perry metrics\\(D dimensional spinning BH)
+$\displaystyle ds^2=-dt^2+\frac{r_0 r}{\Pi F}\left(dt+\sum_{i=1}^n a_i\mu_i^2d\phi_i\right)^2+\frac{\Pi F}{\Pi-\mu r}dr^2+\sum_{i=1}^n(r^2+a_i^2)(d\mu_i^2+\mu_i^2d\phi_i^2)$
+$+r^2d\alpha^2\delta_{D\mathrm{mod}2}$\vspace{3pt}
+$F=1-\sum_{i=1}^n\frac{a_i^2\mu_i^2}{r^2+a_i^2}\ ,\quad\Pi=\prod_{i=1}^n(r^2+a_i^2)$
+
+#110:x=1589.5;y=1232.1;size=0.694;color=#44e3d8
+Myers-Perry metrics with a single rotation
+$\displaystyle ds^2=-dt^2+\frac{r_0 r}{r^{2(n-1)}(r^2+a^2) F}\left(dt+a\mu^2d\phi\right)^2+\frac{\Pi (1-\frac{a^2\mu^2}{r^2+a^2})}{\Pi-\mu r}dr^2+\sum_{i=1}^n(r^2+a_i^2)(d\mu_i^2+\mu_i^2d\phi_i^2)$
+$+r^2d\alpha^2\delta_{D\mathrm{mod}2}$
+
+#120:to:150,170;x=1308.6;y=144.3;size=1.440;color=#a94848;level=0
+AdS/CFT\\Correspondence
+
+#130:from:150;to:160;x=1464.0;y=417.3;size=1.000;color=#3c4064
+AdS Black hole
+((Poincaré coordinates))
+$ds^2=-\left(-\left(\dfrac{r_0}{r}\right)^n+\dfrac{r^2}{L^2}\right)dt^2+\dfrac{dr^2}{-\left(\dfrac{r_0}{r}\right)^n+\dfrac{r^2}{L^2}}+r^2d\textbf x^2_{n+1}$
+
+#140:from:160,220,230;to:70,230,190;x=873.0;y=966.8;size=1.440;color=#4466AA
+Cigar geometry
+$ds^2=k\alpha'(-\tanh^2\rho dt^2+d\rho^2)$
+$\Phi=\Phi_0-\ln\cosh\rho$
+\vspace{3pt}\small with $k=\frac4{n^2}\sqrt{\lambda_{t'H}}$
+
+#150:from:120;to:130;x=1517.2;y=252.9;size=1.200;color=#3c4064
+AdS Space
+((Poincaré coordinates))
+$ds^2=L^2\left(\dfrac{dr^2}{r^2}+r^2d\textbf{x}^2\right)$
+
+#160:from:0,130;to:140;x=1336.0;y=772.1;size=1.000;color=#3c4064
+Near-horizon large D geometry
+$ds^2=\frac{4L^2}{n^2}\left(-\tanh^2\rho d\hat t^2+d\rho^2\right)+r_0^2d\textbf x^2_{n+1}$
+
+#170:from:120,270,340;to:180,320,330,380;x=1012.3;y=268.2;size=1.000;color=#a94848
+$N=4$ Super Yang-Mills in $\mathbb{R}^4$ \\ --$\updownarrow$-- \\Type IIB String theory in $AdS_5\times S^5$
+
+#180:from:170;x=918.9;y=375.4;size=0.578;color=#a94848
+$AdS_5\times S^5$ Correspondence map
+$L^2=\alpha'\sqrt{g_{YM}^2N}=\alpha'\sqrt\lambda\iff\frac{L^4}{l_s^4}=4\pi g_sN\qquad (\alpha'=l_s^2)$
+$g_s=\frac{g_{YM}^2}{4\pi}\qquad N^2=\frac{L^3}{l_P^3}$
+
+#190:from:60,70,140;x=704.4;y=1112.1;size=1.000;color=#4466AA
+Cigar temperature
+$T_{cigar}=\frac1{2\pi\sqrt {k\alpha'}}=\frac{n}{4\pi L}$
+
+#200:to:50,270,300;x=589.6;y=125.2;size=1.440;color=#ff9999;level=0
+String\\theory
+
+#210:to:20;x=142.6;y=125.2;size=0.833;color=#3eaa38;level=0
+General Relativity
+$I=\frac {c^4}{16\pi G}\int d^4x\sqrt{-g}R=\frac\hbar{2l_P^2}\int d^4x\sqrt{-g}R$
+4D Einstein-Hilbert action
+
+#220:from:50;to:140;x=582.3;y=803.8;size=1.000;color=#ff9999
+2D String gravity eom
+$R_\munu+2\nabla_\mu\nabla_\nu\Phi=0$
+$R+4\nabla^2\Phi-4(\nabla\Phi)^2=0$
+
+#230:from:140;to:140,240;x=994.0;y=1120.0;size=1.000;color=#4466AA
+$SL(2)_k/U(1)$ theory
+
+#240:from:230;x=902.0;y=1220.0;size=1.000;color=#4466AA
+$SL(2)_k/U(1)$\\central charge
+$c=2+\frac6{k-2}$
+
+#250:x=1863.7;y=783.3;size=1.000;color=#aa007f
+The Silence of the Little Strings
+\textit{Parnachev, Starinets} (2005)
+
+#260:x=1743.3;y=961.7;size=1.000;color=#4466AA
+Supergravity solution for $k$ coincident NS5-branes
+$d s^{2}=-f(r) d t^{2}+d x_{5}^{2}+A(r)\left(\frac{d r^{2}}{f(r)}+r^{2} d \Omega_{3}^{2}\right)$
+$e^{2 \Phi}=g_{s}^{2} A(r)$
+$H_{3}=2 L \sqrt{k \alpha^{\prime}\left(r_{0}^{2}+k \alpha^{\prime}\right)} \epsilon_{3}$
+$f(r)=1-\frac{r_0^2}{r^2}\,,\qquad A(r)=1+\frac{k\alpha'}{r^2}$
+
+#270:from:200;to:170;x=755.0;y=185.3;size=0.695;color=#ff9999
+$D=10$ Type IIB supergravity action
+\fontsize{4pt}{0pt}\selectfont   $\begin{aligned} S_{IIB}=& \frac{1}{(2 \pi)^{7}\left(\alpha^{\prime}\right)^{4}} \int d x^{10} \sqrt{-g} e^{-2 \phi}\left(R+4(\partial \phi)^{2}-\frac{1}{12} H_{\mu \nu \tau}^{2}\right) \\ &-\frac{\sqrt{-g}}{2}\left(\left(F_{\mu}\right)^{2}+\frac{\tilde{F}_{\mu \nu \tau}^{2}}{3 !}+\frac{\tilde{F}_{\mu \nu \tau \rho \sigma}^{2}}{5 !}\right) \\ &-\frac{1}{2} \epsilon^{\mu_{1} \cdots \mu_{10}} C_{\mu_{1} \cdots \mu_{4}} H_{\mu_{5}\mu_{6}\mu_{7}} F_{\mu_{8}\mu_{9}\mu_{10}}+\text { fermions } \end{aligned}$
+
+#280:from:290;to:290;x=125.0;y=617.7;size=0.833;color=#4466AA
+Quantities in Planck's units in $D=4$
+\\\begin{tabular}{cccc}
+\hline
+$\displaystyle l_P=\sqrt\frac{\hbar G}{c^3}$&$\displaystyle m_P=\sqrt\frac{\hbar c}{G}$&$\displaystyle t_P=\sqrt\frac{\hbar G}{c^5}$&$\displaystyle T_P=\sqrt\frac{\hbar c^5}{Gk_B^2}$\\\hline
+\end{tabular}
+
+#290:from:280;to:20,280;x=96.7;y=413.5;size=1.000;color=#4466AA
+Reduced Planck's units
+$c=8\pi G=\hbar=k_B=1$
+
+#300:from:200;to:310;x=697.4;y=312.0;size=0.833;color=#ff9999
+Effective gravity action in D dimensions
+$S=\frac{1}{2l_s^{D-2}g_s^2}\int d^Dx=\frac{L^{\frac D2}}{2l_s^{D-2}g_s^2}\int d^{\frac D2}x=\frac{1}{2l_P^{\frac D2-2}}\int d^{\frac D2}x$
+
+#310:from:300,380,370;x=1015.8;y=620.5;size=1.000;color=#a94848
+$AdS_{D}\times S^{D}$ Correspondence map
+$l_P^{\frac D2-2}=\frac{l_s^{D-2}g_s^2}{L^{\frac D2}}\,,\qquad g_s=\frac{g_{YM}^2}{4\pi}$
+$\Rightarrow $
+
+#320:from:170;x=1156.6;y=313.4;size=0.335;color=#a94848;level=3
+'t Hooft limit
+\\\begin{tabular}{ccc}
+$\lambda=g_{YM}^2N$ fixed, $N\rightarrow \infty$& $\Leftrightarrow$ & Clasical type IIB string theory\\
+$1/N$ expansion & $\Leftrightarrow$ & $g_s$ string loop expansion \\
+\end{tabular}
+
+#330:from:170;x=1177.2;y=264.2;size=0.335;color=#a94848;level=3
+Large $\lambda$ limit
+\\\begin{tabular}{ccc}
+$\lambda\rightarrow \infty$, $N\rightarrow \infty$& $\Leftrightarrow$ & Clasical type IIB supergravity\\
+$\lambda^{-1/2}$ expansion & $\Leftrightarrow$ & $\alpha'$ expansion \\
+\end{tabular}
+
+#340:to:170,350;x=1000.9;y=92.9;size=1.200;color=#b9af25;level=0
+$N=4$ Super Yang-Mills theory $SU(N)$
+
+#350:from:340;to:370;x=1100.0;y=164.4;size=0.833;color=#b9af25
+SYM Central charge
+$c=\tfrac12(N^2-1)$
+
+#360:from:380;to:370;x=1124.5;y=397.8;size=0.694;color=#b9af25
+SYM 4D Central charge
+((holographically computed))
+$c\propto\frac{L^{D-2}}{l_P^{D-2}}$
+
+#370:from:350,360;to:310;x=1188.4;y=537.1;size=0.833;color=#a94848
+Relation between $N$ and $L$
+$N^2=\frac{L^{D-2}}{l_P^{D-2}}$
+
+#380:from:170;to:310,360;x=1014.7;y=482.3;size=1.000;color=#a94848
+$N=4$ Super Yang-Mills in $\mathbb{R}^{D-1}$ \\ --$\updownarrow$-- \\Type IIB String theory in $AdS_D\times S^D$
+
+#390:x=120.0;y=18.2;size=2.074;color=#4466AA;level=4
+Research Project

@@ -7,8 +7,17 @@ from utils import cleanStr, contains, hex_to_rgb
 import gc
 
 class Mindmap():
-    def __init__(self,name,contents,latexMaker=None,tab=None,progress=None):
+    def __init__(self,name,dirPath=None,contents=None,latexMaker=None,tab=None,progress=None):
         self.name=name
+        if dirPath :
+            self.dirPath=dirPath
+        if not contents :
+            if dirPath:
+                f=open(self.dirPath+"/"+self.name+".txt",'r')
+                contents=f.read()
+                f.close()
+            else :
+                raise("Directory or contents are missing to initialize mindmap.")
         self.title=""
         self.width=2000
         self.height=2000
@@ -18,7 +27,7 @@ class Mindmap():
         self.lastId=-10
         self.newEdgeFr=None
         self.bgColor="#faf2e8"
-        self.bubbleColor=None
+        self.bubbleColor="#5588DD"
         self.selected={}
 
         ### Headers and settings ###
@@ -46,6 +55,12 @@ class Mindmap():
                     self.bubbleColor=v
                 elif contains(k,"bgColor","BgColor","Bg Color","bg color"):
                     self.bgColor=v
+
+    def getContents (self):
+        f=open(self.dirPath+"/"+self.name+".txt","r")
+        contents=f.read()
+        f.close()
+        return contents
 
     def contrastedColor(self):
         bg=self.bgColor
@@ -86,8 +101,8 @@ class Mindmap():
 
     # Constructs the bubbles
     def constructBubbles (self,contents,progress=None):
-        if "#0:" in contents :
-            contents=contents[contents.find("#0:"):].split('#')
+        if "\n#0:" in contents :
+            contents=contents[contents.find("\n#0:"):].split('\n#')
             Ntot=len(contents)
             for i,descr in enumerate(contents) :
                 if descr!='' and "¤" not in descr :
@@ -151,6 +166,11 @@ class Mindmap():
             self.selected[object.id]=object
             object.shine(1)
 
+    def colorize(self,newColor):
+        for object in self.selected.values():
+            if isinstance(object,Bubble):
+                object.changeColor(newColor)
+
     def growSelected(self):
         for object in self.selected.values():
             object.grow()
@@ -158,6 +178,11 @@ class Mindmap():
     def shrinkSelected(self):
         for object in self.selected.values():
             object.shrink()
+
+    def changeLevelSelected(self,incr=0):
+        for object in self.selected.values():
+            if isinstance(object,Bubble):
+                object.changeLevel(incr)
 
     def moveSelected(self,movedBubble,delta):
         for object in self.selected.values():

@@ -25,10 +25,10 @@ $\vec F_h=L\vec u_z-D\vec u_x$
 Diederich formula
 $k_{\alpha_{3D}}=\dfrac{\pi\lambda}{1+\sqrt{1+\left(\dfrac{\pi\lambda}{k_\alpha\cos\varphi}\right)^2}}$
 
-#50:to:60,310;x=1543.4;y=303.8;size=0.833
+#50:to:60,310;x=1555.4;y=312.5;size=0.833;color=#6699BB
 2D unsteady inviscid lift coefficient
 ((Bonnet model))
-\footnotesize $\tilde Cz=\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha}\Re\left (\left [\cx\theta -\dl{\dot{\cx h}}+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+\footnotesize $\tilde Cz=k_\alpha\oz\theta+\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha}\Re\left (\left [\cx\theta -\oz\theta -\dl{\dot{\cx h}}+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
 
 #60:from:50;to:350;x=1401.9;y=500.5;size=1.000
 2D unsteady inviscid drag coefficient

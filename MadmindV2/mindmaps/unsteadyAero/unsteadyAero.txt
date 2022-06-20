@@ -1,0 +1,166 @@
+|MindMap title : Unsteady Aero
+|Height : 3000
+|Width : 3000
+|BgColor : #faf2e8
+|BubbleColor : #778899
+
+#0:to:290,60,50;x=177.8;y=420.2;size=1.440;color=#6b7cb4
+Unsteady Aero
+\small This mindmap presents several
+models of unsteady aerodynamics
+
+#40:from:340;to:310,540;x=1252.8;y=220.0;size=0.833;color=#2cd1da
+Diederich formula
+$k_{\alpha_{3D}}=\dfrac{\pi\lambda}{1+\sqrt{1+\left(\dfrac{\pi\lambda}{k_\alpha\cos\varphi}\right)^2}}$
+
+#50:from:0;to:60,290,370;x=375.0;y=575.6;size=0.833;color=#6b7cb4
+BONNET Lift
+((2D unsteady inviscid lift coefficient))
+\footnotesize $\tilde Cz=2\pi\oz\theta+\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+2\pi\Re\left (\left [\cx\theta -\oz\theta -\dl{\dot{\cx h}}+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+
+#60:from:0,50;to:380;x=331.5;y=716.7;size=0.833;color=#6b7cb4
+BONNET Drag
+((2D unsteady inviscid drag coefficient))
+$\tilde Cx=\tilde Cz\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V}{2\pi}\right)$
+
+#290:from:0,50;to:440;x=287.7;y=857.9;size=0.833;color=#6b7cb4
+BONNET Moment
+((2D unsteady inviscid moment coefficient))
+\footnotesize $Cm_A(\dl t) = \oz{Cm_A}+\frac{\pi}{2}\left[\left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\theta}}-\left(\frac{1}{2}-\dl{x}_A\right)\dl{\ddot{h}}+\left(\frac{9}{32}-\dl{x}_A+{\dl{x}_A}^2\right)\dl{\ddot{\theta}}\right]+\left(\frac{1}{4}-\dl{x}_A\right)Cz^i$
+
+#300:from:310;to:350;x=2189.1;y=632.4;size=1.000;color=#c87918
+3DSUBRI Lift
+((3D unsteady viscid lift coefficient))
+$Cz_\text{3DSUBRI}=\tilde Cz_\text{3DALPHA}\cos\theta+\left(Cx_{STEADY}(\alpha)+\frac{(\tilde Cz^V_\text{3DSUBRI})^2}{\pi\lambda e}\right)\sin(\alpha_h)$
+
+#310:from:40,390;to:300,420;x=1492.4;y=377.9;size=1.000;color=#c87918
+3DALPHA Lift
+((3D unsteady viscid lift coefficient))
+\footnotesize $\tilde Cz_{\text{3DALPHA}}=k_{\alpha_{3D}}\oz\theta+\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha_{3D}}\Re\left (\left [\cx\alpha-\oz\theta+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+$Cz_\text{3DALPHA}=\tilde Cz_\text{3DALPHA}+\left(Cx_{STEADY}(\alpha)+\frac{(\tilde Cz^V_\text{3DALPHA})^2}{\pi\lambda e}\right)\sin(\alpha_h)$
+
+#320:to:340;x=1326.2;y=65.3;size=0.833;color=#2cd1da
+Prandtl lifting line
+$Cz=\pi\lambda A_1$
+$Cz_\alpha=\frac{\pi\lambda}{1+\dfrac{\pi\lambda}{k_\alpha}}$
+
+#330:to:340;x=1170.7;y=79.2;size=0.833;color=#2cd1da
+Slender\\bodies theory
+$Cz_\alpha=\frac{\pi\lambda}{2}$
+
+#340:from:320,330;to:40;x=1240.3;y=133.5;size=0.578;color=#2cd1da
+Helmbold formula
+$Cz_{\alpha}=\frac{\pi\lambda}{1+\sqrt{1+\left(\dfrac{\pi\lambda}{k_\alpha}\right)^2}}$
+
+#350:from:420,300;x=2155.1;y=850.1;size=1.000;color=#c87918
+3DSUBRI Drag
+((3D unsteady viscid drag coefficient))
+$\tilde Cx_\text{3DSUBRI}=\tilde Cz_\text{3DALPHA}\sin\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz_\text{3DALPHA}^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V_\text{3DALPHA}}{k_{\alpha_{3D}}}\right)$
+$Cx_{3DSUBRI}=\tilde Cx_{3DSUBRI}+\left(Cx_{STEADY}(\alpha)+\frac{(\tilde Cz^V_\text{3DALPHA})^2}{\pi\lambda e}\right)\cos(\alpha_h)$
+
+#370:from:50,510;to:390,380;x=682.4;y=652.2;size=1.000;color=#c8b62b
+BF Lift
+((2D unsteady viscid lift coefficient))
+\small $\tilde Cz_{BF}=k_\alpha\oz\theta+\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha}\Re\left (\left [\cx\theta -\oz\theta -\dl{\dot{\cx h}}+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+$Cz_{BF}=\tilde Cz_{BF}+Cx_\text{STEADY}(\alpha)\sin(\alpha_h)$
+
+#380:from:60,370,510;to:400;x=667.6;y=827.1;size=1.000;color=#c8b62b
+BF Drag
+((2D unsteady viscid drag coefficient))
+$\tilde Cx_{BF}=\tilde Cz_{BF}\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz_{BF}^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V_{BF}}{k_\alpha}\right)$
+$Cx_{BF}=\tilde Cx_{BF}+Cx_\text{STEADY}(\alpha)\cos(\alpha_h)$
+
+#390:from:370;to:310,400;x=1075.1;y=670.3;size=1.000;color=#c8b62b
+ALPHA Lift
+((2D unsteady viscid lift coefficient))
+\footnotesize $\tilde Cz_\text{ALPHA}=k_\alpha\oz\theta+\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha}\Re\left (\left [\cx\alpha -\oz\theta + \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
+$Cz_\text{ALPHA}=\tilde Cz_\text{ALPHA}+Cx_\text{STEADY}(\alpha)\sin(\alpha_h)$
+
+#400:from:380,390;to:420;x=1082.3;y=827.8;size=1.000;color=#c8b62b
+ALPHA Drag
+((2D unsteady viscid drag coefficient))
+$\tilde Cx_\text{ALPHA}=\tilde Cz_\text{ALPHA}\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz_\text{ALPHA}^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V_\text{ALPHA}}{k_\alpha}\right)$
+$Cx_\text{ALPHA}=\tilde Cx_\text{ALPHA}+Cx_\text{STEADY}(\alpha)\cos(\alpha_h)$
+
+#420:from:310,400;to:350;x=1493.8;y=578.2;size=1.000;color=#c87918
+3DALPHA Drag
+((3D unsteady viscid drag coefficient))
+$\tilde Cx_\text{3DALPHA}=\tilde Cz_\text{3DALPHA}\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz_\text{3DALPHA}^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V_\text{3DALPHA}}{k_{\alpha_{3D}}}\right)$
+$Cx_\text{3DALPHA}=\tilde Cx_\text{3DALPHA}+\left(Cx_\text{STEADY}(\alpha)+\frac{(\tilde Cz^V_\text{3DALPHA})^2}{\pi\lambda e}\right)\cos(\alpha_h)$
+
+#440:from:290;to:450;x=661.8;y=965.4;size=1.000;color=#c8b62b
+BF Moment
+((2D unsteady viscid moment coefficient))
+
+#450:from:440;to:460;x=1048.6;y=1000.9;size=1.000;color=#c8b62b
+ALPHA Moment
+((2D unsteady viscid moment coefficient))
+
+#460:from:450;to:570;x=1460.2;y=744.3;size=1.000;color=#c87918
+3DALPHA Moment
+((3D unsteady viscid moment coefficient))
+
+#470:from:500,510;x=609.5;y=419.6;size=1.000;color=#c8b62b
+QS Lift
+((2D quasi-steady viscid lift coefficient))
+$Cz_{QS}=k_\alpha\alpha\cos(\alpha_h)+Cx_\text{STEADY}(\alpha)\sin(\alpha_h)$
+
+#480:from:510;x=768.1;y=496.7;size=1.000;color=#c8b62b
+QS Drag
+((2D quasi-steady viscid drag coefficient))
+$Cx_{QS}=Cx_\text{STEADY}(\alpha)\cos(\alpha_h)-k_\alpha\alpha\sin(\alpha_h)$
+
+#490:from:520;x=909.5;y=409.7;size=1.000;color=#c8b62b
+QS Moment
+((2D quasi-steady viscid moment coefficient))
+
+#500:from:530;to:470,540;x=664.6;y=264.8;size=0.833;color=#778899
+STEADY Lift
+((2D steady inviscid lift coefficient))
+$Cz_\text{STEADY}=k_\alpha\alpha$
+
+#510:to:370,380,480,550,470;x=762.8;y=335.9;size=0.833;color=#778899
+STEADY Drag
+((2D steady viscid drag coefficient))
+$Cx_\text{STEADY}(\alpha)$
+\footnotesize from experiment or numerical computation
+
+#520:to:490;x=910.4;y=311.7;size=0.833;color=#778899
+STEADY Moment
+((2D steady inviscid lift coefficient))
+$Cm_\text{STEADY}=\left(\frac14-\dl x_A\right)Cz_\text{STEADY}$
+or
+$Cm_\text{STEADY}(\alpha)$ from exp
+
+#530:to:500;x=683.9;y=146.9;size=1.000;color=#49d5dc
+Thin airfoil\\theory
+
+#540:from:40,500;to:550;x=1092.9;y=281.7;size=1.000;color=#778899
+3DSTEADY Lift
+((3D steady inviscid lift coefficient))
+$Cz_\text{3DSTEADY}=k_{\alpha_{3D}}\alpha$
+
+#550:from:540,510;x=1120.8;y=382.9;size=1.000;color=#778899
+3DSTEADY Drag
+((3D steady inviscid drag coefficient))
+$Cx_\text{3DSTEADY}=Cx_\text{STEADY}(\alpha)+\dfrac{Cz_\text{3DSTEADY}^2}{\pi\lambda e}$
+
+#560:x=1112.7;y=484.8;size=1.000;color=#778899
+3DSTEADY Moment
+((3D steady inviscid moment coefficient))
+
+#570:from:460;x=2030.9;y=1036.9;size=1.000;color=#c87918
+3DSUBRI Moment
+((3D unsteady viscid moment coefficient))
+
+#580:x=626.8987185088222;y=1140.5839218152425
+REV Lift
+((2D unsteady viscid lift coefficient))
+
+#590:x=609.4;y=1217.7;size=1.000;color=#778899
+REV Drag
+((2D unsteady viscid drag coefficient))
+
+#600:x=595.3566446215858;y=1292.0985267378599
+REV Moment
+((2D unsteady viscid moment coefficient))

@@ -19,6 +19,8 @@ class Bubble(QGraphicsEllipseItem):
         self.mindmap=mindmap
         self.tab=tab
         self.size=1
+        self.level=1
+        self.levels=[Qt.PenStyle.SolidLine,Qt.PenStyle.SolidLine,Qt.PenStyle.DashLine,Qt.PenStyle.DotLine,Qt.PenStyle.NoPen]
         self.drawn=False
         self.moving=False
         self.lensed=False
@@ -42,10 +44,7 @@ class Bubble(QGraphicsEllipseItem):
 
         # Style
         self.strokeWidth=2
-        if color==None:
-            self.color="#33BBEE"
-        else :
-            self.color=color
+        self.color=color
         self.lens=1.4
         self.shadow=QGraphicsDropShadowEffect()
         self.shadow.setBlurRadius(10)
@@ -111,12 +110,16 @@ class Bubble(QGraphicsEllipseItem):
     def setStyle(self):
         pen=self.pen()
         pen.setWidthF(self.strokeWidth)
-        if "#" in self.color:
-            pen.setColor(QColor(*hex_to_rgb(self.color)))
+        if self.color==None:
+            color=self.mindmap.bubbleColor
         else :
-            pen.setColor(QColor(self.color))
+            color=self.color
+        if "#" in color:
+            pen.setColor(QColor(*hex_to_rgb(color)))
+        else :
+            pen.setColor(QColor(color))
         self.setPen(pen)
-        self.setBrush(QColor(250,250,250))
+        self.changeLevel(0)
         if self.idLabel:
             self.idLabel.setDefaultTextColor(self.pen().color())
 
@@ -179,7 +182,6 @@ class Bubble(QGraphicsEllipseItem):
         # self.a*=self.size
         # self.b*=self.size
 
-
     def shrink(self):
         self.size/=1.2
         self.setScale(self.size)
@@ -192,6 +194,24 @@ class Bubble(QGraphicsEllipseItem):
         self.setScale(self.size)
         # self.tab.writeNewSize(self)
         self.updateEdges()
+        self.updateStr()
+
+    def changeLevel(self,incr):
+        self.level=max(0,min(self.level+incr,4))
+        pen=self.pen()
+        pen.setStyle(self.levels[self.level])
+        self.setPen(pen)
+        if self.level==0:
+            color=pen.color()
+            color.setHsl(color.hslHue(),color.hslSaturation(),242)
+            self.setBrush(color)
+            self.setZValue(6)
+        elif self.level==4:
+            self.setBrush(QColor(*hex_to_rgb(self.mindmap.bgColor)))
+            self.setZValue(4)
+        else :
+            self.setBrush(QColor(255,255,255))
+            self.setZValue(5)
         self.updateStr()
 
     def magnify(self,bool):
@@ -207,13 +227,23 @@ class Bubble(QGraphicsEllipseItem):
     def getB(self):
         return (self.b+self.strokeWidth/2)*self.size
 
+    def changeColor(self,newColor):
+        self.color=newColor
+        pen=self.pen()
+        pen.setColor(self.color)
+        self.setPen(pen)
+        self.shine()
+        if self.idLabel:
+            self.idLabel.setDefaultTextColor(self.pen().color())
+        self.updateStr()
 
     ### Hover ###
     def hoverEnterEvent(self, event):
-        self.magnify(1)
-        if self.idLabel :
-            self.idLabel.show()
-        self.tab.canvas.scene.hoveredObject=self
+        if self.level!=4:
+            self.magnify(1)
+            if self.idLabel :
+                self.idLabel.show()
+            self.tab.canvas.scene.hoveredObject=self
         
     def hoverLeaveEvent(self, event):
         self.magnify(0)
@@ -331,8 +361,16 @@ class Bubble(QGraphicsEllipseItem):
         toStr=""
         if toList!=[]:
             toStr="to:"+str(toList)[1:-1].replace(' ','').replace("'",'')+";"
-
-        s=("#{}:"+frStr+toStr+"x={:.1f};y={:.1f};size={:.3f}\n").format(self.id,self.scenePos().x(),self.scenePos().y(),self.size)
+        if self.color :
+            if isinstance(self.color,QColor):colorHex=rgb_to_hex(self.color.getRgb()[:3])
+            elif isinstance(self.color,tuple):colorHex=rgb_to_hex(self.color)
+            else :colorHex=self.color
+            if colorHex!="":
+                colorStr=";color="+colorHex
+        levelStr=""
+        if self.level!=1:
+            levelStr=";level="+str(self.level)
+        s=("#{}:"+frStr+toStr+"x={:.1f};y={:.1f};size={:.3f}{}{}\n").format(self.id,self.scenePos().x(),self.scenePos().y(),self.size,colorStr,levelStr)
         s+=self.content.toPlainText()
         return s
 
@@ -355,10 +393,10 @@ class Bubble(QGraphicsEllipseItem):
         self.id=int(fl[0][1:]) # ID
         args=fl[1].split(';')
         for a in args :
-            if contains(a,"to","t"):
+            if contains(a,"to"):
                 for k in a.split(':',1)[1].split(','):
                     self.toLinks.append(k)
-            elif contains(a,"from","fr","f"):
+            elif contains(a,"from","fr"):
                 self.fromLinks=[k for k in a.split(':')[1].split(',')]
             elif contains(a,"size","s"):
                 if ':' in a : self.size=float(a.split(':')[1])
@@ -369,6 +407,10 @@ class Bubble(QGraphicsEllipseItem):
                 elif '=' in a : self.color=a.split('=')[1]
                 if self.color.isdigit() and '#' not in self.color:
                     self.color='#'+self.color
+            elif contains(a,"level","lev"):
+                if ':' in a : self.level=a.split(':')[1]
+                elif '=' in a : self.level=a.split('=')[1]
+                self.level=max(0,min(int(self.level),4))
             elif contains(a,"x"):
                 if '=' in a :
                     x=float(a.split('=')[1])

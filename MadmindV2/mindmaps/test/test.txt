@@ -2,10 +2,7 @@
 |Height : 2000
 |Width : 2000
 |Bg color : #f3eee9
-|Optimize : no
-|Tolerance : None
 
 
-#0:x=720.4;y=324.2;size=1.250
-Polyakov action
-\redbox{$S=-T\int \de^2\sigma\sqrt{-h}g_\munu(X)h^\albe\partial_\alpha X^\mu\partial_\beta X^\nu$}
+#0:x=464.4;y=403.3;size=1.250;color=#ffaa00
+Madmind

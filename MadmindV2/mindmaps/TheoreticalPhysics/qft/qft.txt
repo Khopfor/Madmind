@@ -1,0 +1,92 @@
+|MindMap title : Quantum Field Theory
+|Height : 2000
+|Width : 2000
+|BgColor : #112244
+|BubbleColor : #7788BB
+
+#0:x=293.3;y=135.6;size=1.000;color=#7788BB
+Quantum Field Theory
+Given by an action $S$
+
+#10:from:150;to:50;x=1248.0;y=433.9;size=1.000;color=#7788BB
+S-matrix
+$\bra f\hat S\ket i=\bra fU(-\infty,+\infty)\ket i$
+\footnotesize where $\ket f$ and $\ket i$ are eigenstates
+of the free theory
+
+#20:from:30;x=755.6;y=731.9;size=1.000;color=#7788BB
+Dyson formula
+$U(t,t_0)=T\exp\left(-i\int_{t_0}^tH_I(u)du\right)$
+
+#30:to:20;x=881.2;y=816.6;size=1.000;color=#7788BB
+Unitary time evolution operator
+$\ket{\psi(t)}=U(t,t_0)\ket{\psi(t_0)}$
+
+#40:to:130;x=125.8;y=585.6;size=0.833;color=#7788BB
+Wick's theorem
+$T(\phi_1...\phi_n)=:\phi_1...\phi_n:+:\text {all contractions}:$
+
+#50:from:10;x=1376.6;y=511.3;size=1.000;color=#7788BB
+Scattering amplitude
+$\bra f\hat S-1\ket i=i(2\pi)^4\delta^4(p_{in}-p_{out})\mathcal A$
+
+#60:to:180;x=1215.1;y=544.8;size=1.000;color=#7788BB
+Heisenberg picture
+$\mathcal O_H(\vec x,t)=e^{iHt}\mathcal O_S(\vec x)e^{-iHt}$
+$\frac{d\mathcal O_H}{dt}=i[H,\mathcal O_H]$
+$\ket\psi_H=e^{iHt}\ket\psi_S$
+
+#70:to:180;x=1303.5;y=662.4;size=1.000;color=#7788BB
+Interaction picture
+$\ket{\psi(t)}_I=e^{iH_0t}\ket{\psi(t)}_S$
+$\mathcal O_I(\vec x,t)=e^{iH_0t}\mathcal O_S(\vec x)e^{-iH_0t}$
+$i\frac{d\ket\psi_I}{dt}=H_I(\vec x,t)\ket\psi_I$
+
+#80:to:90;x=212.0;y=338.9;size=1.000;color=#7788BB
+Path integral
+$\int[\cald \varphi]e^{iS[\varphi]}$
+
+#90:from:80;to:100;x=340.1;y=401.9;size=1.000;color=#7788BB
+Free scalar partition function
+$Z_0=\int[\cald \varphi]e^{i\int d^4x\left(\tfrac12\varphi(x)\left(-\partial^2-m^2+i\epsilon\right)\varphi(x)\right)}$
+
+#100:from:90,110;to:130,140;x=368.0;y=521.1;size=1.000;color=#7788BB
+Free scalar functional integral
+$Z_0[J]=\frac1{Z_0}\int[\cald \varphi]e^{\tfrac i2\int dx\varphi(x)\left(-\partial^2-m^2+i\epsilon\right)\varphi(x)+i\int dxJ(x)\varphi(x)}$
+$Z_0[J]=e^{ -\tfrac12\iint dxdyJ(x)\Delta_F(x-y)J(y)}$
+
+#110:to:100;x=545.7;y=419.9;size=1.000;color=#7788BB
+Feynman propagator
+$\Delta_F(x-y)=\int\frac{d^4k}{(2\pi)^4}\frac {ie^{-ik(x-y)}}{k^2-m^2+i\epsilon}$
+
+#120:to:130;x=592.9;y=604.9;size=1.000;color=#7788BB
+n-point correlation function
+$\langle\phi(x_1)\dots\phi(x_n)\rangle=\bra 0 T(\phi(x_1)\dots\phi(x_n))\ket0$
+$=\tfrac{\delta}{i\delta J(x_1)}\cdots\tfrac{\delta}{i\delta J(x_n)}\langle e^{i\int d^4xJ(x)\phi(x)}\rangle\big |_{J=0}$
+
+#130:from:40,100,120;x=320.9;y=671.9;size=1.000;color=#7788BB
+N-point function from functional integral
+$\langle e^{i\int dxJ(x)\phi(x)}\rangle=e^{ -\tfrac12\iint dxdyJ(x)\Delta_F(x-y)J(y)}=Z_0[J]$
+\small\bbox{$\displaystyle \langle\phi(x_1)\dots\phi(x_n)\rangle=\frac{\delta}{i\delta J(x_1)}\cdots\frac{\delta}{i\delta J(x_n)}Z_0[J]\big |_{J=0}=\frac1{Z_0}\int[\cald\varphi]\varphi(x_1)\dots\varphi(x_n)e^{iS[\varphi]}$}
+
+#140:from:100,160;to:180;x=766.1;y=499.9;size=1.000;color=#7788BB
+Interacting scalar generating partition function
+$Z[J]=\frac1{Z[0]}\int[\cald \varphi]e^{iS_0[\varphi]+iS_{int}[\varphi]+i\int J\varphi}$
+$Z[J]=e^{iS_{int}[\frac\delta{i\delta J}]}Z_0[J]=e^{iS_{int}[\frac\delta{i\delta J}]}e^{ -\tfrac12\iint dxdyJ(x)\Delta_F(x-y)J(y)}$
+
+#150:from:160;to:10,180;x=1117.0;y=370.5;size=1.000;color=#7788BB
+Scattering operator
+$\hat S=Te^{i\int\mathcal L_{int}[\hat\phi]}$
+
+#160:to:140,150,170;x=927.6;y=309.7;size=1.000;color=#7788BB
+Interacting theory
+$\mathcal L_{int}$
+
+#170:from:160;to:180;x=977.2;y=409.0;size=1.000;color=#7788BB
+True vacuum of the interacting theory $\ket\Omega$
+$H\ket\Omega=0\, , \quad \langle\Omega\ket\Omega=1$
+
+#180:from:140,170,150,60,70;x=1000.0;y=649.0;size=1.000;color=#7788BB
+Interacting $n$-point correlation function\\(Green's function)
+$G^{(n)}(x_1,\dots,x_n)=\tfrac{\delta}{i\delta J(x_1)}\cdots\tfrac{\delta}{i\delta J(x_n)}Z[J]$
+\bbox{$\displaystyle G^{(n)}(x_1,\dots,x_n)=\bra\Omega T\phi_H(x_1)\dots\phi_H(x_n)\ket\Omega=\frac{\bra0T\phi_I(x_1)\dots\phi_I(x_n)\hat S\ket0}{\bra0 \hat S\ket0}$}

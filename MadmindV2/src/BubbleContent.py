@@ -40,7 +40,7 @@ class BubbleContent(QTextEdit):
         lines=self.toPlainText()
         if type(lines)==type(""):
             lines=lines.split('\n')
-        cachePath="mindmaps/"+self.bubble.tab.tabName+"/cache/"
+        cachePath=self.bubble.mindmap.dirPath+"/cache/"
         if not os.path.isdir(cachePath):
             os.mkdir(cachePath)
         hash=self.makeIdCode(lines)
