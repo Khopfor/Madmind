@@ -1,0 +1,95 @@
+|MindMap title : <title>
+|Height : 2000
+|Width : 2000
+|BgColor : #faf2e8
+|BubbleColor : #778899
+
+#0:to:20;x=423.1;y=73.8;size=1.440;color=#778899;level=0
+Lifting line\\theory
+
+#10:from:160;to:20;x=575.1;y=145.8;size=1.000;color=#778899
+Biot-Savart law
+$d\vec V=\frac{\Gamma d\vec l\wedge \vec r}{4\pi \|\vec r\|^3}$
+\vspace{2pt}\small \textsc{Segment case}\vspace{2pt}
+$V=\frac{\Gamma}{4\pi r}(\cos\alpha+\cos\beta)$
+
+#20:from:10,0;to:50,100;x=445.9;y=216.8;size=1.000;color=#778899
+Induced flow velocity\\on lifting line
+$v_i(y)=\int_{-b}^b\frac{\Gamma'(y')dy'}{4\pi(y-y')}$
+
+#30:to:40,70;x=82.2;y=188.5;size=1.000;color=#778899;level=0
+Thin airfoil\\theory
+
+#40:from:30;to:60;x=191.7;y=265.9;size=1.000;color=#778899
+Lift coefficient
+$Cz=k_\alpha(\alpha-\alpha_0)$
+
+#50:from:20,110,100;to:60;x=394.2;y=345.8;size=1.000;color=#778899
+Effective aoa
+$\alpha_e(y)=\alpha(y)+\alpha_i(y)$
+
+#60:from:40,50;to:80;x=340.9;y=417.6;size=1.000;color=#778899
+Slice lift
+$Cz(y)=k_\alpha(y)(\alpha_e(y)-\alpha_0(y))$
+
+#70:from:30;to:80,130(6);x=89.2;y=317.9;size=1.000;color=#778899
+Joukowski theorem
+$\vec P=\rho_\infty \vec V_\infty\wedge\vec\Gamma\ \Rightarrow\  Cz=\frac{-2\Gamma}{V_\infty c}$
+
+#80:from:60,70;to:120;x=255.8;y=507.3;size=0.833;color=#778899
+Integro-differential equation
+$\Gamma(y)=-\tfrac12 k_\alpha(y) c(y) V_\infty\left(\alpha(y)-\alpha_0(y)+\int_{-b}^b\frac{\Gamma'(y')dy'}{4\pi V_\infty(y-y')}\right)$
+
+#90:from:160;to:100,130,140,170;x=641.3;y=250.7;size=1.000;color=#778899
+Fourier series
+$y=b\cos\theta$
+$\Gamma(\theta)=4bV_\infty\sum_{n=1}^\infty A_n\sin (n\theta)$
+
+#100:from:90,20;to:120,50;x=517.6;y=309.6;size=0.694;color=#778899
+Induced aoa
+$\alpha_i(y)=\dfrac{v_i(\theta)}{V_\infty}=\sum_{n=1}^\infty nA_n\frac{\sin(n\theta)}{\sin\theta}$
+
+#110:to:50;x=315.6;y=285.0;size=0.833;color=#778899
+Angle of attack
+$\alpha(y)=\alpha+\Delta\alpha_V(y)$
+
+#120:from:100,80;to:180;x=498.2;y=569.6;size=0.833;color=#778899
+Prandtl equation
+\footnotesize $\displaystyle \sum_{n=1}^{\infty} A_{n} \sin (n \theta)=\frac{k_\alpha(\theta) c(\theta)}{8b}\left(\alpha+\Delta \alpha_{V}(\theta)-\alpha_{0}(\theta)-\sum_{n=1}^{\infty} n A_{n} \frac{\sin (n \theta)}{\sin \theta}\right)$
+\bbox{$\displaystyle \sum_{n=1}^{\infty} A_{n} \sin (n \theta)\left(1+\frac{nk_\alpha(\theta) c(\theta)}{8b\sin \theta}\right)=\frac{k_\alpha(\theta) c(\theta)}{8 b}\left(\alpha+\Delta \alpha_{V}(\theta)-\alpha_{0}(\theta)\right)$}
+
+#130:from:70(6),90,190;to:150;x=608.1;y=375.8;size=1.000;color=#778899
+Lift coefficient
+\small $L=\rho_\infty V_\infty\int_{-b}^b\Gamma(y)\cos(\alpha_i(y))dy$
+\bbox{$Cz=\pi\lambda A_1$}
+
+#140:from:90;to:150,200;x=833.2;y=409.0;size=0.833;color=#778899
+Induced drag coefficient
+\small $D_i=\rho_\infty\int_{-b}^b\Gamma(y)v_i(y)dy$
+\normalsize \bbox{$\displaystyle Cx_i=\pi\lambda\sum_{n=1}^\infty nA_n^2$}
+
+#150:from:130,140,200;x=844.3;y=513.6;size=1.000;color=#778899
+Drag coefficient
+\redbox{$Cx=Cx_0+\dfrac{Cz^2}{\pi\lambda e}$}
+
+#160:to:10,90,170;x=706.5;y=111.2;size=1.000;color=#778899
+Circulation
+$\Gamma(y)$
+
+#170:from:160,90;to:180;x=834.8;y=286.6;size=1.000;color=#778899
+Elliptic circulation
+$\Gamma(y)=\Gamma_0\sqrt{1-\frac{y^2}{b^2}}$
+$\Gamma(y)=4bV_\infty A_1\sin\theta$
+
+#180:from:120,170;x=667.0;y=472.5;size=1.000;color=#778899
+Elliptic\\circulation lift
+\small $A_1=\frac{1}{1+\frac{8b}{k_\alpha c}}(\alpha-\alpha_0)$
+\redbox{$\displaystyle Cz=\frac{\pi\lambda}{1+\frac{8b}{k_\alpha c}}(\alpha-\alpha_0)$}
+
+#190:to:130;x=836.4;y=192.2;size=1.000;color=#778899
+Aspect ratio $\lambda$
+$\lambda=\frac{l^2}{S}=\frac{4b^2}{S}=\frac{2b}{\bar c}$
+
+#200:from:140;to:150;x=978.6;y=463.3;size=0.833;color=#778899
+Oswald efficiency
+$e=\frac{1}{1+\delta}$ with \small $\displaystyle \delta=\frac{\sum_{n=2}^\infty nA_n^2}{A_1^2}$

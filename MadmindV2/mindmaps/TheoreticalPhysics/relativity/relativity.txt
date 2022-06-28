@@ -3,7 +3,7 @@
 |Width : 2000
 |BubbleColor : #44AA44
 
-#0:to:380;x=854.0;y=78.0;size=2.074
+#0:to:380;x=854.0;y=78.0;size=2.074;color=#44AA44;level=0
 General\\Relativity
 
 #10:from:20,420;to:120,30,890;x=494.4;y=207.5;size=1.440;color=#2c9e7e
@@ -27,7 +27,7 @@ Coordinate\\transformation
 $x^a \rightarrow x'^a$
 $\mathbf e'_a=\frac{\partial x^b}{\partial x'^a}\mathbf e_b$
 
-#70:from:50,60;x=130.0;y=301.6;size=0.694;color=#2c9e7e
+#70:from:50,60;x=103.1;y=301.5;size=0.578;color=#2c9e7e;level=2
 Transformation of the affine connection
 $\Gamma'^a_{bc}=\frac{\partial x'^a}{\partial x^d}\frac{\partial x^f}{\partial x'^b}\frac{\partial x^g}{\partial x'^c}\Gamma^d_{fg}-\frac{\partial x^d}{\partial x'^b}\frac{\partial x^f}{\partial x'^c}\frac{\partial^2 x'^a}{\partial x^d\partial x^f}$
 
@@ -64,7 +64,7 @@ Differential operators
 \\\small\begin{tabular}{rl}\hline
 \textsc{Gradient}&$\nabla\phi=\nabla_a\phi\mathbf e^a=\partial_a\phi\bve^a$\\\textsc{Divergence}&$\nabla\cdot\bvv=\nabla_av^a=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}v^a)$\\\textsc{Laplacian}&$\nabla^2\phi=\frac{1}{\sqrt{|g|}}\partial_a(\sqrt{|g|}g^{ab}\partial_b\phi)$\\\textsc{Curl}&$(\mathrm{curl}\bvv)_{ab}=\nabla_av_b-\nabla_bv_a$\\\textsc{D'Alembertian}&$\square^2=g^\munu\nabla_\mu\nabla_\nu$\\\hline\end{tabular}
 
-#160:from:50;to:140;x=56.7;y=410.7;size=0.482;color=#2c9e7e
+#160:from:50;to:140;x=56.7;y=410.7;size=0.482;color=#2c9e7e;level=2
 Contraction of\\the connection
 $\Gamma^a_{ab}=\frac{1}{\sqrt{|g|}}\partial_b\sqrt{|g|}$
 
@@ -126,7 +126,7 @@ $\nabla_\mu A^\mu=0$
 Field equations in Lorenz gauge
 $\square^2A_\mu=\mu_0j_\mu$
 
-#330:to:20,420;x=357.9;y=68.6;size=1.440;color=#2c9e7e
+#330:to:20,420;x=357.9;y=68.6;size=1.440;color=#2c9e7e;level=0
 Differential\\geometry
 
 #340:from:320;x=488.1;y=1825.7;size=1.000;color=#ff8018
@@ -176,7 +176,7 @@ $R_{abcd}=-R_{abdc}$
 $R_{abcd}=R_{cdab}$
 $R_{abcd}+R_{acdb}+R_{adbc}=0$
 
-#450:from:410,440;x=331.7;y=894.4;size=0.833;color=#2c9e7e
+#450:from:410,440;x=331.7;y=894.4;size=0.833;color=#2c9e7e;level=2
 Number of independant components
 $N^2(N^2-1)/12$
 \\\begin{tabular}{lccc}\hline Nb of dimensions&2&3&4\\Nb of independant components&1&6&20\\\hline\end{tabular}
@@ -240,7 +240,7 @@ $\rho u^\mu(\nabla_\mu u^i)=g^{ij}\partial_jp \ \overset{g=\eta}{\Longrightarrow
 Einstein equation
 \redbox{$\displaystyle R_\munu-\tfrac 12g_\munu R=-\tfrac{8\pi G}{c^4}T_\munu$}
 
-#580:to:560,610,710;x=1908.7;y=265.2;size=1.728
+#580:to:560,610,710;x=1908.7;y=265.2;size=1.728;color=#44AA44;level=0
 Newtonian\\mechanics
 
 #590:from:570;to:600;x=1468.0;y=767.9;size=0.833;color=#44AA44
@@ -567,7 +567,7 @@ $S=\frac{c^4}{16\pi G}\int d^Dx\sqrt{-g}(R-2\Lambda)$
 
 
 
-#1280:from:1260;to:570;x=1097.3;y=696.1;size=0.833;color=#44AA44
+#1280:from:1260;to:570;x=1097.3;y=696.1;size=0.833;color=#44AA44;level=2
 Variations
 $\delta g=gg^\munu\delta g_\munu$
 $\delta\sqrt{-g}=-\tfrac12\sqrt{-g}g_\munu\delta g^\munu$

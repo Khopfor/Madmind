@@ -15,7 +15,7 @@ Schwarzschild-Tangherlini metric\\(D dimensional Schwarzschild BH)
 #20:from:210,290;to:40;x=216.6;y=260.2;size=1.000;color=#3eaa38
 Einstein-Hilbert action in arbitrary D
 $I=\frac {c^{\frac{3D}2-2}}{16\pi G_D}\int d^Dx\sqrt{-g}R=\frac\hbar{2l_P^{D-2}}\int d^Dx\sqrt{-g}R$
-\vspace{5pt}\small $G_D=(8\pi G\hbar)^{\frac D2-1}/\hbar$
+\vspace{5pt}\small $G_D=(8\pi G\hbar)^{\frac D2-1}/\hbar\propto l_P^{D-2}$
 
 #30:to:40,50;x=534.1;y=412.0;size=1.000;color=#4466AA;level=2
 2D Reduction
@@ -24,15 +24,16 @@ $I=\frac {c^{\frac{3D}2-2}}{16\pi G_D}\int d^Dx\sqrt{-g}R=\frac\hbar{2l_P^{D-2}}
 2D dilaton gravity action
 $I=\frac {\Omega_{n+1}r_0^{n+1}}{16\pi G}\int d^2x\sqrt{-g}e^{-2\Phi}\left(R+\frac{4n}{n+1}(\nabla\Phi)^2+\frac{n(n+1)}{r_0^2}e^{-4\Phi/(n+1)}\right)$
 
-#50:from:0,30,40,200;to:220;x=601.2;y=686.8;size=1.000;color=#ff9999
+#50:from:0,30,40,200;to:220;x=563.3;y=669.9;size=1.000;color=#ff9999
 2D string action
-$I=\frac {1}{16\pi G_2}\int d^2x\sqrt{-g}e^{-2\Phi}\left(R+4(\nabla\Phi)^2+4\lambda^2\right)$
+$I=\frac {1}{16\pi G_2}\int d^2x\sqrt{-g}e^{-2\Phi}\left(R+4(\nabla\Phi)^2-4\hat\lambda^2\right)$
+\small$(\hat\lambda^2=\frac2{\alpha'})$
 
-#60:to:190;x=551.5;y=1094.5;size=0.833;color=#4466AA
+#60:to:190;x=618.2;y=1122.1;size=0.833;color=#4466AA
 Hawking\\temperature
 $T_H=\frac\kappa{2\pi}$
 
-#70:from:140;to:190;x=660.6;y=1000.0;size=0.694;color=#4466AA
+#70:from:140;to:190;x=723.7;y=1024.5;size=0.694;color=#4466AA
 Surface gravity of cigar
 $\kappa=\frac 1{\sqrt {k\alpha'}}$
 
@@ -63,32 +64,31 @@ AdS Black hole
 ((Poincaré coordinates))
 $ds^2=-\left(-\left(\dfrac{r_0}{r}\right)^n+\dfrac{r^2}{L^2}\right)dt^2+\dfrac{dr^2}{-\left(\dfrac{r_0}{r}\right)^n+\dfrac{r^2}{L^2}}+r^2d\textbf x^2_{n+1}$
 
-#140:from:160,220,230;to:70,230,190;x=873.0;y=966.8;size=1.440;color=#4466AA
+#140:from:230,310,410,160;to:70,230,190;x=911.8;y=966.6;size=1.440;color=#4466AA
 Cigar geometry
 $ds^2=k\alpha'(-\tanh^2\rho dt^2+d\rho^2)$
-$\Phi=\Phi_0-\ln\cosh\rho$
-\vspace{3pt}\small with $k=\frac4{n^2}\sqrt{\lambda_{t'H}}$
+\vspace{3pt}\small with $k\propto\frac{\lambda^{\frac2{n+2}}}{n^2}$
 
-#150:from:120;to:130;x=1517.2;y=252.9;size=1.200;color=#3c4064
+#150:from:120,400;to:130;x=1517.2;y=252.9;size=1.200;color=#3c4064
 AdS Space
 ((Poincaré coordinates))
 $ds^2=L^2\left(\dfrac{dr^2}{r^2}+r^2d\textbf{x}^2\right)$
 
-#160:from:0,130;to:140;x=1336.0;y=772.1;size=1.000;color=#3c4064
+#160:from:0,130;to:140;x=1248.3;y=793.6;size=1.000;color=#3c4064
 Near-horizon large D geometry
 $ds^2=\frac{4L^2}{n^2}\left(-\tanh^2\rho d\hat t^2+d\rho^2\right)+r_0^2d\textbf x^2_{n+1}$
 
 #170:from:120,270,340;to:180,320,330,380;x=1012.3;y=268.2;size=1.000;color=#a94848
-$N=4$ Super Yang-Mills in $\mathbb{R}^4$ \\ --$\updownarrow$-- \\Type IIB String theory in $AdS_5\times S^5$
+$N=4$ Super Yang-Mills in $\mathbb{R}^{1,3}$ \\ --$\updownarrow$-- \\Type IIB String theory in $AdS_5\times S^5$
 
-#180:from:170;x=918.9;y=375.4;size=0.578;color=#a94848
+#180:from:170;x=888.8;y=382.5;size=0.694;color=#a94848
 $AdS_5\times S^5$ Correspondence map
 $L^2=\alpha'\sqrt{g_{YM}^2N}=\alpha'\sqrt\lambda\iff\frac{L^4}{l_s^4}=4\pi g_sN\qquad (\alpha'=l_s^2)$
 $g_s=\frac{g_{YM}^2}{4\pi}\qquad N^2=\frac{L^3}{l_P^3}$
 
-#190:from:60,70,140;x=704.4;y=1112.1;size=1.000;color=#4466AA
+#190:from:60,70,140;x=771.4;y=1120.5;size=1.000;color=#4466AA
 Cigar temperature
-$T_{cigar}=\frac1{2\pi\sqrt {k\alpha'}}=\frac{n}{4\pi L}$
+$T_{cigar}=\frac1{2\pi\sqrt {k\alpha'}}\propto\frac{n}{2\pi\alpha' \lambda^{\frac{1}{n+2}}}$
 
 #200:to:50,270,300;x=589.6;y=125.2;size=1.440;color=#ff9999;level=0
 String\\theory
@@ -98,15 +98,15 @@ General Relativity
 $I=\frac {c^4}{16\pi G}\int d^4x\sqrt{-g}R=\frac\hbar{2l_P^2}\int d^4x\sqrt{-g}R$
 4D Einstein-Hilbert action
 
-#220:from:50;to:140;x=582.3;y=803.8;size=1.000;color=#ff9999
+#220:from:50;to:410;x=546.0;y=798.7;size=1.000;color=#ff9999
 2D String gravity eom
-$R_\munu+2\nabla_\mu\nabla_\nu\Phi=0$
-$R+4\nabla^2\Phi-4(\nabla\Phi)^2=0$
+$R_\munu-\tfrac12g_\munu R +2\nabla_\mu\nabla_\nu\Phi+ 2g_\munu\left(\nabla^2\Phi-(\nabla\Phi)^2+\hat\lambda^2\right)=0$
+$R+4\nabla^2\Phi-4(\nabla\Phi)^2-4\hat\lambda^2=0$
 
-#230:from:140;to:140,240;x=994.0;y=1120.0;size=1.000;color=#4466AA
+#230:from:140;to:140,240;x=1060.2;y=1061.0;size=1.000;color=#4466AA
 $SL(2)_k/U(1)$ theory
 
-#240:from:230;x=902.0;y=1220.0;size=1.000;color=#4466AA
+#240:from:230;x=1022.1;y=1147.5;size=1.000;color=#4466AA
 $SL(2)_k/U(1)$\\central charge
 $c=2+\frac6{k-2}$
 
@@ -140,10 +140,10 @@ $c=8\pi G=\hbar=k_B=1$
 Effective gravity action in D dimensions
 $S=\frac{1}{2l_s^{D-2}g_s^2}\int d^Dx=\frac{L^{\frac D2}}{2l_s^{D-2}g_s^2}\int d^{\frac D2}x=\frac{1}{2l_P^{\frac D2-2}}\int d^{\frac D2}x$
 
-#310:from:300,380,370;x=1015.8;y=620.5;size=1.000;color=#a94848
+#310:from:300,380,370;to:140;x=998.3;y=656.3;size=1.000;color=#a94848
 $AdS_{D}\times S^{D}$ Correspondence map
 $l_P^{\frac D2-2}=\frac{l_s^{D-2}g_s^2}{L^{\frac D2}}\,,\qquad g_s=\frac{g_{YM}^2}{4\pi}$
-$\Rightarrow $
+$\Rightarrow \frac{L^{D-1}}{l_s^{D-1}}=Ng_s \iff L^2=\alpha'\lambda^{\frac2{D-1}}$
 
 #320:from:170;x=1156.6;y=313.4;size=0.335;color=#a94848;level=3
 't Hooft limit
@@ -164,7 +164,7 @@ $N=4$ Super Yang-Mills theory $SU(N)$
 
 #350:from:340;to:370;x=1100.0;y=164.4;size=0.833;color=#b9af25
 SYM Central charge
-$c=\tfrac12(N^2-1)$
+$c=\tfrac{N^2}4$
 
 #360:from:380;to:370;x=1124.5;y=397.8;size=0.694;color=#b9af25
 SYM 4D Central charge
@@ -173,10 +173,20 @@ $c\propto\frac{L^{D-2}}{l_P^{D-2}}$
 
 #370:from:350,360;to:310;x=1188.4;y=537.1;size=0.833;color=#a94848
 Relation between $N$ and $L$
-$N^2=\frac{L^{D-2}}{l_P^{D-2}}$
+$N^2\propto\frac{L^{D-2}}{l_P^{D-2}}$
 
 #380:from:170;to:310,360;x=1014.7;y=482.3;size=1.000;color=#a94848
-$N=4$ Super Yang-Mills in $\mathbb{R}^{D-1}$ \\ --$\updownarrow$-- \\Type IIB String theory in $AdS_D\times S^D$
+$N=4$ Super Yang-Mills in $\mathbb{R}^{1,D-2}$ \\ --$\updownarrow$-- \\Type IIB String theory in $AdS_D\times S^D$
 
-#390:x=120.0;y=18.2;size=2.074;color=#4466AA;level=4
+#390:x=144.8;y=27.4;size=2.489;color=#f07dff;level=4
 Research Project
+
+#400:to:150;x=1660.4;y=332.7;size=1.000;color=#3c4064
+Relation between $\Lambda$ and $L$
+$L^2=-\frac{(D-1)(D-2)}{2\Lambda}$
+
+#410:from:220;to:140;x=673.4;y=909.1;size=0.833;color=#ff9999
+Cigar as string gravity solution
+$ds^2=\frac{1}{\hat\lambda^2}(-\tanh^2\rho dt^2+d\rho^2)$
+$ds^2=\tfrac{1}{2}\alpha'(-\tanh^2\rho dt^2+d\rho^2)$
+$\Phi=\Phi_0-\ln\cosh\rho$

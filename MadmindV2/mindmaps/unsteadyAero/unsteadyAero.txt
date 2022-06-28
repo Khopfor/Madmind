@@ -4,7 +4,7 @@
 |BgColor : #faf2e8
 |BubbleColor : #778899
 
-#0:to:290,60,50;x=177.8;y=420.2;size=1.440;color=#6b7cb4
+#0:to:290,60,50;x=177.8;y=420.2;size=1.440;color=#6b7cb4;level=0
 Unsteady Aero
 \small This mindmap presents several
 models of unsteady aerodynamics
@@ -18,15 +18,15 @@ BONNET Lift
 ((2D unsteady inviscid lift coefficient))
 \footnotesize $\tilde Cz=2\pi\oz\theta+\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+2\pi\Re\left (\left [\cx\theta -\oz\theta -\dl{\dot{\cx h}}+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
 
-#60:from:0,50;to:380;x=331.5;y=716.7;size=0.833;color=#6b7cb4
+#60:from:0,50;to:380;x=329.1;y=685.6;size=0.833;color=#6b7cb4
 BONNET Drag
 ((2D unsteady inviscid drag coefficient))
 $\tilde Cx=\tilde Cz\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V}{2\pi}\right)$
 
-#290:from:0,50;to:440;x=287.7;y=857.9;size=0.833;color=#6b7cb4
+#290:from:0,50;to:440;x=291.5;y=791.0;size=0.833;color=#6b7cb4
 BONNET Moment
 ((2D unsteady inviscid moment coefficient))
-\footnotesize $Cm_A(\dl t) = \oz{Cm_A}+\frac{\pi}{2}\left[\left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\theta}}-\left(\frac{1}{2}-\dl{x}_A\right)\dl{\ddot{h}}+\left(\frac{9}{32}-\dl{x}_A+{\dl{x}_A}^2\right)\dl{\ddot{\theta}}\right]+\left(\frac{1}{4}-\dl{x}_A\right)Cz^i$
+\footnotesize $\tilde Cm_A=\frac{\pi}{2}\left[-\left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\theta}}+\left(\frac{1}{2}-\dl{x}_A\right)\dl{\ddot{h}}-\left(\frac{9}{32}-\dl{x}_A+{\dl{x}_A}^2\right)\dl{\ddot{\theta}}\right]-\left(\frac{1}{4}-\dl{x}_A\right)\tilde Cz^V$
 
 #300:from:310;to:350;x=2189.1;y=632.4;size=1.000;color=#c87918
 3DSUBRI Lift
@@ -64,7 +64,7 @@ BF Lift
 \small $\tilde Cz_{BF}=k_\alpha\oz\theta+\frac{\pi}{2}\left [\dl{\dot{\theta}}- \dl{\ddot{h}} + \left (\frac{1}{2} - \dl{x}_A\right )\dl{\ddot{\theta}}\right]+k_{\alpha}\Re\left (\left [\cx\theta -\oz\theta -\dl{\dot{\cx h}}+ \left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\cx \theta}} \right]\cx C(\textstyle {\frac{\dl{\omega}}2})\right)$
 $Cz_{BF}=\tilde Cz_{BF}+Cx_\text{STEADY}(\alpha)\sin(\alpha_h)$
 
-#380:from:60,370,510;to:400;x=667.6;y=827.1;size=1.000;color=#c8b62b
+#380:from:60,370,510;to:400;x=664.6;y=811.9;size=1.000;color=#c8b62b
 BF Drag
 ((2D unsteady viscid drag coefficient))
 $\tilde Cx_{BF}=\tilde Cz_{BF}\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz_{BF}^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V_{BF}}{k_\alpha}\right)$
@@ -88,13 +88,17 @@ $Cx_\text{ALPHA}=\tilde Cx_\text{ALPHA}+Cx_\text{STEADY}(\alpha)\cos(\alpha_h)$
 $\tilde Cx_\text{3DALPHA}=\tilde Cz_\text{3DALPHA}\theta-\frac\pi8(\dl{\dot\theta})^2+\tilde Cz_\text{3DALPHA}^V\left(\frac12\dl{\dot\theta}-\frac{\tilde Cz^V_\text{3DALPHA}}{k_{\alpha_{3D}}}\right)$
 $Cx_\text{3DALPHA}=\tilde Cx_\text{3DALPHA}+\left(Cx_\text{STEADY}(\alpha)+\frac{(\tilde Cz^V_\text{3DALPHA})^2}{\pi\lambda e}\right)\cos(\alpha_h)$
 
-#440:from:290;to:450;x=661.8;y=965.4;size=1.000;color=#c8b62b
+#440:from:290;to:450;x=613.6;y=972.6;size=1.000;color=#c8b62b
 BF Moment
 ((2D unsteady viscid moment coefficient))
+${\tilde Cm_A}_\text{BF} =\frac{\pi}{2}\left[-\left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\theta}}+\left(\frac{1}{2}-\dl{x}_A\right)\dl{\ddot{h}}-\left(\frac{9}{32}-\dl{x}_A+{\dl{x}_A}^2\right)\dl{\ddot{\theta}}\right]-\left(\frac{1}{4}-\dl{x}_A\right)\tilde Cz_\text{BF}^V$
+${Cm_A}_\text{BF}={\tilde Cm_A}_\text{BF}+\left(\tfrac14-{\dl x_A}_{exp}\right)k_\alpha\oz\theta+{Cm_A}_{exp}$
 
-#450:from:440;to:460;x=1048.6;y=1000.9;size=1.000;color=#c8b62b
+#450:from:440;to:460;x=1083.1;y=991.1;size=1.000;color=#c8b62b
 ALPHA Moment
 ((2D unsteady viscid moment coefficient))
+${\tilde Cm_A}_\text{ALPHA} =\frac{\pi}{2}\left[-\left(\frac{3}{4}-\dl{x}_A\right)\dl{\dot{\theta}}+\left(\frac{1}{2}-\dl{x}_A\right)\dl{\ddot{h}}-\left(\frac{9}{32}-\dl{x}_A+{\dl{x}_A}^2\right)\dl{\ddot{\theta}}\right]-\left(\frac{1}{4}-\dl{x}_A\right)\tilde Cz_\text{ALPHA}^V$
+${Cm_A}_\text{ALPHA}={\tilde Cm_A}_\text{ALPHA}+\left(\tfrac14-{\dl x_A}_{exp}\right)k_\alpha\oz\theta+{Cm_A}_{exp}$
 
 #460:from:450;to:570;x=1460.2;y=744.3;size=1.000;color=#c87918
 3DALPHA Moment
@@ -105,12 +109,12 @@ QS Lift
 ((2D quasi-steady viscid lift coefficient))
 $Cz_{QS}=k_\alpha\alpha\cos(\alpha_h)+Cx_\text{STEADY}(\alpha)\sin(\alpha_h)$
 
-#480:from:510;x=768.1;y=496.7;size=1.000;color=#c8b62b
+#480:from:510;x=759.3;y=498.6;size=1.000;color=#c8b62b
 QS Drag
 ((2D quasi-steady viscid drag coefficient))
 $Cx_{QS}=Cx_\text{STEADY}(\alpha)\cos(\alpha_h)-k_\alpha\alpha\sin(\alpha_h)$
 
-#490:from:520;x=909.5;y=409.7;size=1.000;color=#c8b62b
+#490:from:520;x=920.2;y=426.9;size=1.000;color=#c8b62b
 QS Moment
 ((2D quasi-steady viscid moment coefficient))
 
